@@ -9,7 +9,8 @@
       <p class="lead">{{ site.description }}</p>
       <hr />
       Soyez prévenu lorsque le livre sortira !
-      <input type="text" id="mail" /> <button id="btn" onclick="microAjax('/register/', function () {}, {'mail': document.getElementById('mail').value})">OK</button>
+      <input type="text" id="mail" onkeydown="if(event.keyCode == 13) {document.getElementById('btn').click(); this.value = ''};" />
+      <button id="btn" onclick="microAjax('/register/', function () {document.getElementById('btn').innerHTML = 'Merci !'}, 'mail=' + document.getElementById('mail').value)">OK</button>
       <hr />
     </div>
 
