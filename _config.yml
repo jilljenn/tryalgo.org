@@ -1,0 +1,26 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+relative_permalinks: true
+
+# Setup
+title:            TryAlgo
+tagline:          'Un livre de programmation'
+description:      'Un manuel de préparation aux entretiens d''embauche et concours de programmation.<br />Par <a href="http://jill-jenn.net" target="_blank">Jill-Jênn Vie</a> et <a href="">Christoph Dürr</a>.'
+url:              http://tryalgo.org
+baseurl:          /
+
+author:
+  name:           'Jill-Jênn Vie'
+  url:            https://twitter.com/jjvie
+
+paginate:         5
+
+# Custom vars
+version:          2.1.0
+
+github:
+  repo:           https://github.com/jilljenn/tryalgo
