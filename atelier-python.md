@@ -4,11 +4,12 @@ title: Atelier Python à l'ENS Cachan
 ---
 
 Nous allons organiser des ateliers d'initiation à Python, le samedi à l'ENS Cachan.  
-[Lien d'inscription bientôt.](#)
+[Inscrivez-vous en remplissant ce formulaire.](https://docs.google.com/forms/d/15qKrO3gec_67iDKGm9LxJIIVyfLZ5V3YnqMQUZYRO4k/viewform)
 
 Ils sont destinés à des non informaticiens. Comme on n'aura pas beaucoup de temps, on va surtout vous apprendre à apprendre.
 
-Aussi : les pizzas sont offertes par Google. Je ne déconne pas.
+Aussi : les pizzas sont offertes par Google. Si si.  
+Pour toutes questions, contactez-moi à [vie@jill-jenn.net](mailto:vie@jill-jenn.net).
 
 ## Le programme
 
@@ -26,8 +27,10 @@ Aussi : les pizzas sont offertes par Google. Je ne déconne pas.
 
 ## L'équipe
 
-- Margot Abord de Châtillon, éco + socio
+- Margot Abord de Châtillon, éco
 - Jordan Delorme, méca
 - Loïc Devilliers, math
+- Pauline Pommeret, bio
+- Julien Pongérard, socio
 - Fabrice Valentino, phy
 - Jill-Jênn Vie, info
