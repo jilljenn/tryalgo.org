@@ -9,7 +9,7 @@ relative_permalinks: true
 # Setup
 title:            TryAlgo
 tagline:          'Un livre de programmation'
-description:      'Un manuel de préparation aux entretiens d''embauche et concours de programmation.<br />Par <a href="http://jill-jenn.net" target="_blank">Jill-Jênn Vie</a> et <a href="http://www-desir.lip6.fr/~durrc/" target="_blank">Christoph Dürr</a>.'
+description:      'Un manuel de préparation aux entretiens d''embauche et concours de programmation.<br />Par <a href="http://jill-jenn.net" target="_blank">Jill-Jênn Vie</a> et <a href="http://www-desir.lip6.fr/~durrc/" target="_blank">Christoph Dürr</a>. En 2016.'
 url:              http://tryalgo.org
 baseurl:          /
 
