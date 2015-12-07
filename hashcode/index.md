@@ -1,4 +1,8 @@
-# Conseils pour le google hashcode
+---
+layout: page
+title: Conseils pour le Google Hash Code
+front: true
+---
 
 Vous avez une seule instance à résoudre. Alors je vous conseille de la lire et peut-être découvrir des propriétés qui pourraient aider. Si c'est un graphe, est-ce que le degré maximal est petit par exemple ?
 
