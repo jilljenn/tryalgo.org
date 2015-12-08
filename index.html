@@ -4,12 +4,12 @@ title: Accueil
 ---
 
 <div class="page">
-    <h1 class="page-title">Avez-vous déjà vu ?</h1>
+    <h1 class="page-title">Avez-vous déjà vu.. ?</h1>
 
     <p>Une implémentation de l'algorithme de Dijkstra aussi courte ?</p>
 
 {% highlight python %}
-from heapq import *
+from heapq import heappop, heappush
 
 def dijkstra(graph, weight, source=0):
     n = len(graph)
