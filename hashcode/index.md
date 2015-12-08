@@ -37,11 +37,11 @@ C'est un problème de *set cover*.  Les ensembles sont définis par des disques 
 * Poser sur le plan une grille avec des cases de dimension 8 fois 8.  Construire un tableau qui associe aux coordonnées d'une case la liste des points inclus.
 * Boucler sur tous les points A
 * Boucler sur tous les points B,C dans les 9 cases autour de A. La grille permet de ne pas faire trop de tests inutiles de points trop éloignés.
-..* Calculer le disque D défini par A, B, C.
-..* Si A,B,C sont co-linéaires ou si le rayon de D dépasse 8, ignorer ce triplet et continuer l'itération.
-..* Si le rayon dépasse 4, l'agrandir à 8, sinon l'agrandir à 4.
-..* Chercher dans les 9 cases l'ensemble S des points inclus dans le disque (avec le nouveau rayon)
-..* Ajouter S dans L
+  * Calculer le disque D défini par A, B, C.
+  * Si A,B,C sont co-linéaires ou si le rayon de D dépasse 8, ignorer ce triplet et continuer l'itération.
+  * Si le rayon dépasse 4, l'agrandir à 8, sinon l'agrandir à 4.
+  * Chercher dans les 9 cases l'ensemble S des points inclus dans le disque (avec le nouveau rayon)
+  * Ajouter S dans L
 
 Puis dans un post traitement trier L, et par un simple parcours enlever les ensembles identiques de L.
 
