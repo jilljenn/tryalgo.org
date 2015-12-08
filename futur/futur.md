@@ -12,7 +12,7 @@ Quelques pistes pour le futur du club ACM.
 * Pluger un juge automatique 
 * Fusionner la préparation avec  l'ENS Ulm
 
-## Séaces thématiques
+## Séances thématiques
 
 * Programmation Linéaire
 * Optimisation & Heuristiques
