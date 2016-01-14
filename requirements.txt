@@ -1,0 +1,3 @@
+tryalgo
+ipython[notebook]
+geopy
