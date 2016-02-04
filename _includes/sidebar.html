@@ -8,10 +8,6 @@
       </h1>
       <p class="lead">{{ site.description }}</p>
       <hr />
-      Le livre est envoyé à l'éditeur. Soyez prévenu de sa sortie !
-      <input type="text" id="mail" onkeydown="if(event.keyCode == 13) {document.getElementById('btn').click(); this.value = ''};" placeholder="Votre mail" />
-      <button id="btn" onclick="microAjax('/register/', function () {document.getElementById('btn').innerHTML = 'Merci !'}, 'mail=' + document.getElementById('mail').value)">OK</button>
-      <hr />
     </div>
 
     <nav class="sidebar-nav">
@@ -31,8 +27,8 @@
         {% endif %}
       {% endfor %}
 
-      <a class="sidebar-nav-item" href="/toc.pdf"><i class="fa fa-download"></i> Table des matières</a>
-      <a class="sidebar-nav-item" href="/index.pdf"><i class="fa fa-download"></i> Index</a>
+      <a class="sidebar-nav-item" href="/_static/toc.pdf"><i class="fa fa-download"></i> Table des matières</a>
+      <a class="sidebar-nav-item" href="/_static/index.pdf"><i class="fa fa-download"></i> Index</a>
       <a class="sidebar-nav-item" href="{{ site.github.repo }}">Projet GitHub</a>
     </nav>
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Conseils pour le Google Hash Code
+title: Conseils Google Hash Code
 front: true
 ---
 

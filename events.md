@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Liste des compétitions d'algorithmique
+title: Compétitions d'algorithmique
 front: true
 ---
 

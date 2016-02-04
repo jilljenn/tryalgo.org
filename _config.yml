@@ -9,7 +9,8 @@ relative_permalinks: true
 # Setup
 title:            TryAlgo
 tagline:          'Un livre de programmation'
-description:      'Un manuel de préparation aux entretiens d''embauche et concours de programmation.<br />Par <a href=\"http://jill-jenn.net\" target=\"_blank\">Jill-Jênn Vie</a> et <a href=\"http://www-desir.lip6.fr/~durrc/\" target=\"_blank\">Christoph Dürr</a>. Mars 2016.'
+description:      'Un manuel de préparation aux entretiens d''embauche et concours de programmation.<br />Par <a href=\"http://jill-jenn.net\" target=\"_blank\">Jill-Jênn Vie</a> et <a href=\"http://www-desir.lip6.fr/~durrc/\" target=\"_blank\">Christoph Dürr</a>.'
+metadescription:  "Programmation efficace - Les 128 algorithmes qu'il faut avoir compris et codés dans sa vie. Sortie le 1er mars 2016."
 url:              http://tryalgo.org
 baseurl:          /
 
@@ -23,4 +24,4 @@ paginate:         5
 version:          2.1.0
 
 github:
-  repo:           https://github.com/jilljenn/tryalgo
+  repo:           https://github.com/jilljenn/tryalgo.org

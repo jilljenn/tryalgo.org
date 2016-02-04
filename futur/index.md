@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Futur du club ACM 
-front: true
 ---
 
 Quelques pistes pour le futur du club ACM.
