@@ -24,4 +24,5 @@ paginate:         5
 version:          2.1.0
 
 github:
-  repo:           https://github.com/jilljenn/tryalgo.org
+  tryalgo:        https://github.com/jilljenn/tryalgo
+  meta:           https://github.com/jilljenn/tryalgo.org

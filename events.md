@@ -1,10 +1,9 @@
 ---
 layout: page
-title: Compétitions d'algorithmique
-front: true
+title: Compétitions de programmation
 ---
 
-On a jugé intéressant de réunir la liste des compétitions d'algorithmique les plus célèbres.
+Voici une liste des compétitions de programmation les plus célèbres.
 
 ## Réservées aux plus jeunes
 

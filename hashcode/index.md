@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Conseils Google Hash Code
-front: true
 ---
 
 Vous avez une seule instance à résoudre. Alors je vous conseille de la lire et peut-être découvrir des propriétés qui pourraient aider. Si c'est un graphe, est-ce que le degré maximal est petit par exemple ?

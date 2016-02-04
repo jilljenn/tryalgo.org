@@ -1,8 +1,9 @@
 ---
 layout: page
 title: Concours ACM
-front: true
 ---
+
+[Tout savoir sur le concours ACM-ICPC](https://fr.wikipedia.org/wiki/ACM_International_Collegiate_Programming_Contest) (sur Wikipédia).
 
 [Boîte à outils](/toolbox/)
 
