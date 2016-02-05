@@ -3,6 +3,8 @@ layout: page
 title: Conseils Google Hash Code
 ---
 
+Cette page donne des conseils pour le Google Hash Code et le site d’entraînement [primers.xyz](http://primers.xyz).
+
 Vous avez une seule instance à résoudre. Alors je vous conseille de la lire et peut-être découvrir des propriétés qui pourraient aider. Si c'est un graphe, est-ce que le degré maximal est petit par exemple ?
 
 Il me semble que parfois des approches génériques pourraient donner de bons résultats, à savoir
@@ -27,6 +29,8 @@ Typiquement on résout une instance par *branch and bound*. C'est à dire pour *
 Avec cette méthode on peut se fixer une limite en temps et juste retourner la meilleure solution trouvée, sans nécessairement prouver son optimalité, ce qui nécessite l'exploration complète de l'arbre.
 
 Je conseille l'utilisation de solveur de programmes linéaires à variable entière (MIP - mixed integer linear program) car ils implémentent le *branch and bound* de manière efficace.  Les solveurs courants sont glpk (projet GNU, mais peu efficace), CPLEX, Gurobi par exemple.  Les licences académiques sont gratuits et il existe des API pour Python, C++, Java, etc.
+
+
 
 ## Exposition au musée
 
@@ -69,6 +73,10 @@ C'est un problème de maximisation de clauses XOR-SAT.  Je pense que le recuit s
 ## Pizza Google
 
 C'est un problème de *set packing*.  Faire appel à un solveur MIP.
+L'instance est grande, alors il peut être intéressant de découper la pizza en k rectangles et résoudre chacun de manière indépendant avec un solveur MIP.  Puis après avoir assemblé les solutions respectives, on peut refaire un tour de recherche locale.
+
+C'est ce qui a été fait [ici](PizzaGoogle.py).
+
 
 ## Et c'est parti
 
