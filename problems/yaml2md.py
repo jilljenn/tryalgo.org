@@ -31,7 +31,8 @@ for item in yaml.load(open("problems.yaml").read()):
 
 L.sort(key = lambda t: (t[1].lower(),t[2].lower()))
 
-cat = [':fish:', ':dolphin:', ':tropical_fish:', ':whale2:']
+# cat = [':fish:', ':dolphin:', ':tropical_fish:', ':whale2:']
+cat = ['☆', '☆☆', '☆☆☆', '☆☆☆☆']
 
 print("section | order | problem | link\n--- | --- | --- | ---")
 for order, chapter, name, links in L:
