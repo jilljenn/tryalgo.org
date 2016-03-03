@@ -34,10 +34,10 @@ L.sort(key = lambda t: (t[1].lower(),t[2].lower()))
 # cat = [':fish:', ':dolphin:', ':tropical_fish:', ':whale2:']
 cat = ['☆', '☆☆', '☆☆☆', '☆☆☆☆']
 
-print("section | order | problem | link\n--- | --- | --- | ---")
+print("| section | order | problem | link |\n| --- | --- | --- | --- |")
 for order, chapter, name, links in L:
-    print("%s | %s | %s | " % (chapter, cat[order], name), end='')
+    print("| %s | %s | %s |" % (chapter, cat[order], name), end='')
     for a in links:
-        print(' [[%s]](%s)' % (code(a), a),  end='')
-    print()
+        print(' [[%s]](%s)' % (code(a), a), end='')
+    print(' |\n', end='')
 print()

@@ -8,9 +8,12 @@
       </h1>
       <p class="lead">{{ site.description }}</p>
       <hr />
-      Inscrivez-vous au <a href="/club/">workshop samedi 6/2 à 14 h</a>, ENS Cachan !
-      <input type="text" id="mail" onkeydown="if(event.keyCode == 13) {document.getElementById('btn').click(); this.value = ''};" placeholder="Votre mail" />
-      <button id="btn" onclick="microAjax('/register/', function () {document.getElementById('btn').innerHTML = 'Merci !'}, 'mail=' + document.getElementById('mail').value)">OK</button>
+
+      <i class="fa fa-book"></i> Acheter sur <a href="http://www.amazon.fr/gp/product/2340010055/ref=as_li_tl?ie=UTF8&camp=1642&creative=19458&creativeASIN=2340010055&linkCode=as2&tag=mangaki-21" target="_blank">Amazon</a> / <a href="http://livre.fnac.com/a9189301/C-Durr-Programmation-efficace" target="_blank">Fnac</a>
+      <a class="sidebar-nav-item" href="/problems/"><i class="fa fa-star"></i> Problèmes sélectionnés</a>
+      <a class="sidebar-nav-item" href="/toc.pdf"><i class="fa fa-download"></i> Voir la table des matières</a>
+      <a class="sidebar-nav-item" href="http://docs.tryalgo.org" target="_blank"><i class="fa fa-search"></i> Documentation</a>
+
       <hr />
     </div>
 
@@ -31,11 +34,7 @@
         {% endif %}
       {% endfor %}
 
-      <a class="sidebar-nav-item" href="/toc.pdf"><i class="fa fa-download"></i>Table des matières</a>
 
-      <a class="sidebar-nav-item" href="/problems/">Problèmes sélectionnés</a>
-
-      <a class="sidebar-nav-item" href="http://livre.fnac.com/a9189301/C-Durr-Programmation-efficace" target="_blank">Acheter sur la Fnac</a>
 
       Projets GitHub : <a href="{{ site.github.tryalgo }}" target="_blank">tryalgo</a> / <a href="{{ site.github.meta }}" target="_blank">méta</a>
        <iframe src="https://ghbtns.com/github-btn.html?user=jilljenn&repo=tryalgo&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
