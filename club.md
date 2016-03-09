@@ -4,7 +4,9 @@ title: Club Algo à l'ENS Cachan
 front: true
 ---
 
-## Prochain workshop : samedi 6 février 2016 à 14 h
+## Workshops algo
+
+[Compte rendu du workshop du 6 février 2016](/2016/02/06/workshop-algo/)
 
 ENS Cachan  
 61 avenue du Président Wilson  
@@ -12,8 +14,6 @@ Bât. Cournot
 
 RER B **Arcueil-Cachan** puis bus 187 vers *Division Leclerc - Camille Desmoulins*  
 ou RER B **Bagneux**
-
-**Inscrivez-vous** ci-contre (dans le bandeau gauche, là) ou [contactez-nous](mailto:vie@jill-jenn.net).
 
 ## Activités
 
