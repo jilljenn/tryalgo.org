@@ -9,7 +9,7 @@ Une relation A -> B signifie « *B est un cas particulier de A* ».
 Une relation en pointillés A -> B signifie « *A peut être implémenté par B* ».  
 Les nœuds à double bordure sont les types abstraits.
 
-![Une structure de données des structures de données.](/static/metadatastructure.png)
+<p><a href="/static/metadatastructure.png"><img src="/static/metadatastructure.png" alt="Une structure de données des structures de données."></a></p>
 
 ## Structures moins connues
 
