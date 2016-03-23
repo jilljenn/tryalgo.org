@@ -1,10 +1,11 @@
 ---
 layout: page
-title: "Selected problems"
+title: "Problèmes sélectionnés"
 ---
 
-We selected a few problems, which we think are good training material for programming contests.  Each problem is assigned to some category and also to some level.  We recommend to start with level 1 in order to make sure you know the basic tools. Then continue with level 2, 3 and finally 4.  But you have guessed that, right?
+Voici quelques problèmes, qui représentent un bon entraînement pour les compétitions de programmation.
 
+Chaque problème est associé à une catégorie et une difficulté. Ce tableau est triable par catégorie, difficulté, titre ou juge.
 
 <script src="sorttable.js"></script>
 
@@ -17,221 +18,1306 @@ table.sortable thead {
     cursor: default;
 }
 </style>
-section | order | problem | link
---- | --- | --- | ---
-ad_hoc | ☆ | Advanced ASCII Cubes |  [[tju]](http://acm.tju.edu.cn/toj/showp2323.html) [[zju]](http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=2438)
-ad_hoc | ☆☆☆☆ | Australian Voting |  [[tju]](http://acm.tju.edu.cn/toj/showp1299.html)
-ad_hoc | ☆☆☆☆ | Babel Towers |  [[tju]](http://acm.tju.edu.cn/toj/showp2499.html)
-ad_hoc | ☆☆☆☆ | Blood Type |  [[tju]](http://acm.tju.edu.cn/toj/showp3268.html)
-ad_hoc | ☆☆☆☆ | Bullseye |  [[codejam]](https://code.google.com/codejam/contest/2418487/dashboard#s=p0)
-ad_hoc | ☆ | City hall |  [[tju]](http://acm.tju.edu.cn/toj/showp1090.html)
-ad_hoc | ☆☆☆☆ | Common Item |  [[tju]](http://acm.tju.edu.cn/toj/showp3108.html)
-ad_hoc | ☆☆☆☆ | Cryptoquote |  [[tju]](http://acm.tju.edu.cn/toj/showp3151.html)
-ad_hoc | ☆☆☆☆ | DNA Sorting |  [[tju]](http://acm.tju.edu.cn/toj/showp1127.html)
-ad_hoc | ☆☆☆☆ | European railroad tracks |  [[tju]](http://acm.tju.edu.cn/toj/showp2136.html)
-ad_hoc | ☆☆☆☆ | Giant Screen |  [[tju]](http://acm.tju.edu.cn/toj/showp3135.html)
-ad_hoc | ☆☆☆☆ | Huffman Trees |  [[tju]](http://acm.tju.edu.cn/toj/showp1497.html) [[zju]](http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=1564)
-ad_hoc | ☆☆☆☆ | Interpreter |  [[tju]](http://acm.tju.edu.cn/toj/showp1357.html)
-ad_hoc | ☆☆☆☆ | Knights In The Zombie Land |  [[onlinejudge]](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=278&page=show_problem&problem=3758)
-ad_hoc | ☆ | LC Display |  [[tju]](http://acm.tju.edu.cn/toj/showp1031.html)
-ad_hoc | ☆☆☆☆ | Matrix Swapping II |  [[tju]](http://acm.tju.edu.cn/toj/showp3306.html)
-ad_hoc | ☆ | Mine Sweeper |  [[tju]](http://acm.tju.edu.cn/toj/showp1330.html)
-ad_hoc | ☆☆☆ | Poker Hands |  [[onlinejudge]](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1256)
-ad_hoc | ☆☆☆☆ | The Trip |  [[tju]](http://acm.tju.edu.cn/toj/showp1301.html)
-ad_hoc | ☆☆☆☆ | Total flow |  [[tju]](http://acm.tju.edu.cn/toj/showp3172.html)
-ad_hoc | ☆☆☆☆ | X-Express |  [[onlinejudge]](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=11&page=show_problem&problem=921)
-anagrams | ☆☆ | Anagram checker |  [[onlinejudge]](http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=84)
-anagrams | ☆☆ | Anagram Groups |  [[poj]](http://poj.org/problem?id=2408) [[tju]](http://acm.tju.edu.cn/toj/showp1340.html)
-arithmetic | ☆☆☆☆ | Factorvisors |  [[onlinejudge]](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1080)
-backtracking | ☆☆☆☆ | Channel Allocation |  [[tju]](http://acm.tju.edu.cn/toj/showp1077.html)
-backtracking | ☆☆☆☆ | minimal length addition chain |  [[codility]](http://codility.com/cert/start/rho2012/)
-backtracking | ☆☆ | Mirror Maze |  [[onlinejudge]](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=194)
-backtracking | ☆☆ | Sudoku (16x16) |  [[tju]](http://acm.tju.edu.cn/toj/showp2546.html) [[spoj]](http://www.spoj.com/problems/SUDOKU/)
-backtracking | ☆☆ | Sudoku (9x9) |  [[tju]](http://acm.tju.edu.cn/toj/showp1851.html) [[spoj]](http://www.spoj.com/problems/EASUDOKU/)
-backtracking | ☆☆☆☆ | The Triangle Game |  [[zju]](http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemId=697)
-bellman_ford | ☆☆☆☆ | Haunted graveyard |  [[spoj]](http://www.spoj.pl/problems/GRAVEYRD/)
-bellman_ford | ☆☆ | Negative Cycles |  [[spoj]](http://www.spoj.com/problems/NEGCYC/)
-bellman_ford | ☆☆ | Roads in Berland |  [[spoj]](http://www.spoj.com/problems/CT25C/)
-BFS | ☆☆ | Hike on a Graph |  [[spoj]](http://www.spoj.com/problems/HIKE/)
-BFS | ☆☆☆☆ | Kisu Pari Na 2 |  [[onlinejudge]](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=25&page=show_problem&problem=3868)
-BFS | ☆☆☆☆ | Knight Moves |  [[poj]](http://poj.org/problem?id=1915)
-BFS | ☆☆ | Ricochet Robots |  [[onlinejudge]](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=861&page=show_problem&problem=4746)
-BFS | ☆☆ | Traffic Jam |  [[icpcarchive]](https://icpcarchive.ecs.baylor.edu/index.php?option=onlinejudge&page=show_problem&problem=2501) [[tju]](http://acm.tju.edu.cn/toj/showp2272.html)
-biconnected_components | ☆☆☆☆ | Street Directions |  [[tju]](http://acm.tju.edu.cn/toj/showp1125.html)
-biconnected_components | ☆☆ | The Key Stations |  [[tju]](http://acm.tju.edu.cn/toj/showp2189.html)
-binary_search | ☆☆☆☆ | AggressiveCows |  [[spoj]](http://www.spoj.com/problems/AGGRCOW/)
-binary_search | ☆☆ | Egg Drop |  [[codejam]](https://code.google.com/codejam/contest/32003/dashboard#s=p2)
-binary_search | ☆☆ | Fill the cisterns |  [[spoj]](http://www.spoj.com/problems/CISTFILL/)
-binary_search | ☆☆☆☆ | SpeedCameras |  [[codility]](https://codility.com/programmers/challenges/calcium2015)
-binary_tree | ☆☆☆☆ | France'98 |  [[uni-ulm]](http://www.informatik.uni-ulm.de/acm/Locals/1998/html/france98.html) [[uni-ulm]](http://www.informatik.uni-ulm.de/acm/Locals/1998/)
-binomial_coefficients | ☆☆☆☆ | Hexagonal Routes |  [[tju]](http://acm.tju.edu.cn/toj/showp2270.html)
-bipartite_matching | ☆☆ | Dungeon of Death |  [[spoj]](http://www.spoj.com/problems/QUEST4/)
-bipartite_matching | ☆☆ | Muddy Fields |  [[spoj]](http://www.spoj.com/problems/MUDDY/)
-bipartite_vertex_cover | ☆☆☆☆ | Playground |  [[tju]](http://acm.tju.edu.cn/toj/showp2799.html)
-combinatoire | ☆☆☆☆ | Make it Manhattan |  [[tju]](http://acm.tju.edu.cn/toj/showp2519.html)
-connected_components | ☆☆ | The Ant |  [[spoj]](http://www.spoj.com/problems/ANTTT/)
-convex_hull | ☆☆☆☆ | Herding Frosh |  [[tju]](http://acm.tju.edu.cn/toj/showp1215.html)
-data_1d | ☆☆ | Unique Encryption Keys |  [[icpcarchive]](https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=3892)
-decoding | ☆☆☆☆ | Alien Numbers |  [[codejam]](https://code.google.com/codejam/contest/32003/dashboard#s=p0)
-decoding | ☆☆☆☆ | All your base |  [[codejam]](https://code.google.com/codejam/contest/189252/dashboard#s=p0)
-decoding | ☆☆☆☆ | Crazy Search |  [[tju]](http://acm.tju.edu.cn/toj/showp1663.html)
-decoding | ☆☆☆☆ | IPNetworks |  [[tju]](http://acm.tju.edu.cn/toj/showp2336.html)
-decoding | ☆ | Problem 3467 |  [[tju]](http://acm.tju.edu.cn/toj/showp3467.html)
-DFS | ☆☆☆☆ | Caterpillar |  [[tju]](http://acm.tju.edu.cn/toj/showp2561.html)
-DFS | ☆☆ | Mine |  [[tju]](http://acm.tju.edu.cn/toj/showp2194.html)
-DFS | ☆☆☆☆ | Mine |  [[tju]](http://acm.tju.edu.cn/toj/showp2194.html)
-DFS | ☆☆ | Playing Boogle |  [[onlinejudge]](http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2258)
-DFS | ☆☆☆☆ | Poor Wenwen |  [[tju]](http://acm.tju.edu.cn/toj/showp2244.html)
-DFS | ☆☆☆☆ | The Die Is Cast |  [[tju]](http://acm.tju.edu.cn/toj/showp1605.html)
-dictionary | ☆☆☆☆ | Incidental Points |  [[tju]](http://acm.tju.edu.cn/toj/showp3044.html)
-dijkstra | ☆☆ | Almost the shortest route |  [[tju]](http://acm.tju.edu.cn/toj/showp2459.html)
-dijkstra | ☆☆☆☆ | Dirt |  [[tju]](http://acm.tju.edu.cn/toj/showp3342.html)
-dijkstra | ☆☆ | Dragon Maze |  [[codejam]](https://code.google.com/codejam/contest/2929486/dashboard#s=p3)
-dijkstra | ☆☆☆☆ | Hydrogenium |  [[codility]](https://codility.com/programmers/challenges/hydrogenium2013)
-dijkstra | ☆☆☆☆ | Low Cost Air Travel |  [[icpcarchive]](https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1562)
-dijkstra | ☆☆☆☆ | The K-th City |  [[tju]](http://acm.tju.edu.cn/toj/showp2870.html)
-dijkstra | ☆☆ | War |  [[tju]](http://acm.tju.edu.cn/toj/showp3410.html)
-dilworth | ☆☆ | Stock Charts |  [[codejam]](https://code.google.com/codejam/contest/204113/dashboard#s=p2)
-dilworth | ☆☆ | Taxi  Cab Scheme |  [[icpcarchive]](https://icpcarchive.ecs.baylor.edu/index.php?option=onlinejudge&page=show_problem&problem=1127) [[poj]](http://poj.org/problem?id=2060)
-dilworth | ☆☆☆☆ | Wooden sticks |  [[poj]](http://poj.org/problem?id=1065) [[tju]](http://acm.tju.edu.cn/toj/showp1469.html)
-dinic | ☆☆ | Fast Maximum Flow |  [[spoj]](http://www.spoj.com/problems/FASTFLOW/)
-dinic | ☆☆ | Maximum Flow |  [[spoj]](http://www.spoj.com/A12/problems/FLOW/)
-dist_grid | ☆☆ | A Famous Grid |  [[spoj]](http://www.spoj.com/problems/SPIRALGR/)
-dynamic_programming | ☆☆☆☆ | A Digging Problem |  [[codejam]](http://code.google.com/codejam/contest/204113/dashboard#s=p1)
-dynamic_programming | ☆☆☆☆ | Airbus vs. Boeing |  [[onlinejudge]](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=16&page=show_problem&problem=2962)
-dynamic_programming | ☆☆☆☆ | Blocks |  [[onlinejudge]](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1500)
-dynamic_programming | ☆☆☆☆ | Brackets sequence |  [[tju]](http://acm.tju.edu.cn/toj/showp3268.html)
-dynamic_programming | ☆☆☆☆ | Bribe the Prisoners |  [[codejam]](https://code.google.com/codejam/contest/189252/dashboard#s=p2)
-dynamic_programming | ☆☆☆☆ | Chopstick |  [[onlinejudge]](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1212)
-dynamic_programming | ☆☆☆☆ | Cow Solitaire |  [[tju]](http://acm.tju.edu.cn/toj/showp2827.html)
-dynamic_programming | ☆☆☆☆ | To The Max |  [[tju]](http://acm.tju.edu.cn/toj/showp1564.html)
-eratosthene | ☆☆ | The Spiral of Primes |  [[icpcarchive]](https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&category=79&page=show_problem&problem=121)
-eulerian_tour | ☆☆ | Free Tour |  [[spoj]](http://www.spoj.com/problems/FTOUR/)
-eulerian_tour | ☆☆ | Goldbach graphs |  [[spoj]](http://www.spoj.com/problems/GOLDG/)
-expr_eval | ☆☆☆☆ | Alien Language |  [[codejam]](https://code.google.com/codejam/contest/90101/dashboard#s=p0)
-expr_eval | ☆☆ | Boolean Expression |  [[tju]](http://acm.tju.edu.cn/toj/showp2185.html)
-expr_eval | ☆☆ | Cells |  [[spoj]](http://www.spoj.com/problems/IPCELLS/)
-expr_eval | ☆☆☆☆ | Compile Error |  [[spoj]](http://www.spoj.com/problems/CE/)
-expr_eval | ☆☆☆☆ | Matrix Chain Multiplication |  [[poj]](http://poj.org/problem?id=2246)
-expr_eval | ☆☆☆☆ | Simplified Lambda-evaluations |  [[tju]](http://acm.tju.edu.cn/toj/showp2700.html)
-expr_eval | ☆☆ | Spreadsheet |  [[onlinejudge]](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=132) [[tju]](http://acm.tju.edu.cn/toj/showp1751.html)
-expr_eval | ☆☆☆ | Strange Expression |  [[tju]](http://acm.tju.edu.cn/toj/showp2882.html)
-fast_exponentiation | ☆☆ | Modex |  [[onlinejudge]](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=3671)
-fast_exponentiation | ☆☆ | Tiling a Grid With Dominoes |  [[tju]](http://acm.tju.edu.cn/toj/showp3011.html) [[spoj]](http://www.spoj.com/problems/GNY07H/)
-finite_automata | ☆☆☆☆ | Language recognition |  [[onlinejudge]](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=3402)
-floyd_warshall | ☆☆☆☆ | Edgetown's Traffic Jams |  [[onlinejudge]](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=278&page=show_problem&problem=3741)
-floyd_warshall | ☆☆☆☆ | Stockbroker Grapevine |  [[tju]](http://acm.tju.edu.cn/toj/showp1075.html)
-floyd_warshall | ☆☆☆☆ | Word Ladders |  [[tju]](http://acm.tju.edu.cn/toj/showp2925.html)
-gale_shapley | ☆☆ | Stable Marriage Problem |  [[spoj]](http://www.spoj.com/problems/STABLEMP/)
-gauss_jordan | ☆☆ | Ars Longa |  [[onlinejudge]](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=3491) [[icpcarchive]](https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&category=18&page=show_problem&problem=1564)
-geometry | ☆ | Center of Mass |  [[codejam]](https://code.google.com/codejam/contest/189252/dashboard#s=p1)
-geometry | ☆☆☆☆ | Chocolate Chip Cookies |  [[tju]](http://acm.tju.edu.cn/toj/showp1300.html)
-geometry | ☆☆☆☆ | Divide the land |  [[onlinejudge]](http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2695)
-geometry | ☆☆☆ | November Rain |  [[poj]](http://poj.org/problem?id=1765) [[tju]](http://acm.tju.edu.cn/toj/showp1879.html)
-geometry | ☆☆☆☆ | Shrinking Polygons |  [[icpcarchive]](https://icpcarchive.ecs.baylor.edu/index.php?option=onlinejudge&page=show_problem&problem=2221)
-graph01 | ☆☆ | Finding Nemo |  [[tju]](http://acm.tju.edu.cn/toj/showp1091.html) [[zju]](http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=2210)
-greatest_monochromatic_rectangle | ☆☆☆☆ | Largest Submatrix of All 1’s |  [[pku]](http://acm.pku.edu.cn/JudgeOnline/problem?id=3494) [[poj]](http://poj.org/problem?id=3494)
-greedy | ☆☆☆☆ | ABCD |  [[spoj]](http://www.spoj.pl/problems/ABCD/)
-greedy | ☆☆☆☆ | Airport Walkways |  [[codejam]](https://code.google.com/codejam/contest/1150486/dashboard#s=p0)
-greedy | ☆ | Color A Tree |  [[tju]](http://acm.tju.edu.cn/toj/showp1096.html)
-greedy | ☆☆☆☆ | Enter the dragon |  [[icpcarchive]](https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&category=395&page=show_problem&problem=2978)
-greedy | ☆☆☆☆ | Feel Good |  [[tju]](http://acm.tju.edu.cn/toj/showp2333.html)
-greedy | ☆☆☆☆ | Flags |  [[codility]](https://codility.com/demo/take-sample-test/flags)
-greedy | ☆☆☆☆ | Homework |  [[tju]](http://acm.tju.edu.cn/toj/showp2780.html)
-greedy | ☆☆ | Minimal Coverage |  [[onlinejudge]](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=961)
-greedy | ☆☆ | Minimum Scalar Product |  [[codejam]](https://code.google.com/codejam/contest/32016/dashboard)
-greedy | ☆ | Novice41 |  [[spoj]](http://www.spoj.pl/problems/NOVICE41/)
-greedy | ☆☆☆☆ | Prefix Suffix Set |  [[codility]](http://codility.com/cert/start/beryllium2013/)
-grid | ☆☆☆☆ | Always Turn Left |  [[codejam]](https://code.google.com/codejam/contest/32003/dashboard#s=p1)
-grid | ☆☆☆☆ | Number Steps |  [[tju]](http://acm.tju.edu.cn/toj/showp1233.html)
-grid | ☆☆☆☆ | Spiral of Numbers |  [[onlinejudge]](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=844)
-huffman | ☆☆ | Huffman Trees |  [[poj]](http://poj.org/problem?id=1261)
-huffman | ☆☆ | Variable Radix Huffman Encoding |  [[spoj]](http://www.spoj.com/problems/VHUFFM/)
-intervals_cover | ☆☆ | Radar Installation |  [[tju]](http://acm.tju.edu.cn/toj/showp1115.html)
-k-sum | ☆☆ | 4 Values whose Sum is 0 |  [[poj]](http://poj.org/problem?id=2785)
-knuth_morris_pratt | ☆☆ | A Needle in the Haystack |  [[spoj]](http://www.spoj.com/problems/NHAY/)
-knuth_morris_pratt | ☆☆ | Find the maximal product of string prefixes |  [[codility]](https://codility.com/programmers/challenges/carbo2013)
-kruskal | ☆☆ | Networking |  [[tju]](http://acm.tju.edu.cn/toj/showp1676.html)
-kuhn_munkres | ☆☆ | Selfish Cities |  [[spoj]](http://www.spoj.com/problems/SCITIES/)
-levenshtein | ☆☆ | Advanced Edit Distance |  [[spoj]](http://www.spoj.com/problems/ADVEDIST/)
-levenshtein | ☆☆ | Edit distance |  [[spoj]](http://www.spoj.com/problems/EDIST/)
-levenshtein | ☆☆ | The Separator in Grid |  [[tju]](http://acm.tju.edu.cn/toj/showp1098.html)
-longest path | ☆☆☆☆ | Ascending paths |  [[codility]](https://codility.com/demo/take-sample-test/magnesium2014/)
-longest_common_subsequence | ☆☆ | Common Subsequence |  [[tju]](http://acm.tju.edu.cn/toj/showp1683.html)
-longest_common_subsequence | ☆☆ | Longest Common Subsequence |  [[spoj]](http://www.spoj.com/problems/LCS0/)
-longest_increasing_subsequence | ☆☆ | Easy Longest Increasing Subsequence |  [[spoj]](http://www.spoj.com/problems/ELIS/)
-longest_increasing_subsequence | ☆☆☆☆ | Is Bigger Smarter? |  [[tju]](http://acm.tju.edu.cn/toj/showp1216.html)
-longest_increasing_subsequence | ☆☆☆☆ | Longest Ordered Subsequence |  [[tju]](http://acm.tju.edu.cn/toj/showp1765.html)
-longest_path_in_a_dag | ☆☆☆☆ | Edit Step Ladders |  [[tju]](http://acm.tju.edu.cn/toj/showp1352.html)
-longest_path_in_a_dag | ☆☆☆☆ | Stacking Boxes |  [[onlinejudge]](https://uva.onlinejudge.org/index.php?option=onlinejudge&Itemid=8&page=show_problem&problem=39)
-longest_path_in_a_tree | ☆☆ | Labyrinth |  [[spoj]](http://www.spoj.com/problems/LABYR1/) [[tju]](http://acm.tju.edu.cn/toj/showp1056.html)
-longest_path_in_a_tree | ☆☆☆☆ | Labyrinth |  [[tju]](http://acm.tju.edu.cn/toj/showp1056.html)
-longest_path_in_a_tree | ☆☆ | Longest path in a tree |  [[spoj]](http://www.spoj.com/problems/PT07Z/)
-longuest_common_subsequence | ☆☆☆☆ | Greatest Common Increasing Subsequence |  [[tju]](http://acm.tju.edu.cn/toj/showp2707.html) [[pku]](http://acm.pku.edu.cn/JudgeOnline/problem?id=2127)
-lowest_common_ancestor | ☆☆ | City Driving |  [[stanford]](http://cs.stanford.edu/group/acm/slpclive/problems/C.pdf) [[stanford]](http://cs.stanford.edu/group/acm/SLPC2011/)
-manacher | ☆☆ | Casting Spells |  [[icpcarchive]](https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=2976)
-manacher | ☆☆ | Longest Palindrome |  [[onlinejudge]](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=2092)
-matrix_chain_mult | ☆☆ | Mixtures |  [[spoj]](http://www.spoj.com/problems/MIXTURES/)
-matrix_chain_mult | ☆☆ | Optimal Array Multiplication Sequence |  [[tju]](http://acm.tju.edu.cn/toj/showp2118.html)
-matrix_chain_mult | ☆☆ | Sweet and Sour Rock |  [[spoj]](http://www.spoj.com/problems/ROCK/)
-matrix_chain_mult | ☆☆ | The safe secret |  [[onlinejudge]](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=4750)
-maximum_flow | ☆☆ | Crime Wave |  [[onlinejudge]](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=504) [[icpcarchive]](https://icpcarchive.ecs.baylor.edu/index.php?option=onlinejudge&page=show_problem&problem=3585)
-maximum_flow | ☆☆☆☆ | Down Went the Titanic |  [[onlinejudge]](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=25&page=show_problem&problem=2375)
-maximum_interval_intersection | ☆☆☆☆ | Magic Sticks Again |  [[tju]](http://acm.tju.edu.cn/toj/showp2179.html)
-maximum_matching | ☆☆☆☆ | Councilling |  [[onlinejudge]](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1452)
-maximum_matching | ☆☆☆☆ | Courses |  [[tju]](http://acm.tju.edu.cn/toj/showp1050.html)
-median | ☆☆☆☆ | Pizza Delivery |  [[tju]](http://acm.tju.edu.cn/toj/showp2418.html) [[zju]](http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=3082)
-min_mean_cycle | ☆☆ | Word Rings |  [[spoj]](http://www.spoj.com/problems/WORDRING/)
-next_permutation | ☆☆ | Anagram |  [[onlinejudge]](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=131)
-next_permutation | ☆☆ | GREAT+SWERC=PORTO |  [[onlinejudge]](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=4742)
-pattern matching | ☆☆☆☆ | Barcode of Judgment |  [[livearchive]](http://livearchive.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=2699)
-permutation | ☆☆☆☆ | Crypto Columns |  [[tju]](http://acm.tju.edu.cn/toj/showp1530.html)
-powerstring | ☆☆ | Period |  [[spoj]](http://www.spoj.com/problems/PERIOD/)
-powerstring | ☆☆ | Power strings |  [[onlinejudge]](http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1239)
-predictive_text | ☆☆ | T9 |  [[poj]](http://poj.org/problem?id=1451)
-prefix_tree | ☆☆☆☆ | Phone Numbers |  [[poj]](http://poj.org/problem?id=1732)
-prim | ☆☆☆☆ | Freckles |  [[onlinejudge]](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=975)
-random | ☆☆☆☆ | Aerobics |  [[codejam]](https://code.google.com/codejam/contest/1842485/dashboard#s=p1)
-range_minimum_query | ☆☆ | Tetris |  [[tju]](http://acm.tju.edu.cn/toj/showp2885.html)
-reading | ☆☆ | Enormous Input Test |  [[spoj]](http://www.spoj.com/problems/INTEST/)
-rectangle_max_sum | ☆☆☆☆ | Finding Seats |  [[icpcarchive]](https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1933)
-rectangles_from_histogram | ☆☆ | Largest Rectangle in a Histogram |  [[tju]](http://acm.tju.edu.cn/toj/showp1800.html)
-segment_tree | ☆☆☆☆ | Ultra Quick-Sort |  [[tju]](http://acm.tju.edu.cn/toj/showp1455.html)
-shortest_path_variants | ☆☆ | Almost the shortest route |  [[tju]](http://acm.tju.edu.cn/toj/showp2459.html)
-shortest_path_variants | ☆☆ | Heavy Cargo |  [[tju]](http://acm.tju.edu.cn/toj/showp1172.html)
-simulation | ☆☆☆☆ | Bot Trust |  [[codejam]](https://code.google.com/codejam/contest/975485/dashboard#s=p0)
-sorting | ☆☆☆☆ | Common Permutation |  [[tju]](http://acm.tju.edu.cn/toj/showp3108.html)
-sorting | ☆☆ | Disk Tree |  [[tju]](http://acm.tju.edu.cn/toj/showp2364.html)
-sorting | ☆ | Editor Nottobad |  [[onlinejudge]](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1543)
-sorting | ☆☆ | I am Lord Voldemort |  [[tju]](http://acm.tju.edu.cn/toj/showp2782.html)
-sorting | ☆ | Walk |  [[tju]](http://acm.tju.edu.cn/toj/showp3038.html)
-sorting | ☆☆☆☆ | What's Cryptanalysis? |  [[onlinejudge]](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=949)
-stack | ☆ | Binary Trees |  [[tju]](http://acm.tju.edu.cn/toj/showp2801.html)
-stack | ☆ | Insults |  [[icpcarchive]](https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=2982)
-string | ☆☆☆☆ | Excessive Space Remover |  [[onlinejudge]](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=279&page=show_problem&problem=3847)
-string | ☆ | File Fragmentation |  [[onlinejudge]](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1073)
-string | ☆☆☆☆ | Java vs C++ |  [[tju]](http://acm.tju.edu.cn/toj/showp2674.html)
-strongly_connected_components | ☆☆ | Capital City |  [[spoj]](http://www.spoj.com/problems/CAPCITY/)
-structures | ☆☆ | A concrete ad_hoc |  [[spoj]](http://www.spoj.com/problems/ACS/)
-structures | ☆☆ | Encryption |  [[spoj]](http://www.spoj.com/problems/ACM_0036/)
-structures | ☆☆ | Havannah |  [[codejam]](https://code.google.com/codejam/contest/1835486/dashboard#s=p1)
-structures | ☆☆ | Phone List |  [[spoj]](http://www.spoj.com/problems/PHONELST/)
-subsetsum | ☆☆ | Boat Burglary |  [[tju]](http://acm.tju.edu.cn/toj/showp4095.html)
-suffix_tree | ☆☆☆☆ | Stammering Aliens |  [[spoj]](http://www.spoj.com/problems/STAMMER/)
-sweepline | ☆☆☆☆ | Line Segments |  [[tju]](http://acm.tju.edu.cn/toj/showp1703.html)
-sweepline | ☆☆☆☆ | Rectilinear polygon |  [[tju]](http://acm.tju.edu.cn/toj/showp2477.html)
-sweepline | ☆☆ | Retour vers le futur |  [[prologin]](https://prologin.org/train/2012/semifinal/retour_vers_le_futur)
-sweepline | ☆☆☆☆ | The Skyline Problem |  [[onlinejudge]](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=41)
-sweepline | ☆☆☆☆ | Weird Advertisement |  [[onlinejudge]](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=25&page=show_problem&problem=3134)
-topological_order | ☆☆ | Ordering Tasks |  [[onlinejudge]](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1246)
-topological_order | ☆☆ | Project File Dependencies |  [[spoj]](http://www.spoj.com/problems/PFDEP/)
-topological_order | ☆☆ | Rare Order |  [[onlinejudge]](http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=136)
-traveling_salesman | ☆☆ | Collecting Beepers |  [[tju]](http://acm.tju.edu.cn/toj/showp2696.html)
-trie | ☆☆ | Spell checker |  [[onlinejudge]](http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=612) [[icpcarchive]](https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1873)
-two_sat | ☆☆ | Manhattan |  [[onlinejudge]](http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1260)
-two_sat | ☆☆☆☆ | Seminar Room |  [[tju]](http://acm.tju.edu.cn/toj/showp2506.html)
-two_sat | ☆☆ | Soldiers on Parade |  [[spoj]](http://www.spoj.com/problems/SOPARADE/)
-union_disjoint_rectangles | ☆☆ | City Park |  [[icpcarchive]](https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&category=657&page=show_problem&problem=4901)
-union_find | ☆☆☆☆ | Heavy Transportation |  [[poj]](http://poj.org/problem?id=1797) [[tju]](http://acm.tju.edu.cn/toj/showp1713.html)
-union_rectangles | ☆☆☆☆ | Rectangles |  [[tju]](http://acm.tju.edu.cn/toj/showp1049.html)
 
+<table class="sortable">
+<thead>
+<tr class="header">
+<th align="left">catégorie</th>
+<th align="left">difficulté</th>
+<th align="left">titre</th>
+<th align="left">juge</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">ad_hoc</td>
+<td align="left">☆</td>
+<td align="left">Advanced ASCII Cubes</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2323.html">[tju]</a> <a href="http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=2438">[zju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">ad_hoc</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Australian Voting</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1299.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">ad_hoc</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Babel Towers</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2499.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">ad_hoc</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Blood Type</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp3268.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">ad_hoc</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Bullseye</td>
+<td align="left"><a href="https://code.google.com/codejam/contest/2418487/dashboard#s=p0">[codejam]</a></td>
+</tr>
+<tr class="even">
+<td align="left">ad_hoc</td>
+<td align="left">☆</td>
+<td align="left">City hall</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1090.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">ad_hoc</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Common Item</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp3108.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">ad_hoc</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Cryptoquote</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp3151.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">ad_hoc</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">DNA Sorting</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1127.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">ad_hoc</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">European railroad tracks</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2136.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">ad_hoc</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Giant Screen</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp3135.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">ad_hoc</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Huffman Trees</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1497.html">[tju]</a> <a href="http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=1564">[zju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">ad_hoc</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Interpreter</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1357.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">ad_hoc</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Knights In The Zombie Land</td>
+<td align="left"><a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=278&amp;page=show_problem&amp;problem=3758">[onlinejudge]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">ad_hoc</td>
+<td align="left">☆</td>
+<td align="left">LC Display</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1031.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">ad_hoc</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Matrix Swapping II</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp3306.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">ad_hoc</td>
+<td align="left">☆</td>
+<td align="left">Mine Sweeper</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1330.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">ad_hoc</td>
+<td align="left">☆☆☆</td>
+<td align="left">Poker Hands</td>
+<td align="left"><a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=1256">[onlinejudge]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">ad_hoc</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">The Trip</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1301.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">ad_hoc</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Total flow</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp3172.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">ad_hoc</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">X-Express</td>
+<td align="left"><a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=11&amp;page=show_problem&amp;problem=921">[onlinejudge]</a></td>
+</tr>
+<tr class="even">
+<td align="left">anagrams</td>
+<td align="left">☆☆</td>
+<td align="left">Anagram checker</td>
+<td align="left"><a href="http://uva.onlinejudge.org/index.php?option=onlinejudge&amp;page=show_problem&amp;problem=84">[onlinejudge]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">anagrams</td>
+<td align="left">☆☆</td>
+<td align="left">Anagram Groups</td>
+<td align="left"><a href="http://poj.org/problem?id=2408">[poj]</a> <a href="http://acm.tju.edu.cn/toj/showp1340.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">arithmetic</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Factorvisors</td>
+<td align="left"><a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=1080">[onlinejudge]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">backtracking</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Channel Allocation</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1077.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">backtracking</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">minimal length addition chain</td>
+<td align="left"><a href="http://codility.com/cert/start/rho2012/">[codility]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">backtracking</td>
+<td align="left">☆☆</td>
+<td align="left">Mirror Maze</td>
+<td align="left"><a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=194">[onlinejudge]</a></td>
+</tr>
+<tr class="even">
+<td align="left">backtracking</td>
+<td align="left">☆☆</td>
+<td align="left">Sudoku (16x16)</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2546.html">[tju]</a> <a href="http://www.spoj.com/problems/SUDOKU/">[spoj]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">backtracking</td>
+<td align="left">☆☆</td>
+<td align="left">Sudoku (9x9)</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1851.html">[tju]</a> <a href="http://www.spoj.com/problems/EASUDOKU/">[spoj]</a></td>
+</tr>
+<tr class="even">
+<td align="left">backtracking</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">The Triangle Game</td>
+<td align="left"><a href="http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemId=697">[zju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">bellman_ford</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Haunted graveyard</td>
+<td align="left"><a href="http://www.spoj.pl/problems/GRAVEYRD/">[spoj]</a></td>
+</tr>
+<tr class="even">
+<td align="left">bellman_ford</td>
+<td align="left">☆☆</td>
+<td align="left">Negative Cycles</td>
+<td align="left"><a href="http://www.spoj.com/problems/NEGCYC/">[spoj]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">bellman_ford</td>
+<td align="left">☆☆</td>
+<td align="left">Roads in Berland</td>
+<td align="left"><a href="http://www.spoj.com/problems/CT25C/">[spoj]</a></td>
+</tr>
+<tr class="even">
+<td align="left">BFS</td>
+<td align="left">☆☆</td>
+<td align="left">Hike on a Graph</td>
+<td align="left"><a href="http://www.spoj.com/problems/HIKE/">[spoj]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">BFS</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Kisu Pari Na 2</td>
+<td align="left"><a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=25&amp;page=show_problem&amp;problem=3868">[onlinejudge]</a></td>
+</tr>
+<tr class="even">
+<td align="left">BFS</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Knight Moves</td>
+<td align="left"><a href="http://poj.org/problem?id=1915">[poj]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">BFS</td>
+<td align="left">☆☆</td>
+<td align="left">Ricochet Robots</td>
+<td align="left"><a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=861&amp;page=show_problem&amp;problem=4746">[onlinejudge]</a></td>
+</tr>
+<tr class="even">
+<td align="left">BFS</td>
+<td align="left">☆☆</td>
+<td align="left">Traffic Jam</td>
+<td align="left"><a href="https://icpcarchive.ecs.baylor.edu/index.php?option=onlinejudge&amp;page=show_problem&amp;problem=2501">[icpcarchive]</a> <a href="http://acm.tju.edu.cn/toj/showp2272.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">biconnected_components</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Street Directions</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1125.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">biconnected_components</td>
+<td align="left">☆☆</td>
+<td align="left">The Key Stations</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2189.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">binary_search</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">AggressiveCows</td>
+<td align="left"><a href="http://www.spoj.com/problems/AGGRCOW/">[spoj]</a></td>
+</tr>
+<tr class="even">
+<td align="left">binary_search</td>
+<td align="left">☆☆</td>
+<td align="left">Egg Drop</td>
+<td align="left"><a href="https://code.google.com/codejam/contest/32003/dashboard#s=p2">[codejam]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">binary_search</td>
+<td align="left">☆☆</td>
+<td align="left">Fill the cisterns</td>
+<td align="left"><a href="http://www.spoj.com/problems/CISTFILL/">[spoj]</a></td>
+</tr>
+<tr class="even">
+<td align="left">binary_search</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">SpeedCameras</td>
+<td align="left"><a href="https://codility.com/programmers/challenges/calcium2015">[codility]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">binary_tree</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">France'98</td>
+<td align="left"><a href="http://www.informatik.uni-ulm.de/acm/Locals/1998/html/france98.html">[uni-ulm]</a> <a href="http://www.informatik.uni-ulm.de/acm/Locals/1998/">[uni-ulm]</a></td>
+</tr>
+<tr class="even">
+<td align="left">binomial_coefficients</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Hexagonal Routes</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2270.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">bipartite_matching</td>
+<td align="left">☆☆</td>
+<td align="left">Dungeon of Death</td>
+<td align="left"><a href="http://www.spoj.com/problems/QUEST4/">[spoj]</a></td>
+</tr>
+<tr class="even">
+<td align="left">bipartite_matching</td>
+<td align="left">☆☆</td>
+<td align="left">Muddy Fields</td>
+<td align="left"><a href="http://www.spoj.com/problems/MUDDY/">[spoj]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">bipartite_vertex_cover</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Playground</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2799.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">combinatoire</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Make it Manhattan</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2519.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">connected_components</td>
+<td align="left">☆☆</td>
+<td align="left">The Ant</td>
+<td align="left"><a href="http://www.spoj.com/problems/ANTTT/">[spoj]</a></td>
+</tr>
+<tr class="even">
+<td align="left">convex_hull</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Herding Frosh</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1215.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">data_1d</td>
+<td align="left">☆☆</td>
+<td align="left">Unique Encryption Keys</td>
+<td align="left"><a href="https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=3892">[icpcarchive]</a></td>
+</tr>
+<tr class="even">
+<td align="left">decoding</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Alien Numbers</td>
+<td align="left"><a href="https://code.google.com/codejam/contest/32003/dashboard#s=p0">[codejam]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">decoding</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">All your base</td>
+<td align="left"><a href="https://code.google.com/codejam/contest/189252/dashboard#s=p0">[codejam]</a></td>
+</tr>
+<tr class="even">
+<td align="left">decoding</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Crazy Search</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1663.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">decoding</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">IPNetworks</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2336.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">decoding</td>
+<td align="left">☆</td>
+<td align="left">Problem 3467</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp3467.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">DFS</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Caterpillar</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2561.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">DFS</td>
+<td align="left">☆☆</td>
+<td align="left">Mine</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2194.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">DFS</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Mine</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2194.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">DFS</td>
+<td align="left">☆☆</td>
+<td align="left">Playing Boogle</td>
+<td align="left"><a href="http://uva.onlinejudge.org/index.php?option=onlinejudge&amp;page=show_problem&amp;problem=2258">[onlinejudge]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">DFS</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Poor Wenwen</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2244.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">DFS</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">The Die Is Cast</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1605.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">dictionary</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Incidental Points</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp3044.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">dijkstra</td>
+<td align="left">☆☆</td>
+<td align="left">Almost the shortest route</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2459.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">dijkstra</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Dirt</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp3342.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">dijkstra</td>
+<td align="left">☆☆</td>
+<td align="left">Dragon Maze</td>
+<td align="left"><a href="https://code.google.com/codejam/contest/2929486/dashboard#s=p3">[codejam]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">dijkstra</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Hydrogenium</td>
+<td align="left"><a href="https://codility.com/programmers/challenges/hydrogenium2013">[codility]</a></td>
+</tr>
+<tr class="even">
+<td align="left">dijkstra</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Low Cost Air Travel</td>
+<td align="left"><a href="https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=1562">[icpcarchive]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">dijkstra</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">The K-th City</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2870.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">dijkstra</td>
+<td align="left">☆☆</td>
+<td align="left">War</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp3410.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">dilworth</td>
+<td align="left">☆☆</td>
+<td align="left">Stock Charts</td>
+<td align="left"><a href="https://code.google.com/codejam/contest/204113/dashboard#s=p2">[codejam]</a></td>
+</tr>
+<tr class="even">
+<td align="left">dilworth</td>
+<td align="left">☆☆</td>
+<td align="left">Taxi Cab Scheme</td>
+<td align="left"><a href="https://icpcarchive.ecs.baylor.edu/index.php?option=onlinejudge&amp;page=show_problem&amp;problem=1127">[icpcarchive]</a> <a href="http://poj.org/problem?id=2060">[poj]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">dilworth</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Wooden sticks</td>
+<td align="left"><a href="http://poj.org/problem?id=1065">[poj]</a> <a href="http://acm.tju.edu.cn/toj/showp1469.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">dinic</td>
+<td align="left">☆☆</td>
+<td align="left">Fast Maximum Flow</td>
+<td align="left"><a href="http://www.spoj.com/problems/FASTFLOW/">[spoj]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">dinic</td>
+<td align="left">☆☆</td>
+<td align="left">Maximum Flow</td>
+<td align="left"><a href="http://www.spoj.com/A12/problems/FLOW/">[spoj]</a></td>
+</tr>
+<tr class="even">
+<td align="left">dist_grid</td>
+<td align="left">☆☆</td>
+<td align="left">A Famous Grid</td>
+<td align="left"><a href="http://www.spoj.com/problems/SPIRALGR/">[spoj]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">dynamic_programming</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">A Digging Problem</td>
+<td align="left"><a href="http://code.google.com/codejam/contest/204113/dashboard#s=p1">[codejam]</a></td>
+</tr>
+<tr class="even">
+<td align="left">dynamic_programming</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Airbus vs. Boeing</td>
+<td align="left"><a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=16&amp;page=show_problem&amp;problem=2962">[onlinejudge]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">dynamic_programming</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Blocks</td>
+<td align="left"><a href="https://uva.onlinejudge.org/index.php?option=onlinejudge&amp;page=show_problem&amp;problem=1500">[onlinejudge]</a></td>
+</tr>
+<tr class="even">
+<td align="left">dynamic_programming</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Brackets sequence</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp3268.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">dynamic_programming</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Bribe the Prisoners</td>
+<td align="left"><a href="https://code.google.com/codejam/contest/189252/dashboard#s=p2">[codejam]</a></td>
+</tr>
+<tr class="even">
+<td align="left">dynamic_programming</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Chopstick</td>
+<td align="left"><a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=1212">[onlinejudge]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">dynamic_programming</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Cow Solitaire</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2827.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">dynamic_programming</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">To The Max</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1564.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">eratosthene</td>
+<td align="left">☆☆</td>
+<td align="left">The Spiral of Primes</td>
+<td align="left"><a href="https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=79&amp;page=show_problem&amp;problem=121">[icpcarchive]</a></td>
+</tr>
+<tr class="even">
+<td align="left">eulerian_tour</td>
+<td align="left">☆☆</td>
+<td align="left">Free Tour</td>
+<td align="left"><a href="http://www.spoj.com/problems/FTOUR/">[spoj]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">eulerian_tour</td>
+<td align="left">☆☆</td>
+<td align="left">Goldbach graphs</td>
+<td align="left"><a href="http://www.spoj.com/problems/GOLDG/">[spoj]</a></td>
+</tr>
+<tr class="even">
+<td align="left">expr_eval</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Alien Language</td>
+<td align="left"><a href="https://code.google.com/codejam/contest/90101/dashboard#s=p0">[codejam]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">expr_eval</td>
+<td align="left">☆☆</td>
+<td align="left">Boolean Expression</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2185.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">expr_eval</td>
+<td align="left">☆☆</td>
+<td align="left">Cells</td>
+<td align="left"><a href="http://www.spoj.com/problems/IPCELLS/">[spoj]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">expr_eval</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Compile Error</td>
+<td align="left"><a href="http://www.spoj.com/problems/CE/">[spoj]</a></td>
+</tr>
+<tr class="even">
+<td align="left">expr_eval</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Matrix Chain Multiplication</td>
+<td align="left"><a href="http://poj.org/problem?id=2246">[poj]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">expr_eval</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Simplified Lambda-evaluations</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2700.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">expr_eval</td>
+<td align="left">☆☆</td>
+<td align="left">Spreadsheet</td>
+<td align="left"><a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=132">[onlinejudge]</a> <a href="http://acm.tju.edu.cn/toj/showp1751.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">expr_eval</td>
+<td align="left">☆☆☆</td>
+<td align="left">Strange Expression</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2882.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">fast_exponentiation</td>
+<td align="left">☆☆</td>
+<td align="left">Modex</td>
+<td align="left"><a href="https://uva.onlinejudge.org/index.php?option=onlinejudge&amp;page=show_problem&amp;problem=3671">[onlinejudge]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">fast_exponentiation</td>
+<td align="left">☆☆</td>
+<td align="left">Tiling a Grid With Dominoes</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp3011.html">[tju]</a> <a href="http://www.spoj.com/problems/GNY07H/">[spoj]</a></td>
+</tr>
+<tr class="even">
+<td align="left">finite_automata</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Language recognition</td>
+<td align="left"><a href="https://uva.onlinejudge.org/index.php?option=onlinejudge&amp;page=show_problem&amp;problem=3402">[onlinejudge]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">floyd_warshall</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Edgetown's Traffic Jams</td>
+<td align="left"><a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=278&amp;page=show_problem&amp;problem=3741">[onlinejudge]</a></td>
+</tr>
+<tr class="even">
+<td align="left">floyd_warshall</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Stockbroker Grapevine</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1075.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">floyd_warshall</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Word Ladders</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2925.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">gale_shapley</td>
+<td align="left">☆☆</td>
+<td align="left">Stable Marriage Problem</td>
+<td align="left"><a href="http://www.spoj.com/problems/STABLEMP/">[spoj]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">gauss_jordan</td>
+<td align="left">☆☆</td>
+<td align="left">Ars Longa</td>
+<td align="left"><a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=3491">[onlinejudge]</a> <a href="https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=18&amp;page=show_problem&amp;problem=1564">[icpcarchive]</a></td>
+</tr>
+<tr class="even">
+<td align="left">geometry</td>
+<td align="left">☆</td>
+<td align="left">Center of Mass</td>
+<td align="left"><a href="https://code.google.com/codejam/contest/189252/dashboard#s=p1">[codejam]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">geometry</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Chocolate Chip Cookies</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1300.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">geometry</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Divide the land</td>
+<td align="left"><a href="http://uva.onlinejudge.org/index.php?option=onlinejudge&amp;page=show_problem&amp;problem=2695">[onlinejudge]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">geometry</td>
+<td align="left">☆☆☆</td>
+<td align="left">November Rain</td>
+<td align="left"><a href="http://poj.org/problem?id=1765">[poj]</a> <a href="http://acm.tju.edu.cn/toj/showp1879.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">geometry</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Shrinking Polygons</td>
+<td align="left"><a href="https://icpcarchive.ecs.baylor.edu/index.php?option=onlinejudge&amp;page=show_problem&amp;problem=2221">[icpcarchive]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">graph01</td>
+<td align="left">☆☆</td>
+<td align="left">Finding Nemo</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1091.html">[tju]</a> <a href="http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=2210">[zju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">greatest_monochromatic_rectangle</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Largest Submatrix of All 1’s</td>
+<td align="left"><a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=3494">[pku]</a> <a href="http://poj.org/problem?id=3494">[poj]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">greedy</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">ABCD</td>
+<td align="left"><a href="http://www.spoj.pl/problems/ABCD/">[spoj]</a></td>
+</tr>
+<tr class="even">
+<td align="left">greedy</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Airport Walkways</td>
+<td align="left"><a href="https://code.google.com/codejam/contest/1150486/dashboard#s=p0">[codejam]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">greedy</td>
+<td align="left">☆</td>
+<td align="left">Color A Tree</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1096.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">greedy</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Enter the dragon</td>
+<td align="left"><a href="https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=395&amp;page=show_problem&amp;problem=2978">[icpcarchive]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">greedy</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Feel Good</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2333.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">greedy</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Flags</td>
+<td align="left"><a href="https://codility.com/demo/take-sample-test/flags">[codility]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">greedy</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Homework</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2780.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">greedy</td>
+<td align="left">☆☆</td>
+<td align="left">Minimal Coverage</td>
+<td align="left"><a href="https://uva.onlinejudge.org/index.php?option=onlinejudge&amp;page=show_problem&amp;problem=961">[onlinejudge]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">greedy</td>
+<td align="left">☆☆</td>
+<td align="left">Minimum Scalar Product</td>
+<td align="left"><a href="https://code.google.com/codejam/contest/32016/dashboard">[codejam]</a></td>
+</tr>
+<tr class="even">
+<td align="left">greedy</td>
+<td align="left">☆</td>
+<td align="left">Novice41</td>
+<td align="left"><a href="http://www.spoj.pl/problems/NOVICE41/">[spoj]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">greedy</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Prefix Suffix Set</td>
+<td align="left"><a href="http://codility.com/cert/start/beryllium2013/">[codility]</a></td>
+</tr>
+<tr class="even">
+<td align="left">grid</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Always Turn Left</td>
+<td align="left"><a href="https://code.google.com/codejam/contest/32003/dashboard#s=p1">[codejam]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">grid</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Number Steps</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1233.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">grid</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Spiral of Numbers</td>
+<td align="left"><a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=844">[onlinejudge]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">huffman</td>
+<td align="left">☆☆</td>
+<td align="left">Huffman Trees</td>
+<td align="left"><a href="http://poj.org/problem?id=1261">[poj]</a></td>
+</tr>
+<tr class="even">
+<td align="left">huffman</td>
+<td align="left">☆☆</td>
+<td align="left">Variable Radix Huffman Encoding</td>
+<td align="left"><a href="http://www.spoj.com/problems/VHUFFM/">[spoj]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">intervals_cover</td>
+<td align="left">☆☆</td>
+<td align="left">Radar Installation</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1115.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">k-sum</td>
+<td align="left">☆☆</td>
+<td align="left">4 Values whose Sum is 0</td>
+<td align="left"><a href="http://poj.org/problem?id=2785">[poj]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">knuth_morris_pratt</td>
+<td align="left">☆☆</td>
+<td align="left">A Needle in the Haystack</td>
+<td align="left"><a href="http://www.spoj.com/problems/NHAY/">[spoj]</a></td>
+</tr>
+<tr class="even">
+<td align="left">knuth_morris_pratt</td>
+<td align="left">☆☆</td>
+<td align="left">Find the maximal product of string prefixes</td>
+<td align="left"><a href="https://codility.com/programmers/challenges/carbo2013">[codility]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">kruskal</td>
+<td align="left">☆☆</td>
+<td align="left">Networking</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1676.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">kuhn_munkres</td>
+<td align="left">☆☆</td>
+<td align="left">Selfish Cities</td>
+<td align="left"><a href="http://www.spoj.com/problems/SCITIES/">[spoj]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">levenshtein</td>
+<td align="left">☆☆</td>
+<td align="left">Advanced Edit Distance</td>
+<td align="left"><a href="http://www.spoj.com/problems/ADVEDIST/">[spoj]</a></td>
+</tr>
+<tr class="even">
+<td align="left">levenshtein</td>
+<td align="left">☆☆</td>
+<td align="left">Edit distance</td>
+<td align="left"><a href="http://www.spoj.com/problems/EDIST/">[spoj]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">levenshtein</td>
+<td align="left">☆☆</td>
+<td align="left">The Separator in Grid</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1098.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">longest path</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Ascending paths</td>
+<td align="left"><a href="https://codility.com/demo/take-sample-test/magnesium2014/">[codility]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">longest_common_subsequence</td>
+<td align="left">☆☆</td>
+<td align="left">Common Subsequence</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1683.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">longest_common_subsequence</td>
+<td align="left">☆☆</td>
+<td align="left">Longest Common Subsequence</td>
+<td align="left"><a href="http://www.spoj.com/problems/LCS0/">[spoj]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">longest_increasing_subsequence</td>
+<td align="left">☆☆</td>
+<td align="left">Easy Longest Increasing Subsequence</td>
+<td align="left"><a href="http://www.spoj.com/problems/ELIS/">[spoj]</a></td>
+</tr>
+<tr class="even">
+<td align="left">longest_increasing_subsequence</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Is Bigger Smarter?</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1216.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">longest_increasing_subsequence</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Longest Ordered Subsequence</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1765.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">longest_path_in_a_dag</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Edit Step Ladders</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1352.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">longest_path_in_a_dag</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Stacking Boxes</td>
+<td align="left"><a href="https://uva.onlinejudge.org/index.php?option=onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=39">[onlinejudge]</a></td>
+</tr>
+<tr class="even">
+<td align="left">longest_path_in_a_tree</td>
+<td align="left">☆☆</td>
+<td align="left">Labyrinth</td>
+<td align="left"><a href="http://www.spoj.com/problems/LABYR1/">[spoj]</a> <a href="http://acm.tju.edu.cn/toj/showp1056.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">longest_path_in_a_tree</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Labyrinth</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1056.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">longest_path_in_a_tree</td>
+<td align="left">☆☆</td>
+<td align="left">Longest path in a tree</td>
+<td align="left"><a href="http://www.spoj.com/problems/PT07Z/">[spoj]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">longuest_common_subsequence</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Greatest Common Increasing Subsequence</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2707.html">[tju]</a> <a href="http://acm.pku.edu.cn/JudgeOnline/problem?id=2127">[pku]</a></td>
+</tr>
+<tr class="even">
+<td align="left">lowest_common_ancestor</td>
+<td align="left">☆☆</td>
+<td align="left">City Driving</td>
+<td align="left"><a href="http://cs.stanford.edu/group/acm/slpclive/problems/C.pdf">[stanford]</a> <a href="http://cs.stanford.edu/group/acm/SLPC2011/">[stanford]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">manacher</td>
+<td align="left">☆☆</td>
+<td align="left">Casting Spells</td>
+<td align="left"><a href="https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=2976">[icpcarchive]</a></td>
+</tr>
+<tr class="even">
+<td align="left">manacher</td>
+<td align="left">☆☆</td>
+<td align="left">Longest Palindrome</td>
+<td align="left"><a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=2092">[onlinejudge]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">matrix_chain_mult</td>
+<td align="left">☆☆</td>
+<td align="left">Mixtures</td>
+<td align="left"><a href="http://www.spoj.com/problems/MIXTURES/">[spoj]</a></td>
+</tr>
+<tr class="even">
+<td align="left">matrix_chain_mult</td>
+<td align="left">☆☆</td>
+<td align="left">Optimal Array Multiplication Sequence</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2118.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">matrix_chain_mult</td>
+<td align="left">☆☆</td>
+<td align="left">Sweet and Sour Rock</td>
+<td align="left"><a href="http://www.spoj.com/problems/ROCK/">[spoj]</a></td>
+</tr>
+<tr class="even">
+<td align="left">matrix_chain_mult</td>
+<td align="left">☆☆</td>
+<td align="left">The safe secret</td>
+<td align="left"><a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=24&amp;page=show_problem&amp;problem=4750">[onlinejudge]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">maximum_flow</td>
+<td align="left">☆☆</td>
+<td align="left">Crime Wave</td>
+<td align="left"><a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=504">[onlinejudge]</a> <a href="https://icpcarchive.ecs.baylor.edu/index.php?option=onlinejudge&amp;page=show_problem&amp;problem=3585">[icpcarchive]</a></td>
+</tr>
+<tr class="even">
+<td align="left">maximum_flow</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Down Went the Titanic</td>
+<td align="left"><a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=25&amp;page=show_problem&amp;problem=2375">[onlinejudge]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">maximum_interval_intersection</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Magic Sticks Again</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2179.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">maximum_matching</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Councilling</td>
+<td align="left"><a href="https://uva.onlinejudge.org/index.php?option=onlinejudge&amp;page=show_problem&amp;problem=1452">[onlinejudge]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">maximum_matching</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Courses</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1050.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">median</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Pizza Delivery</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2418.html">[tju]</a> <a href="http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=3082">[zju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">min_mean_cycle</td>
+<td align="left">☆☆</td>
+<td align="left">Word Rings</td>
+<td align="left"><a href="http://www.spoj.com/problems/WORDRING/">[spoj]</a></td>
+</tr>
+<tr class="even">
+<td align="left">next_permutation</td>
+<td align="left">☆☆</td>
+<td align="left">Anagram</td>
+<td align="left"><a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=131">[onlinejudge]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">next_permutation</td>
+<td align="left">☆☆</td>
+<td align="left">GREAT+SWERC=PORTO</td>
+<td align="left"><a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=24&amp;page=show_problem&amp;problem=4742">[onlinejudge]</a></td>
+</tr>
+<tr class="even">
+<td align="left">pattern matching</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Barcode of Judgment</td>
+<td align="left"><a href="http://livearchive.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=2699">[livearchive]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">permutation</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Crypto Columns</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1530.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">powerstring</td>
+<td align="left">☆☆</td>
+<td align="left">Period</td>
+<td align="left"><a href="http://www.spoj.com/problems/PERIOD/">[spoj]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">powerstring</td>
+<td align="left">☆☆</td>
+<td align="left">Power strings</td>
+<td align="left"><a href="http://uva.onlinejudge.org/index.php?option=onlinejudge&amp;page=show_problem&amp;problem=1239">[onlinejudge]</a></td>
+</tr>
+<tr class="even">
+<td align="left">predictive_text</td>
+<td align="left">☆☆</td>
+<td align="left">T9</td>
+<td align="left"><a href="http://poj.org/problem?id=1451">[poj]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">prefix_tree</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Phone Numbers</td>
+<td align="left"><a href="http://poj.org/problem?id=1732">[poj]</a></td>
+</tr>
+<tr class="even">
+<td align="left">prim</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Freckles</td>
+<td align="left"><a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=975">[onlinejudge]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">random</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Aerobics</td>
+<td align="left"><a href="https://code.google.com/codejam/contest/1842485/dashboard#s=p1">[codejam]</a></td>
+</tr>
+<tr class="even">
+<td align="left">range_minimum_query</td>
+<td align="left">☆☆</td>
+<td align="left">Tetris</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2885.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">reading</td>
+<td align="left">☆☆</td>
+<td align="left">Enormous Input Test</td>
+<td align="left"><a href="http://www.spoj.com/problems/INTEST/">[spoj]</a></td>
+</tr>
+<tr class="even">
+<td align="left">rectangle_max_sum</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Finding Seats</td>
+<td align="left"><a href="https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=1933">[icpcarchive]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">rectangles_from_histogram</td>
+<td align="left">☆☆</td>
+<td align="left">Largest Rectangle in a Histogram</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1800.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">segment_tree</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Ultra Quick-Sort</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1455.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">shortest_path_variants</td>
+<td align="left">☆☆</td>
+<td align="left">Almost the shortest route</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2459.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">shortest_path_variants</td>
+<td align="left">☆☆</td>
+<td align="left">Heavy Cargo</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1172.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">simulation</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Bot Trust</td>
+<td align="left"><a href="https://code.google.com/codejam/contest/975485/dashboard#s=p0">[codejam]</a></td>
+</tr>
+<tr class="even">
+<td align="left">sorting</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Common Permutation</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp3108.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">sorting</td>
+<td align="left">☆☆</td>
+<td align="left">Disk Tree</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2364.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">sorting</td>
+<td align="left">☆</td>
+<td align="left">Editor Nottobad</td>
+<td align="left"><a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=1543">[onlinejudge]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">sorting</td>
+<td align="left">☆☆</td>
+<td align="left">I am Lord Voldemort</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2782.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">sorting</td>
+<td align="left">☆</td>
+<td align="left">Walk</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp3038.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">sorting</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">What's Cryptanalysis?</td>
+<td align="left"><a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=949">[onlinejudge]</a></td>
+</tr>
+<tr class="even">
+<td align="left">stack</td>
+<td align="left">☆</td>
+<td align="left">Binary Trees</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2801.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">stack</td>
+<td align="left">☆</td>
+<td align="left">Insults</td>
+<td align="left"><a href="https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=2982">[icpcarchive]</a></td>
+</tr>
+<tr class="even">
+<td align="left">string</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Excessive Space Remover</td>
+<td align="left"><a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=279&amp;page=show_problem&amp;problem=3847">[onlinejudge]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">string</td>
+<td align="left">☆</td>
+<td align="left">File Fragmentation</td>
+<td align="left"><a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=1073">[onlinejudge]</a></td>
+</tr>
+<tr class="even">
+<td align="left">string</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Java vs C++</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2674.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">strongly_connected_components</td>
+<td align="left">☆☆</td>
+<td align="left">Capital City</td>
+<td align="left"><a href="http://www.spoj.com/problems/CAPCITY/">[spoj]</a></td>
+</tr>
+<tr class="even">
+<td align="left">structures</td>
+<td align="left">☆☆</td>
+<td align="left">A concrete ad_hoc</td>
+<td align="left"><a href="http://www.spoj.com/problems/ACS/">[spoj]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">structures</td>
+<td align="left">☆☆</td>
+<td align="left">Encryption</td>
+<td align="left"><a href="http://www.spoj.com/problems/ACM_0036/">[spoj]</a></td>
+</tr>
+<tr class="even">
+<td align="left">structures</td>
+<td align="left">☆☆</td>
+<td align="left">Havannah</td>
+<td align="left"><a href="https://code.google.com/codejam/contest/1835486/dashboard#s=p1">[codejam]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">structures</td>
+<td align="left">☆☆</td>
+<td align="left">Phone List</td>
+<td align="left"><a href="http://www.spoj.com/problems/PHONELST/">[spoj]</a></td>
+</tr>
+<tr class="even">
+<td align="left">subsetsum</td>
+<td align="left">☆☆</td>
+<td align="left">Boat Burglary</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp4095.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">suffix_tree</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Stammering Aliens</td>
+<td align="left"><a href="http://www.spoj.com/problems/STAMMER/">[spoj]</a></td>
+</tr>
+<tr class="even">
+<td align="left">sweepline</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Line Segments</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1703.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">sweepline</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Rectilinear polygon</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2477.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">sweepline</td>
+<td align="left">☆☆</td>
+<td align="left">Retour vers le futur</td>
+<td align="left"><a href="https://prologin.org/train/2012/semifinal/retour_vers_le_futur">[prologin]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">sweepline</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">The Skyline Problem</td>
+<td align="left"><a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=41">[onlinejudge]</a></td>
+</tr>
+<tr class="even">
+<td align="left">sweepline</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Weird Advertisement</td>
+<td align="left"><a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=25&amp;page=show_problem&amp;problem=3134">[onlinejudge]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">topological_order</td>
+<td align="left">☆☆</td>
+<td align="left">Ordering Tasks</td>
+<td align="left"><a href="https://uva.onlinejudge.org/index.php?option=onlinejudge&amp;page=show_problem&amp;problem=1246">[onlinejudge]</a></td>
+</tr>
+<tr class="even">
+<td align="left">topological_order</td>
+<td align="left">☆☆</td>
+<td align="left">Project File Dependencies</td>
+<td align="left"><a href="http://www.spoj.com/problems/PFDEP/">[spoj]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">topological_order</td>
+<td align="left">☆☆</td>
+<td align="left">Rare Order</td>
+<td align="left"><a href="http://uva.onlinejudge.org/index.php?option=onlinejudge&amp;page=show_problem&amp;problem=136">[onlinejudge]</a></td>
+</tr>
+<tr class="even">
+<td align="left">traveling_salesman</td>
+<td align="left">☆☆</td>
+<td align="left">Collecting Beepers</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2696.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">trie</td>
+<td align="left">☆☆</td>
+<td align="left">Spell checker</td>
+<td align="left"><a href="http://uva.onlinejudge.org/index.php?option=onlinejudge&amp;page=show_problem&amp;problem=612">[onlinejudge]</a> <a href="https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=1873">[icpcarchive]</a></td>
+</tr>
+<tr class="even">
+<td align="left">two_sat</td>
+<td align="left">☆☆</td>
+<td align="left">Manhattan</td>
+<td align="left"><a href="http://uva.onlinejudge.org/index.php?option=onlinejudge&amp;page=show_problem&amp;problem=1260">[onlinejudge]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">two_sat</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Seminar Room</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp2506.html">[tju]</a></td>
+</tr>
+<tr class="even">
+<td align="left">two_sat</td>
+<td align="left">☆☆</td>
+<td align="left">Soldiers on Parade</td>
+<td align="left"><a href="http://www.spoj.com/problems/SOPARADE/">[spoj]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">union_disjoint_rectangles</td>
+<td align="left">☆☆</td>
+<td align="left">City Park</td>
+<td align="left"><a href="https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=657&amp;page=show_problem&amp;problem=4901">[icpcarchive]</a></td>
+</tr>
+<tr class="even">
+<td align="left">union_find</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Heavy Transportation</td>
+<td align="left"><a href="http://poj.org/problem?id=1797">[poj]</a> <a href="http://acm.tju.edu.cn/toj/showp1713.html">[tju]</a></td>
+</tr>
+<tr class="odd">
+<td align="left">union_rectangles</td>
+<td align="left">☆☆☆☆</td>
+<td align="left">Rectangles</td>
+<td align="left"><a href="http://acm.tju.edu.cn/toj/showp1049.html">[tju]</a></td>
+</tr>
+</tbody>
+</table>
