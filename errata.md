@@ -11,8 +11,10 @@ Voici une liste de coquilles dans le livre.
 
 - page 143 (légende 9.9): ... décomposition en chaînes *minimum* dans G ...
 
+- page 146 (fonction tree_adj_to_prec): la ligne n = len(graph) peut être omise.
+
 - page 153: Donc on peut choisir un sommet arbitraire r, déterminer un sommet v1 de distance maximale de *r*, puis à nouveau déterminer un sommet v2 de distance maximale de v1.
 
 - page 157 (rendu de monnaie): dans la récurrence pour A[i][m] il faut lire min au lieu de max
 
-- page 191 (Tous les chemins pour un laser): peut en fait être réduit à un problème de couplage.  Par contre le graphe n'est pas biparti, et l'algorithme de Edmond (Blossom algorithm) est long à implémenter.
+- page 191 (Tous les chemins pour un laser): peut en fait être réduit à un problème de couplage parfait.  Par contre le graphe n'est pas biparti, et l'algorithme de Edmond (Blossom algorithm) est long à implémenter.
