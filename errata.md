@@ -22,3 +22,8 @@ Voici une liste de coquilles dans le livre.
 - page 157 (rendu de monnaie): dans la récurrence pour A[i][m] il faut lire min au lieu de max
 
 - page 191 (Tous les chemins pour un laser): peut en fait être réduit à un problème de couplage parfait.  Par contre le graphe n'est pas biparti, et l'algorithme de Edmond (Blossom algorithm) est long à implémenter.
+
+
+## Clarifications
+
+- page 35, 36 : la fonction présentée prend une liste de mots (*w*) en argument et retourne une liste de liste de mots (*reponse*).
