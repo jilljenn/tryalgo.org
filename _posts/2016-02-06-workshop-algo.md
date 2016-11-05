@@ -51,7 +51,7 @@ Et si on utilisait MCTS pour résoudre des problèmes d'optimisation combinatoir
 
 C'est amusant, parce que ce papier vient de IBM Watson Research, et que ce jour-là (6/2) il y a justement [Watson for President](http://watson2016.com) qui a fait [la une de Hacker News](https://news.ycombinator.com/item?id=11047268). C'est celui qui avait explosé tout le monde à l'équivalent anglophone de *Questions pour un champion* :
 
-{% youtube WFR3lOm_xhE %}
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/WFR3lOm_xhE" frameborder="0" allowfullscreen></iframe>
 
 ## Ressources liées au code
 
