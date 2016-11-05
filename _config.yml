@@ -2,11 +2,11 @@
 markdown:         redcarpet
 redcarpet:
   extensions: ["tables"]
-highlighter:      pygments
+highlighter:      rb-pygments
+gems: ["jekyll-paginate"]
 
 # Permalinks
 permalink:        pretty
-relative_permalinks: true
 
 # Setup
 title:            TryAlgo
