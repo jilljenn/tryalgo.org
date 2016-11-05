@@ -1,7 +1,5 @@
 # Dependencies
-markdown:         redcarpet
-redcarpet:
-  extensions: ["tables"]
+markdown:         kramdown
 highlighter:      rb-pygments
 gems: ["jekyll-paginate"]
 
