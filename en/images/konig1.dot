@@ -1,0 +1,31 @@
+graph G {
+    node [shape=circle];
+    r1, r2, r3, r4, r5, r6, r7, r8;
+    c1, c2, c3, c4, c5, c6, c7, c8;
+    r1 -- c2
+    r1--c5
+    r1--c8
+    r2--c1
+    r2--c2
+    r2--c6
+    r2--c7
+    r3--c4
+    r4--c2
+    r5--c8
+    r6--c2
+    r6--c3
+    r6--c5
+    r6--c6
+    r6--c7
+    r7--c2
+    r7--c8
+    r8--c2
+    r8--c4
+
+    r6--c1[color=blue, penwidth=2]
+r5--c2[color=blue, penwidth=2]
+r2--c3[color=blue, penwidth=2]
+r1--c4[color=blue, penwidth=2]
+r3--c5[color=blue, penwidth=2]
+r4--c8[color=blue, penwidth=2]
+}
