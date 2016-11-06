@@ -411,9 +411,9 @@ Note how every non-terminal of the grammar is represented by a dedicated method.
 
 ## [FTOUR - Free Tour](http://www.spoj.com/problems/FTOUR/)
 
-Essentially we need to initiate a BFS traversal on every vertex $$r$$.  If while exploring the enighbors of $$u$$ an edge $$u,v$$ is found to an already marked vertex $$v$$ in the level after $$u$$, then we know that there is an even cycle containing $$u,v$$ and the closest common ancestor of $$u$$ and $$v$$ in the BFS tree.  We have to think a bit about how to find efficiently the closest ancestor.
 
-See an explanation of the algorithm [BFS-cycle](http://theory.stanford.edu/~virgi/cs267/lecture2.pdf).
+See [shortest cycle]({% post_url 2016-11-06-shortest-cycle%}).
+
 
 ## [A Digging Problem](https://code.google.com/codejam/contest/204113/dashboard#s=p1)
 
