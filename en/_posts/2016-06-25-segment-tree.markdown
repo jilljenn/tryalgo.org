@@ -11,7 +11,7 @@ Maintain a numerical table that implements the following operations in logarithm
 Without loss of generality suppose that the table has a size n in the form of a power of 2.
 The idea is to work with a binary tree with n leafs, each corresponding to an entry in the table.  Every node *p* in the tree has a value label *p.val*, including the leafs.  The relation between the tree and the table is as follows. The total value along the path from the root to a leaf equals the corresponding table entry.  In that sense the tree encodes the table. The data structure consists only of the tree, not of the table.
 
-![]({{ site.images }}segment_tree_mapping.svg "A segment tree encoding the table below. Every cell is a node, and the two rectangles below the left and right descendants.")
+![]({{ site.images }}segment_tree_mapping.svg "A segment tree encoding the table below. Every cell is a node, and the two rectangles below the left and right descendants."){:width="500"}
 
 As we have seen querying the entry at some index can be done in logarithmic time (which is the depth of the tree).  Now we explain how to perform table updates.  To each node *p* we associate the interval formed by all the table indices corresponding to the leafs of the subtree. We call this interval *p.span*.  For a leaf *p*, the interval *p.span* consists only of the corresponding table index. For an inner node *p* with descendants *p.left* and *p.right*, the interval *p.span* is the (disjoint) union of *p.left.span* and *p.right.span*.
 
@@ -35,7 +35,7 @@ def update(node p, p_span,  update_span, delta_val):  # pseudo code
 
 To convince yourself that the update procedure, when initiated at the root, terminates in logarithmic time, simply observe that for each level k there will be at most two calls to *update* with p_span of size \\( 2^k \\).
 
-![]({{ site.images }}segment_tree_update.svg "Adding a value Δ to all table entries in an index interval is done by adding it to some nodes of the tree.")
+![]({{ site.images }}segment_tree_update.svg "Adding a value Δ to all table entries in an index interval is done by adding it to some nodes of the tree."){:width="500"}
 
 ## Extension
 

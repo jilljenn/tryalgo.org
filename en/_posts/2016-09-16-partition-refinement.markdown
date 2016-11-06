@@ -8,7 +8,7 @@ Given a partition of {0,1,...,n-1} into disjoint sets $$C_1,\ldots,C_k$$ and a s
   See [partition refinement](https://en.wikipedia.org/wiki/Partition_refinement).
 
 
-![]({{ site.images }}partition-refinement-definition.svg "A partition of the integers 0,..,7 with some refinements.  Colors are only for illustration.")
+![]({{ site.images }}partition-refinement-definition.svg "A partition of the integers 0,..,7 with some refinements.  Colors are only for illustration."){:width="500"}
 
 ## The general approach
 
@@ -38,7 +38,7 @@ An implementation of *refine* would have the following structure.
 
 The last step ensures that during the next call to *refine*, the reminder of the class C, which is now $$C\setminus S$$ can again split into a new class.
 
-![]({{ site.images }}partition-refinement-implementation.svg "An implementation of a data structure representing a partition.  The links of the double linked list are shown simplified as gray lines.")
+![]({{ site.images }}partition-refinement-implementation.svg "An implementation of a data structure representing a partition.  The links of the double linked list are shown simplified as gray lines."){:width="600"}
 
 
 ## Double linked lists

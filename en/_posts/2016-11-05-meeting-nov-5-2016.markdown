@@ -16,7 +16,7 @@ We will talk about solutions to problems A to I from this [booklet](http://www.b
 
 Given a graph G(V,E) with V={1,...,n} and edge weights, find the largest x such that the in the graph restricted to edges of weight at least x, the vertices 1 and n are connected.
 
-In time $$O(n \log n)$$. Start with empty graph.  Add edges in order of decreasing weight, until source 1 and target n become connected.
+In time $$O(n \log n)$$. Start with empty graph.  Add edges in order of decreasing weight, until source 1 and target n become connected. 
 
 ### vertex indexes
 
@@ -41,104 +41,11 @@ class Street implements Comparable<Street> {
         Arrays.sort(S);
 {% endhighlight %}
 
-### union-find
+See also [expiring edges]({% post_url 2016-06-22-edges-expiring %}).
 
-Union-Find is a data structure which maintains a partition.  Every set in the partition corresponds to a connected component.  Initially every vertex is a component by itself.  *Find(v)* returns a representative of the component containing v.  The components are organized as a tree, with the representative as root.  The table f contains for every vertex v the father f[v] in that tree. We have f[v]=v iff v is the root of a tree.
-Union merges two components by attaching one tree below another.  The function *Find(v)* walks all the way from vertex v to the root, and attaches the vertices along the path directly below the root. This flattens the tree.
+## [Seminar room](http://acm.tju.edu.cn/toj/showp2506.html)
 
-![]({{site.images}}union-find1.svg "Union-find structure representing the partition {7,8,12}, {2,3,4,5,6}, {1,9,10,10}.
-After merging the component containing 3 with the one containing 10, the arc 1->5 is added." ){:width="300"}
-
-![]({{site.images}}union-find2.svg "After the query Find(11) the vertices along the path from 11 to the root 5 are directly attached to the root." ){:width="400"}
-
-The following code is simple and could be good enough in practice if you are lucky.
-
-{% highlight c++ %}
-// from Hao Fu
-void MakeSet(int f[],int a) {
-    f[a]=a;
-}
-int Find(int f[],int a) {
-    if(f[a]==a) return a;
-    return f[a]=Find(f,f[a]);
-}
-bool Same(int f[],int a,int b) {
-    return Find(f,a)==Find(f,b);
-}
-void Union(int f[],int a,int b) {
-    f[Find(f,a)]=Find(f,b);
-}
-{% endhighlight %}
-
-But in order to ensure worst case complexity almost constant for the *Find* and *Union* operation, you need to maintain a rank for each component and attach always the tree with smaller rank below the one with largest.
-
-{% highlight python %}
-# from tryalgo.kruskal
-
-class UnionFind:
-    """Maintains a partition of {1,..,n}
-    """
-    def __init__(self, n):
-        self.up = list(range(n))
-        self.rank = [0] * n
-
-    def find(self, x):
-        """:returns: identifier of part containing x
-        :complexity: O(inverse_ackerman(n))
-        """
-        if self.up[x] == x:
-            return x
-        else:
-            self.up[x] = self.find(self.up[x])
-            return self.up[x]
-
-    def union(self, x, y):
-        """ merges part that contain x and part containing y
-            :returns: false if x,y are already in same part
-            :complexity: O(inverse_ackerman(n))
-        """
-        repr_x = self.find(x)
-        repr_y = self.find(y)
-        if repr_x == repr_y:       # déjà dans la même composante
-            return False
-        if self.rank[repr_x] == self.rank[repr_y]:
-            self.rank[repr_x] += 1
-            self.up[repr_y] = repr_x
-        elif self.rank[repr_x] > self.rank[repr_y]:
-            self.up[repr_y] = repr_x
-        else:
-            self.up[repr_x] = repr_y
-        return True
-{% endhighlight %}
-
-## [Seminar Room](http://acm.tju.edu.cn/toj/showp2506.html)
-
-You have n boolean variables. Every variable $$x_i$$ corresponds to two literals $$x_i$$ and $$\bar x_i$$.  To every literal there is a given interval.  There is a clause $$\bar x \vee \bar y$$ if the intervals corresponding to literals $$x$$ and $$y$$ intersect.  The clauses form a so-called 2-SAT formula.  The goal is to find a boolean assignment that can satisfy all clauses.
-
-2-SAT formulas can be solved in linear time by an algorithm by Tarjan. Consider a directed graph, where every literal is a vertex and every clause $$x\vee y$$ --- which can also write as $$\bar x \Rightarrow y$$ or $$\bar y \Rightarrow x$$ --- corresponds to the arcs $$(\bar x, y), (\bar y, x)$$.  Clearly the literals of a strongly connected component must have all the same true value.  If there is a variable which sits in the same component as its negation then the  formula has no solution.
-
-
-![]({{site.images}}exemple-2sat.svg "The implication graph corresponding to the formula (¬a ∨ ¬b) ∧ (b ∨ c) ∧ (a ∨ ¬c) ∧ (a ∨ c)." ){:width="200"}
-
-Otherwise a solution can be found as follows.  When you contract the components you obtain a directed acyclic graph (DAG). Hence there must be a component with no incoming arcs, and a corresponding component with no outgoing arcs.  Assign False to all literals in the first component, which will assign True to all literals in the second component.  Remove these components and repeat.  Implementing it in linear time is a bit tricky.  The easiest is to implement Kosaraju's algorithm.
-
-### trick for translating day:hour:min into minutes
-
-{% highlight Java %}
-static int minutes(String a) {
-    int j = "MON TUE WED THU FRI SAT".indexOf(a.substring(0, 3)) / 4;
-    int h = Integer.parseInt(a.substring(4,6));
-    int m = Integer.parseInt(a.substring(7));
-    return m + 60 * (h + 24 * j);
-}
-{% endhighlight %}
-
-
-
-
-### links
-
-- solution from the tryalgo library [two_sat](http://pythonhosted.org/tryalgo/_modules/tryalgo/two_sat.html#two_sat) and [strongly connected components](http://pythonhosted.org/tryalgo/tryalgo/tryalgo.html?highlight=strongly#module-tryalgo.strongly_connected_components)
+See [Seminar room]({% post_url 2016-11-06-seminar-room %})
 
 
 ## [Collecting Beepers](http://acm.tju.edu.cn/toj/showp2696.html)
@@ -153,17 +60,8 @@ See [Traveling Salesman]({% post_url 2016-07-18-traveling-salesman %})
 Given n=30000 rectilinear rectangles, the goal is to find the total area that is covered by at least 10 rectangles.
 This can be solved in time $$O(n\log n)$$ by the sweepline algorithm using a segment tree.
 
-Méthode: décomposer l'axe y en intervalles séparés par les valeurs y des rectangles. Donc on écrit dans un tableau toutes valeurs y, on les trie, et dans un tableau yVal on met dans l'ordre les valeurs distinctes, et dans un dictionnaire yIdx on associe aux valeurs y les indices correspondants dans ce tableau. Disons qu'il y a N valeurs dans yVal.
+See [Weird Advertisement]({% post_url 2016-06-26-weird-advertisement %})
 
-Maintenant on décrit une structure de données qui permet d'incrémenter et de décrémenter un tableau d'entier sur tout un intervalle d'indices, et aussi de demander le nombre de valeurs qui sont au moins k. L'entrée à l'indice i du tableau T correspond à l'intervalle [yVal[i], yVal[i+1]). Mais le tableau est représenté de manière implicite.
-
-On construit un arbre binaire au dessus de yVal. Chaque nœud correspond à un intervalle d'indices. Les nœuds ont deux étiquettes entiers: delta>=0 et covered>=0.
-
-Chaque feuille v a une valeur associée, qui est la somme des delta du chemin de la racine vers v. Pour la i-ème feuille v, v.covered est 0 si cette valeur est < k, et elle est yVal[i + 1] - yVal[i] sinon.
-
-Maintenant on décrit comment effectuer l'opération update(lo,hi,delta,v,val) sur l'arbre. Initialement elle est appelé avec les valeurs update(lo,hi,delta,root,0). Elle va ajouter delta à toutes les valeurs T[i] pour lo<=i<=hi. Dans les appels récursif val contiendra la somme des delta le long du chemin à partir de la racine.
-
-Pour le balayage on crée un tableau avec des événements (x,d,r). Chaque rectangle [x1,x2]\*[y1,y2] génère deux événements (x1,+1,r) et (x2,-1,r). Puis ces événements sont traités dans l'ordre lexicographique. Pour chaque événement on appelle *update*.
 
 ## [Disk Tree](http://acm.tju.edu.cn/toj/showp2364.html)
 
@@ -403,7 +301,7 @@ Given two boolean expressions on 27 variables, decide whether their truth value 
 
 This is a co-NP-hard problem. Deciding if a boolean expression is equivalent to the constant False, is equivalent with deciding if there is a boolean assignment that validates the boolean expression.
 
-We propose a backtracking algorithm to answer the question. Let L be the list of all variables that appear in the given expressions.  In order to avoid evaluating the expression for all $$2^{|L|}$$ possible boolean assignments, we use a simple trick to prune the search tree.  We extend the boolean algebra to partial assignments.  The consist of assigning to the variables the values True, False and Undefined.  The evaluation rules are quite natural, for example True OR Undefined = True while False OR Undefined = Undefined.  Every node in the search tree will correspond to a True-False assignment to some prefix of L, and Undefined assignment for the remaining variables.  Now we have to consider 3 cases.
+We propose a backtracking algorithm to answer the question. Let L be the list of all variables that appear in the given expressions.  In order to avoid evaluating the expression for all $$ 2^{\#L}$$ possible boolean assignments, we use a simple trick to prune the search tree.  We extend the boolean algebra to partial assignments.  The consist of assigning to the variables the values True, False and Undefined.  The evaluation rules are quite natural, for example True OR Undefined = True while False OR Undefined = Undefined.  Every node in the search tree will correspond to a True-False assignment to some prefix of L, and Undefined assignment for the remaining variables.  Now we have to consider 3 cases.
 
 - If one of the boolean expressions evaluates as undefined, we extend the tree as follows.  Let x be the first undefined variable in L (there must be at least one).  The current node has two descendants, one where x is assigned to True and one where x is assigned to False.
 
@@ -513,9 +411,28 @@ Note how every non-terminal of the grammar is represented by a dedicated method.
 
 ## [FTOUR - Free Tour](http://www.spoj.com/problems/FTOUR/)
 
-?
+Essentially we need to initiate a BFS traversal on every vertex $$r$$.  If while exploring the enighbors of $$u$$ an edge $$u,v$$ is found to an already marked vertex $$v$$ in the level after $$u$$, then we know that there is an even cycle containing $$u,v$$ and the closest common ancestor of $$u$$ and $$v$$ in the BFS tree.  We have to think a bit about how to find efficiently the closest ancestor.
+
+See an explanation of the algorithm [BFS-cycle](http://theory.stanford.edu/~virgi/cs267/lecture2.pdf).
 
 ## [A Digging Problem](https://code.google.com/codejam/contest/204113/dashboard#s=p1)
 
 [Explanation](https://code.google.com/codejam/contest/204113/dashboard#s=a&a=1)
 
+## Clustering
+
+Given n points in the plane, clustern them into k groups, such that the minimal distance between two points of different clusters is maximized.
+
+This is a nice variation of Kruskal's algorithm. Simple interrupt it, once there are k connected components.
+
+## [Muddy Fields](http://www.spoj.com/problems/MUDDY/)
+
+This a minimum bipartite vertex cover problem.  Simply let every maximal row segment containing only mud fields be a vertex.  Segments can have length as small as 1.  Do the same for column segments.  Whenever a row segment and column segment intersect, let there be an edge.  This is a bipartite graph.  The required solution is precisely a minimum vertex cover in that graph.
+
+See [minimum bipartite vertex cover]({% post_url 2016-08-05-konig %}).
+
+## [Street directions](http://acm.tju.edu.cn/toj/showp1125.html)
+
+You are given a city map formed by vertical and horizontal streets. There are n intersection pairs forming a source and a target.  The goal is to orient the streets to make them one way streets such that every source-target pair can be connected using only a single turn.
+
+Think a bit, this can be modeled as a 2-SAT formula. See [Seminar room]{% post_url 2016-11-06-seminar-room %}).

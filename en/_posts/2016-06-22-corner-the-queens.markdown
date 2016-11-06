@@ -14,7 +14,7 @@ Let's mark on the grid the loosing positions, by inspecting the possibilities of
 
 The problem can be solved in linear time in the grid coordinates, which is ok, since the given grid coordinates are bounded by 10e6.
 
-![](/~durrc/tryalgo/images/corner-the-queens.png)
+![]({{site.images}}corner-the-queens.svg){:width="400"}
 
 For curiosity:
 Successive points happen to be distant in x-coordinate either by 1 or by 2.  The resulting pattern does not seem to have a simple structure, it seems fractal.  Understanding it could lead possibly to a constant time algorithmic solution.  The following string shows this pattern for the first 100 points. A dash means distance 2 and a point distance 1.

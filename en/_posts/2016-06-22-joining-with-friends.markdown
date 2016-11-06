@@ -10,5 +10,5 @@ Explanations for the problem [Joining with friends](http://uva.onlinejudge.org/i
 
 The goal is to compute the area of the intersection of this shaded strip with the rectangle.  Can be solved by simple case analysis.
 
-![]({{ site.url }}/~durrc/tryalgo/images/joining-with-friends.svg){: width="500px"}
+![]({{ site.images }}joining-with-friends.svg){: width="500px"}
 

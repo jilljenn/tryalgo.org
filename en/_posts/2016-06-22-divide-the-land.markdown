@@ -17,7 +17,7 @@ But only the edge lengths AB, BC, CD, DA are given.
 
 Points E,F such that EF is parallel to AB (and hence CD), and divides the trapezoid into two halfs of same area.
 
-![trapezoid]({{ site.url }}/~durrc/tryalgo/images/divide-the-land.png){: width="300px"}
+![trapezoid]({{ site.images }}divide-the-land.png){: width="300px"}
 
 ### Solution
 

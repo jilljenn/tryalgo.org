@@ -12,7 +12,7 @@ See [Determine the shape](https://uva.onlinejudge.org/index.php?option=com_onlin
 
 A point is represented as a tuple.  Given 3 points a, b, c we can ask if the walk a to b to c is a left turn.
 
-![]({{ site.images }}left-turn.svg "Is the walk from a to b to c a left turn?")
+![]({{ site.images }}left-turn.svg "Is the walk from a to b to c a left turn?"){:width="400"}
 
 This is done by computing this simple expression.  Similarly we can test whether the segments a-b and b-c are perpendicular, or if two segments are parallel.  All these tests reduce to computing the determinant of some 2 by 2 matrix.
 

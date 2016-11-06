@@ -23,7 +23,7 @@ The new objective is now simply the total edge weight, where the weight of edge 
 
 The particular structure of the edge weigths give structure to the optimal solution. Namely all optimal solutions have the following shape.  Assume the ordering \\( t_0 \leq  t_1 \leq \ldots \leq t_{n-1} \\).  The last vertices are matched in sequence starting from some vertex index x, which is the unique parameter of choice of the optimal solution.  The vertices before x are all matched with vertex 0.  And there are enough edges (0, 1) to make the required total edge number of \\( n-1 \\).
 
-![]({{site.images}}bridge-and-torch.svg "Optimal solutions are fully described by graphs of this form.")
+![]({{site.images}}bridge-and-torch.svg "Optimal solutions are fully described by graphs of this form."){:width="600"}
 
 Hence the algorithm only needs to determine the parameter x.  This is done by analyzing for every possible value of x, the difference in cost of the edge sets {(0, 1), (x, x+1)} and {(0, x), (0, x+1)}.
 

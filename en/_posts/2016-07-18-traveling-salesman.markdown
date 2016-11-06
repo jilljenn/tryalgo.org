@@ -14,7 +14,7 @@ Let w be the arc lengths.
 Let the vertices be numbered from 0 to n-1.  Let vertex n-1 be a source.  For every \\( S \\subseteq \\{0,\\ldots,n-2\\} \\) and every \\( v\\not\\in S \\) we want to find the shortest path from the source to v that traverses all vertices from S exactly once and only those.
 Let O[S][v] be this value.
 
-![]({{site.images}}traveling-salesman.svg)
+![]({{site.images}}traveling-salesman.svg){:width="400"}
 
 For the base case we have
 \\[

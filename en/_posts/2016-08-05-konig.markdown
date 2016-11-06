@@ -12,14 +12,14 @@ Given a bipartite graph \\( G(U,V,E) \\) find a vertex set \\( S \\subseteq U \\
 
 Suppose we are given a grid with black and white cells.  (In the illustrations above, black is replaced by orange). We want to find a minimum cardinality set of lines (which is either a row or a column) such that if we color all those lines in black then we obtain an all black grid.  In other words every white cell belongs to a selected line.
 
-![]({{site.images}}covering4.svg "After coloring these 3 lines we obtain all orange grid.")
+![]({{site.images}}covering4.svg "After coloring these 3 lines we obtain all orange grid."){:width="200"}
 
 This problem can be viewed as finding a *minimum cardinality vertex cover* of a *bipartite graph*. Here is the explanation.
 Interpret the given grid as the adjacency matrix of a bipartite graph.  There will be a vertex for every row and  a vertex for every column. For every white cell there is an edge between the corresponding row and column vertices.  Such a graph is called *bipartite* because there are two types of vertices and edges exist only between vertices of different types.
 
-![]({{site.images}}covering8.svg "An example grid, generating the graph below.")
+![]({{site.images}}covering8.svg "An example grid, generating the graph below."){:width="300"}
 
-![]({{site.images}}konig0.svg "The graph corresponding to the grid above" ){:width="400"}
+![]({{site.images}}konig0.svg "The graph corresponding to the grid above" ){:width="500"}
 
 A vertex cover is a set of vertices such that every edge has at least one endpoint in the set. In that sense the set is covering all edges.  Finding the minimum cardinality vertex cover is a hard problem, but for bipartite graphs it is easy to solve as we will see now.
 
@@ -29,7 +29,7 @@ Given a bipartite graph \\( G(U,V,E) \\) find a vertex set \\( S \\subseteq U \\
 
 Let M be a maximum cardinality matching in G.  A *matching* is an edge set \\( M\\subseteq E\\)  such that no two edges of M have the same endpoint.
 
-![]({{site.images}}konig1.svg "A maximum matching (in blue)"){:width="400"}
+![]({{site.images}}konig1.svg "A maximum matching (in blue)"){:width="500"}
 
 Since every edge of a matching must have at least one endpoint on S, the size of a maximum matching M is a lower bound on the size of the minimum cardinality vertex cover.
 [Kőnig's theorem](https://en.wikipedia.org/wiki/K%C5%91nig%27s_theorem_(graph_theory)) states that these optimal cardinalities are in fact equal.
@@ -39,11 +39,11 @@ The proof of the theorem is constructive and provides an algorithm to compute th
 Initially let Z be the set of non matched vertices in U.  In the figures the row vertices represent U and the column vertices represent V.
 
 
-![]({{site.images}}konig2init.svg "In red: the initial set Z"){:width="400"}
+![]({{site.images}}konig2init.svg "In red: the initial set Z"){:width="500"}
 
  Now add to Z all vertices reachable by some vertex from Z via an alternating path.  A path is called *alternating* if it alternates between edges from the matching and edges which are not in the matching.
 
-![]({{site.images}}konig2.svg "In red: the final set Z"){:width="400"}
+![]({{site.images}}konig2.svg "In red: the final set Z"){:width="500"}
 
 
 Define the set
@@ -52,7 +52,7 @@ S = (U\\setminus Z) \\cup (V\\cap Z).
 \\]
 
 
-![]({{site.images}}konig3.svg "In red: the set S"){:width="400"}
+![]({{site.images}}konig3.svg "In red: the set S"){:width="500"}
 
 
 The construction of Z implies that for every edge \\( (u,v)\\in M\\), if \\(v\\in Z\\) then \\(u\\in Z\\) as well.  And if \\(u\\in Z\\), since u was not initially in Z among the non matched vertices in U, it must be that u was added to Z by following some matched edge, which means that \\(v\\in Z\\) as well.
@@ -63,7 +63,7 @@ Now we show that S covers all edges of the graph.
 Let \\( (u,v)\\) an arbitrary edge. If \\(u \\not\\in Z\\), then the edge is covered.  From now on assume  If \\(u \\in Z\\).  If \\( (u,v)\\)  is not an edge from the matching then by maximality of Z the vertex v has to be in Z, and hence \\( v\\in S \\).
 But if \\( (u,v)\\)  is an edge from the matching, then by the previous observation v belongs to Z and hence to S as well.  This shows that S is a vertex cover, which implies by our first observation \\( \|S\| \\leq \|M\| \\), from which we can conclude \\( \|S\| = \|M\| \\).
 
-![]({{site.images}}covering8sol.svg "The optimal solution defined by the vertex cover.")
+![]({{site.images}}covering8sol.svg "The optimal solution defined by the vertex cover."){:width="300"}
 
 ## The algorithm
 

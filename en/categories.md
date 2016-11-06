@@ -13,7 +13,7 @@ See also our list [ordered by date](..).
 		<li>{{category[0] | capitalize}}
 		<ul>
 		  {% for post in sorted_posts %}
-		    <li><a href="{{ site.baseurl }}{{  post.url }}">{{  post.title }}</a></li>
+		    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
 		  {% endfor %}
 		</ul>
 		</li>
