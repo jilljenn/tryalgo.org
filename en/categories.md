@@ -8,7 +8,7 @@ See also our list [ordered by date](..).
 <ul>
 {% assign sorted_cats = site.categories | sort %}
 {% for category in sorted_cats %}
-	{% if category[0] != "en" %}
+	{% if category[0] != "en" and category[0] != "fr" %}
 		{% assign sorted_posts = category[1] | sort: 'title' %}
 		<li>{{category[0] | capitalize}}
 		<ul>
