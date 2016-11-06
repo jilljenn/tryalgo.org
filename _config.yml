@@ -1,6 +1,6 @@
 # Dependencies
 markdown:         kramdown
-highlighter:      rb-pygments
+highlighter:      rouge
 gems: ["jekyll-paginate"]
 
 # Permalinks
@@ -13,6 +13,7 @@ description:      'Un manuel de préparation aux entretiens d''embauche et conco
 metadescription:  "Programmation efficace - Les 128 algorithmes qu'il faut avoir compris et codés dans sa vie. Sortie le 1er mars 2016."
 url:              http://tryalgo.org
 baseurl:          /
+images: "/en/images/"
 
 author:
   name:           'Jill-Jênn Vie'
@@ -27,3 +28,8 @@ version:          2.1.0
 github:
   tryalgo:        https://github.com/jilljenn/tryalgo
   meta:           https://github.com/jilljenn/tryalgo.org
+
+collections:
+  en:
+    output: true
+    permalink: /:collection/:title/
