@@ -16,7 +16,7 @@ If from a vertex $$u$$ at level $$i$$ we discover an edge to a neighbor $$v$$ at
 
 Hence in order to find a shortest cycle simply loop over all possible root vertices $$r$$. Initiate a BFS search at $$r$$, and for every non-forward edge $$u,v$$ you encounter, keep track of the tree vertices $$r,u,v$$ that minimize the sum of the levels of $$u$$ and of $$v$$.  After that you know that for the minimizers $$r,u,v$$, there is a shortest cycle containing these vertices.  Then you just need a last BFS search initiated at $$r$$, so that you obtain the shortest path from $$r$$ to $$u$$ and to $$v$$.  Together with the edge $$(u,v)$$ they form a shortest cycle.  
 
-![]({{site.images}}shortest-cycle.svg "Neighbors of vertex u.  The edge (u,c) will be part of the BFS tree, while edges (u,a) and (u,b) are part of a simple cycle." ){:width="200"}
+![]({{site.images}}shortest-cycle.svg "Forward edges are depicted as solid arrows. Neighbors of vertex u: The edge (u,c) will be part of the BFS tree, while edges (u,a) and (u,b) are part of a simple cycle." ){:height="400"}
 
 ### Links
 

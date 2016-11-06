@@ -435,4 +435,4 @@ See [minimum bipartite vertex cover]({% post_url 2016-08-05-konig %}).
 
 You are given a city map formed by vertical and horizontal streets. There are n intersection pairs forming a source and a target.  The goal is to orient the streets to make them one way streets such that every source-target pair can be connected using only a single turn.
 
-Think a bit, this can be modeled as a 2-SAT formula. See [Seminar room]{% post_url 2016-11-06-seminar-room %}).
+Think a bit, this can be modeled as a 2-SAT formula. See [Seminar room]({% post_url 2016-11-06-seminar-room %}).
