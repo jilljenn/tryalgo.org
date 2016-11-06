@@ -12,8 +12,8 @@ tagline:          'Un livre de programmation'
 description:      'Un manuel de préparation aux entretiens d''embauche et concours de programmation.<br />Par <a href="http://jill-jenn.net" target="_blank">Jill-Jênn Vie</a> et <a href="http://www-desir.lip6.fr/~durrc/" target="_blank">Christoph Dürr</a>.'
 metadescription:  "Programmation efficace - Les 128 algorithmes qu'il faut avoir compris et codés dans sa vie. Sortie le 1er mars 2016."
 url:              http://tryalgo.org
-baseurl:          /
-images: "/en/images/"
+baseurl:          "/"
+images: 		  "/en/images/"
 
 author:
   name:           'Jill-Jênn Vie'
@@ -29,7 +29,10 @@ github:
   tryalgo:        https://github.com/jilljenn/tryalgo
   meta:           https://github.com/jilljenn/tryalgo.org
 
-collections:
-  en:
-    output: true
-    permalink: /:collection/:title/
+# collections:
+#   en:
+#     output: true
+#     permalink: /:collection/:title/
+#   fr:
+#     output: true
+#     permalink: /:collection/:title/
