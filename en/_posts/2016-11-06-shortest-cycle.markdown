@@ -1,6 +1,6 @@
 ---
 layout: en
-title:  "Seminar room"
+title:  "Shortest cycle"
 category: cycles
 ---
 
