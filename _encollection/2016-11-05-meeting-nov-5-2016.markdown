@@ -1,0 +1,521 @@
+---
+layout: en
+title:  "Meeting 5 Novembre 2016"
+category: meetings
+collection: en
+author: Christoph Dürr and Jill-Jênn Vie
+---
+
+Jussieu, room 26-25/105, 14:00 until 17:00
+
+No need to bring a computer.  Only paper and pen, and if needed some fruits and cookies.  Coffee is provided.
+
+We will talk about solutions to problems A to I from this [booklet](http://www.bubblecup.org/Media/Booklet2012.pdf) and some subselection from [this](http://tryalgo.org/problems/) selection.
+
+## [HeavyTransportation](http://poj.org/problem?id=1797)
+
+Given a graph G(V,E) with V={1,...,n} and edge weights, find the largest x such that the in the graph restricted to edges of weight at least x, the vertices 1 and n are connected.
+
+In time $$O(n \log n)$$. Start with empty graph.  Add edges in order of decreasing weight, until source 1 and target n become connected.
+
+### vertex indexes
+
+(optional) Decrement indexes by 1 after reading to make them start at 0.
+
+### sort edges
+
+{% highlight java %}
+class Street implements Comparable<Street> {
+    int u,v,w;  // endpoints u,v, max allowed weight w
+    Street(int _u, int _v, int _w) {
+        u=_u;
+        v=_v;
+        w=_w;
+    }
+    public int compareTo(Street s) {
+        return s.w-w;  // ordre poids decroissant
+    }
+}
+
+[...]
+        Arrays.sort(S);
+{% endhighlight %}
+
+### union-find
+
+Union-Find is a data structure which maintains a partition.  Every set in the partition corresponds to a connected component.  Initially every vertex is a component by itself.  *Find(v)* returns a representative of the component containing v.  The components are organized as a tree, with the representative as root.  The table f contains for every vertex v the father f[v] in that tree. We have f[v]=v iff v is the root of a tree.
+Union merges two components by attaching one tree below another.  The function *Find(v)* walks all the way from vertex v to the root, and attaches the vertices along the path directly below the root. This flattens the tree.
+
+![]({{site.images}}union-find1.svg "Union-find structure representing the partition {7,8,12}, {2,3,4,5,6}, {1,9,10,10}.
+After merging the component containing 3 with the one containing 10, the arc 1->5 is added." ){:width="300"}
+
+![]({{site.images}}union-find2.svg "After the query Find(11) the vertices along the path from 11 to the root 5 are directly attached to the root." ){:width="400"}
+
+The following code is simple and could be good enough in practice if you are lucky.
+
+{% highlight c++ %}
+// from Hao Fu
+void MakeSet(int f[],int a) {
+    f[a]=a;
+}
+int Find(int f[],int a) {
+    if(f[a]==a) return a;
+    return f[a]=Find(f,f[a]);
+}
+bool Same(int f[],int a,int b) {
+    return Find(f,a)==Find(f,b);
+}
+void Union(int f[],int a,int b) {
+    f[Find(f,a)]=Find(f,b);
+}
+{% endhighlight %}
+
+But in order to ensure worst case complexity almost constant for the *Find* and *Union* operation, you need to maintain a rank for each component and attach always the tree with smaller rank below the one with largest.
+
+{% highlight python %}
+# from tryalgo.kruskal
+
+class UnionFind:
+    """Maintains a partition of {1,..,n}
+    """
+    def __init__(self, n):
+        self.up = list(range(n))
+        self.rank = [0] * n
+
+    def find(self, x):
+        """:returns: identifier of part containing x
+        :complexity: O(inverse_ackerman(n))
+        """
+        if self.up[x] == x:
+            return x
+        else:
+            self.up[x] = self.find(self.up[x])
+            return self.up[x]
+
+    def union(self, x, y):
+        """ merges part that contain x and part containing y
+            :returns: false if x,y are already in same part
+            :complexity: O(inverse_ackerman(n))
+        """
+        repr_x = self.find(x)
+        repr_y = self.find(y)
+        if repr_x == repr_y:       # déjà dans la même composante
+            return False
+        if self.rank[repr_x] == self.rank[repr_y]:
+            self.rank[repr_x] += 1
+            self.up[repr_y] = repr_x
+        elif self.rank[repr_x] > self.rank[repr_y]:
+            self.up[repr_y] = repr_x
+        else:
+            self.up[repr_x] = repr_y
+        return True
+{% endhighlight %}
+
+## [Seminar Room](http://acm.tju.edu.cn/toj/showp2506.html)
+
+You have n boolean variables. Every variable $$x_i$$ corresponds to two literals $$x_i$$ and $$\bar x_i$$.  To every literal there is a given interval.  There is a clause $$\bar x \vee \bar y$$ if the intervals corresponding to literals $$x$$ and $$y$$ intersect.  The clauses form a so-called 2-SAT formula.  The goal is to find a boolean assignment that can satisfy all clauses.
+
+2-SAT formulas can be solved in linear time by an algorithm by Tarjan. Consider a directed graph, where every literal is a vertex and every clause $$x\vee y$$ --- which can also write as $$\bar x \Rightarrow y$$ or $$\bar y \Rightarrow x$$ --- corresponds to the arcs $$(\bar x, y), (\bar y, x)$$.  Clearly the literals of a strongly connected component must have all the same true value.  If there is a variable which sits in the same component as its negation then the  formula has no solution.
+
+
+![]({{site.images}}exemple-2sat.svg "The implication graph corresponding to the formula (¬a ∨ ¬b) ∧ (b ∨ c) ∧ (a ∨ ¬c) ∧ (a ∨ c)." ){:width="200"}
+
+Otherwise a solution can be found as follows.  When you contract the components you obtain a directed acyclic graph (DAG). Hence there must be a component with no incoming arcs, and a corresponding component with no outgoing arcs.  Assign False to all literals in the first component, which will assign True to all literals in the second component.  Remove these components and repeat.  Implementing it in linear time is a bit tricky.  The easiest is to implement Kosaraju's algorithm.
+
+### trick for translating day:hour:min into minutes
+
+{% highlight Java %}
+static int minutes(String a) {
+    int j = "MON TUE WED THU FRI SAT".indexOf(a.substring(0, 3)) / 4;
+    int h = Integer.parseInt(a.substring(4,6));
+    int m = Integer.parseInt(a.substring(7));
+    return m + 60 * (h + 24 * j);
+}
+{% endhighlight %}
+
+
+
+
+### links
+
+- solution from the tryalgo library [two_sat](http://pythonhosted.org/tryalgo/_modules/tryalgo/two_sat.html#two_sat) and [strongly connected components](http://pythonhosted.org/tryalgo/tryalgo/tryalgo.html?highlight=strongly#module-tryalgo.strongly_connected_components)
+
+
+## [Collecting Beepers](http://acm.tju.edu.cn/toj/showp2696.html)
+
+Given a grid with 10 targets and an origin, find a minimum length tour from origin to origin that visits all targets.
+This a traveling salesman problem, which you can solve in time $$(n^2 2^n)$$.
+
+See [Traveling Salesman]({% post_url 2016-07-18-traveling-salesman %})
+
+## [Weird Advertisement](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=25&page=show_problem&problem=3134)
+
+Given n=30000 rectilinear rectangles, the goal is to find the total area that is covered by at least 10 rectangles.
+This can be solved in time $$O(n\log n)$$ by the sweepline algorithm using a segment tree.
+
+Méthode: décomposer l'axe y en intervalles séparés par les valeurs y des rectangles. Donc on écrit dans un tableau toutes valeurs y, on les trie, et dans un tableau yVal on met dans l'ordre les valeurs distinctes, et dans un dictionnaire yIdx on associe aux valeurs y les indices correspondants dans ce tableau. Disons qu'il y a N valeurs dans yVal.
+
+Maintenant on décrit une structure de données qui permet d'incrémenter et de décrémenter un tableau d'entier sur tout un intervalle d'indices, et aussi de demander le nombre de valeurs qui sont au moins k. L'entrée à l'indice i du tableau T correspond à l'intervalle [yVal[i], yVal[i+1]). Mais le tableau est représenté de manière implicite.
+
+On construit un arbre binaire au dessus de yVal. Chaque nœud correspond à un intervalle d'indices. Les nœuds ont deux étiquettes entiers: delta>=0 et covered>=0.
+
+Chaque feuille v a une valeur associée, qui est la somme des delta du chemin de la racine vers v. Pour la i-ème feuille v, v.covered est 0 si cette valeur est < k, et elle est yVal[i + 1] - yVal[i] sinon.
+
+Maintenant on décrit comment effectuer l'opération update(lo,hi,delta,v,val) sur l'arbre. Initialement elle est appelé avec les valeurs update(lo,hi,delta,root,0). Elle va ajouter delta à toutes les valeurs T[i] pour lo<=i<=hi. Dans les appels récursif val contiendra la somme des delta le long du chemin à partir de la racine.
+
+Pour le balayage on crée un tableau avec des événements (x,d,r). Chaque rectangle [x1,x2]\*[y1,y2] génère deux événements (x1,+1,r) et (x2,-1,r). Puis ces événements sont traités dans l'ordre lexicographique. Pour chaque événement on appelle *update*.
+
+## [Disk Tree](http://acm.tju.edu.cn/toj/showp2364.html)
+
+The key observation is that if you order the input lines lexicographically, then they are in the output order. Then you just need to use spaces to replace the common prefix with the previous line for each output line.  This is much simpler than to build the actual tree.
+
+## [Phone Numbers](http://poj.org/problem?id=1732)
+
+Organize the dictionary as a prefix tree with outdegree 10. This permits to generate all words that match some input numbers.
+
+You can attach to every node of the tree a possible word that corresponds to the path from the root to that node.  In addition by dynamic programming you can attach to every node the smallest word in the sub-tree rooted at that node.
+
+All in all the running time to build the tree is linear in the total word size of the dictionary.  Also for every input number you need  to do a linear time traversal of the tree.
+
+
+## [ROCK - Sweet and Sour Rock](http://www.spoj.com/problems/ROCK/)
+
+The problem is about breaking a 01 string into smaller strings of maximum total score.  The score of a string is its length if it contains more 1's than 0's otherwise its score is zero.
+
+This can be solved by dynamic programming.  For every j compute the optimal solution for the prefix of size j.  This solution consists of a last string, say from i to j, and the optimal solution for the prefix of size i - 1.  The solution is straightforward and runs in quadratic time.
+
+{% highlight Python %}
+from sys       import *
+
+def readstr():    return stdin.readline().strip()
+def readint():    return int(stdin.readline())
+
+def solve(stick):
+    n = len(stick)
+    opt = [0] * n                    # opt[i] = optimal breaking of tab[0 : i + 1]
+    for j in range(0,n):
+        sweat_minus_sour = 0         # balance of tab[i : j + 1]
+        for i in range(j, -1, -1):   # break into [0 : i] and [i : j+1]
+            sweat_minus_sour += 2 * int(stick[i]) - 1
+            alt = 0
+            if i > 0:
+                alt += opt[i - 1]    # score of optimal breaking of [0 : i]
+            if sweat_minus_sour > 0:
+                alt += j - i + 1     # score of [i : j + 1]
+            if alt > opt[j]:
+                opt[j] = alt         # keep best option
+    return opt[n - 1]
+
+for test in range(readint()):
+    readint()
+    print (solve(readstr()))
+{% endhighlight %}
+
+
+## [City Driving](http://cs.stanford.edu/group/acm/SLPC2011/problems.pdf)
+
+Given a tree with a single additional edge, find shortest paths between different source-destination pairs.
+Essentially we have to implement a solution to the least common ancestor problem.
+
+See an explanation [here]({{site.images}}15cityDriving.pdf).
+
+## [Edit Step Ladders](http://acm.tju.edu.cn/toj/showp1352.html)
+
+Opérations pour obtenir un mot lexicographiquement plus grand :
+
+CHANGING,    INSERTION,    SUPPRESSION
+
+Calculer un plus long chemin est NP-dur en général, mais polynomial
+par programmation dynamique dans un graphe orienté sans cycle (DAG en anglais).
+
+Le graphe orienté obtenu est acyclique. Alors par composition un
+plus long chemin i->j->k est composé de plus longs chemins i->j et
+j->k. On va tout simplement calculer d[i] la longueur du plus long
+chemin commençant par i, et succ[i], le successeur dans ce chemin,
+où succ[i]=-1 si le chemin s’arrête là. Et d[i]=1+max j d[j] pour
+tout arc i->j.
+
+Pour avoir les mots u qu'on peut obtenir d'une opération sur w et
+avec u\<w, on utilise une table de hachage.  Chaque mot "jus" est
+aussi stocke sous les clés "?us" "j?s" et "ju?".  Pire : pour "ju?"
+on stocke seulement l'indice du mot qui matche avec "ju?" et qui a
+plus longue sequence parmi ceux-la.
+
+Pour s'assurer que la séquence est lexicographiquement croissante, on
+traite tout simplement les mots dans le bon ordre et on les ajoute
+dans le dictionaire seulement au fur et a mesure.
+
+Problème 1: les mots données ne sont pas du tout triés comme promis dans
+l'énoncé. Je l'ai verifie en forcant un time limit exceeded dans le
+cas non-trié. Et il y a des doublons.
+
+Problème 2: une map basée sur un arbre binaire de recherche est trop
+lente pour nous. Il nous faut une table de hashage.  Pour cela il
+faut fournir une fonction de hashage comme ci-dessous.
+
+{% highlight C++ %}
+using namespace __gnu_cxx;
+
+namespace __gnu_cxx {
+  template<> struct hash< std::string > {
+    size_t operator()( const std::string& x ) const {
+      return hash< const char* >()( x.c_str() );
+    }
+  };
+}
+{% endhighlight %}
+
+
+## [Edit distance](http://www.spoj.com/problems/EDIST/)
+
+This is a classical dynamic programming problem. Reduces to finding a shortest path in a grid.
+
+![]({{site.images}}levenshtein.svg "Computing the shortest distance between LADA and AUDI." ){:width="500"}
+
+
+## [Spiral of Numbers](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=844)
+
+This a problem of converting a position to the spiral to a grid coordinate and vice-versa. By looking at the example we observe the following relations.
+
+{% highlight C++ %}
+int p(int x, int y) {
+  int n = max(abs(x), abs(y));
+  int N = (2*n+1)*(2*n+1);
+  if (n==y)
+    return N-  n+x;
+  if (n==-x)
+    return N-3*n+y;
+  if (n==-y)
+    return N-5*n-x;
+  //  if (n==x)
+  return   N-7*n-y;
+}
+{% endhighlight %}
+
+and
+
+{% highlight C++ %}
+    // convert q into (x, y)
+    int n = (int)ceil( (sqrt(q)-1)/2);
+    int N = (2*n+1)*(2*n+1);
+    int d = n? (N-q)/(2*n) : 0;
+    int x,y;
+    switch (d) {
+    case 0:
+      y=n;
+      x=n-(N-q);
+      break;
+    case 1:
+      x=-n;
+      y=3*n-(N-q);
+      break;
+    case 2:
+      y=-n;
+      x=(N-q)-5*n;
+      break;
+    case 3:
+      x=n;
+      y=(N-q)-7*n;
+    }
+{% endhighlight %}
+
+
+## [Color a Tree](http://acm.tju.edu.cn/toj/showp1096.html)
+
+This is a scheduling problem, which is denoted as [1\|tree\|sum wjCj](http://schedulingzoo.lip6.fr/).
+
+We are given a rooted tree, representing a precendence relation between jobs. Every job has a unit size and a weight.  The goal is to find an order on the jobs that respects the precendence relation and minimizes the total weighted completion time.
+
+Algo glouton en $$O(n^2)$$ -- peut être fait en $$O(n \log n)$$.
+
+Problème d’ordonnancement de taches unitaires avec relation de
+précédence en forme d'arbre. Minimiser somme pondéré sur les temps
+de complétude.  Donc on veut mettre le plus de poids possible vers
+le début.
+
+Algorithme glouton dans le sens suivant.  On ne peut pas juste
+ordonnancer la racine, puis à chaque fois la tâche la plus lourde
+active (dont le père a été ordonnancé).
+
+![]({{site.images}}color-a-tree.svg "A counter example showing why you cannot just select the heaviest available job everytime." ){:width="200"}
+
+Plutôt on va ordonnancer la tâche la plus lourde juste après son
+père, par un argument d’échange c'est optimal.  Ensuite on
+fusionne les deux taches, en une tache plus lourde et plus
+longue.  En général w[u] est la taille de la tâche u, s[u] sa
+longueur et o[u] le coût engendré si la tâche est ordonnancée au
+temps 0.  On recommence a chaque fois avec la tâche qui a le plus
+grand rapport poids/taille, aussi appelé *Smith-ratio*.
+
+Quand on fusionne u dans v, pour marquer u comme supprimée on pose s[u]=0.
+
+## [Word Ladders](http://acm.tju.edu.cn/toj/showp2925.html)
+
+This is the classical Floyd-Marshal all pair shortest paths problem.
+
+On lit les mots, et on les trie.  Ensuite on ne travaille qu'avec
+les indices, et l'ordre sur les indices est aussi l'ordre lexicographique sur les mots.
+
+On calcule la distance d’édition entre les mots. C'est la distance
+L1 entre les vecteurs d’occurrence des lettres des mots.  Cette
+distance défini un graphe, où il y a une arrête (i,j) si la distance
+L1 est 1.
+
+Invariant: dist[i][j] est la distance entre i et j dans ce graphe
+en n'utilisant que des sommets intermédiaires entre 0 et k, ou k
+va varier de 0 a n-1.
+
+next[i][j] est le prochain sommet sur le plus court chemin entre i
+et j.  S'il y a plusieurs plus court chemins, on ne garde que le
+lexicographiquement plus petit.
+
+La solution est un couple (bi,bj) (b, comme best), qui dans l'ordre
+
+* maximise la distance L1 entre bi et bj
+* minimise la distance dist[bi][bj]
+* minimise lexicographiquement le chemin de bi à bj
+
+## [Tiling a Grid With Dominoes](http://www.spoj.com/problems/GNY07H/)
+
+Can be solved using fast exponentiation in time $$O(\log W)$$,
+plus a preprocessing using $$6^3 \cdot 32$$ multiplications.
+
+The important aspect of the tiling is the line between two columns.
+There are several configurations depending on where the vertical dominoes cross this line.
+We encode these configurations using 4 bits, one for each row.
+
+There are 6 different possible configurations as depicted here.  The - represents the crossing by a horizontal domino.
+
+    0  1  2  3  4  5
+    |  -  -  |  -  |
+    |  -  -  |  |  -
+    |  -  |  -  |  -
+    |  -  |  -  -  |
+
+
+We encode in a 6 by 6 adjacency matrix, the compatibility between configurations.  M[i,j]=1 if there is a tiling with configuration to the left of a column and configuration j to the right of the same column.  Otherwise M[i,j]=0.
+
+Now M taken to the W-th power gives a matrix, where the entry at row 0 and column 0 is the answer to the problem, namely the number of domino tilings of a 4 by W grid.
+
+## [Boolean Expression](http://acm.tju.edu.cn/toj/showp2185.html)
+
+Given two boolean expressions on 27 variables, decide whether their truth value is the identical for all possible boolean assignements to the variables.
+
+This is a co-NP-hard problem. Deciding if a boolean expression is equivalent to the constant False, is equivalent with deciding if there is a boolean assignment that validates the boolean expression.
+
+We propose a backtracking algorithm to answer the question. Let L be the list of all variables that appear in the given expressions.  In order to avoid evaluating the expression for all $$2^{|L|}$$ possible boolean assignments, we use a simple trick to prune the search tree.  We extend the boolean algebra to partial assignments.  The consist of assigning to the variables the values True, False and Undefined.  The evaluation rules are quite natural, for example True OR Undefined = True while False OR Undefined = Undefined.  Every node in the search tree will correspond to a True-False assignment to some prefix of L, and Undefined assignment for the remaining variables.  Now we have to consider 3 cases.
+
+- If one of the boolean expressions evaluates as undefined, we extend the tree as follows.  Let x be the first undefined variable in L (there must be at least one).  The current node has two descendants, one where x is assigned to True and one where x is assigned to False.
+
+- If both expression are true or both are false, we proceed as in the previous case.
+
+- If one of the expression is false and one is true, we can stop the exploration, because we know that the two boolean expression are not equivalent.
+
+Now if the construction of the tree completes without interruption we can safely answer that the expressions are equivalent. It should be noted that we don't need to build explicitly the tree, it is induced by recursive calls to the backtracking function.
+
+In fact the main difficultly is to parse the expression and build a internal representation that permits an easy evaluation.
+For this purpose we encode the truth values as True=+1, False=-1 and Undefined=0.
+With the following class we can compose any boolean expression.
+
+{% highlight java %}
+class Expr {
+  Expr x,y;
+  char op;
+  Expr(Expr _x, char _op, Expr _y) {
+    x = _x;
+    op=_op;
+    y = _y;
+    }
+  int eval() {
+    switch (op) {
+    case '+': return Math.max(x.eval(), y.eval());   // OR
+    case '*': return Math.min(x.eval(), y.eval());   // AND
+    case '-': return -x.eval();                      // NOT
+    default:                                         // VAR
+      return Main.val[op];
+    }
+  }
+}
+{% endhighlight %}
+
+In order to parse the expression we follow a simple grammar, which is:
+
+     O = A | A + O
+     A = N | N A
+     N = V #*
+     V = var | ( O )
+
+The expression can be constructed from the string representation as follows. (There might quite well be a simpler method.)
+Note how every non-terminal of the grammar is represented by a dedicated method.
+
+{% highlight java %}
+  static String s; // chaine representant une expr.
+  static int    p; // position dans s
+
+  static char look() {return p<s.length() ? s.charAt(p) : '\0'; }
+  static void next() {p++;}
+
+  static Expr parse(String _s) {
+    s = _s;
+    p = 0;
+    return O();
+  }
+
+  static Expr O() {
+    Expr e = A();
+    while (look()=='+') {
+      next(); // consommer le '+'
+      Expr f = A();
+      e = new Expr(e, '+', f);
+    }
+    return e;
+  }
+
+  static Expr A() {
+    Expr f, e = N();
+    while ((f=N())!=null)
+      e = new Expr(e, '*', f);
+    return e;
+  }
+
+  static Expr N() {
+    Expr e = V();
+    int p=0;
+    if (e==null)
+      return null;
+    while (look()=='#') {
+      next();
+      p++;
+    }
+    if (p%2==1)
+      return new Expr(e, '-', null);
+    else
+      return e;
+  }
+
+  static Expr V() {
+    char c = look();
+    if (c=='(') {
+      next();        // (
+      Expr e = O();
+      next();        // )
+      return e;
+    }
+    if ('A'<=c && c<='Z') {
+      used[c] = true;
+      next();
+      return new Expr(null, c, null);
+    }
+    return null;
+  }
+{% endhighlight %}
+
+
+## [FTOUR - Free Tour](http://www.spoj.com/problems/FTOUR/)
+
+?
+
+## [A Digging Problem](https://code.google.com/codejam/contest/204113/dashboard#s=p1)
+
+[Explanation](https://code.google.com/codejam/contest/204113/dashboard#s=a&a=1)
+

@@ -1,0 +1,77 @@
+---
+layout: en
+title:  "Meeting july 2016"
+category: meetings
+---
+
+café Fluctuat Nec Mergitur, July 9th, 2016, 9:00
+
+
+![](http://fluctuat-cafe.paris/wp-content/uploads/2016/02/logo-fluctuat-nec-mergitur.png)
+
+## Advices
+
+To train for the programming contest
+- read many problems, to train quick translation into formal statement with all constraints
+- get to know your classical algorithms
+- know how to implement them, and also how to implement algorithmic easy problems
+
+## Hints
+
+### [Teams](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=2656)
+
+There are n ways to choose the team leader and then \\( 2^{n-1} \\) to choose the remaining team members among the n-1 other persons.
+So you have to output \\( n\\cdot 2^{n-1} \\). Use [fast exponentiation](https://en.wikipedia.org/wiki/Exponentiation_by_squaring) for that.
+
+### [Mirror Clock](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=35&category=439&page=show_problem&problem=2697)
+
+The main "difficulty" is to print integers with 2 digits. For this use a [format string](http://www.dotnetperls.com/format)
+
+{% highlight java %}
+print("%02d:%02d" % (hours, minutes))                            # Python
+printf("%02d:%02d\n", hours, minutes);                           // C
+System.out.println(String.format("%02d:%02d", hours, minutes));  // Java
+{% endhighlight %}
+
+### [Travel Company](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=2985)
+
+Basically you are given a directed graph, where every arc \\( (A_i,B_i) \\) has the weight \\(I_i-P*E_i\\). We need to detect a negative cycle.
+Use Bellman-Ford or even Floyd-Warshall.
+
+### [Fun with Strings](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=3196)
+
+Basically you have to solve a linear equation system with two variables and two equations.
+The coefficients are Fibonacci numbers.  In order to compute those numbers in short time use fast exponentiation on the matrix
+
+\\[
+    M = \\left( \\begin{array}{cc}1&1\\\\1&0\\end{array}\\right)
+\\]
+which gives \\( M(a,b) = (a+b,a) \\).
+
+### [Kisu Pari Na 2](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=25&page=show_problem&problem=3868)
+
+Funny text, it starts with unrelated topic, so you cannot see immediately that this is a graph problem.
+
+Given a forest and an integer K we want to know what is the length of the shortest path that can visit K distinct vertices.
+Clearly each tree forms an independent subproblem.  It is not very clear from the examples whether a path can traverse a same vertex several times.  But querying the [uDebug](https://www.udebug.com/UVa/12437) website tells us that such paths have to be considered as well.
+
+![]({{ site.images }}kisu-pari-na2.svg "In blue: the longest path in the tree, in red: a shortest path covering 12 vertices")
+
+If you think about, for a given tree the first vertex is covered for free, the next ones need a single or two edges.  Let P be the [longest path in the tree]({{ site.baseurl  }}{% post_url 2016-06-22-longest-path-in-a-tree %}).  Its length is called the *diameter* of the tree. Then if K≤len(P), the answer is just K-1. For every additional vertex two edges are necessary to cover it from P, hence the answer is min(K, len(P)) -1 + 2 max(0, K-len(P)) if K is not more than the number of vertices in the tree, otherwise the answer is ∞.
+
+To answer a query K, simply choose the tree with the largest diameter among all trees of size at least K.  This tree can be found using binary search and some preprocessing (sorting).
+
+### [Pizza cutting](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1020)
+
+The answer is n(n+1)/2. Simply think of an arrangement of lines such that no lines are parallel and no 3 lines intersect at the same point.  Let all intersection points be inside the pizza. When you remove a line among the n lines, then it will merge n+1 pairs of pizza pieces.  If you continue removing you reach the claimed bound.
+
+### [What is the Card?](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1587)
+
+Boring simulation. But go ahead and code it quickly.
+
+## References
+
+- [Adrià Garriga's excellent blog](http://agarri.ga/tags/swerc/)
+- [I solved a problem -- a few commented solutions](http://isolvedaproblem.blogspot.fr/)
+- [a collection of 373 problems with hints and solutions](http://jp1000.site50.net/acm/2.0/)
+

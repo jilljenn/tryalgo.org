@@ -1,0 +1,63 @@
+---
+layout: en
+title:  "Meeting 15 Octobre 2016"
+category: meetings
+author: Christoph Dürr
+---
+
+Jussieu, room 26-25/105, 14:00 until 17:00
+
+No need to bring a computer.  Only paper and pen, and if needed some fruits and cookies.  Coffee is provided.
+
+We will talk about
+
+- survey over several important shortest path problems
+- survey over several important subset sum problems
+
+We will solve
+
+- [SWERC 2009](http://pc.fdi.ucm.es/swerc/swerc09/problems.php) problems
+- some problems from SPOJ solved or posted by [Miguel Oliviera](http://www.spoj.com/users/mogers/)
+
+# For a shortest path algorithm follow this decision tree
+
+n = number of vertices, m = number of edges
+
+- all source-destination pairs?
+    - Use Floyd-Warshall in time $$O(n^3)$$ or for a sparse graph n times Dijkstra in time $$O(n^2 + m n \log n)$$.
+- single source?
+    - Is the graph a DAG ? Use topological sorting and then dynamic programming in time O(n+m).
+    - Is the graph unweighted ? Use BFS in time O(n+m). The computed distance can be used to mark visited vertices. In that case use -1 for unvisited vertices.
+    - Has the graph positive edge weights? Use Dijkstra in time O(n + m log n). Use standard priority queue.  Fibonacci queues permit O(m + n log n) but are too long to implement.
+    - Has the graph also negative edge weights? Use Bellman-Ford in time O(n*m)
+    - Has the graph weights in {0,1}? Use Dijkstra with a double ended queue as priority queue.
+    - Shortest path on a grid? Use BFS.  Special care for grid border.  Use matrix for marking.
+    - Shortest path on a grid with doors? A door is an edge of weight 1. See {0,1} weighted graphs.
+- minimize path with maximum edge weight rather than total edge weight? Use Union-Find, adding edges in increasing weight order until source and destination are connected.
+- minimize path with maximum node weight?  Sort vertices in increasing weight and then use Floyd-Warshall.
+- maximize path length over simple paths (no vertex is visited twice)?
+    - Is the graph a DAG? Proceed as for shortest path.
+    - Is the graph a tree? Use dynamic programming in time O(n+m).
+    - Otherwise, use dynamic programming on vertex sets in time $$O(n^2 \cdot 2^n)$$.
+- Has the graph node weights? Add weight on incoming arcs, and proceed as with arc weighted graphs. Or replace each vertex v by two connected vertices v+ and v-.
+- Find all edges that belong to a shortest path?  Compute distances d(s,.) from source s and distances d(.,t) to destination t.  The solution are exactly the edges (u,v) with d(s,u) + w(u,v) + d(v,t) = d(s,t).
+- Graph decomposable? Run Floyd-Warshall on components and topological sorting + dynamic programming on the top of the component graph.
+
+# Subset sum problems
+
+Given positive integers x1,..,xn for a small n.
+
+- Find a set whose sum is equal to a target?  Dynamic programming: A[k,p] = 1 of value p can be obtained by a subset of x1,..,xk. A[k,p] = A[k-1,p] or A[k-1, p - xk].
+- Find a set of sum equal a target sum where elements can be taken several times?  Dynamic programming: A[k,p] = 1 of value p can be obtained by a subset of x1,..,xk. A[k,p] = A[k-1,p] or A[k, p - xk].
+- Find a set that comes closest to target sum? Search in this table A[n,.].
+
+Given integers x1,..,xn for big n.
+
+- Find 2 numbers of sum equal to zero?  Hash the numbers. Then for each xi search for -xi. - time O(n).
+- Find 3 numbers of sum equal to zero?  Sort x. Then for each xi see if -x and x+xi intersect using linear time list merging. - time $$O(n^2)$$.
+- Find k numbers of sum equal to zero?  Sort x. Produce the list A of all sums over ceil(k/2) elements, together with the tuples creating the sums. Produce a similar list B for all combinations of floor(k/2) elements. Sort these lists. Look for intersection between the lists A and -B.  Some work has to be done in order to ignore matching values of intersection tuples. - time could be close to $$O(n^{\lceil k/2 \rceil})$$.
+
+
+# Links
+
+- [here](http://www.bubblecup.org/Booklets) you can find booklets of the Microsoft bubble cup competition. Each contains problems and solution analysis.
