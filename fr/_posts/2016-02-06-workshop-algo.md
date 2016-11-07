@@ -77,7 +77,7 @@ Il y a Jupyter qui travaille sur une [intégration à Google Drive](https://gith
 
 - **Docker + Jupyter** = http://tmpnb.org, notebook jetable, supprimé après 10 minutes d'activité.
 - **GitHub + Jupyter** = http://mybinder.org, ajoute un badge pour parcourir les notebooks d'un repo (durée : 2 heures).
-- **GDrive + Jupyter** = [https://github.com/jupyter/jupyter-drive](JupyterDrive) (pas encore en temps réel)
+- **GDrive + Jupyter** = [JupyterDrive](https://github.com/jupyter/jupyter-drive) (pas encore en temps réel)
 - **coup de cœur** : [Livebook](http://livebook.inkandswitch.com), modifier un Notebook comme un post de blog, directement dans le navigateur. À base de React.js.
 
 ### Coder de la musique dans le navigateur
