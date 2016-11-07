@@ -12,7 +12,6 @@ title: Tryalgo billets
     <p class="post-meta"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></p>
 
         {{ post.excerpt }}
-      </li>
   </div>
   {% endif %}
 {% endfor %}
