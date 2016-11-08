@@ -41,7 +41,7 @@ def bfs(graph, root, prune_level):
     best_v = None
     while toVisit:
         u = toVisit.popleft()           
-        if level[u] >= prune_level:
+        if level[u] > prune_level:
             break
         for v in graph[u]:
             if tree[u] == v:              # ignore the tree edge
