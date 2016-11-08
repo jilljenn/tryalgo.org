@@ -2,7 +2,7 @@
 layout: en
 title:  "Shortest cycle"
 category: cycles
-author: Christoph Dürr, Louis Abraham and Finn Völkel and students present at the Nov 5 meeting
+author: Christoph Dürr, Louis Abraham and Finn Völkel
 ---
 
 Find a shortest cycle in a given undirected graph. See [GIRTH](http://www.spoj.com/problems/GIRTH/) or [FTOUR](http://www.spoj.com/problems/FTOUR/).
