@@ -1,0 +1,13 @@
+---
+layout: en
+title:  "Meeting 12 Novembre 2016"
+category: meetings
+collection: en
+author: Christoph Dürr
+---
+
+Jussieu, room 26-25/105, from 9:00-12:00 only the ecole polytechnique teams, from 13:00-18:00 (+discussions) open to everyone.
+
+## Afternoon
+
+Concours blanc. Bring one laptop per team. We will work on [this](https://a2oj.com/contest?ID=28855) contest.

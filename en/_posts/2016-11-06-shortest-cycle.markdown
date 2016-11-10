@@ -51,7 +51,6 @@ def bfs(graph, root, prune_level):
                 toVisit.append(v)
                 tree[v] = u
             else:                         # vertex already seen - traversal edge
-                has_cycle = True
                 prune_level = level[v] - 1
                 cycle_len = level[u] + 1 + level[v]
                 if cycle_len < best_cycle:  # footnote (1)
