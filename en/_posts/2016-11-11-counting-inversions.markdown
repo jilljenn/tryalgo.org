@@ -1,6 +1,6 @@
 ---
 layout: en
-title:  "Couting inversions"
+title:  "Counting inversions"
 category: permutations
 ---
 
