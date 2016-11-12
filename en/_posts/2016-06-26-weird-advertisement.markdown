@@ -17,7 +17,7 @@ So we need a data-structure that permits to increment and decrement these counte
 
 A [segment tree]({% post_url 2016-06-25-segment-tree %}) is the appropriate data structure for this purpose. Every node corresponds to an interval over the x-axis and contains as an integer *shift*.  The value of the counter associated to an elementary interval I is the sum of the *shift* values over all nodes on the path from the root to the leaf corresponding to I. 
 
-![]({{ site.images }}weird-advertisement.png "The segment tree and the sweep-line."){:width="400"}
+![]({{ site.images }}weird-advertisement.svg "The segment tree and the sweep-line."){:width="600"}
 
 In addition to *shift* we associate to every node of the tree a table *covered*.  For a node p corresponding to x-axis interval I the entry *p.covered[i]* contains the total length of the elementary intervals that are covered by at least i rectangles among the intervals that incremented the *shift* value of some node in the interval.  In particular *p.covered[0]* is just the length of I. We describe the data structure as if *covered* were a vector of unbounded dimension, but in the implementation we would just truncate it after the index k, because we only case about the value *root.covered[k]*.  When the sweep-line moves down by distance $$\Delta$$ to the next event, then the total area of rectangles that are covered by at least k rectangles and that have been seen by the sweep-line is simply $$\Delta$$ times *root.covered[k]*
 
