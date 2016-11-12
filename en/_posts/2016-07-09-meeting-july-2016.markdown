@@ -57,7 +57,7 @@ Clearly each tree forms an independent subproblem.  It is not very clear from th
 
 ![]({{ site.images }}kisu-pari-na2.svg "In blue: the longest path in the tree, in red: a shortest path covering 12 vertices"){:width="400"}
 
-If you think about, for a given tree the first vertex is covered for free, the next ones need a single or two edges.  Let P be the [longest path in the tree]({% post_url 2016-06-22-longest-path-in-a-tree %}).  Its length is called the *diameter* of the tree. Then if K≤len(P), the answer is just K-1. For every additional vertex two edges are necessary to cover it from P, hence the answer is min(K, len(P)) -1 + 2 max(0, K-len(P)) if K is not more than the number of vertices in the tree, otherwise the answer is ∞.
+If you think about, for a given tree the first vertex is covered for free, the next ones need a single or two edges.  Let P be the [longest path in the tree]({% post_url en/2016-06-22-longest-path-in-a-tree %}).  Its length is called the *diameter* of the tree. Then if K≤len(P), the answer is just K-1. For every additional vertex two edges are necessary to cover it from P, hence the answer is min(K, len(P)) -1 + 2 max(0, K-len(P)) if K is not more than the number of vertices in the tree, otherwise the answer is ∞.
 
 To answer a query K, simply choose the tree with the largest diameter among all trees of size at least K.  This tree can be found using binary search and some preprocessing (sorting).
 

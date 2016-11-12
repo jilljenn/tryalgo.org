@@ -16,7 +16,7 @@ We will talk about solutions to problems A to I from this [booklet](http://www.b
 
 Given a graph G(V,E) with V={1,...,n} and edge weights, find the largest x such that the in the graph restricted to edges of weight at least x, the vertices 1 and n are connected.
 
-In time $$O(n \log n)$$. Start with empty graph.  Add edges in order of decreasing weight, until source 1 and target n become connected. 
+In time $$O(n \log n)$$. Start with empty graph.  Add edges in order of decreasing weight, until source 1 and target n become connected.
 
 ### vertex indexes
 
@@ -41,11 +41,11 @@ class Street implements Comparable<Street> {
         Arrays.sort(S);
 {% endhighlight %}
 
-See also [expiring edges]({% post_url 2016-06-22-edges-expiring %}).
+See also [expiring edges]({% post_url en/2016-06-22-edges-expiring %}).
 
 ## [Seminar room](http://acm.tju.edu.cn/toj/showp2506.html)
 
-See [Seminar room]({% post_url 2016-11-06-seminar-room %})
+See [Seminar room]({% post_url en/2016-11-06-seminar-room %})
 
 
 ## [Collecting Beepers](http://acm.tju.edu.cn/toj/showp2696.html)
@@ -53,14 +53,14 @@ See [Seminar room]({% post_url 2016-11-06-seminar-room %})
 Given a grid with 10 targets and an origin, find a minimum length tour from origin to origin that visits all targets.
 This a traveling salesman problem, which you can solve in time $$(n^2 2^n)$$.
 
-See [Traveling Salesman]({% post_url 2016-07-18-traveling-salesman %})
+See [Traveling Salesman]({% post_url en/2016-07-18-traveling-salesman %})
 
 ## [Weird Advertisement](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=25&page=show_problem&problem=3134)
 
 Given n=30000 rectilinear rectangles, the goal is to find the total area that is covered by at least 10 rectangles.
 This can be solved in time $$O(n\log n)$$ by the sweepline algorithm using a segment tree.
 
-See [Weird Advertisement]({% post_url 2016-06-26-weird-advertisement %})
+See [Weird Advertisement]({% post_url en/2016-06-26-weird-advertisement %})
 
 
 ## [Disk Tree](http://acm.tju.edu.cn/toj/showp2364.html)
@@ -412,7 +412,7 @@ Note how every non-terminal of the grammar is represented by a dedicated method.
 ## [FTOUR - Free Tour](http://www.spoj.com/problems/FTOUR/)
 
 
-See [shortest cycle]({% post_url 2016-11-06-shortest-cycle%}).
+See [shortest cycle]({% post_url en/2016-11-06-shortest-cycle%}).
 
 
 ## [A Digging Problem](https://code.google.com/codejam/contest/204113/dashboard#s=p1)
@@ -429,10 +429,10 @@ This is a nice variation of Kruskal's algorithm. Simple interrupt it, once there
 
 This a minimum bipartite vertex cover problem.  Simply let every maximal row segment containing only mud fields be a vertex.  Segments can have length as small as 1.  Do the same for column segments.  Whenever a row segment and column segment intersect, let there be an edge.  This is a bipartite graph.  The required solution is precisely a minimum vertex cover in that graph.
 
-See [minimum bipartite vertex cover]({% post_url 2016-08-05-konig %}).
+See [minimum bipartite vertex cover]({% post_url en/2016-08-05-konig %}).
 
 ## [Street directions](http://acm.tju.edu.cn/toj/showp1125.html)
 
 You are given a city map formed by vertical and horizontal streets. There are n intersection pairs forming a source and a target.  The goal is to orient the streets to make them one way streets such that every source-target pair can be connected using only a single turn.
 
-Think a bit, this can be modeled as a 2-SAT formula. See [Seminar room]({% post_url 2016-11-06-seminar-room %}).
+Think a bit, this can be modeled as a 2-SAT formula. See [Seminar room]({% post_url en/2016-11-06-seminar-room %}).

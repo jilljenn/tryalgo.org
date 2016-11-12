@@ -98,7 +98,7 @@ def rank_permutation(r, n):
 
 ## An $$O(n \log n)$$ algorithm
 
-In order to compute the rank of a permutation we use a table called *rank* which maps a value $$p_i$$ to a rank $$r_i$$ as explained above. Initially the table has the identity ranks, i.e. rank[x]=x.  Then after each processed value $$p_i$$ we need to decrement all ranks in *rank* between the indices $$p_i$$ and $$n-1$$.  We can use a [segment tree]({{ post_url 2016-06-25-segment-tree }}) for this purpose.  Then the decrement and access operations to the rank table can be done in logarithmic time.
+In order to compute the rank of a permutation we use a table called *rank* which maps a value $$p_i$$ to a rank $$r_i$$ as explained above. Initially the table has the identity ranks, i.e. rank[x]=x.  Then after each processed value $$p_i$$ we need to decrement all ranks in *rank* between the indices $$p_i$$ and $$n-1$$.  We can use a [segment tree]({% post_url en/2016-06-25-segment-tree %}) for this purpose.  Then the decrement and access operations to the rank table can be done in logarithmic time.
 
 ## Variant
 

@@ -11,11 +11,11 @@ See [Weird Advertisement](https://uva.onlinejudge.org/index.php?option=com_onlin
 ## Sweep line algorithm with a segment tree
 
 This problem can be solved in time \\( O(k n \log n) \\) using the sweep line algorithm.
-Sweep a vertical line from top to bottom over the rectangles. The left and right borders of all rectangles partition the x-axis into elementary intervals. We would like to maintain a counter for each of them, indicating how many rectangles currently contain the interval on the sweep-line. 
+Sweep a vertical line from top to bottom over the rectangles. The left and right borders of all rectangles partition the x-axis into elementary intervals. We would like to maintain a counter for each of them, indicating how many rectangles currently contain the interval on the sweep-line.
 
 So we need a data-structure that permits to increment and decrement these counters over an interval of indices, whenever the sweep-line touches the top or bottom border of a rectangle.  During these operations we just need to keep track of the total length of all elementary intervals that have their associated counter at least k.
 
-A [segment tree]({% post_url 2016-06-25-segment-tree %}) is the appropriate data structure for this purpose. Every node corresponds to an interval over the x-axis and contains as an integer *shift*.  The value of the counter associated to an elementary interval I is the sum of the *shift* values over all nodes on the path from the root to the leaf corresponding to I. 
+A [segment tree]({% post_url en/2016-06-25-segment-tree %}) is the appropriate data structure for this purpose. Every node corresponds to an interval over the x-axis and contains as an integer *shift*.  The value of the counter associated to an elementary interval I is the sum of the *shift* values over all nodes on the path from the root to the leaf corresponding to I.
 
 ![]({{ site.images }}weird-advertisement.svg "The segment tree and the sweep-line."){:width="600"}
 

@@ -6,7 +6,7 @@ front: true
 
 ## Workshops algo
 
-[Compte rendu du workshop du 6 février 2016]({% post_url 2016-02-06-workshop-algo %})
+[Compte rendu du workshop du 6 février 2016]({% post_url fr/2016-02-06-workshop-algo %})
 
 ENS Cachan  
 61 avenue du Président Wilson  
