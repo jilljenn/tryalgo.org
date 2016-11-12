@@ -16,7 +16,7 @@ These counters are index from 0 to say n-1, using the ordering along the y-axis.
 Now to keep track of the area of the union of rectangles over the part seen so far, we need to determine the total length over all intervals who's counter is positive.
 
 
-![]({{ site.images }}union-of-rectangles.svg "Counters are incremented when the left side of a rectangle is encountered.")
+![]({{ site.images }}union-of-rectangles.svg "Counters are incremented when the left side of a rectangle is encountered."){:width="400"}
 
 So we need a data structure that maintains an array of counters, each has an associated constant length.
 The data structure must implement the following operations.
