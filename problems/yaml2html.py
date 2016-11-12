@@ -31,7 +31,7 @@ for item in yaml.load(open("problems.yaml").read()):
 
 L.sort(key = lambda t: (t[1].lower(),t[2].lower()))
 
-print('<table class="sortable"><tr><th>chapitre</th><th>difficulté</th><th>problème</th><th>énoncé</th>')
+print('<table class="sortable"><tr><th>chapitre</th><th>difficulté</th><th>problème</th><th>énoncé</th></tr>')
 for order, chapter, name, links in L:
     hearts = "&star;" * order
     print("<tr><td>%s</td><td>%s</td><td>%s</td><td>" % (chapter, hearts, name))
