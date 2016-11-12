@@ -24,16 +24,16 @@ for item in yaml.load(open("problems.yaml").read()):
         order = item['order']
     else:
         order = 4
-    chapter = item['chapter']
+    chapter = item['chapter'].replace("_"," ")
     name = item['name']
     links = item['links']
     L.append((order, chapter, name, links))
 
 L.sort(key = lambda t: (t[1].lower(),t[2].lower()))
 
-print("<table class=sortable><tr><th>chapter</th><th>order</th><th>name</th><th>links</th>")
+print('<table class="sortable"><tr><th>chapitre</th><th>difficulté</th><th>problème</th><th>énoncé</th>')
 for order, chapter, name, links in L:
-    hearts = "<!%i>" % order + "&star;" * order
+    hearts = "&star;" * order
     print("<tr><td>%s</td><td>%s</td><td>%s</td><td>" % (chapter, hearts, name))
     for a in links:
         print('<a href="%s">[%s]</a> ' % (a, code(a)))

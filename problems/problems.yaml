@@ -362,7 +362,7 @@
   links:
     - http://acm.tju.edu.cn/toj/showp2118.html
 
-- chapter: matrix_chain_mult
+- chapter: dynamic_programming
   name:  Sweet and Sour Rock
   order: 2
   links:
@@ -652,65 +652,6 @@
 
 - chapter: dynamic_programming
   name:  Airbus vs. Boeing
-  solution: |
-            We want to remove a minimal number of edges to turn a forest in a
-            graph that can be drawn without crossings as a bipartite
-            graph. These graphs are called caterpillars. A caterpillar is a tree
-            where the longest path has only leafs attached to it.
-
-            our notation for caterpillars:
-
-            a-node : has two neighbors of degree>1
-            b-node : has degree>1 and one neighbor of degree>1
-            c-node : has degree=1
-
-            c--b--a--a--a--b--c
-              / \    |    /|\
-             c   c   c   c c c
-
-            DFS fixes an orientation of the trees.
-            Tv := subtree with root v
-            p[v] = parent node of v in the tree
-
-            in the following asum, bsum, csum refers to the sum over sons of v
-            and k to the number of sons
-            the type of the father is without taking into accounts Tv
-
-            D[v] = max where v has no father to connect to
-
-            C[v] = max where v has a degree 0 father
-
-            B[b] = max where v has a type B father
-
-            A[v] = max where v has a type A father,
-                   (or a B father, but v can only be a leaf of its father)
-
-            let CD0 be the maximum of c[u]-d[u] among all sons u of v
-            let BA0 be the same for b[u]-a[u]
-            let BA1 be the second maximum value of this difference
-
-            then
-
-            D[v] = 0 of v has no son, otherwise
-                 = max{ dsum,     -- do not connect to sons
-                        dsum+CD0, -- become leaf of a single son
-                        asum,     -- become a star
-                        asum+BA0, -- let one son to become B
-                        asum+BA1} -- let two sons become B
-
-            C[v] = max{ D[v],       -- don't connect to father, otherwise...
-                        1+asum,     -- become star
-                        1+asum+BA0, -- become B
-                        1+asum+BA0+BA1 }  -- become A with two B sons
-
-            B[v] = max{ D[v],       -- don't connect to father, otherwise...
-                        1+asum,     -- become B (father becomes A)
-                        1+asum+BA0 } -- become A with one B son
-
-            A[v] = max{ D[v],       -- don't connect to father
-                        1+dsum }    -- become leaf of its father
-
-            Complexity is O(N log N) but could be made linear.
   links:
     - https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=16&page=show_problem&problem=2962
 
@@ -1089,7 +1030,7 @@
     - http://acm.tju.edu.cn/toj/showp1330.html
 
 - chapter: backtracking
-  name: minimal length addition chain
+  name: Minimal length addition chain
   links:
     - http://codility.com/cert/start/rho2012/
 
