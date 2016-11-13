@@ -7,38 +7,40 @@ category: geometry
 You are given \\( n \\) rectilinear rectangles and a threshold \\( k \\), and want to find out the total area covered by at least \\( k \\) rectangles.
 See [Weird Advertisement](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=25&page=show_problem&problem=3134).
 
-## Sweep line algorithm with a segment tree
+## Sweep line algorithm
 
 This problem can be solved in time \\( O(k n \log n) \\) using a sweep line algorithm.
-Sweep a **horizontal line** from top to bottom over the rectangles. The left and right borders of all rectangles partition the \\( x \\)-axis into elementary intervals.
+Sweep a **horizontal line** from bottom to top over the rectangles. The left and right borders of all rectangles partition the \\( x \\)-axis into elementary intervals, which we call *segments* from now on.  For example in the figure below we have 8 segments that we will number from 0 to 7 from left to right.
 
-The idea is to maintain, at each instant, the total length of intervals covered by at least \\( i \\) rectangles, for each \\( i = 0, \ldots, k \\).
+Each segment has a fixed `length` and a variable `count`, that keeps track of the number of rectangles containing the segment on the sweep line.  As the line moves down we have to update the counters whenever the top or the bottom of a rectangle is reached.  The solution to the problem is then computed by cumulating in a variable `total_area` the product \\( \Delta \cdot c\\), where \\( \Delta \\) is the distance in \\( y \\) traveled by the sweep line between two updates and \\( c \\) is the total length over all segments where `count` is at least \\( k \\).
 
-So we need a data structure that allows incrementing and decrementing efficiently counters over a range of elementary intervals, whenever the sweep line crosses the top or bottom border of a rectangle.
+The algorithm consists of the sequential processing of a list of events.  An event corresponds either to the top or the bottom of a rectangle.  It is represented by  a tuple \\( (y, d, s_1, s_2 \\) where:
 
-A [segment tree]({% post_url en/2016-06-25-segment-tree %}) is the appropriate data structure for this purpose. Every node (resp. leaf) \\( p \\) corresponds to an (resp. elementary) interval over the \\( x \\)-axis and contains:
+-  \\( y \\) is the \\( y \\)-coordinate or the rectangle border;
+- \\(d \\) is +1 for the a top border and -1 for a bottom border;
+- \\( [s_1, s_2) \\) is a half-open interval over the segments, representing the projection of the rectangle on the \\(x \\)-axis.
 
-- an integer `shift`, that represents the number of rectangles related to this node (actually, those that start or end with this interval) ;
-- an array `covered`, where `p.covered[i]` contains the total length of intervals covered by at least \\( i \\) rectangles considered within the subtree rooted in \\( p \\). In particular, `p.covered[0]` is just the length of \\( I \\).
+The event list is processed in order of increasing \\(y\\) coordinates.  It is not important for the same \\(y\\)-coordinate in which order bottom and top borders are processed.
 
-The number of rectangles related to an elementary interval \\( I_0 \\) is the sum of the *shift* values over all nodes on the path from the leaf related to \\( I_0 \\) to the root.
+So on event \\( (y, d, s_1, s_2) \\) first `total_area` is updated as described above, where \\(\Delta\\) is the difference in \\(y\\) between the current and the last event.  Then the value \\(d\\) is added to the variable `count` over all segments in \\( [s_1, s_2) \\). 
 
-![]({{ site.images }}weird-advertisement.svg "The segment tree and the sweep-line."){:width="600"}
+On every event there might be as many as \\(\Omega(n)\\) counters to be incremented/decremented.  Hence we to be a bit clever.
 
-We describe the data structure as if `covered` were a vector of unbounded dimension, but in the implementation we would just truncate it after the index \\( k \\), because we only care about the value `root.covered[k]`.
+## Segment tree
 
-The data structure maintains the following relation between `covered` and `shift`.  If a node \\( p \\) has two descendants with respective `covered` vectors $$a_0,a_1,\ldots$$ and $$b_0,b_1,\ldots$$, and $$\ell=$$ `p.shift`, then the vector `p.covered` is equal to
+A [segment tree]({% post_url en/2016-06-25-segment-tree %}) is the appropriate data structure for this purpose. It is a binary tree build on the top of the segments.  Every node corresponds to a interval of segments, and contains an integer variable `val`. This variable represents a lazy update of the counters at the segments.  For example if `val` is 2 then this means an increment of 2 the counters among the corresponding segments. Hence when we want to add \\(d\\) to all segment counters in the interval \\( [s_1, s_2) \\), then we just have to add \\(d\\) to the variable `val` of a logarithmic number of nodes in the segment tree.
+
+Now we need to augment this data structure with additional information that permits is to determine the total length of the segments which have their counter at \\(k\\) at least.  To this purpopse we associate to every node `p` a vector `p.covered` indexed from 0 to \\(k\\).  The idea is that `p.covered[i]` contains the total length over segments with a counter being least \\( i \\).  Now if `root` is the root of this tree, then `root.covered[k]` is exactly the total length \\(c\\) that we need for the update of `total_area`.
+
+The vector `covered` of a node can be computed recursively as follows.  For a leaf node `p` `p.covered[0]` is just the length of the corresponding segment. In addition `p.covered[i] == p.covered[0]` for all \\(i\\) smaller equal `p.val` and `p.covered[i] == 0` for all larger indices.
+
+Now for a node `p` with two descendant nodes `left` and `right` if `p.val=0` then `p.covered` is clearly just the memberwise sum of `left.covered` and `right.covered`.  But in general if `c == left.covered[i] + right.covered[i]` represents the total length of segments with their counter being at least \\(i\\), then with respect to the node `p` we can say that \\(c\\) is the total length of segments with their counter being at least `i + p.val`.  
+Hence formally if $$\ell=$$ `p.val`, \\(a =\\)`left.covered` and \\(b =\\)`right.covered`, then the vector `p.covered` is equal to
 
 $$
 		\texttt{p.covered} = \underbrace{(a_0+b_0),\ldots,(a_0+b_0)}_{\ell+1},(a_1+b_1),(a_2+b_2),\ldots
 $$
 
-## Computing the solution
+The former equation is an invariant that the segment tree needs to maintain on the nodes all the way from `p` to the `root` whenever the value `p.val` is modified. Each of these updates cost only time \\(O(k)\\), which proves the claimed time complexity.
 
-Events are triplets `(x_1, x_2, y, type, p)` where:
 
-- \\( [x_1, x_2] \\) is an interval at \\( y \\)-coordinate \\( y \\);
-- ``type`` denotes whether the rectangles starts or ends;
-- ``p`` is a pointer to the corresponding node in the segment tree.
-
-When the sweep line moves down by distance $$\Delta$$ to the next event, then the total area of rectangles covered by at least \\( k \\) rectangles that have been crossed by the sweep line is simply $$\Delta$$ times `root.covered[k]`, which is added up to some total.
