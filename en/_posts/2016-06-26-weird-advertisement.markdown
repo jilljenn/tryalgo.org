@@ -14,7 +14,7 @@ Sweep a **horizontal line** from bottom to top over the rectangles. The left and
 
 Each segment has a fixed `length` and a variable `count`, that keeps track of the number of rectangles containing the segment on the sweep line.  As the line moves down we have to update the counters whenever the top or the bottom of a rectangle is reached.  The solution to the problem is then computed by cumulating in a variable `total_area` the product \\( \Delta \cdot c\\), where \\( \Delta \\) is the distance in \\( y \\) traveled by the sweep line between two updates and \\( c \\) is the total length over all segments where `count` is at least \\( k \\).
 
-The algorithm consists of the sequential processing of a list of events.  An event corresponds either to the top or the bottom of a rectangle.  It is represented by  a tuple \\( (y, d, s_1, s_2 \\) where:
+The algorithm consists of the sequential processing of a list of events.  An event corresponds either to the top or the bottom of a rectangle.  It is represented by  a tuple \\( (y, d, s_1, s_2 ) \\) where:
 
 -  \\( y \\) is the \\( y \\)-coordinate or the rectangle border;
 - \\(d \\) is +1 for the a top border and -1 for a bottom border;
@@ -24,7 +24,7 @@ The event list is processed in order of increasing \\(y\\) coordinates.  It is n
 
 So on event \\( (y, d, s_1, s_2) \\) first `total_area` is updated as described above, where \\(\Delta\\) is the difference in \\(y\\) between the current and the last event.  Then the value \\(d\\) is added to the variable `count` over all segments in \\( [s_1, s_2) \\). 
 
-On every event there might be as many as \\(\Omega(n)\\) counters to be incremented/decremented.  Hence we to be a bit clever.
+On every event there might be as many as \\(\Omega(n)\\) counters to be incremented/decremented.  Hence we need to be a bit clever.
 
 ## Segment tree
 
