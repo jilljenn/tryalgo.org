@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import yaml
+import sys
 
 # tuples:
 #   - nice
@@ -31,10 +32,18 @@ for item in yaml.load(open("problems.yaml").read()):
 
 L.sort(key = lambda t: (t[1].lower(),t[2].lower()))
 
-print('<table class="sortable"><tr><th>chapitre</th><th>difficulté</th><th>problème</th><th>énoncé</th></tr>')
+hide = len(sys.argv) > 1
+
+if hide:
+    print('<table class="sortable"><tr><th>difficulté</th><th>problème</th><th>énoncé</th></tr>')
+else:
+    print('<table class="sortable"><tr><th>chapitre</th><th>difficulté</th><th>problème</th><th>énoncé</th></tr>')
 for order, chapter, name, links in L:
     hearts = "&star;" * order
-    print("<tr><td>%s</td><td>%s</td><td>%s</td><td>" % (chapter, hearts, name))
+    if hide:
+        print("<tr><td>%s</td><td>%s</td><td>" % (hearts, name))
+    else:
+        print("<tr><td>%s</td><td>%s</td><td>%s</td><td>" % (chapter, hearts, name))
     for a in links:
         print('<a href="%s">[%s]</a> ' % (a, code(a)))
     print("</td></tr>")
