@@ -12,6 +12,8 @@ See [Weird Advertisement](https://uva.onlinejudge.org/index.php?option=com_onlin
 This problem can be solved in time \\( O(k n \log n) \\) using a sweep line algorithm.
 Sweep a **horizontal line** from bottom to top over the rectangles. The left and right borders of all rectangles partition the \\( x \\)-axis into elementary intervals, which we call *segments* from now on.  For example in the figure below we have 8 segments that we will number from 0 to 7 from left to right.
 
+![]({{ site.images }}weird-advertisement.svg "The segment tree and the sweep-line."){:width="600"}
+ 
 Each segment has a fixed `length` and a variable `count`, that keeps track of the number of rectangles containing the segment on the sweep line.  As the line moves down we have to update the counters whenever the top or the bottom of a rectangle is reached.  The solution to the problem is then computed by cumulating in a variable `total_area` the product \\( \Delta \cdot c\\), where \\( \Delta \\) is the distance in \\( y \\) traveled by the sweep line between two updates and \\( c \\) is the total length over all segments where `count` is at least \\( k \\).
 
 The algorithm consists of the sequential processing of a list of events.  An event corresponds either to the top or the bottom of a rectangle.  It is represented by  a tuple \\( (y, d, s_1, s_2 ) \\) where:
