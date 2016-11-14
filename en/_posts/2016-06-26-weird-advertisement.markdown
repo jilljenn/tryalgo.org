@@ -61,4 +61,6 @@ This variable is indirectly maintained in a segment tree. Every segment tree
 
 Whenever the sweep line hits the bottom or top border of a rectangle the `count` variables of the corresponding segments are respectively incremented or decremented.  This is done by updating the variable `var` of a logarithmic number of nodes in the tree, updating the vectors `covered` on the path from the root to these modified nodes, in order to preserve the above mentioned invariant.
 
+### Notes
 
+If you don't see the figure above, maybe the Adblocker module of your browser blocks images that are named *weird advertisement*. 
