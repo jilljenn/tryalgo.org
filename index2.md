@@ -9,11 +9,12 @@ title: Accueil
 
 {% highlight Python %}
 import sys
-from algorithms import *  # learn as much as as possible
+from algorithms import *       # import all you can eat
 
 try:
-  problem = read(sys.stdin)
-  solution = solve(problem)
+  problem = read(sys.stdin)    # needs organisation
+  algo = solve(problem)        # needs skills
+  solution = implement(algo)   # needs experience
   answer = submit(solution)
   assert answer == "Accept"
 except Submission_error:
