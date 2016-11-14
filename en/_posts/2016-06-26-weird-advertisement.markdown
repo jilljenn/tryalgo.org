@@ -2,7 +2,7 @@
 layout: en
 title:  "Weird Advertisement"
 category: geometry
-authors: Christoph Dürr and Jill-Jênn Vie
+author: Christoph Dürr and Jill-Jênn Vie
 ---
 
 You are given \\( n \\) rectilinear rectangles and a threshold \\( k \\), and want to find out the total area covered by at least \\( k \\) rectangles.
@@ -45,5 +45,20 @@ $$
 $$
 
 The former equation is an invariant that the segment tree needs to maintain on the nodes all the way from `p` to the `root` whenever the value `p.val` is modified. Each of these updates cost only time \\(O(k)\\), which proves the claimed time complexity.
+
+## Summary
+
+The left and right borders of the given rectangles partition the \\(x\\)-axis into segments. Every segment on the sweep line has
+
+* a fixed `length`;
+* a variable `count` containing the number of rectangles containing this segment for the current position of the sweep line.
+
+This variable is indirectly maintained in a segment tree. Every segment tree 
+
+* is responsible for an interval over consecutive segments;
+* a variable `val`, representing a lazy update of the `count` variables of the corresponding segments;
+* a vector `covered`, where `covered[i]` contains the total length among the segments which `count` variable is at least i taking into account the lazy updates of this subtree.
+
+Whenever the sweep line hits the bottom or top border of a rectangle the `count` variables of the corresponding segments are respectively incremented or decremented.  This is done by updating the variable `var` of a logarithmic number of nodes in the tree, updating the vectors `covered` on the path from the root to these modified nodes, in order to preserve the above mentioned invariant.
 
 
