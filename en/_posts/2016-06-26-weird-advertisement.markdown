@@ -22,19 +22,19 @@ The algorithm consists of the sequential processing of a list of events.  An eve
 - \\(d \\) is +1 for the a top border and -1 for a bottom border;
 - \\( [s_1, s_2) \\) is a half-open interval over the segments, representing the projection of the rectangle on the \\(x \\)-axis.
 
-The event list is processed in order of increasing \\(y\\) coordinates.  It is not important for the same \\(y\\)-coordinate in which order bottom and top borders are processed.
+The event list is processed in order of increasing \\(y\\)-coordinates. The order in which bottom and top borders at the same \\(y\\)-coordinate are processed does not matter.
 
-So on event \\( (y, d, s_1, s_2) \\) first `total_area` is updated as described above, where \\(\Delta\\) is the difference in \\(y\\) between the current and the last event.  Then the value \\(d\\) is added to the variable `count` over all segments in \\( [s_1, s_2) \\). 
+On event \\( (y, d, s_1, s_2) \\), first `total_area` is updated as described above, where \\(\Delta\\) is the difference in \\(y\\) between the current and the last event.  Then the value \\(d\\) is added to the variable `count` over all segments in \\( [s_1, s_2) \\). 
 
 On every event there might be as many as \\(\Omega(n)\\) counters to be incremented/decremented.  Hence we need to be a bit clever.
 
 ## Segment tree
 
-A [segment tree]({% post_url en/2016-06-25-segment-tree %}) is the appropriate data structure for this purpose. It is a binary tree build on the top of the segments.  Every node corresponds to a interval of segments, and contains an integer variable `val`. This variable represents a lazy update of the counters at the segments.  For example if `val` is 2 then this means an increment of 2 the counters among the corresponding segments. Hence when we want to add \\(d\\) to all segment counters in the interval \\( [s_1, s_2) \\), then we just have to add \\(d\\) to the variable `val` of a logarithmic number of nodes in the segment tree.
+A [segment tree]({% post_url en/2016-06-25-segment-tree %}) is the appropriate data structure for this purpose. It is a binary tree built on top of the segments.  Every node corresponds to a interval of segments, and contains an integer variable `val`. This variable represents a lazy update of the counters at the segments.  For example if `val` is 2 then this means an increment of 2 the counters among the corresponding segments. Hence when we want to add \\(d\\) to all segment counters in the interval \\( [s_1, s_2) \\), then we just have to add \\(d\\) to the variable `val` of a logarithmic number of nodes in the segment tree.
 
-Now we need to augment this data structure with additional information that permits is to determine the total length of the segments which have their counter at \\(k\\) at least.  To this purpopse we associate to every node `p` a vector `p.covered` indexed from 0 to \\(k\\).  The idea is that `p.covered[i]` contains the total length over segments with a counter being least \\( i \\).  Now if `root` is the root of this tree, then `root.covered[k]` is exactly the total length \\(c\\) that we need for the update of `total_area`.
+Now we need to augment this data structure with additional information that allows us to determine the total length of the segments which have their counter greater or equal than \\(k\\).  For this purpose, we associate to every node `p` a vector `p.covered` indexed from 0 to \\(k\\).  The idea is that `p.covered[i]` contains the total length over segments having a counter at least \\( i \\).  Now if `root` is the root of this tree, then `root.covered[k]` is exactly the total length \\(c\\) that we need for the update of `total_area`.
 
-The vector `covered` of a node can be computed recursively as follows.  For a leaf node `p` `p.covered[0]` is just the length of the corresponding segment. In addition `p.covered[i] == p.covered[0]` for all \\(i\\) smaller equal `p.val` and `p.covered[i] == 0` for all larger indices.
+The vector `covered` of a node can be computed recursively as follows.  For a leaf node `p` `p.covered[0]` is just the length of the corresponding segment. In addition `p.covered[i] == p.covered[0]` for all \\(i\\) smaller or equal than `p.val` and `p.covered[i] == 0` ultimately.
 
 Now for a node `p` with two descendant nodes `left` and `right` if `p.val=0` then `p.covered` is clearly just the memberwise sum of `left.covered` and `right.covered`.  But in general if `c == left.covered[i] + right.covered[i]` represents the total length of segments with their counter being at least \\(i\\), then with respect to the node `p` we can say that \\(c\\) is the total length of segments with their counter being at least `i + p.val`.  
 Hence formally if $$\ell=$$ `p.val`, \\(a =\\)`left.covered` and \\(b =\\)`right.covered`, then the vector `p.covered` is equal to
