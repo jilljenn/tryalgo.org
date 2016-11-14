@@ -2,6 +2,7 @@
 layout: en
 title:  "Weird Advertisement"
 category: geometry
+authors: Christoph Dürr and Jill-Jênn Vie
 ---
 
 You are given \\( n \\) rectilinear rectangles and a threshold \\( k \\), and want to find out the total area covered by at least \\( k \\) rectangles.
@@ -14,7 +15,7 @@ Sweep a **horizontal line** from bottom to top over the rectangles. The left and
 
 ![]({{ site.images }}weird-advertisement.svg "The segment tree and the sweep-line."){:width="600"}
  
-Each segment has a fixed `length` and a variable `count`, that keeps track of the number of rectangles containing the segment on the sweep line.  As the line moves down we have to update the counters whenever the top or the bottom of a rectangle is reached.  The solution to the problem is then computed by cumulating in a variable `total_area` the product \\( \Delta \cdot c\\), where \\( \Delta \\) is the distance in \\( y \\) traveled by the sweep line between two updates and \\( c \\) is the total length over all segments where `count` is at least \\( k \\).
+Each segment has a fixed `length` and a variable `count`, that keeps track of the number of rectangles containing the segment on the sweep line.  As the line moves up we have to update the counters whenever the top or the bottom of a rectangle is reached.  The solution to the problem is then computed by cumulating in a variable `total_area` the product \\( \Delta \cdot c\\), where \\( \Delta \\) is the distance in \\( y \\) traveled by the sweep line between two updates and \\( c \\) is the total length over all segments where `count` is at least \\( k \\).
 
 The algorithm consists of the sequential processing of a list of events.  An event corresponds either to the top or the bottom of a rectangle.  It is represented by  a tuple \\( (y, d, s_1, s_2 ) \\) where:
 
