@@ -63,7 +63,7 @@ Maintenant, si on met un cycle de longueur paire $$2n$$ au carré, on obtient de
 
 Ainsi, dans la permutation d'arrivée, on peut déjà éliminer tous les cycles de longueur impaire, puisqu'on peut leur connaître une racine. Maintenant par analyse - synthèse, si la permutation est un carré, comme on a éliminé tous les cycles impairs, c'est qu'il n'y avait que des cycles pairs dans la racine. Ainsi, une CNS est qu'il y a un nombre pair de cycles de longueur $$2k$$ pour tout $$k$$.
 
-Il suffit donc de partir de chaque élément et d'itérer la permutation en comptant le nombre d'itérations, et on incrémente le tableau compteur de nombres de cycles pour cette longueur. A la fin, on vérifie qu'il y a un nombre pair dans toutes les cases d'indice pair. On n'a même pas besoin d'optimiser la décomposition en cycles (avec un `bool[] visited`, le pire cas étant un seul cycle de longueur 26 et la complexité étant alors 26*26, et 26*26*500 = 338 000).
+Il suffit donc de partir de chaque élément et d'itérer la permutation en comptant le nombre d'itérations, et on incrémente le tableau compteur de nombres de cycles pour cette longueur. A la fin, on vérifie qu'il y a un nombre pair dans toutes les cases d'indice pair. On n'a même pas besoin d'optimiser la décomposition en cycles (avec un `bool[] visited`, le pire cas étant un seul cycle de longueur 26 et la complexité étant alors 26\*26, et 26\*26\*500 = 338 000).
 
 ### Notes
 
