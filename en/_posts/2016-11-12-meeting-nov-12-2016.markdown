@@ -67,7 +67,7 @@ Il suffit donc de partir de chaque élément et d'itérer la permutation en comp
 
 * Une approche possible donc. Initialement C est une liste vide qui contiendra les longueurs de cycles pairs.  Et `visited` un tableau boolean encore tout faux. Puis:
 
-  1. Pour toute lettre pas encore visité. Marquer visite et passer à la lettre suivante comme spécifiée par la permutation. Jusqu'à ce qu'on rencontre un sommet déjà visité. Alors ajouter à C la longueur du cycle.
+  1. Pour toute lettre pas encore visité. Marquer visite et passer à la lettre suivante comme spécifiée par la permutation. Jusqu'à ce qu'on rencontre un sommet déjà visité. Alors ajouter à C la longueur du cycle dans le cas où elle est paire.
   
   2. Trier C, et vérifier que la longueur de C est pair et que `C[2*i]==C[2*i+1]` pour tout i.
   
