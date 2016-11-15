@@ -13,7 +13,9 @@ Jussieu, room 26-25/105, from 9:00-12:00 only the ecole polytechnique teams, fro
 Concours blanc. Bring one laptop per team. We will work on [this](https://a2oj.com/contest?ID=28855) contest.
 
 
-## P1 - Recurrences
+	[!] les notes ci-dessous sont en cours de rédaction.
+	
+## [P1 - Recurrences](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1811)
 
 Il s'agit d'un simple problème d'exponentiation rapide.
 On pose $$U(k) = [ [f(k)], [f(k+1)],\ldots , [f(k+d-1)] ]$$, où
@@ -51,7 +53,7 @@ Ainsi, avec $$U(1)$$ en entrée, il suffit de calculer $$A^{n-1} U(1) = U(n)$$ e
 
 Attention, tous les calculs se font modulo m.
 
-## P2 - Leonardo's Notebook
+## [P2 - Leonardo's Notebook](https://icpcarchive.ecs.baylor.edu/index.php?option=onlinejudge&page=show_problem&problem=1642)
 
 Il s'agit d'un problème de permutations. Toute une page de texte pour nous dire de décider si une permutation est un carré, pas très écologique tout ça.
 Pour cela, on considère la décomposition en cycles disjoints d'une permutation. On rappelle que la composition de deux cycles disjoints est commutative (ils agissent indépendamment).
@@ -89,7 +91,7 @@ Alors une partie du code pourrait avoir la forme suivante.
 {% endhighlight %}
 
 
-## P3 - Boxes of Chocolates Again
+## [P3 - Boxes of Chocolates Again](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1531)
 
 Il s'agit d'un problème de rendu de monnaie : combien de manières y a-t-il de décomposer N en plus petits nombres sans compter l'ordre ?
 
@@ -110,7 +112,7 @@ Ainsi, l'algo tourne en $$O(n^2\cdot\log(n))$$, et pour $$n = 5000$$, ça passe 
 
 * La difficulté principale est de faire de l'arithmétique sur des entiers à précision arbitraire. Les utilisateurs de Python et de Java sont avantagés. Mais depuis quelques années il n'y a plus de problème dans SWERC nécessitant ces *BigIntegers*. C'est officiel.
 
-## P4 - Chandelier
+## [P4 - Chandelier](https://icpcarchive.ecs.baylor.edu/index.php?option=onlinejudge&page=show_problem&problem=1216)
 
 Cet exercice est plus difficile que les autres.
 On va modéliser les chandeliers avec des listes doublement chaînées (`deque`).
@@ -124,7 +126,7 @@ Tout ce qu'on veut faire, c'est maintenir le max de cette liste en passant d'une
 
 On a donc résolu le sous-problème en temps linéaire. Ainsi, en notant $$T$$ le temps d'exécution de l'algorithme, $$T(\langle s_1, s_2, \ldots, s_k \rangle) = O(k) + \sum T(s_i)$$. Puisque le codage d'un arbre est linéaire en sa taille, i.e. $$\textrm{len}(\langle s_1, s_2, \ldots, s_k \rangle) = \sum \textrm{len}(s_i)$$, on a un algorithme linéaire.
 
-## P5 - Ping pong
+## [P5 - Ping pong](https://icpcarchive.ecs.baylor.edu/index.php?option=onlinejudge&page=show_problem&problem=2330)
 
 Le problème est difficile à lire, il faut comprendre que si $$i$$ et $$j$$ sont arbitrés par $$k$$, alors on a à la fois ($$i < k < j$$ ou $$j < k < i$$) et ($$\textrm{rank}[i] < \textrm{rank}[k] < \textrm{rank}[j]$$ ou $$\textrm{rank}[j] < \textrm{rank}[k] < \textrm{rank}[i]$$) (les inégalités sont strictes car l'id est unique).
 C'est vraiment tordu de dire "The contestants have to walk to the referee’s house, and because they are lazy, they want to make their total walking distance no more than the distance between their houses." pour ($$i < k < j$$ ou $$j < k < i$$).
@@ -186,11 +188,11 @@ Remarque : Même si max\_rank n'était pas borné, on aurait quand même du $$O(
 
 * voir [ici]({% post_url en/2016-11-11-counting-inversions %}) une approche basée sur le tri par fusion
 
-## P6 - Insurrection
+## [P6 - Insurrection](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2087)
 
-à faire
+Chercher du côté de [Mininium cost flow](https://www.topcoder.com/community/data-science/data-science-tutorials/minimum-cost-flow-part-one-key-concepts/)
 
-## P7 - Ancient vending machine
+## [P7 - Ancient vending machine](https://icpcarchive.ecs.baylor.edu/index.php?option=onlinejudge&page=show_problem&problem=2757)
 
 Le problème le plus dégueulasse (comme dit JJ, "si M = N = 20, c'est forcément dégueulasse").
 Il faut déterminer deux grandeurs puis les comparer : A et B
@@ -222,18 +224,17 @@ Ainsi, il faut tester pour chaque couple de sommets la longueur du plus long seg
 Enfin, il suffit de renvoyer 'legal' si A <= B et 'illegal' sinon.
 
 
-## P8 - Treblecross
+## [P8 - Treblecross](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1502)
 
-J'ai cherché un peu vite fait. Je ne trouve pas grand chose. On peut déjà se ramener au cas où on a des 'X' solitaires espacés d'au moins 5 '.', puisqu'en dessous, personne ne voudra jouer puisque c'est une position perdante.
-Ensuite, mis à part les cas aux bords, on se retrouve à étudier les configurations locales de la forme 'X' + k * '.' + 'X', le jeu total étant le produit de ces configurations locales. Je ne suis pas allé plus loin.
+Chercher du côté de [Sprague-Grundy](https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_Sprague-Grundy).
 
-## P9 - Calculator Conundrum
+## [P9 - Calculator Conundrum](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2544)
 
 On n'a vraiment aucun outil pour évaluer la complexité, il s'agit d'un brute force.
 Le piège est qu'on peut boucler sans repasser par le point de départ, il faut donc détecter les cycles. Pour cela le plus simple est la technique [Baby step giant step](https://en.wikipedia.org/wiki/Baby-step_giant-step).
 Attention, quand baby\_step = giant\_step, on n'a parcouru qu'un élément sur deux de la boucle avec giant\_step. Le plus simple est de maintenir le max avec baby_step et de parcourir toute la boucle une fois qu'on l'a trouvée.
 
-## P10 - Animal Run
+## [P10 - Animal Run](https://icpcarchive.ecs.baylor.edu/index.php?option=onlinejudge&page=show_problem&problem=1662)
 
 On pourrait résoudre ce problème avec un min-cut, mais il est beaucoup plus simple d'en faire un plus court chemin puisque le graphe est planaire. Une coupe est équivalente à relier les côtés NE aux côtés SW.
 On peut construire le graphe de la manière suivante : un noeud par zone de la grille, sauf l'extérieur où on a deux noeuds, NE et SW. On relie deux noeuds par une arête de même poids que la ligne qui les sépare sur le plan du zoo.
