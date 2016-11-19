@@ -3,9 +3,11 @@ layout: en
 title:  "Spiral"
 category: geometry
 author: Christoph Dürr
+problem_urls: ["http://www.spoj.com/problems/SPTTRN2/", "http://www.spoj.com/problems/SPTTRN4/"]
+problem_names: ["Straight Line Spiral Pattern (Act 2)", "Straight Line Spiral Pattern (Act 4)"]
 ---
 
-Draw a spiral in an s by s grid.  Or better, given the coordinates of a grid cell, determine in constant time its color. See [Straight Line Spiral Pattern (Act 2)](http://www.spoj.com/problems/SPTTRN2/) and [Straight Line Spiral Pattern (Act 4)](http://www.spoj.com/problems/SPTTRN4/).
+Draw a spiral in an s by s grid.  Or better, given the coordinates of a grid cell, determine in constant time its color.
 
 ## Compare with nested squares
 

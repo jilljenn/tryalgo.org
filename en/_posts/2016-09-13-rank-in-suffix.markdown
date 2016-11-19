@@ -3,9 +3,11 @@ layout: en
 title:  "Rank in suffix"
 category: segment tree
 excerpt_separator: <!--more-->
+problem_url: "https://www.hackerearth.com/code-monk-sorting/algorithm/puchi-and-luggage/"
+problem_name: "puchi and luggage"
 ---
 
-Given an integer table t1,...,tn compute for every position 1≤i≤n the rank of t[i] among the suffix t[i,...,n] that is the number of j≥i such that t[j]≤t[i].  See [puchi and luggage](https://www.hackerearth.com/code-monk-sorting/algorithm/puchi-and-luggage/).
+Given an integer table t1,...,tn compute for every position 1≤i≤n the rank of t[i] among the suffix t[i,...,n] that is the number of j≥i such that t[j]≤t[i].
 
 
 ![]({{ site.images }}rank-in-suffix.svg "The rank of element 7 is 4, since 4 elements after 7 are smaller than 7."){:width="400"}

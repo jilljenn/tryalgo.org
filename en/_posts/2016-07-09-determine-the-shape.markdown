@@ -2,10 +2,11 @@
 layout: en
 title:  "Determine the shape"
 category: geometry
+problem_url: "https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=2900"
+problem_name: "Determine the shape"
 ---
 
 Given 4 points, place them in clockwise order and determine the shape formed by these points: square, rectangle, rhombus, parallelogram, trapezium or ordinary quadrilateral.
-See [Determine the shape](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=2900).
 
 
 ## Elementary tests

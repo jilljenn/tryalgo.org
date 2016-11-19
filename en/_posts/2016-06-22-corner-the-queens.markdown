@@ -2,9 +2,11 @@
 layout: en
 title:  "Corner the queens"
 category: sequences
+problem_url: "https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=2835"
+problem_name: "Corner the Queen"
 ---
 
-Two players move in turns a queen on a chessboard, either left, down or diagonally left-down. The first player to reach the lower left corner wins.  For what initial positions is the starting player sure to win?  See [Corner the Queen](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=2835).
+Two players move in turns a queen on a chessboard, either left, down or diagonally left-down. The first player to reach the lower left corner wins.  For what initial positions is the starting player sure to win?
 
 To make the problem more interesting, you are given a grid dimension rows*cols and have to find out the proportion of initial winning positions.
 

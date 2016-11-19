@@ -2,10 +2,16 @@
 layout: en
 title:  "Divide the land"
 category: geometry
+problem_url: "http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2695"
+problem_name: "Divide the land"
+excerpt_separator: <!--more-->
 ---
 
-Explanations for the problem [Divide the land](http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2695).  Please read the problem first.
+Divide a trapezoid into two halfs of same area.
 
+![trapezoid]({{ site.images }}divide-the-land.png){: width="300px"}
+
+<!--more-->
 
 ### Input
 
@@ -17,7 +23,6 @@ But only the edge lengths AB, BC, CD, DA are given.
 
 Points E,F such that EF is parallel to AB (and hence CD), and divides the trapezoid into two halfs of same area.
 
-![trapezoid]({{ site.images }}divide-the-land.png){: width="300px"}
 
 ### Solution
 

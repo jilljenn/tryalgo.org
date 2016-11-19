@@ -2,9 +2,11 @@
 layout: en
 title:  "Disc obstacles"
 category: geometry
+problem_url: "https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=3072"
+problem_name: "Save the Princess"
 ---
 
-Find a shortest path in the plane between two points avoiding given obstacles with disc shapes.  See [Save the Princess](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=3072).
+Find a shortest path in the plane between two points avoiding given obstacles with disc shapes.
 
 ### Build a weighted graph
 

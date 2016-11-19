@@ -2,9 +2,11 @@
 layout: en
 title:  "Joining with friends"
 category: geometry
+problem_url: "http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2769"
+problem_name: "Joining with friends"
 ---
 
-Explanations for the problem [Joining with friends](http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2769).  Please read the problem first.
+Some easy geometry problem.
 
 ### Explanation
 

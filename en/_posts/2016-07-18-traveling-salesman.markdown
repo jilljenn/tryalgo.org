@@ -2,11 +2,11 @@
 layout: en
 title:  "Traveling salesman"
 category: graphs
+problem_url: "http://acm.tju.edu.cn/toj/showp2696.html"
+problem_name: "Collecting beepers"
 ---
 
 Given a complete oriented arc-weighted graph find a cycle that visits every vertex exactly once (a *Hamiltonian* cycle) and that has minimal length.
-See [Collecting beepers](http://acm.tju.edu.cn/toj/showp2696.html).
-
 
 ## A dynamic programming algorithm in time \\( O(n^2 2^n ) \\)
 

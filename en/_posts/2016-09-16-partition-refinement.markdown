@@ -5,7 +5,7 @@ category: data structures
 ---
 
 Given a partition of {0,1,...,n-1} into disjoint sets $$C_1,\ldots,C_k$$ and a set $$S$$ modify the partition such that each set splits according to membership in S, i.e. produce the partition $$C_1\cap S, C_1\setminus S, \ldots, C_k\cap S, C_k\setminus S$$.  Find a data-structure representing partitions that allow this operation in time $$O(|S|)$$ while preprocessing and space is $$O(n)$$.
-  See [partition refinement](https://en.wikipedia.org/wiki/Partition_refinement).
+  See also [wikipedia:partition refinement](https://en.wikipedia.org/wiki/Partition_refinement).
 
 
 ![]({{ site.images }}partition-refinement-definition.svg "A partition of the integers 0,..,7 with some refinements.  Colors are only for illustration."){:width="500"}

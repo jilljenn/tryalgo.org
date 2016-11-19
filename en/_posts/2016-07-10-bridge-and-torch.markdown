@@ -3,9 +3,11 @@ layout: en
 title:  "The bridge and torch puzzle"
 category: graphs
 language: en
+problem_url: "https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=978"
+problem_name: "Bridge"
 ---
 
-There are n persons that all have to cross a bridge, using a single torch.  Person i takes \\( t_i \\) minutes to cross the bridge.  At most 2 persons can walk on the bridge at the same time and need to carry the torch with them.  If persons i and j cross together their crossing time is \\( \\max\{ t_i, t_j \} \\).  Minimize the total crossing time. See [Bridge](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=978).
+There are n persons that all have to cross a bridge, using a single torch.  Person i takes \\( t_i \\) minutes to cross the bridge.  At most 2 persons can walk on the bridge at the same time and need to carry the torch with them.  If persons i and j cross together their crossing time is \\( \\max\{ t_i, t_j \} \\).  Minimize the total crossing time.
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7yDmGnA8Hw0" frameborder="0" allowfullscreen></iframe>

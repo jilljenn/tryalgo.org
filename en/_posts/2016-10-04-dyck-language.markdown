@@ -3,9 +3,11 @@ layout: en
 title:  "Dyck language"
 category: strings
 author: Christoph Dürr
+problem_url: "http://www.spoj.com/problems/EMTY2/en/"
+problem_name: "Can you make it empty 2"
 ---
 
-Given a 01-string we have to decide in linear time if it can be obtained by starting with the empty word and repeatedly inserting the word 10 in an arbitrary position.  See [Can you make it empty 2](http://www.spoj.com/problems/EMTY2/en/).
+Given a 01-string we have to decide in linear time if it can be obtained by starting with the empty word and repeatedly inserting the word 10 in an arbitrary position.
 
 ## The Dyck language
 

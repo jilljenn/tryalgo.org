@@ -2,9 +2,11 @@
 layout: en
 title:  "Knight in a War Grid"
 category: graphs
+problem_url: "https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=3057"
+problem_name: "Knight in a War Grid"
 ---
 
-Explanations for the problem [Knight in a War Grid](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=3057). Please read the problem first.
+Accessibility in a grid consisting of cells with heights and water flooding.
 
 ## A graph model
 

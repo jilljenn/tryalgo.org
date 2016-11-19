@@ -2,9 +2,11 @@
 layout: en
 title:  "Seminar room"
 category: 2-sat
+problem_url: "http://acm.tju.edu.cn/toj/showp2506.html"
+problem_name: "Seminar Room"
 ---
 
-You are given n pairs of time intervals. From each pair select exactly one such that the selected time intervals do not intersect. See [Seminar Room](http://acm.tju.edu.cn/toj/showp2506.html).
+You are given n pairs of time intervals. From each pair select exactly one such that the selected time intervals do not intersect.
 
 ## Reduction to 2-SAT
 

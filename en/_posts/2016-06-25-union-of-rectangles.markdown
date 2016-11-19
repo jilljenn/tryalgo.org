@@ -2,10 +2,11 @@
 layout: en
 title:  "Union of rectangles"
 category: geometry
+problem_url: "http://acm.tju.edu.cn/toj/showp1049.html"
+problem_name: "Rectangles"
 ---
 
 You are given n rectilinear rectangles and want to find out the total area covered by their union.
-See [Rectangles](http://acm.tju.edu.cn/toj/showp1049.html).
 
 ## Sweep line algorithm with a segment tree
 

@@ -3,9 +3,11 @@ layout: en
 title:  "Translate between Java and C++  style identifiers"
 category: strings
 author: Christoph Dürr
+problem_url: "http://www.spoj.com/problems/JAVAC/en/"
+problem_name: "Java vs C++"
 ---
 
-Java style  identifiers consist of lower and upper case letters, starting with lower cases. C++ style identifiers consist of lower case letters and the underscore sign.  Given a word you should detect its style and translate it into the other style, or produce the string "Error!" if it not in one of the styles. See [Java vs C ++](http://www.spoj.com/problems/JAVAC/en/).
+Java style  identifiers consist of lower and upper case letters, starting with lower cases. C++ style identifiers consist of lower case letters and the underscore sign.  Given a word you should detect its style and translate it into the other style, or produce the string "Error!" if it not in one of the styles.
 
 ## A linear time algorithm
 

@@ -3,10 +3,12 @@ layout: en
 title:  "Weird Advertisement"
 category: geometry
 author: Christoph Dürr and Jill-Jênn Vie
+problem_url: "https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=25&page=show_problem&problem=3134"
+problem_name: "Weird Advertisement"
 ---
 
 You are given \\( n \\) rectilinear rectangles and a threshold \\( k \\), and want to find out the total area covered by at least \\( k \\) rectangles.
-See [Weird Advertisement](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=25&page=show_problem&problem=3134).
+
 
 ## Sweep line algorithm
 
@@ -14,7 +16,7 @@ This problem can be solved in time \\( O(k n \log n) \\) using a sweep line algo
 Sweep a **horizontal line** from bottom to top over the rectangles. The left and right borders of all rectangles partition the \\( x \\)-axis into elementary intervals, which we call *segments* from now on.  For example in the figure below we have 8 segments that we will number from 0 to 7 from left to right.
 
 ![]({{ site.images }}weird-advertisement.svg "The segment tree and the sweep-line."){:width="600"}
- 
+
 Each segment has a fixed `length` and a variable `count`, that keeps track of the number of rectangles containing the segment on the sweep line.  As the line moves up we have to update the counters whenever the top or the bottom of a rectangle is reached.  The solution to the problem is then computed by cumulating in a variable `total_area` the product \\( \Delta \cdot c\\), where \\( \Delta \\) is the distance in \\( y \\) traveled by the sweep line between two updates and \\( c \\) is the total length over all segments where `count` is at least \\( k \\).
 
 The algorithm consists of the sequential processing of a list of events.  An event corresponds either to the top or the bottom of a rectangle.  It is represented by  a tuple \\( (y, d, s_1, s_2 ) \\) where:
@@ -25,7 +27,7 @@ The algorithm consists of the sequential processing of a list of events.  An eve
 
 The event list is processed in order of increasing \\(y\\)-coordinates. The order in which bottom and top borders at the same \\(y\\)-coordinate are processed does not matter.
 
-On event \\( (y, d, s_1, s_2) \\), first `total_area` is updated as described above, where \\(\Delta\\) is the difference in \\(y\\) between the current and the last event.  Then the value \\(d\\) is added to the variable `count` over all segments in \\( [s_1, s_2) \\). 
+On event \\( (y, d, s_1, s_2) \\), first `total_area` is updated as described above, where \\(\Delta\\) is the difference in \\(y\\) between the current and the last event.  Then the value \\(d\\) is added to the variable `count` over all segments in \\( [s_1, s_2) \\).
 
 On every event there might be as many as \\(\Omega(n)\\) counters to be incremented/decremented.  Hence we need to be a bit clever.
 
@@ -37,7 +39,7 @@ Now we need to augment this data structure with additional information that allo
 
 The vector `covered` of a node can be computed recursively as follows.  For a leaf node `p` `p.covered[0]` is just the length of the corresponding segment. In addition `p.covered[i] == p.covered[0]` for all \\(i\\) smaller or equal than `p.val` and `p.covered[i] == 0` ultimately.
 
-Now for a node `p` with two descendant nodes `left` and `right` if `p.val=0` then `p.covered` is clearly just the memberwise sum of `left.covered` and `right.covered`.  But in general if `c == left.covered[i] + right.covered[i]` represents the total length of segments with their counter being at least \\(i\\), then with respect to the node `p` we can say that \\(c\\) is the total length of segments with their counter being at least `i + p.val`.  
+Now for a node `p` with two descendant nodes `left` and `right` if `p.val=0` then `p.covered` is clearly just the memberwise sum of `left.covered` and `right.covered`.  But in general if `c == left.covered[i] + right.covered[i]` represents the total length of segments with their counter being at least \\(i\\), then with respect to the node `p` we can say that \\(c\\) is the total length of segments with their counter being at least `i + p.val`.
 Hence formally if $$\ell=$$ `p.val`, \\(a =\\)`left.covered` and \\(b =\\)`right.covered`, then the vector `p.covered` is equal to
 
 $$
@@ -53,7 +55,7 @@ The left and right borders of the given rectangles partition the \\(x\\)-axis in
 * a fixed `length`;
 * a variable `count` containing the number of rectangles containing this segment for the current position of the sweep line.
 
-This variable is indirectly maintained in a segment tree. Every segment tree 
+This variable is indirectly maintained in a segment tree. Every segment tree
 
 * is responsible for an interval over consecutive segments;
 * a variable `val`, representing a lazy update of the `count` variables of the corresponding segments;
@@ -63,4 +65,4 @@ Whenever the sweep line hits the bottom or top border of a rectangle the `count`
 
 ### Notes
 
-If you don't see the figure above, maybe the Adblocker module of your browser blocks images that are named *weird advertisement*. 
+If you don't see the figure above, maybe the Adblocker module of your browser blocks images that are named *weird advertisement*.

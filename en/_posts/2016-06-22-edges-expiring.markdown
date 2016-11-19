@@ -2,12 +2,16 @@
 layout: en
 title:  "Edges expiring"
 category: union-find
+problem_url: "https://codility.com/programmers/challenges/psi2012/"
+problem_name: "codility:psi2012"
+excerpt_separator: <!--more-->
 ---
 
-Given a graph with expiring dates for every edge, when will the graph be disconnected? See [codility:psi2012](https://codility.com/programmers/challenges/psi2012/)
+Given a graph with expiring dates for every edge, when will the graph be disconnected?
 
 ![]({{ site.images }}edges-expiring.svg){:width="400"}
 
+<!--more-->
 
 ### Key observation
 

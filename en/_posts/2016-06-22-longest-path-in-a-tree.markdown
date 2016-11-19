@@ -2,9 +2,11 @@
 layout: en
 title:  "Longest path in a tree"
 category: trees
+problem_url: "http://www.spoj.com/problems/PT07Z/"
+problem_name: "spoj:PT07Z"
 ---
 
-Find a longest path in a tree. See [spoj:PT07Z](http://www.spoj.com/problems/PT07Z/).
+Find a longest path in a tree.
 
 ### Dynamic programming
 

@@ -3,9 +3,11 @@ layout: en
 title:  "Dynamic binary equation system"
 category: union-find
 author: Christoph Dürr
+problem_url: "http://www.spoj.com/problems/CHAIN/en/"
+problem_name: "Strange Food Chain"
 ---
 
-You have to maintain a consistent system of equations of the form $$x_i - x_j = d$$.  Write an operation *add(i,j,d)* that decides if the equation $$x_i - x_j = d$$ is consistent with the system and if yes adds it to the system.  Complexity should be almost constant time per request. See [Strange Food Chain](http://www.spoj.com/problems/CHAIN/en/).
+You have to maintain a consistent system of equations of the form $$x_i - x_j = d$$.  Write an operation *add(i,j,d)* that decides if the equation $$x_i - x_j = d$$ is consistent with the system and if yes adds it to the system.  Complexity should be almost constant time per request.
 
 ## Augmented union-find
 

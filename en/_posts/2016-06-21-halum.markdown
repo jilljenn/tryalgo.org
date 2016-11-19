@@ -3,9 +3,11 @@ layout: en
 title:  "Halum"
 date:   2016-06-21 10:18:46 +0200
 category: cycles
+problem_url: "https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=25&page=show_problem&problem=2473"
+problem_name: "Halum"
 ---
 
-Explanations for the problem [Halum](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=25&page=show_problem&problem=2473).  Please read the problem first.
+Apply some operations on arcs to make vertex weights non-negative.
 
 
 ## This is a negative cycle detection problem

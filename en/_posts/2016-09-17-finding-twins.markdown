@@ -4,10 +4,12 @@ title:  "Finding Twins"
 category: data structures
 author: Christoph Dürr and Michel Habib
 excerpt_separator: <!--more-->
+problem_url: "http://www.spoj.com/problems/TRUETWIN/"
+problem_name: "Finding true twins"
 ---
 
 Two vertices u,v are *twins* if they have the same neighborhood. They are *false* if uv is not an edge and *true* twins if uv is an edge.
-Find a false twin pair in time $$O(|V|+|E|)$$. See [Finding true twins](http://www.spoj.com/problems/TRUETWIN/).
+Find a false twin pair in time $$O(|V|+|E|)$$.
 
 
 ![]({{ site.images }}twins-definition.svg "The vertices c,d are the only twins in this graph. They are false twins."){:width="300"}

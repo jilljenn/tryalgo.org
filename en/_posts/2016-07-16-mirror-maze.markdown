@@ -3,11 +3,11 @@ layout: en
 title:  "Mirror maze"
 author: Christoph Dürr, Martin Hoefer and Thanh Dung Le Nguyen
 category: matching
+problem_url: "https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=194"
+problem_name: "Mirror Maze"
 ---
 
 Given a grid with two openings and two sided mirrors in some grid cells, find an orientation for the mirrors at 45 or -45 degrees, such that a laser beam entering one opening would be reflected all the way to the second opening.
-See [Mirror Maze](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=194).
-
 
 ## An \\( O(n^2) \\) algorithm
 

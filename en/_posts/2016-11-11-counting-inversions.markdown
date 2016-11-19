@@ -2,11 +2,11 @@
 layout: en
 title:  "Counting inversions"
 category: permutations
+problem_url: "https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=4174"
+problem_name: "Ping pong"
 ---
 
 Given a table, find for every entry how many elements there are to left that are larger and how many elements there are to right that are smaller.  In other words find out how many swaps bubble sort will do on the table.
-See [Ping pong](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=4174).
-
 
 ## A $$O(n\log n)$$ algorithm based on merge sort
 
@@ -18,7 +18,7 @@ At any moment we compare the elements pointed by i and j and move the smaller of
 ![]({{ site.images }}left-right-inversions.svg "Counting the number of inversions at every merging step."){:width="500"}
 
 
-In the implementation below, we do not sort the intial given table, but rather a vector *rank* containing indices to the table.  
+In the implementation below, we do not sort the intial given table, but rather a vector *rank* containing indices to the table.
 This is necessary since otherwise the items would at some stage of the algorithm not be at their initial position anymore, making it impossible to increase the correct entries in the tables  *left* and *right*
 
 {% highlight python %}
@@ -43,7 +43,7 @@ def _merge_sort(tab, tmp, rank, left, right, lo, hi):
         k += 1
     for k in range(lo, hi):      # copy sorted segment into original table
         rank[k] = tmp[k]
-    
+
 
 def left_right_inversions(tab):
     """ Compute left and right inversions of each element of a table.

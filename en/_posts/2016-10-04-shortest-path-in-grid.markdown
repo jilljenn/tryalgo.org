@@ -3,9 +3,11 @@ layout: en
 title:  "Shortest path in a grid"
 category: shortest-paths
 author: Christoph Dürr and Jin Shendan
+problem_urls: ["http://www.spoj.com/problems/MLASERP/en/",  "http://www.spoj.com/problems/QUEEN/"]
+problem_names: ["Laser Phones", "Wandering Queen"]
 ---
 
-Given a grid with a source cell, a destination cell and obstacle cells, find the shortest path from the source to destination, where every direction change along the path costs 1.  See [Laser Phones](http://www.spoj.com/problems/MLASERP/en/) and [Wandering Queen](http://www.spoj.com/problems/QUEEN/).
+Given a grid with a source cell, a destination cell and obstacle cells, find the shortest path from the source to destination, where every direction change along the path costs 1.
 
 Say the grid has dimensions n times n.
 
