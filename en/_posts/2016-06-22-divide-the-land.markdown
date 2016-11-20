@@ -2,8 +2,8 @@
 layout: en
 title:  "Divide the land"
 category: geometry
-problem_url: "http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2695"
-problem_name: "Divide the land"
+problems:
+   "uva:Divide the land": http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2695
 excerpt_separator: <!--more-->
 ---
 

@@ -2,8 +2,8 @@
 layout: en
 title:  "Edges expiring"
 category: union-find
-problem_url: "https://codility.com/programmers/challenges/psi2012/"
-problem_name: "codility:psi2012"
+problems:
+   "codility:psi2012": https://codility.com/programmers/challenges/psi2012/
 excerpt_separator: <!--more-->
 ---
 

@@ -2,8 +2,8 @@
 layout: en
 title:  "Counting inversions"
 category: permutations
-problem_url: "https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=4174"
-problem_name: "Ping pong"
+problems:
+   "uva:Ping pong": https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=4174
 ---
 
 Given a table, find for every entry how many elements there are to left that are larger and how many elements there are to right that are smaller.  In other words find out how many swaps bubble sort will do on the table.

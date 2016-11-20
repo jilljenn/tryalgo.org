@@ -3,8 +3,9 @@ layout: en
 title:  "Shortest cycle"
 category: cycles
 author: Christoph Dürr, Louis Abraham and Finn Völkel
-problem_urls: ["http://www.spoj.com/problems/GIRTH/", "http://www.spoj.com/problems/FTOUR/"]
-problem_names: ["GIRTH", "FTOUR"]
+problem_urls:
+    "spoj:GIRTH": http://www.spoj.com/problems/GIRTH/
+    "spoj:FTOUR": http://www.spoj.com/problems/FTOUR/
 ---
 
 Find a shortest cycle in a given undirected graph.

@@ -3,8 +3,8 @@ layout: en
 title:  "Weird Advertisement"
 category: geometry
 author: Christoph Dürr and Jill-Jênn Vie
-problem_url: "https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=25&page=show_problem&problem=3134"
-problem_name: "Weird Advertisement"
+problems:
+   "uva:Weird Advertisement": https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=25&page=show_problem&problem=3134
 ---
 
 You are given \\( n \\) rectilinear rectangles and a threshold \\( k \\), and want to find out the total area covered by at least \\( k \\) rectangles.

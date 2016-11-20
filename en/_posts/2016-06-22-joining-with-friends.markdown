@@ -2,8 +2,8 @@
 layout: en
 title:  "Joining with friends"
 category: geometry
-problem_url: "http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2769"
-problem_name: "Joining with friends"
+problems:
+   "uva:Joining with friends": http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2769
 ---
 
 Some easy geometry problem.

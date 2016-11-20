@@ -4,8 +4,8 @@ title:  "2 player game on a row of coins"
 category: games
 author: Christoph Dürr
 excerpt_separator: <!--more-->
-problem_url: "http://www.spoj.com/problems/CODEM4/"
-problem_name: "spoj:Problem 4"
+problems:
+   "spoj:Problem 4": http://www.spoj.com/problems/CODEM4/
 ---
 
 Consider a 2 player game that plays on a row of coins.  Players in turn remove either the leftmost or the rightmost coin until the row is empty. What is the maximum amount that the first player can collect if both players play optimally?

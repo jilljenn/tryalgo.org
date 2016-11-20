@@ -2,8 +2,9 @@
 layout: en
 title:  "The rank of a permutation"
 category: permutations
-problem_urls: ["http://www.spoj.com/problems/PERMRANK/", "http://www.spoj.com/problems/TPERML/"]
-problem_names: ["spoj:PERMRANK", "spoj:TPERML"]
+problems:
+  "spoj:PERMRANK": http://www.spoj.com/problems/PERMRANK/
+  "spoj:TPERML": http://www.spoj.com/problems/TPERML/
 ---
 
 Given a permutation on {0,1,...,n-1} find its rank for the lexicographical order. Given a rank find the corresponding permutation.

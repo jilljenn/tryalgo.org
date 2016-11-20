@@ -3,8 +3,8 @@ layout: en
 title:  "King's Wish"
 author: Christoph Dürr,  Henrique Gasparini Fiuza Do Nascimento, Vo Van Huy
 category: arithmetics
-problem_url: "https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2873"
-problem_name: "King's Wish"
+problems:
+   "uva:King's Wish": https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2873
 ---
 
 A K by K grid has to be tiled with L by W tiles which can be taken vertically or horizontally.  Given K find L, W such that this tiling is possible and (max(L,W)-min(L,W), L+W) is lexicographically maximal subject to W ≤ L < K.  All numbers are positive integers.

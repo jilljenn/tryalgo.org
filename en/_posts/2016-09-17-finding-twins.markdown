@@ -4,8 +4,8 @@ title:  "Finding Twins"
 category: data structures
 author: Christoph Dürr and Michel Habib
 excerpt_separator: <!--more-->
-problem_url: "http://www.spoj.com/problems/TRUETWIN/"
-problem_name: "Finding true twins"
+problems:
+   "spoj:Finding true twins": http://www.spoj.com/problems/TRUETWIN/
 ---
 
 Two vertices u,v are *twins* if they have the same neighborhood. They are *false* if uv is not an edge and *true* twins if uv is an edge.

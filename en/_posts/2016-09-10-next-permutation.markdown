@@ -2,8 +2,8 @@
 layout: en
 title:  "Next permutation"
 category: permutations
-problem_url: "http://www.spoj.com/SHORTEN/problems/NEXTPERM/"
-problem_name: "spoj:NEXTPERM"
+problems:
+   "spoj:NEXTPERM": http://www.spoj.com/SHORTEN/problems/NEXTPERM/
 ---
 
 Given a table with n integers, compute the permutation which comes lexicographically next, or answer that the given order is maximal.

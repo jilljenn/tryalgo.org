@@ -66,7 +66,14 @@ layout: default
 
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.category %} • <span itemprop="category">{{ page.category }}</span>{% endif %}{% if page.author %} • <span itemprop="author">{{ page.author }}</span>{% endif %}</p>
+    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.category %} • <span itemprop="category">{{ page.category }}</span>{% endif %}{% if page.author %} • <span itemprop="author">{{ page.author }}</span>{% endif %}
+        {% if post.problems %}
+            <br>Related problem:
+            {% for pb in post.problems %}
+               <a href="{{ pb[1] }}">[{{ pb[0] }}]</a>
+            {% endfor %}
+        {% endif %}
+    </p>
   </header>
 
 <article class="post">
