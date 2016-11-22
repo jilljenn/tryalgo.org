@@ -9,7 +9,7 @@ Voici une liste des compétitions de programmation les plus célèbres.
 
 ### - Prologin
 
-Qualification: jusqu'au 03 Janvier 2016
+Qualification : jusqu'au 04 janvier 2017
 
 Demi-Finales: Aux alentours de Février/Mars
 
