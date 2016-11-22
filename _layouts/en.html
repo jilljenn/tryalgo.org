@@ -2,92 +2,48 @@
 layout: default
 ---
 
-{% for c in site.encollection %}
-{% if c.title == page.title %}
-  {% assign thisPost = c %}
-  {% if forloop.index == 1 %}
-    {% assign prevflag = 0 %}
-    {% assign nextflag = 1 %}
-  {% elsif forloop.index == forloop.length %}
-    {% assign prevflag = 1 %}
-    {% assign nextflag = 0 %}
-  {% else %}
-    {% assign prevflag = 1 %}
-    {% assign nextflag = 1 %}
-  {% endif %}
-{% endif %}
-{% endfor %}
-
-{% for c in site.encollection %}
-  {% if c.title == page.title %}
-    {% assign prevflag = 0 %}
-  {% endif %}
-  {% if prevflag == 1 %}
-    {% assign prevPost = c %}
-    {% assign page.previous = c %}
-  {% endif %}
-{% endfor %}
-
-{% if nextflag == 1 %}
-  {% for c in site.encollection %}
-    {% if foundPost == 1 %}
-      {% assign getNext = 1 %}
-    {% endif %}
-    {% if c.title == page.title %}
-      {% assign foundPost = 1 %}
-    {% endif %}
-    {% if getNext == 1%}
-      {% assign nextPost = c %}
-      {% assign page.next = c %}
-      {% assign foundPost = 0 %}
-      {% assign getNext = 0 %}
-    {% endif %}
-  {% endfor %}
-{% endif %}
-
 <div id="post-nav" class="clearfix nav-slide">
     <div class="work">
-        {% if prevPost.url %}
-        <a class="prev" href="{{prevPost.url}}">
-            <span class="slide-wrap">&lt; {{prevPost.title}}</span>
+        {% if page.previous.url %}
+        <a class="prev" href="{{ page.previous.url }}">
+            <span class="slide-wrap">← {{ page.previous.title }}</span>
         </a>
         {% endif %}
         &nbsp;&nbsp;&nbsp;&nbsp;
-        {% if nextPost.url %}
-        <a class="next" href="{{nextPost.url}}">
-            <span class="slide-wrap">{{nextPost.title}} &gt;</span>
+        {% if page.next.url %}
+        <a class="next" style="float: right" href="{{ page.next.url }}">
+            <span class="slide-wrap">{{ page.next.title }} →</span>
         </a>
         {% endif %}
     </div>
 </div>
 
-
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.category %} • <span itemprop="category">{{ page.category }}</span>{% endif %}{% if page.author %} • <span itemprop="author">{{ page.author }}</span>{% endif %}
-        {% if post.problems %}
-            <br>Related problem:
-            {% for pb in post.problems %}
-               <a href="{{ pb[1] }}">[{{ pb[0] }}]</a>
-            {% endfor %}
-        {% endif %}
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
+      {% if page.category %}
+         • <span itemprop="category">{{ page.category }}</span>
+      {% endif %}
+      {% if page.author %}
+         • <span itemprop="author">{{ page.author }}</span>
+      {% endif %}
+      {% if post.problems %}
+        <br>Related problems:
+        {% for pb in post.problems %}
+           <a href="{{ pb[1] }}">[{{ pb[0] }}]</a>
+        {% endfor %}
+      {% endif %}
     </p>
   </header>
 
-<article class="post">
   {{ content }}
- </article>
 
-  <script src="https://apis.google.com/js/plusone.js">
-</script>
-<div class="g-comments"
-  data-href="{{ site.url }}{{ site.baseurl }}{{ page.url }}"
-  data-width="600"
-  data-first_party_property="BLOGGER"
-  data-view_type="FILTERED_POSTMOD">
-</div>
+  <script data-isso="//comments.jiji.cat/tryalgo/"
+    src="//comments.jiji.cat/tryalgo/js/embed.min.js"></script>
+
+  <section id="isso-thread"></section>
 
 </article>
-
