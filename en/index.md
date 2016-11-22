@@ -5,8 +5,9 @@ title: Most recent 8 posts
 
 See also all posts [ordered by categories](categories).
 
-{% for post in site.posts limit:8 %}
-  {% if post.layout == 'en' %}
+{% assign posts = site.posts | where:'layout', 'en' %}
+
+{% for post in posts limit:8 %}
   <div class="post">
             <h2>
           <a class="post-link" href="{{ post.url }}">{{ post.title }}</a>
@@ -23,6 +24,5 @@ See also all posts [ordered by categories](categories).
         {{ post.excerpt }}
 
   </div>
-  {% endif %}
 {% endfor %}
 
