@@ -14,7 +14,7 @@ Concours blanc. Bring one laptop per team. We will work on [this](https://a2oj.c
 
 
 	[!] les notes ci-dessous sont en cours de rédaction.
-	
+
 ## [P1 - Recurrences](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1811)
 
 Il s'agit d'un simple problème d'exponentiation rapide.
@@ -22,7 +22,7 @@ On pose $$U(k) = [ [f(k)], [f(k+1)],\ldots , [f(k+d-1)] ]$$, où
 $$U(k)$$ est le vecteur colonne :
 
 $$
-\left( 
+\left(
 \begin{array}{c}
 f(k)\\
 f(k+1)\\
@@ -70,9 +70,9 @@ Il suffit donc de partir de chaque élément et d'itérer la permutation en comp
 * Une approche possible donc. Initialement C est une liste vide qui contiendra les longueurs de cycles pairs.  Et `visited` un tableau boolean encore tout faux. Puis:
 
   1. Pour toute lettre pas encore visité. Marquer visite et passer à la lettre suivante comme spécifiée par la permutation. Jusqu'à ce qu'on rencontre un sommet déjà visité. Alors ajouter à C la longueur du cycle dans le cas où elle est paire.
-  
+
   2. Trier C, et vérifier que la longueur de C est pair et que `C[2*i]==C[2*i+1]` pour tout i.
-  
+
 En interne travailler avec des entiers basés à 0 plutôt que des caractères. Utilisez l'arithmétique sur les caractères.
 Alors une partie du code pourrait avoir la forme suivante.
 
@@ -206,12 +206,12 @@ Cela se voit géométriquement (si oui, on peut sauter le paragraphe suivant), s
 Ainsi, il suffit de calculer l'enveloppe convexe puis de tester chaque couple (sommet, côté), il y en a $$n (n-1)$$, complexité totale $$O( n \log(n) + n^2) = O(n^2) = O(N^2)$$ avec n le nombre de points de l'enveloppe convexe.
 
 B. La longueur du plus grand segment entièrement contenu dans le trou.
-Pour cela, on peut montrer que cet extremum est obtenu avec un segment touchant deux sommets du trou. En effet, sinon le segment est délimité par deux côtés. Alors dans une petite bande autour du segment il n'y aura aucun sommet, donc les seuls éléments de la frontière du trou seront les intersections des deux côtés avec la bande. Maintenant on peut même fixer une des extrémités du segment, la mobilité de l'autre sur un petit bout de segment suffit. Mathématiquement, on note a le point immobile, $$b + x t$$ celui qui bouge où $$x$$ est la direction et $$t$$ un scalaire petit. On a alors 
+Pour cela, on peut montrer que cet extremum est obtenu avec un segment touchant deux sommets du trou. En effet, sinon le segment est délimité par deux côtés. Alors dans une petite bande autour du segment il n'y aura aucun sommet, donc les seuls éléments de la frontière du trou seront les intersections des deux côtés avec la bande. Maintenant on peut même fixer une des extrémités du segment, la mobilité de l'autre sur un petit bout de segment suffit. Mathématiquement, on note a le point immobile, $$b + x t$$ celui qui bouge où $$x$$ est la direction et $$t$$ un scalaire petit. On a alors
 
 $$
 \begin{align*}
-d(a, b+xt)^2 &= \langle b+x t - a, b+xt - a\rangle 
-\\&= d(a, b)^2 + 2 t  \langle x, b - a\rangle + t^2 * d(0, x)^2 
+d(a, b+xt)^2 &= \langle b+x t - a, b+xt - a\rangle
+\\&= d(a, b)^2 + 2 t  \langle x, b - a\rangle + t^2 * d(0, x)^2
 \\&= d(a, b)^2 + 2 t  \langle x, b - a \rangle + o(t).
 \end{align*}
 $$
@@ -226,7 +226,12 @@ Enfin, il suffit de renvoyer 'legal' si A <= B et 'illegal' sinon.
 
 ## [P8 - Treblecross](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1502)
 
-Chercher du côté de [Sprague-Grundy](https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_Sprague-Grundy).
+You are given a row of cells, some of which are marked. Two players in turn each marks a cell. The first player who reaches a configuration with 3 adjacent marked cells wins.  The goal is to list all cells such that if the first player marks one of those, then he can always win the game.
+
+This game can be solved using the [Sprague-Grundy](https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_Sprague-Grundy) theorem.
+[Here](http://lbv-pc.blogspot.fr/2012/07/treblecross.html) is an excellent explanation of a solution.
+
+Basically you first need to detect patterns where the first player can immediately win, namely .XX, X.X or XX.  Then by adding X.. to the left and ..X to the right we end up with a string of the form X..?X..?X etc, where every sequence of points has some length at least 2.  These sequences form sub-games, where the 2 first and 2 last points are forbidden cells, since the opponent can then immediately win.  The trick is then to compute the nimber for configurations of the form X.{k}X for every k up to 200.  Then you can combine these numbers with XOR in order to decide whether some configuration is loosing or not.
 
 ## [P9 - Calculator Conundrum](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2544)
 

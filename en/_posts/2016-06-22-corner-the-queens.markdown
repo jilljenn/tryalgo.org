@@ -18,7 +18,6 @@ The problem can be solved in linear time in the grid coordinates, which is ok, s
 
 ![]({{site.images}}corner-the-queens.svg){:width="400"}
 
-For curiosity:
-Successive points happen to be distant in x-coordinate either by 1 or by 2.  The resulting pattern does not seem to have a simple structure, it seems fractal.  Understanding it could lead possibly to a constant time algorithmic solution.  The following string shows this pattern for the first 100 points. A dash means distance 2 and a point distance 1.
+### Linear time solution
 
-    #.##.#.##.##.#.##.#.##.##.#.##.##.#.##.#.##.##.#.##.#.##.##.#.##.##.#.##.#.##.##.#.##.##.#.##.#.##.#
+In 1907 [Wythoff](https://en.wikipedia.org/wiki/Wythoff's_game) has shown that all loosing positions are of the form $$\lfloor k \Phi \rfloor$$ and $$\lfloor k \Phi^2 \rfloor$$ for every non-negative integer $$k$$.

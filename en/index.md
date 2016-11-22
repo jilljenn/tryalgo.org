@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Tryalgo posts ordered by date
+title: Most recent 8 posts
 ---
 
-See also our list [ordered by categories](categories).
+See also all posts [ordered by categories](categories).
 
-{% for post in site.posts %}
+{% for post in site.posts limit:8 %}
   {% if post.layout == 'en' %}
   <div class="post">
             <h2>

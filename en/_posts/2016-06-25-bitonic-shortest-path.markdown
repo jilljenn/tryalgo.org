@@ -2,11 +2,14 @@
 layout: en
 title:  "Bitonic shortest path"
 category: shortest-paths
+excerpt_separator: <!--more-->
 ---
 
 Given a graph with edge weights and vertex heights find a shortest path from a given source to a given destination, that traverses vertices of first increasing and then decreasing heights.
 
 ![]({{ site.images }}bitonic-shortest-path.svg){: width="300px"}
+
+<!--more-->
 
 ### Dynamic programming
 
