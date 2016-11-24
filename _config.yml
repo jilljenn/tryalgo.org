@@ -38,3 +38,19 @@ github:
 #   fr:
 #     output: true
 #     permalink: /:collection/:title/
+
+# Includes an icon in the footer for each username you enter
+footer-links:
+  dribbble:
+  email: vie@jill-jenn.net
+  facebook:
+  flickr:
+  github: jilljenn/tryalgo
+  instagram:
+  linkedin:
+  pinterest:
+  rss: # just type anything here for a working RSS icon
+  twitter: # jekyllrb
+  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
+  youtube: # channel/<your_long_string> or user/<user-name>
+  googleplus: # anything in your profile username that comes after plus.google.com/
