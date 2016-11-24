@@ -224,15 +224,6 @@ Ainsi, il faut tester pour chaque couple de sommets la longueur du plus long seg
 Enfin, il suffit de renvoyer 'legal' si A <= B et 'illegal' sinon.
 
 
-## [P8 - Treblecross](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1502)
-
-You are given a row of cells, some of which are marked. Two players in turn each marks a cell. The first player who reaches a configuration with 3 adjacent marked cells wins.  The goal is to list all cells such that if the first player marks one of those, then he can always win the game.
-
-This game can be solved using the [Sprague-Grundy](https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_Sprague-Grundy) theorem.
-[Here](http://lbv-pc.blogspot.fr/2012/07/treblecross.html) is an excellent explanation of a solution.
-
-Basically you first need to detect patterns where the first player can immediately win, namely .XX, X.X or XX.  Then by adding X.. to the left and ..X to the right we end up with a string of the form X..?X..?X etc, where every sequence of points has some length at least 2.  These sequences form sub-games, where the 2 first and 2 last points are forbidden cells, since the opponent can then immediately win.  The trick is then to compute the nimber for configurations of the form X.{k}X for every k up to 200.  Then you can combine these numbers with XOR in order to decide whether some configuration is loosing or not.
-
 ## [P9 - Calculator Conundrum](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2544)
 
 On n'a vraiment aucun outil pour évaluer la complexité, il s'agit d'un brute force.
