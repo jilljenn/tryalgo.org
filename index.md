@@ -3,6 +3,13 @@ layout: page
 title: Résolution de problèmes algorithmiques
 ---
 
+## Prochaines conférences
+
+- [**AlphaGo explained**](/club/) par Étienne Simon & Jill-Jênn Vie  
+jeudi 1<sup>er</sup> décembre 2016 à 19 h à l'ENS Paris-Saclay
+- [**Arbres de Merkle : la structure de données à l'origine de git, BitTorrent, Bitcoin et autres blockchains**](/club/) par Jill-Jênn Vie  
+vendredi 9 décembre 2016 à 19 h à l'ENS Paris-Saclay
+
 ## [pip install tryalgo](/code/)
 
 <a href="{% post_url fr/2016-11-19-swerc-2016 %}"><img src="/fr/images/swerc2016/swerc2016-thumb.jpg" style="float: right" /></a>
