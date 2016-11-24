@@ -30,9 +30,9 @@ layout: default
       {% if page.author %}
          • <span itemprop="author">{{ page.author }}</span>
       {% endif %}
-      {% if post.problems %}
+      {% if page.problems %}
         <br>Related problems:
-        {% for pb in post.problems %}
+        {% for pb in page.problems %}
            <a href="{{ pb[1] }}">[{{ pb[0] }}]</a>
         {% endfor %}
       {% endif %}
