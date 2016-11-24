@@ -27,7 +27,7 @@ print(coin_change([3, 5, 11], 29))
 
 <a href="http://pythonhosted.org/tryalgo/_modules/tryalgo/subsetsum.html#coin_change" target="_blank">See the source code (6 lines)</a>
 
-## Demo: our Dijkstra's algorithm on the graph of Paris
+## Demo: Dijkstra's algorithm on the graph of Paris
 
 See our [Jupyter notebook](http://nbviewer.jupyter.org/github/jilljenn/tryalgo/blob/master/examples/TryAlgo%20Maps%20in%20Paris.ipynb) (in French): [**TryAlgo Maps in Paris**](http://nbviewer.jupyter.org/github/jilljenn/tryalgo/blob/master/examples/TryAlgo%20Maps%20in%20Paris.ipynb)
 
