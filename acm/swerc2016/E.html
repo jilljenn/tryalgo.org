@@ -1,0 +1,127 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link
+rel="stylesheet"
+href="../../styles/base.css"
+type="text/css">
+</head>
+<body>
+<center>
+<table
+cellpadding	="20"
+width		="100%">
+<tr>
+<td id="Base"><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <title>Passwords</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+.li-itemize{margin:1ex 0ex;}
+.li-enumerate{margin:1ex 0ex;}
+.dd-description{margin:0ex 0ex 1ex 4ex;}
+.dt-description{margin:0ex;}
+.toc{list-style:none;}
+.footnotetext{margin:0ex; padding:0ex;}
+div.footnotetext P{margin:0px; text-indent:1em;}
+.thefootnotes{text-align:left;margin:0ex;}
+.dt-thefootnotes{margin:0em;}
+.dd-thefootnotes{margin:0em 0em 0em 2em;}
+.footnoterule{margin:1em auto 1em 0px;width:50%;}
+.caption{padding-left:2ex; padding-right:2ex; margin-left:auto; margin-right:auto}
+.title{margin:2ex auto;text-align:center}
+.titlemain{margin:1ex 2ex 2ex 1ex;}
+.titlerest{margin:0ex 2ex;}
+.center{text-align:center;margin-left:auto;margin-right:auto;}
+.flushleft{text-align:left;margin-left:0ex;margin-right:auto;}
+.flushright{text-align:right;margin-left:auto;margin-right:0ex;}
+div table{margin-left:inherit;margin-right:inherit;margin-bottom:2px;margin-top:2px}
+td table{margin:auto;}
+table{border-collapse:collapse;}
+td{padding:0;}
+.cellpadding0 tr td{padding:0;}
+.cellpadding1 tr td{padding:1px;}
+pre{text-align:left;margin-left:0ex;margin-right:auto;}
+blockquote{margin-left:4ex;margin-right:4ex;text-align:left;}
+td p{margin:0px;}
+.boxed{border:1px solid black}
+.textboxed{border:1px solid black}
+.vbar{border:none;width:2px;background-color:black;}
+.hbar{border:none;height:2px;width:100%;background-color:black;}
+.hfill{border:none;height:1px;width:200%;background-color:black;}
+.vdisplay{border-collapse:separate;border-spacing:2px;width:auto; empty-cells:show; border:2px solid red;}
+.vdcell{white-space:nowrap;padding:0px; border:2px solid green;}
+.display{border-collapse:separate;border-spacing:2px;width:auto; border:none;}
+.dcell{white-space:nowrap;padding:0px; border:none;}
+.dcenter{margin:0ex auto;}
+.vdcenter{border:solid #FF8000 2px; margin:0ex auto;}
+.minipage{text-align:left; margin-left:0em; margin-right:auto;}
+.marginpar{border:solid thin black; width:20%; text-align:left;}
+.marginparleft{float:left; margin-left:0ex; margin-right:1ex;}
+.marginparright{float:right; margin-left:1ex; margin-right:0ex;}
+.theorem{text-align:left;margin:1ex auto 1ex 0ex;}
+.part{margin:2ex auto;text-align:center}
+</style>
+  </head>
+  <body>
+
+
+
+
+<div class="center"><span style="font-size:xx-large"><span style="font-weight:bold">Passwords</span></span></div>
+
+<p><img align="right" src="9449771460820814?image+E+passwords.png" width="200">It’s that time of the year again when you go back to work and need to choose new passwords for all your services. The rules enforced by the system administrators are very strict, and the password you choose must obey the following restrictions:</p><ul class="itemize"><li class="li-itemize">
+
+It must contain only letters and digits.
+</li><li class="li-itemize">It must have between <span style="font-style:italic">A</span> and <span style="font-style:italic">B</span> characters (inclusive).
+</li><li class="li-itemize">It must have at least one lowercase letter, one uppercase letter and one digit.
+</li><li class="li-itemize">It cannot contain any word of a collection of forbidden words (the blacklist).
+</li></ul><p>A word of the blacklist is considered to be contained in the password if it appears as a substring, that is, if it occurs as a consecutive sequence of characters (regardless of it being upper or lower case). For instance, <span style="font-family:monospace">swerc</span> is a substring of <span style="font-family:monospace">SwErC</span>, <span style="font-family:monospace">2016swerc2016</span> or <span style="font-family:monospace">SWERC16</span>, but it is not a substring of <span style="font-family:monospace">ICPC</span> or <span style="font-family:monospace">sw16erc</span>.</p><p>Additionally, for the purposes of avoiding the blacklist, you cannot use <em>l33t</em>. Specifically, some digits can be interpreted as letters, namely the 0 (’o’), 1 (’i’), 3 (’e’), 5 (’s’) and 7 (’t’). This implies that for example <span style="font-family:monospace">5w3rC</span> would be an occurrence of <span style="font-family:monospace">swerc</span>, and that <span style="font-family:monospace">abcL337def</span> contains the word <span style="font-family:monospace">leet</span>.</p><p>You cannot stop thinking about all these rules and you wonder how many different valid passwords there are... Can you calculate how many passwords would obey these rules?</p><!--TOC subsection id="sec32" Task-->
+<h3 id="sec32" class="subsection">Task</h3><!--SEC END --><p>Given a blacklist with <span style="font-style:italic">N</span> words and two integers <span style="font-style:italic">A</span> and <span style="font-style:italic">B</span>, your task is to compute the number of different valid passwords that exist following the given constraints: made up of only letters and digits; length between <span style="font-style:italic">A</span> and <span style="font-style:italic">B</span> (inclusive); at least one lowercase letter, one uppercase letter, and one digit; no blacklisted substring. Since this number can be very big, compute it modulo 1 000 003.</p><!--TOC subsection id="sec33" Input-->
+<h3 id="sec33" class="subsection">Input</h3><!--SEC END --><p>The first line contains two integers, <span style="font-style:italic">A</span> and <span style="font-style:italic">B</span>, specifying respectively the minimum and maximum length of the password. The second line contains an integer <span style="font-style:italic">N</span>, the number of words of the blacklist. The following <span style="font-style:italic">N</span> lines each contains a string <span style="font-style:italic">W</span><sub><span style="font-style:italic">i</span></sub> indicating a word in the blacklist. These words are formed only by lowercase letters.</p><!--TOC subsection id="sec34" Constraints-->
+<h3 id="sec34" class="subsection">Constraints</h3><!--SEC END --><table style="border-spacing:6px;border-collapse:separate;margin-left:0;margin-right:auto;" class="cellpading0"><tr><td style="text-align:right;white-space:nowrap" >3</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" >≤</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" ><span style="font-style:italic">A</span>    ≤    <span style="font-style:italic">B</span></td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" >≤</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:left;white-space:nowrap" >20</td><td style="text-align:left;white-space:nowrap" >Size of the password <br>
+</td></tr>
+<tr><td style="text-align:right;white-space:nowrap" >0</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" >≤</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" ><span style="font-style:italic">N</span></td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" >≤</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:left;white-space:nowrap" >50</td><td style="text-align:left;white-space:nowrap" >Number of words in the blacklist <br>
+</td></tr>
+<tr><td style="text-align:right;white-space:nowrap" >1</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" >≤</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" >length(<span style="font-style:italic">W</span><sub><span style="font-style:italic">i</span></sub>)</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" >≤</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:left;white-space:nowrap" >20</td><td style="text-align:left;white-space:nowrap" >Size of each blacklist word
+</td></tr>
+</table><!--TOC subsection id="sec35" Output-->
+<h3 id="sec35" class="subsection">Output</h3><!--SEC END --><p>The output should contain a single line with an integer indicating the number of valid passwords modulo 1 000 003. A valid password is one that respects all of the given constraints.</p><!--TOC subsection id="sec36" Sample Input-->
+<h3 id="sec36" class="subsection">Sample Input</h3><!--SEC END --><pre class="verbatim">3 5
+9
+swerc
+icpc
+fbi
+cia
+bio
+z
+hi
+no
+yes
+</pre><!--TOC subsection id="sec37" Sample Output-->
+<h3 id="sec37" class="subsection">Sample Output</h3><!--SEC END --><pre class="verbatim">607886
+</pre><!--TOC subsection id="sec38" Sample Explanation-->
+<h3 id="sec38" class="subsection">Sample Explanation</h3><!--SEC END --><p>In this case there are exactly 378 609 020 valid passwords and
+</p>
+<p>378 609 020  mod  1 000 003 = 607 886   .</p>
+<p>Some examples of valid passwords are: 
+<span style="font-family:monospace">aA1</span>, <span style="font-family:monospace">B23tT</span>, <span style="font-family:monospace">1g9K</span> or <span style="font-family:monospace">B2j</span>.</p><p>Some examples of invalid passwords are: <span style="font-family:monospace">aaA</span> (it does not contain digits), <span style="font-family:monospace">12a</span> (it does not contain upper case letters), <span style="font-family:monospace">a12A34</span> (length &gt; 5) or <span style="font-family:monospace">bB10</span> (contains <span style="font-family:monospace">bio</span> as substring). 
+
+</p>
+
+  
+    <hr size="2">
+    <center><b>SWERC'2016</b><br>
+      Computer Science Department<br>
+      Universidade do Porto<br>
+    <hr size="2">
+  
+  </body>
+</html>
+</td>
+</tr>
+</table>
+</center>
+</body>
+</html>
