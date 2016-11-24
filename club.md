@@ -21,7 +21,7 @@ vendredi 9 décembre 2016 à 19 h
 ## Préparation aux concours
 
 - [Google Hash Code](/hashcode/) (23 février 2017)
-- [Concours ACM/ICPC & SWERC](/acm/) (19--20 novembre 2016, [compte rendu]({% post_url fr/2016-11-19-swerc-2016 %}))
+- [Concours ACM-ICPC & SWERC](/acm/) (19--20 novembre 2016, [compte rendu]({% post_url fr/2016-11-19-swerc-2016 %}))
 - [Autres compétitions de programmation](/contests/)
 
 ## Autres activités
