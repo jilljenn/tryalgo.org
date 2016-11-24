@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Most recent 8 posts
+lang: en
 ---
 
 See also all posts [ordered by categories](categories).

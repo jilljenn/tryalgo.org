@@ -1,21 +1,28 @@
 <div class="wrapper-masthead">
   <div class="container">
     <header class="masthead clearfix">
-      <a href="{{ site.baseurl }}" class="site-avatar"><img src="{{ site.avatar }}" alt="{{ site.title }}" /></a>
-
-      <div class="site-info">
-        <h1 class="site-name"><a href="{{ site.baseurl }}">{{ site.description }}</a></h1>
-        <!-- <p class="site-description">{{ site.description }}</p> -->
-      </div>
+      {% if page.lang == 'en' %}
+        <a href="/"><img src="/public/french.png" style="float: right" /></a>
+        <a href="/index-en" class="site-avatar"><img src="{{ site.avatar }}" alt="{{ site.title }}" /></a>
+        <div class="site-info">
+          <h1 class="site-name"><a href="/index-en">{{ site.description_en }}</a></h1>
+        </div>
+      {% else %}
+        <a href="/index-en"><img src="/public/english.png" style="float: right" /></a>
+        <a href="/" class="site-avatar"><img src="{{ site.avatar }}" alt="{{ site.title }}" /></a>
+        <div class="site-info">
+          <h1 class="site-name"><a href="{{ site.baseurl }}">{{ site.description }}</a></h1>
+        </div>
+      {% endif %}
 
       <nav>
-        <a href="{{ site.baseurl }}book">Livre</a>
+        {% if page.lang != 'en' %}<a href="{{ site.baseurl }}book">Livre</a>{% endif %}
         <a href="{{ site.baseurl }}code">Code</a>
-        <a href="{{ site.baseurl }}contests">Concours</a>
-        <a href="{{ site.baseurl }}problems">Problèmes</a>
+        <a href="{{ site.baseurl }}contests">{% if page.lang == 'en' %}Contests{% else %}Concours{% endif %}</a>
+        <a href="{{ site.baseurl }}problems">{% if page.lang == 'en' %}Problems{% else %}Problèmes{% endif %}</a>
         <a href="{{ site.baseurl }}en">Solutions</a>
         <a href="{{ site.baseurl }}fr">Blog</a>
-        <a href="{{ site.baseurl }}club">Club</a>
+        {% if page.lang != 'en' %}<a href="{{ site.baseurl }}club">Club</a>{% endif %}
         <a href="https://github.com/jilljenn/tryalgo.org/">GitHub</a>
       </nav>
     </header>
