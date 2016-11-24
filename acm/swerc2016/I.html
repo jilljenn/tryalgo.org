@@ -1,0 +1,165 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link
+rel="stylesheet"
+href="../../styles/base.css"
+type="text/css">
+</head>
+<body>
+<center>
+<table
+cellpadding	="20"
+width		="100%">
+<tr>
+<td id="Base"><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <title>The White Rabbit Pocket Watch</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+.li-itemize{margin:1ex 0ex;}
+.li-enumerate{margin:1ex 0ex;}
+.dd-description{margin:0ex 0ex 1ex 4ex;}
+.dt-description{margin:0ex;}
+.toc{list-style:none;}
+.footnotetext{margin:0ex; padding:0ex;}
+div.footnotetext P{margin:0px; text-indent:1em;}
+.thefootnotes{text-align:left;margin:0ex;}
+.dt-thefootnotes{margin:0em;}
+.dd-thefootnotes{margin:0em 0em 0em 2em;}
+.footnoterule{margin:1em auto 1em 0px;width:50%;}
+.caption{padding-left:2ex; padding-right:2ex; margin-left:auto; margin-right:auto}
+.title{margin:2ex auto;text-align:center}
+.titlemain{margin:1ex 2ex 2ex 1ex;}
+.titlerest{margin:0ex 2ex;}
+.center{text-align:center;margin-left:auto;margin-right:auto;}
+.flushleft{text-align:left;margin-left:0ex;margin-right:auto;}
+.flushright{text-align:right;margin-left:auto;margin-right:0ex;}
+div table{margin-left:inherit;margin-right:inherit;margin-bottom:2px;margin-top:2px}
+td table{margin:auto;}
+table{border-collapse:collapse;}
+td{padding:0;}
+.cellpadding0 tr td{padding:0;}
+.cellpadding1 tr td{padding:1px;}
+pre{text-align:left;margin-left:0ex;margin-right:auto;}
+blockquote{margin-left:4ex;margin-right:4ex;text-align:left;}
+td p{margin:0px;}
+.boxed{border:1px solid black}
+.textboxed{border:1px solid black}
+.vbar{border:none;width:2px;background-color:black;}
+.hbar{border:none;height:2px;width:100%;background-color:black;}
+.hfill{border:none;height:1px;width:200%;background-color:black;}
+.vdisplay{border-collapse:separate;border-spacing:2px;width:auto; empty-cells:show; border:2px solid red;}
+.vdcell{white-space:nowrap;padding:0px; border:2px solid green;}
+.display{border-collapse:separate;border-spacing:2px;width:auto; border:none;}
+.dcell{white-space:nowrap;padding:0px; border:none;}
+.dcenter{margin:0ex auto;}
+.vdcenter{border:solid #FF8000 2px; margin:0ex auto;}
+.minipage{text-align:left; margin-left:0em; margin-right:auto;}
+.marginpar{border:solid thin black; width:20%; text-align:left;}
+.marginparleft{float:left; margin-left:0ex; margin-right:1ex;}
+.marginparright{float:right; margin-left:1ex; margin-right:0ex;}
+.theorem{text-align:left;margin:1ex auto 1ex 0ex;}
+.part{margin:2ex auto;text-align:center}
+</style>
+  </head>
+  <body>
+
+<div class="center"><span style="font-size:xx-large"><span style="font-weight:bold">The White Rabbit Pocket Watch</span></span></div>
+
+<p><img align="right" src="9449771460820814?image+I+wr.png" width="300">
+<span style="font-style:italic">
+Alice: How can it be?<br>
+<br>
+Rabbit: Trust me Alice. It always takes the same time. When I go from my home up the road to Queen of Hearts’ Castle, my watch counts nine hours. However, if I continue down to Mad Hatter’s House, my watch counts just two hours in total. Isn’t that great?<br>
+<br>
+Alice: How can it be Rabbit? The path is longer and you take a shorter time to do it? How can it be?<br>
+<br>
+<br>
+Rabbit: Trust me Alice! It is all recorded in my logbook. You can check it. All my trips are there...<br>
+<br>
+Alice: Rabbit, I do not think it can help me...<br>
+<br>
+Rabbit: Alice, no matter where you are, or where you want to go, or the track you choose, you’ll be
+able to find how long it takes you.<br>
+<br>
+Alice: Really?<br>
+<br>
+Rabbit: For sure!</span></p>
+<p><br>
+Poor Rabbit, poor Alice. </p><p>White Rabbit is helping Alice finding a quick way home through the Rabbit’s hole with his holy logbook of trips.
+The problem lies in the chronometer of its bizarre pocket watch (it displays the hours from zero to 12), and the way the Rabbit counts the time with it: If a journey takes 14 hours (real time), seeing the pointer resting above number one, he assumes it took one hour long.</p><p>Given that the White Rabbit is telling the truth,
+can you help Alice finding how long the shortest path home takes, using the Rabbit’s
+logbook of trips?</p><!--TOC subsection id="sec61" Task-->
+<h3 id="sec61" class="subsection">Task</h3><!--SEC END --><p>
+Your task is to find the shortest real time it takes for Alice to go from her present location to the Rabbit’s hole. For each trip, the White Rabbit wrote down the trip time, the number of visited locations (not necessarily distinct) and the sequence in which they were visited. That sequence defines the trip because there is at most one direct track between any two locations in the Wonderland and it takes the same time both ways.</p><!--TOC subsection id="sec62" Input-->
+<h3 id="sec62" class="subsection">Input</h3><!--SEC END --><p>
+The first line contains four integers <span style="font-style:italic">N</span>, <span style="font-style:italic">A</span>, <span style="font-style:italic">R</span> and <span style="font-style:italic">T</span>, where:
+<span style="font-style:italic">N</span> is the number of distinct locations; <span style="font-style:italic">A</span> identifies the place where Alice
+is located; <span style="font-style:italic">R</span> corresponds
+to the Rabbit’s hole location; and
+<span style="font-style:italic">T</span> is 
+the number of trips recorded in White Rabbit’s logbook.
+All locations are identified by numbers from 1 to <span style="font-style:italic">N</span>.
+Each of the next <span style="font-style:italic">T</span> lines describes a trip logged with format
+<span style="font-style:italic">d</span>    <span style="font-style:italic">p</span>    <span style="font-style:italic">a</span><sub>1</sub>    <span style="font-style:italic">a</span><sub>2</sub>   ⋯   <span style="font-style:italic">a</span><sub><span style="font-style:italic">p</span></sub>, where
+<span style="font-style:italic">d</span> is the trip duration (according to White Rabbit),
+<span style="font-style:italic">p</span> is the number of locations and 
+<span style="font-style:italic">a</span><sub>1</sub>    <span style="font-style:italic">a</span><sub>2</sub>   ⋯   <span style="font-style:italic">a</span><sub><span style="font-style:italic">p</span></sub> is the sequence of visited locations.</p><!--TOC subsection id="sec63" Constraints-->
+<h3 id="sec63" class="subsection">Constraints</h3><!--SEC END --><table style="border-spacing:6px;border-collapse:separate;margin-left:0;margin-right:auto;" class="cellpading0"><tr><td style="text-align:right;white-space:nowrap" >2</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" >≤</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" ><span style="font-style:italic">N</span></td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" >≤</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:left;white-space:nowrap" >200	</td><td style="text-align:left;white-space:nowrap" >	Number of locations <br>
+</td></tr>
+<tr><td style="text-align:right;white-space:nowrap" >1</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" >≤</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" ><span style="font-style:italic">T</span></td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" >≤</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:left;white-space:nowrap" >500	</td><td style="text-align:left;white-space:nowrap" >	Number of trips in the logbook <br>
+</td></tr>
+<tr><td style="text-align:right;white-space:nowrap" >2</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" >≤</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" ><span style="font-style:italic">p</span></td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" >≤</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:left;white-space:nowrap" >800	</td><td style="text-align:left;white-space:nowrap" >	Number of (possibly repeated) locations in a trip <br>
+</td></tr>
+<tr><td style="text-align:right;white-space:nowrap" >1</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" >≤</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" ><span style="font-style:italic">d</span><sub><span style="font-style:italic">ij</span></sub></td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" >≤</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:left;white-space:nowrap" >12</td><td style="text-align:left;white-space:nowrap" >	Real time of the direct track between <span style="font-style:italic">a</span><sub><span style="font-style:italic">i</span></sub> and <span style="font-style:italic">a</span><sub><span style="font-style:italic">j</span></sub> (if it exists)
+<br>
+</td></tr>
+<tr><td style="text-align:left;white-space:nowrap"  colspan=10>There are at most 200 direct tracks
+</td></tr>
+</table><!--TOC subsection id="sec64" Output-->
+<h3 id="sec64" class="subsection">Output</h3><!--SEC END --><p>
+An integer representing the shortest (real) time it takes for Alice to get home.</p>
+</p>
+
+<!--TOC subsection id="sec65" Sample Input 1-->
+<h3 id="sec65" class="subsection">Sample Input 1</h3><!--SEC END --><pre class="verbatim">3 1 3 3
+3 4 1 2 3 2
+4 3 1 2 1
+1 4 1 2 1 3
+</pre><!--TOC subsection id="sec66" Sample Output 1-->
+<h3 id="sec66" class="subsection">Sample Output 1</h3><!--SEC END --><pre class="verbatim">9
+</pre>
+
+<!--TOC subsection id="sec67" Sample Input 2-->
+<h3 id="sec67" class="subsection">Sample Input 2</h3><!--SEC END --><pre class="verbatim">5 5 1 9
+0 3 1 2 3
+1 4 1 4 2 3
+6 4 3 4 1 3
+11 5 1 3 4 2 1
+4 4 1 2 4 1
+6 6 1 2 3 1 4 3
+7 4 2 3 4 1
+11 3 4 3 5
+12 5 5 2 4 2 5
+</pre><!--TOC subsection id="sec68" Sample Output 2-->
+<h3 id="sec68" class="subsection">Sample Output 2</h3><!--SEC END --><pre class="verbatim">6
+</pre>
+
+  
+  
+    <hr size="2">
+    <center><b>SWERC'2016</b><br>
+      Computer Science Department<br>
+      Universidade do Porto<br>
+    <hr size="2">
+  
+  </body>
+</html>
+</td>
+</tr>
+</table>
+</center>
+</body>
+</html>
