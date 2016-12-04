@@ -1,7 +1,7 @@
 ---
 layout: en
 title:  "Seminar room"
-category: 2-sat
+category: satisfiability
 problems:
    "tju:Seminar Room": http://acm.tju.edu.cn/toj/showp2506.html
 ---
