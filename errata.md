@@ -7,6 +7,8 @@ Voici une liste de coquilles dans le livre.
 
 - page 14 : la définition d'$\Omega$ est erronée, il faut $f(n) \geq c \cdot g(n)$ (merci garkham).
 
+- page 15 : La chaîne de formatage doit contenir %.02f%% à la place de .02f pour qu'un pourcentage s'affiche en sortie.
+
 - page 16 : (première phrase) Il se trouve que $\textsf{P} \subseteq \textsf{NP}$, l'intuition étant que si on peut construire une solution en temps polynomial, alors on peut *vérifier* une solution en temps polynomial.
 
 - page 102 : la complexité de l'algorithme pour le voyageur de commerce est $O(&#124;V&#124;^2 2^{&#124;V&#124;})$
