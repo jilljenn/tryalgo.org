@@ -3,7 +3,7 @@ layout: en
 title:  "Traffic Jam"
 category: shortest-paths
 author: Christoph Dürr
-problem_urls:
+problems:
     "poj:Traffic Jam": http://poj.org/problem?id=1817
     "tju:Traffic Jam": http://acm.tju.edu.cn/toj/showp2272.html
 ---
@@ -47,7 +47,7 @@ def bfs_implicit(graph, start, is_target):
     return None   # target is not reachable
 ```
 
-So for this problem we have to start building the data structures from the given intial grid. This is done as follows by inspecting the grid on row wise order. As you can see this is the longest path of the code.
+So for this problem we have to start building the data structures from the given intial grid. This is done as follows by inspecting the grid on row wise order. As you can see this is the longest part of the code.
 
 ```python
 def read(grid):
