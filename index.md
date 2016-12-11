@@ -3,12 +3,10 @@ layout: page
 title: Résolution de problèmes algorithmiques
 ---
 
-## Prochaines conférences
+## Dernières conférences
 
-- [**AlphaGo explained**](/club/) par Étienne Simon & Jill-Jênn Vie  
-jeudi 1<sup>er</sup> décembre 2016 à 19 h à l'ENS Paris-Saclay
-- [**Arbres de Merkle : la structure de données à l'origine de git, BitTorrent, Bitcoin et autres blockchains**](/club/) par Jill-Jênn Vie  
-vendredi 9 décembre 2016 à 19 h à l'ENS Paris-Saclay
+- **AlphaGo explained** (slides bientôt) par Étienne Simon & Jill-Jênn Vie  
+- [**Arbres de Merkle : la structure de données à l'origine de git, BitTorrent, Bitcoin, Ethereum, The DAO et autres blockchains**](/fr/2016/12/10/arbres-de-merkle/) par Jill-Jênn Vie
 
 ## [pip install tryalgo](/code/)
 
