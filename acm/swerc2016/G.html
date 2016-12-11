@@ -1,0 +1,204 @@
+---
+layout: page
+title: G
+---
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link
+rel="stylesheet"
+href="../../styles/base.css"
+type="text/css">
+</head>
+<body>
+<center>
+<table
+cellpadding	="20"
+width		="100%">
+<tr>
+<td id="Base"><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <title>Cairo Corridor</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+.li-itemize{margin:1ex 0ex;}
+.li-enumerate{margin:1ex 0ex;}
+.dd-description{margin:0ex 0ex 1ex 4ex;}
+.dt-description{margin:0ex;}
+.toc{list-style:none;}
+.footnotetext{margin:0ex; padding:0ex;}
+div.footnotetext P{margin:0px; text-indent:1em;}
+.thefootnotes{text-align:left;margin:0ex;}
+.dt-thefootnotes{margin:0em;}
+.dd-thefootnotes{margin:0em 0em 0em 2em;}
+.footnoterule{margin:1em auto 1em 0px;width:50%;}
+.caption{padding-left:2ex; padding-right:2ex; margin-left:auto; margin-right:auto}
+.title{margin:2ex auto;text-align:center}
+.titlemain{margin:1ex 2ex 2ex 1ex;}
+.titlerest{margin:0ex 2ex;}
+.center{text-align:center;margin-left:auto;margin-right:auto;}
+.flushleft{text-align:left;margin-left:0ex;margin-right:auto;}
+.flushright{text-align:right;margin-left:auto;margin-right:0ex;}
+div table{margin-left:inherit;margin-right:inherit;margin-bottom:2px;margin-top:2px}
+td table{margin:auto;}
+table{border-collapse:collapse;}
+td{padding:0;}
+.cellpadding0 tr td{padding:0;}
+.cellpadding1 tr td{padding:1px;}
+pre{text-align:left;margin-left:0ex;margin-right:auto;}
+blockquote{margin-left:4ex;margin-right:4ex;text-align:left;}
+td p{margin:0px;}
+.boxed{border:1px solid black}
+.textboxed{border:1px solid black}
+.vbar{border:none;width:2px;background-color:black;}
+.hbar{border:none;height:2px;width:100%;background-color:black;}
+.hfill{border:none;height:1px;width:200%;background-color:black;}
+.vdisplay{border-collapse:separate;border-spacing:2px;width:auto; empty-cells:show; border:2px solid red;}
+.vdcell{white-space:nowrap;padding:0px; border:2px solid green;}
+.display{border-collapse:separate;border-spacing:2px;width:auto; border:none;}
+.dcell{white-space:nowrap;padding:0px; border:none;}
+.dcenter{margin:0ex auto;}
+.vdcenter{border:solid #FF8000 2px; margin:0ex auto;}
+.minipage{text-align:left; margin-left:0em; margin-right:auto;}
+.marginpar{border:solid thin black; width:20%; text-align:left;}
+.marginparleft{float:left; margin-left:0ex; margin-right:1ex;}
+.marginparright{float:right; margin-left:1ex; margin-right:0ex;}
+.theorem{text-align:left;margin:1ex auto 1ex 0ex;}
+.part{margin:2ex auto;text-align:center}
+</style>
+  </head>
+  <body>
+
+
+
+
+  <div class="center"><span style="font-size:xx-large"><span style="font-weight:bold">Cairo Corridor</span></span></div>
+
+<p><img align="right" src="9449771460820814?image+G+cairo.jpg" width="200">The <em>Cairo pentagonal tiling</em> is a decomposition of the plane
+using semiregular pentagons. Its name is given because several 
+streets in Cairo are paved using variations of this design.</p><p>Consider a bounded tiling where each pentagon is 
+either <em>clear</em> (white) or <em>filled in</em> (grey). 
+A <em>corridor</em> is a maximal set of clear adjacent pentagons 
+that connect the four borders of the tiling. 
+Pentagons are considered adjacent if they share an edge, 
+not just a corner.
+It is easy to verify that
+there can be at most one corridor in each tiling.
+A corridor is said to be <em>minimal</em> if
+it has no superfluous pentagon, that is,
+if any pentagon of the corridor was filled in,
+the set of remaining pentagons would not be a corridor. </p>
+
+<div class="center">
+<table>
+  <tr>
+    <td class="center">
+      <img src="9449771460820814?image+G+corridor3.png" width="200">
+      <br>(a) Minimal corridor
+    </td>
+    <td width="20">&nbsp;</td>
+    <td class="center">
+      <img src="9449771460820814?image+G+corridor2.png" width="200">
+      <br>(b) Minimal corridor
+    </td>
+    <td width="20">&nbsp;</td>
+    <td class="center">
+      <img src="9449771460820814?image+G+corridor5.png" width="200">
+      <br>(c) No minimal corridor
+    </td>
+    <td width="20">&nbsp;</td>
+    <td class="center">
+      <img src="9449771460820814?image+G+corridor6.png" width="200">
+      <br>(d) No corridor
+    </td>
+  </tr>
+</table>
+</div>
+
+<p>The figure above depicts four example tilings.
+In the first three cases, there is a corridor
+which is highlighted in yellow.
+Besides, 
+the corridors of figures (a) and (b) are minimal, 
+but the one in figure (c) is not:
+for example, the tiles marked ‘X’ (among others)
+could be filled in and a corridor would still exist.
+In the rightmost tiling there is no corridor.</p><p>The tilings shown in figures (a) and (c) correspond to sample input 1.</p><!--TOC subsection id="sec45" Task-->
+<h3 id="sec45" class="subsection">Task</h3><!--SEC END --><p>Write a program that reads textual descriptions of Cairo tilings,
+and for each one determines if a corridor exists and is minimal.
+In the latter case, the program should compute the <em>size of the corridor</em>,
+i.e., the number of clear pentagonal tiles of the corridor.</p><!--TOC subsection id="sec46" Input-->
+<h3 id="sec46" class="subsection">Input</h3><!--SEC END --><p>
+The first line of input is a positive decimal integer <span style="font-style:italic">T</span>
+of tilings to be processed.
+Each tiling description <span style="font-style:italic">k</span> has 
+a first line with two positive decimal integers, 
+<span style="font-style:italic">N</span><sub><span style="font-style:italic">k</span></sub> and <span style="font-style:italic">M</span><sub><span style="font-style:italic">k</span></sub>, separated by a space.
+The following <span style="font-style:italic">N</span><sub><span style="font-style:italic">k</span></sub> lines contain 2× <span style="font-style:italic">M</span><sub><span style="font-style:italic">k</span></sub> binary digits 
+representing pairs <span style="font-style:italic">a</span><sub><span style="font-style:italic">ij</span></sub>, <span style="font-style:italic">b</span><sub><span style="font-style:italic">ij</span></sub> of tiles
+(<span style="font-family:monospace">0</span> is clear and <span style="font-family:monospace">1</span> is full)
+in alternating horizontal/vertical adjacency following 
+a “checkerboard” pattern,
+as is illustrated in the figure below.</p>
+
+  <p class="center"><img src="9449771460820814?image+G+inputformat2.png" width="350"></p>
+
+  <!--TOC subsection id="sec47" Constraints-->
+<h3 id="sec47" class="subsection">Constraints</h3><!--SEC END --><table style="border-spacing:6px;border-collapse:separate;margin-left:0;margin-right:auto;" class="cellpading0"><tr><td style="text-align:right;white-space:nowrap" >1</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" >≤</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" ><span style="font-style:italic">T</span></td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" >≤</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:left;white-space:nowrap" >10</td><td style="text-align:left;white-space:nowrap" >Number of tilings <br>
+</td></tr>
+<tr><td style="text-align:right;white-space:nowrap" >1</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" >≤</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" >∑<sub><span style="font-style:italic">k</span>=1</sub><sup><span style="font-style:italic">T</span></sup> <span style="font-style:italic">N</span><sub><span style="font-style:italic">k</span></sub></td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" >≤</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:left;white-space:nowrap" >250</td><td style="text-align:left;white-space:nowrap" >Total number of lines <br>
+</td></tr>
+<tr><td style="text-align:right;white-space:nowrap" >1</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" >≤</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" >∑<sub><span style="font-style:italic">k</span>=1</sub><sup><span style="font-style:italic">T</span></sup> <span style="font-style:italic">M</span><sub><span style="font-style:italic">k</span></sub></td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" >≤</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:left;white-space:nowrap" >250</td><td style="text-align:left;white-space:nowrap" >Total number of tile pairs
+</td></tr>
+</table><!--TOC subsection id="sec48" Output-->
+<h3 id="sec48" class="subsection">Output</h3><!--SEC END --><p>The output consists of <span style="font-style:italic">T</span> lines; the <span style="font-style:italic">k</span>-th line should be the 
+size of the corridor of the <span style="font-style:italic">k</span>-th tiling,
+if there exists a minimal corridor, 
+and <span style="font-family:monospace">NO MINIMAL CORRIDOR</span>, otherwise.</p>
+
+<!--TOC subsection id="sec49" Sample Input 1-->
+<h3 id="sec49" class="subsection">Sample Input 1</h3><!--SEC END --><pre class="verbatim">2
+6 6 
+010101001001
+001000101100
+110101001101
+010010000100
+001110110010
+001001101010
+6 6 
+010010110010
+001100100111
+000110100101
+011001100101
+100100011100
+011010001101
+</pre><!--TOC subsection id="sec50" Sample Output 1-->
+<h3 id="sec50" class="subsection">Sample Output 1</h3><!--SEC END --><pre class="verbatim">17
+NO MINIMAL CORRIDOR
+</pre>
+
+<!--TOC subsection id="sec51" Sample Input 2-->
+<h3 id="sec51" class="subsection">Sample Input 2</h3><!--SEC END --><pre class="verbatim">1
+3 4
+11110111
+01000000
+11110111
+</pre><!--TOC subsection id="sec52" Sample Output 2-->
+<h3 id="sec52" class="subsection">Sample Output 2</h3><!--SEC END --><pre class="verbatim">9
+</pre>
+  
+    <hr size="2">
+    <center><b>SWERC'2016</b><br>
+      Computer Science Department<br>
+      Universidade do Porto<br>
+    <hr size="2">
+  
+  </body>
+</html>
+</td>
+</tr>
+</table>
+</center>
+</body>
+</html>

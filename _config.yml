@@ -11,10 +11,11 @@ title:            TryAlgo
 avatar:           /public/apple-touch-icon-144-precomposed.png
 tagline:          'Un livre de programmation'
 description:      'Résolution de problèmes algorithmiques'
+description_en:   'Algorithmic Problem Solving'
 metadescription:  "Programmation efficace - Les 128 algorithmes qu'il faut avoir compris et codés dans sa vie. Sortie le 1er mars 2016."
 url:              http://tryalgo.org
 baseurl:          "/"
-images: 		  "/en/images/"
+images: 		      "/en/images/"
 
 author:
   name:           'Jill-Jênn Vie'
@@ -37,3 +38,19 @@ github:
 #   fr:
 #     output: true
 #     permalink: /:collection/:title/
+
+# Includes an icon in the footer for each username you enter
+footer-links:
+  dribbble:
+  email: vie@jill-jenn.net
+  facebook:
+  flickr:
+  github: jilljenn/tryalgo
+  instagram:
+  linkedin:
+  pinterest:
+  rss: # just type anything here for a working RSS icon
+  twitter: # jekyllrb
+  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
+  youtube: # channel/<your_long_string> or user/<user-name>
+  googleplus: # anything in your profile username that comes after plus.google.com/

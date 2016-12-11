@@ -1,0 +1,237 @@
+---
+layout: page
+title: H
+---
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link
+rel="stylesheet"
+href="../../styles/base.css"
+type="text/css">
+</head>
+<body>
+<center>
+<table
+cellpadding	="20"
+width		="100%">
+<tr>
+<td id="Base"><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <title>Pascal’s Hyper-Pyramids</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+.li-itemize{margin:1ex 0ex;}
+.li-enumerate{margin:1ex 0ex;}
+.dd-description{margin:0ex 0ex 1ex 4ex;}
+.dt-description{margin:0ex;}
+.toc{list-style:none;}
+.footnotetext{margin:0ex; padding:0ex;}
+div.footnotetext P{margin:0px; text-indent:1em;}
+.thefootnotes{text-align:left;margin:0ex;}
+.dt-thefootnotes{margin:0em;}
+.dd-thefootnotes{margin:0em 0em 0em 2em;}
+.footnoterule{margin:1em auto 1em 0px;width:50%;}
+.caption{padding-left:2ex; padding-right:2ex; margin-left:auto; margin-right:auto}
+.title{margin:2ex auto;text-align:center}
+.titlemain{margin:1ex 2ex 2ex 1ex;}
+.titlerest{margin:0ex 2ex;}
+.center{text-align:center;margin-left:auto;margin-right:auto;}
+.flushleft{text-align:left;margin-left:0ex;margin-right:auto;}
+.flushright{text-align:right;margin-left:auto;margin-right:0ex;}
+div table{margin-left:inherit;margin-right:inherit;margin-bottom:2px;margin-top:2px}
+td table{margin:auto;}
+table{border-collapse:collapse; border:0;}
+td{padding:0;}
+.cellpadding0 tr td{padding:0;}
+.cellpadding1 tr td{padding:4px;}
+pre{text-align:left;margin-left:0ex;margin-right:auto;}
+blockquote{margin-left:4ex;margin-right:4ex;text-align:left;}
+td p{margin:0px;}
+.boxed{border:1px solid black}
+.textboxed{border:1px solid black}
+.vbar{border:none;width:2px;background-color:black;}
+.hbar{border:none;height:2px;width:100%;background-color:black;}
+.hfill{border:none;height:1px;width:200%;background-color:black;}
+.vdisplay{border-collapse:separate;border-spacing:2px;width:auto; empty-cells:show; border:2px solid red;}
+.vdcell{white-space:nowrap;padding:0px; border:2px solid green;}
+.display{border-collapse:separate;border-spacing:2px;width:auto; border:none;}
+.dcell{white-space:nowrap;padding:0px; border:none;}
+.dcenter{margin:0ex auto;}
+.vdcenter{border:solid #FF8000 2px; margin:0ex auto;}
+.minipage{text-align:left; margin-left:0em; margin-right:auto;}
+.marginpar{border:solid thin black; width:20%; text-align:left;}
+.marginparleft{float:left; margin-left:0ex; margin-right:1ex;}
+.marginparright{float:right; margin-left:1ex; margin-right:0ex;}
+.theorem{text-align:left;margin:1ex auto 1ex 0ex;}
+.part{margin:2ex auto;text-align:center}
+</style>
+  </head>
+  <body>
+
+
+
+
+<div class="center"><span style="font-size:xx-large"><span style="font-weight:bold">Pascal’s Hyper-Pyramids</span></span></div>
+
+<p><img align="right" src="9449771460820814?image+H+eye_pyramid.jpg" width="200">We programmers know and love Pascal’s triangle: an array of numbers with 1 at the top and whose entries are the 
+sum of the two numbers directly above (except numbers at both ends, which are always 1). 
+For programming this generation rule,
+the triangle is best represented left-aligned;
+then the numbers on the left column and on the top row equal 1 and
+every other is the sum of the numbers immediately above and to its left.
+The numbers highlighted in bold correspond to the base of 
+Pascal’s triangle of height 5:
+</p>
+
+<table class="display dcenter"><tr style="vertical-align:middle"><td class="dcell"><table border=1  style="border-spacing:0;" class="cellpadding1"><tr><td style="text-align:center;border:solid 1px;white-space:nowrap" >1</td><td style="text-align:center;border:solid 1px;white-space:nowrap" >1</td><td style="text-align:center;border:solid 1px;white-space:nowrap" >1</td><td style="text-align:center;border:solid 1px;white-space:nowrap" >1</td><td style="text-align:center;border:solid 1px;white-space:nowrap" ><span style="font-weight:bold">1</span></td></tr>
+<tr><td style="text-align:center;border:solid 1px;white-space:nowrap" >1</td><td style="text-align:center;border:solid 1px;white-space:nowrap" >2</td><td style="text-align:center;border:solid 1px;white-space:nowrap" >3</td><td style="text-align:center;border:solid 1px;white-space:nowrap" ><span style="font-weight:bold">4</span></td></tr>
+<tr><td style="text-align:center;border:solid 1px;white-space:nowrap" >1</td><td style="text-align:center;border:solid 1px;white-space:nowrap" >3</td><td style="text-align:center;border:solid 1px;white-space:nowrap;" ><span style="font-weight:bold">6</span></td></tr>
+<tr><td style="text-align:center;border:solid 1px;white-space:nowrap" >1</td><td style="text-align:center;border:solid 1px;white-space:nowrap" ><span style="font-weight:bold">4</span></td></tr>
+<tr><td style="text-align:center;border:solid 1px;white-space:nowrap" ><span style="font-weight:bold">1</span>
+</td></tr>
+</table></td></tr>
+</table>
+
+<p><span style="font-style:italic">Pascal’s hyper-pyramids</span> generalize the triangle to higher dimensions.
+In 3 dimensions, 
+the value at position (<span style="font-style:italic">x</span>, <span style="font-style:italic">y</span>, <span style="font-style:italic">z</span>) is the sum of up to three other values:
+</p><ul class="itemize"><li class="li-itemize">
+
+(<span style="font-style:italic">x</span>, <span style="font-style:italic">y</span>, <span style="font-style:italic">z</span>−1), the value immediately below it if we are not on the bottom face (<span style="font-style:italic">z</span>=0);
+</li><li class="li-itemize">(<span style="font-style:italic">x</span>, <span style="font-style:italic">y</span>−1, <span style="font-style:italic">z</span>), the value immediately behind if we are not on the back face (<span style="font-style:italic">y</span>=0);
+</li><li class="li-itemize">(<span style="font-style:italic">x</span>−1, <span style="font-style:italic">y</span>, <span style="font-style:italic">z</span>), the value immediately to the left if we are not on the leftmost face (<span style="font-style:italic">x</span>=0).
+</li></ul><p>The following figure depicts Pascal’s 3D-pyramid of height 5 as a series
+      of plane cuts obtained by fixing the value of the <span style="font-style:italic">z</span> coordinate.</p>
+
+<div class="center">
+  <table>
+    <tr>
+      <td valign="top">
+	
+	<table class="display dcenter">
+	  <tr style="vertical-align:middle"><td class="dcell">
+	      <table border=1  style="border-spacing:0;" class="cellpadding1">
+		<tr><td style="text-align:center;border:solid 1px;white-space:nowrap"  colspan=5><span style="font-style:italic">z</span>=0</td></tr>
+		<tr><td style="text-align:center;border:solid 1px;white-space:nowrap" >1</td><td style="text-align:center;border:solid 1px;white-space:nowrap" >1</td><td style="text-align:center;border:solid 1px;white-space:nowrap" >1</td><td style="text-align:center;border:solid 1px;white-space:nowrap" >1</td><td style="text-align:center;border:solid 1px;white-space:nowrap" ><span style="font-weight:bold">1</span></td></tr>
+		<tr><td style="text-align:center;border:solid 1px;white-space:nowrap" >1</td><td style="text-align:center;border:solid 1px;white-space:nowrap" >2</td><td style="text-align:center;border:solid 1px;white-space:nowrap" >3</td><td style="text-align:center;border:solid 1px;white-space:nowrap" ><span style="font-weight:bold">4</span></td></tr>
+		<tr><td style="text-align:center;border:solid 1px;white-space:nowrap" >1</td><td style="text-align:center;border:solid 1px;white-space:nowrap" >3</td><td style="text-align:center;border:solid 1px;white-space:nowrap" ><span style="font-weight:bold">6</span></td></tr>
+		<tr><td style="text-align:center;border:solid 1px;white-space:nowrap" >1</td><td style="text-align:center;border:solid 1px;white-space:nowrap" ><span style="font-weight:bold">4</span></td></tr>
+		<tr><td style="text-align:center;border:solid 1px;white-space:nowrap" ><span style="font-weight:bold">1</span>
+	      </td></tr></table>
+	</td></tr></table>
+	      	
+      </td>
+      <td width="20">&nbsp;</td>
+      <td valign="top">
+	
+	<table class="display dcenter">
+	  <tr style="vertical-align:middle"><td class="dcell">
+	      <table border=1  style="border-spacing:0;" class="cellpadding1">
+		<tr><td style="text-align:center;border:solid 1px;white-space:nowrap"  colspan=4><span style="font-style:italic">z</span>=1</td></tr>
+		<tr><td style="text-align:center;border:solid 1px;white-space:nowrap" >1</td><td style="text-align:center;border:solid 1px;white-space:nowrap" >2</td><td style="text-align:center;border:solid 1px;white-space:nowrap" >3</td><td style="text-align:center;border:solid 1px;white-space:nowrap" ><span style="font-weight:bold">4</span></td></tr>
+		<tr><td style="text-align:center;border:solid 1px;white-space:nowrap" >2</td><td style="text-align:center;border:solid 1px;white-space:nowrap" >6</td><td style="text-align:center;border:solid 1px;white-space:nowrap" ><span style="font-weight:bold">12</span></td></tr>
+		<tr><td style="text-align:center;border:solid 1px;white-space:nowrap" >3</td><td style="text-align:center;border:solid 1px;white-space:nowrap" ><span style="font-weight:bold">12</span></td></tr>
+		<tr><td style="text-align:center;border:solid 1px;white-space:nowrap" ><span style="font-weight:bold">4</span>
+		</td></tr>
+	      </table>
+	  </td></tr>
+	</table>
+	
+      </td>
+      <td width="20">&nbsp;</td>
+    <td valign="top">
+            
+      <table class="display dcenter">
+	<tr style="vertical-align:middle"><td class="dcell">
+	    <table border=1  style="border-spacing:0;" class="cellpadding1"><tr><td style="text-align:center;border:solid 1px;white-space:nowrap"  colspan=3><span style="font-style:italic">z</span>=2</td></tr>
+	      <tr><td style="text-align:center;border:solid 1px;white-space:nowrap" >1</td><td style="text-align:center;border:solid 1px;white-space:nowrap" >3</td><td style="text-align:center;border:solid 1px;white-space:nowrap" ><span style="font-weight:bold">6</span></td></tr>
+	      <tr><td style="text-align:center;border:solid 1px;white-space:nowrap" >3</td><td style="text-align:center;border:solid 1px;white-space:nowrap" ><span style="font-weight:bold">12</span></td></tr>
+	      <tr><td style="text-align:center;border:solid 1px;white-space:nowrap" ><span style="font-weight:bold">6</span></td></tr>
+	    </table>
+	</td></tr>
+      </table>
+	    
+    </td>
+    <td width="20">&nbsp;</td>
+      <td valign="top">
+      
+	<table class="display dcenter"><tr style="vertical-align:middle"><td class="dcell">
+	      <table border=1  style="border-spacing:0;" class="cellpadding1"><tr><td style="text-align:center;border:solid 1px;white-space:nowrap"  colspan=2><span style="font-style:italic">z</span>=3</td></tr>
+		<tr><td style="text-align:center;border:solid 1px;white-space:nowrap" >1</td><td style="text-align:center;border:solid 1px;white-space:nowrap" ><span style="font-weight:bold">4</span></td></tr>
+		<tr><td style="text-align:center;border:solid 1px;white-space:nowrap" ><span style="font-weight:bold">4</span></td></tr>
+	      </table>
+	  </td></tr>
+	</table>
+	
+      </td>
+      <td width="20">&nbsp;</td>
+      <td valign="top">
+	
+	<table class="display dcenter"><tr style="vertical-align:middle"><td class="dcell">
+	      <table border=1  style="border-spacing:0;" class="cellpadding1"><tr><td style="text-align:center;border:solid 1px;white-space:nowrap" ><span style="font-style:italic">z</span>=4</td></tr>
+		<tr><td style="text-align:center;border:solid 1px;white-space:nowrap" ><span style="font-weight:bold">1</span>
+	      </td></tr></table>	      
+	    </td>
+	  </tr>
+	</table>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<p>For example, the number at position <span style="font-style:italic">x</span>=1, <span style="font-style:italic">y</span>=2, <span style="font-style:italic">z</span>=1 is the sum of 
+the values at (0, 2, 1), (1, 1, 1) and (1, 2, 0), namely,
+6 + 3 + 3 = 12.
+The base of the pyramid 
+corresponds to a plane of positions such that <span style="font-style:italic">x</span>+<span style="font-style:italic">y</span>+<span style="font-style:italic">z</span> = 4
+(highlighted in bold above).</p><p>The size of each layer grows quadratically with the height of the 
+pyramid, but 
+there are many repeated values due to symmetries: numbers at positions that are
+permutations of one another must be equal. For example,
+the numbers at positions (0,1,2), (1,2,0) and (2,1,0)
+above are all equal to 3.</p><!--TOC subsection id="sec53" Task-->
+<h3 id="sec53" class="subsection">Task</h3><!--SEC END --><p>Write a program that, given the number of dimensions <span style="font-style:italic">D</span> of the hyper-space
+and the height <span style="font-style:italic">H</span> of a hyper-pyramid, computes the set of numbers at the base.</p><!--TOC subsection id="sec54" Input-->
+<h3 id="sec54" class="subsection">Input</h3><!--SEC END --><p>
+A single line with two positive integers: the number of dimensions, <span style="font-style:italic">D</span>, and the height of the hyper-pyramid, <span style="font-style:italic">H</span>.</p><!--TOC subsection id="sec55" Constraints-->
+<h3 id="sec55" class="subsection">Constraints</h3><!--SEC END --><table style="border-spacing:6px;border-collapse:separate;margin-left:0;margin-right:auto;" class="cellpading0"><tr><td style="text-align:right;white-space:nowrap" >2</td><td style="text-align:center;white-space:nowrap" ></td><td style="text-align:center;white-space:nowrap" >≤</td><td style="text-align:center;white-space:nowrap" ></td><td style="text-align:center;white-space:nowrap" ><span style="font-style:italic">D</span></td><td style="text-align:center;white-space:nowrap" ></td><td style="text-align:center;white-space:nowrap" >&lt;</td><td style="text-align:center;white-space:nowrap" ></td><td style="text-align:left;white-space:nowrap" >32</td><td style="text-align:left;white-space:nowrap" >Number of dimensions <br>
+</td></tr>
+<tr><td style="text-align:right;white-space:nowrap" >1</td><td style="text-align:center;white-space:nowrap" ></td><td style="text-align:center;white-space:nowrap" >≤</td><td style="text-align:center;white-space:nowrap" ></td><td style="text-align:center;white-space:nowrap" ><span style="font-style:italic">H</span></td><td style="text-align:center;white-space:nowrap" ></td><td style="text-align:center;white-space:nowrap" >&lt;</td><td style="text-align:center;white-space:nowrap" ></td><td style="text-align:left;white-space:nowrap" >32</td><td style="text-align:left;white-space:nowrap" >Height <br>
+</td></tr>
+<tr><td style="text-align:left;white-space:nowrap"  colspan=10><span style="font-style:italic">D</span> and <span style="font-style:italic">H</span> are such that all numbers in the hyper-pyramid are less than 2<sup>63</sup>.
+</td></tr>
+</table><!--TOC subsection id="sec56" Output-->
+<h3 id="sec56" class="subsection">Output</h3><!--SEC END --><p>
+The set of numbers at the base of the hyper-pyramid, with no repetitions,
+one number per line, and in ascending order.</p><!--TOC subsection id="sec57" Sample Input 1-->
+<h3 id="sec57" class="subsection">Sample Input 1</h3><!--SEC END --><pre class="verbatim">2 5
+</pre><!--TOC subsection id="sec58" Sample Output 1-->
+<h3 id="sec58" class="subsection">Sample Output 1</h3><!--SEC END --><pre class="verbatim">1
+4
+6
+</pre><!--TOC subsection id="sec59" Sample Input 2-->
+<h3 id="sec59" class="subsection">Sample Input 2</h3><!--SEC END --><pre class="verbatim">3 5
+</pre><!--TOC subsection id="sec60" Sample Output 2-->
+<h3 id="sec60" class="subsection">Sample Output 2</h3><!--SEC END --><pre class="verbatim">1
+4
+6
+12
+</pre>
+
+  
+    <hr size="2">
+    <center><b>SWERC'2016</b><br>
+      Computer Science Department<br>
+      Universidade do Porto<br>
+    <hr size="2">
+  
+  </body>
+</html>
+</td>
+</tr>
+</table>
+</center>
+</body>
+</html>

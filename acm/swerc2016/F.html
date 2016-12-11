@@ -1,0 +1,141 @@
+---
+layout: page
+title: F
+---
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link
+rel="stylesheet"
+href="../../styles/base.css"
+type="text/css">
+</head>
+<body>
+<center>
+<table
+cellpadding	="20"
+width		="100%">
+<tr>
+<td id="Base"><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <title>Performance Review</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+.li-itemize{margin:1ex 0ex;}
+.li-enumerate{margin:1ex 0ex;}
+.dd-description{margin:0ex 0ex 1ex 4ex;}
+.dt-description{margin:0ex;}
+.toc{list-style:none;}
+.footnotetext{margin:0ex; padding:0ex;}
+div.footnotetext P{margin:0px; text-indent:1em;}
+.thefootnotes{text-align:left;margin:0ex;}
+.dt-thefootnotes{margin:0em;}
+.dd-thefootnotes{margin:0em 0em 0em 2em;}
+.footnoterule{margin:1em auto 1em 0px;width:50%;}
+.caption{padding-left:2ex; padding-right:2ex; margin-left:auto; margin-right:auto}
+.title{margin:2ex auto;text-align:center}
+.titlemain{margin:1ex 2ex 2ex 1ex;}
+.titlerest{margin:0ex 2ex;}
+.center{text-align:center;margin-left:auto;margin-right:auto;}
+.flushleft{text-align:left;margin-left:0ex;margin-right:auto;}
+.flushright{text-align:right;margin-left:auto;margin-right:0ex;}
+div table{margin-left:inherit;margin-right:inherit;margin-bottom:2px;margin-top:2px}
+td table{margin:auto;}
+table{border-collapse:collapse;}
+td{padding:0;}
+.cellpadding0 tr td{padding:0;}
+.cellpadding1 tr td{padding:1px;}
+pre{text-align:left;margin-left:0ex;margin-right:auto;}
+blockquote{margin-left:4ex;margin-right:4ex;text-align:left;}
+td p{margin:0px;}
+.boxed{border:1px solid black}
+.textboxed{border:1px solid black}
+.vbar{border:none;width:2px;background-color:black;}
+.hbar{border:none;height:2px;width:100%;background-color:black;}
+.hfill{border:none;height:1px;width:200%;background-color:black;}
+.vdisplay{border-collapse:separate;border-spacing:2px;width:auto; empty-cells:show; border:2px solid red;}
+.vdcell{white-space:nowrap;padding:0px; border:2px solid green;}
+.display{border-collapse:separate;border-spacing:2px;width:auto; border:none;}
+.dcell{white-space:nowrap;padding:0px; border:none;}
+.dcenter{margin:0ex auto;}
+.vdcenter{border:solid #FF8000 2px; margin:0ex auto;}
+.minipage{text-align:left; margin-left:0em; margin-right:auto;}
+.marginpar{border:solid thin black; width:20%; text-align:left;}
+.marginparleft{float:left; margin-left:0ex; margin-right:1ex;}
+.marginparright{float:right; margin-left:1ex; margin-right:0ex;}
+.theorem{text-align:left;margin:1ex auto 1ex 0ex;}
+.part{margin:2ex auto;text-align:center}
+</style>
+  </head>
+  <body>
+
+
+
+
+<div class="center"><span style="font-size:xx-large"><span style="font-weight:bold">Performance Review</span></span></div>
+
+<p><img align="right" src="9449771460820814?image+F+structure.png" width="200">Employee performance reviews are a necessary evil in any company. 
+In a performance review, employees give written feedback about each other on 
+the work done recently. This feedback is passed up to their managers which 
+then decide promotions based on the feedback received. </p><p>Maria is in charge of the performance review system in the engineering division 
+of a famous company. The division follows a typical structure. Each employee 
+(except the engineering director) reports to one manager and every employee 
+reports directly or indirectly to the director. </p><p>Having the managers assessing the performance of their direct reports has not 
+worked very well. After thorough research, Maria came up with a new performance 
+review system. The main idea is to complement the existing corporate structure 
+with a technical rank for each employee. An employee should give feedback only 
+about subordinates with lower technical level. </p><p>Hence, the performance review will work as follows. Employees prepare a summary 
+of their work, estimate how much time it takes to review it, and then request 
+their superiors with higher technical rank to review their work. </p><p>Maria is very proud of this new system, but she is unsure if it will be feasible 
+in practice. She wonders how much time each employee will waste writing reviews. 
+Can you help her out? </p><!--TOC subsection id="sec39" Task-->
+<h3 id="sec39" class="subsection">Task</h3><!--SEC END --><p>Given the corporate structure of the engineering division, 
+determine how much time each employee will spend writing performance reviews.</p><!--TOC subsection id="sec40" Input-->
+<h3 id="sec40" class="subsection">Input</h3><!--SEC END --><p>The first line of input has one integer <span style="font-style:italic">E</span>, the number of employees, who are 
+conveniently numbered between 1 and <span style="font-style:italic">E</span>.
+The next <span style="font-style:italic">E</span> lines describe all the employees, starting at employee 1 
+until employee <span style="font-style:italic">E</span>. Each line contains three space-separated 
+integers <span style="font-style:italic">m</span><sub><span style="font-style:italic">i</span></sub> <span style="font-style:italic">r</span><sub><span style="font-style:italic">i</span></sub> <span style="font-style:italic">t</span><sub><span style="font-style:italic">i</span></sub>, the manager, the technical rank and the expected 
+time to perform the review of employee <span style="font-style:italic">i</span>.
+The engineering director has no manager, represented with <span style="font-style:italic">m</span><sub><span style="font-style:italic">i</span></sub> = −1.
+The other employees have <span style="font-style:italic">m</span><sub><span style="font-style:italic">i</span></sub> between 1 and <span style="font-style:italic">E</span>.</p><!--TOC subsection id="sec41" Constraints-->
+<h3 id="sec41" class="subsection">Constraints</h3><!--SEC END --><table style="border-spacing:6px;border-collapse:separate;margin-left:0;margin-right:auto;" class="cellpading0"><tr><td style="text-align:right;white-space:nowrap" >1</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" >≤</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" ><span style="font-style:italic">E</span></td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" >≤</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:left;white-space:nowrap" >100 000</td><td style="text-align:left;white-space:nowrap" >Number of employees <br>
+</td></tr>
+<tr><td style="text-align:right;white-space:nowrap" >1</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" >≤</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" ><span style="font-style:italic">r</span><sub><span style="font-style:italic">i</span></sub></td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" >≤</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:left;white-space:nowrap" >100 000</td><td style="text-align:left;white-space:nowrap" >Technical rank of each employee <br>
+</td></tr>
+<tr><td style="text-align:right;white-space:nowrap" >1</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" >≤</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" ><span style="font-style:italic">t</span><sub><span style="font-style:italic">i</span></sub></td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:center;white-space:nowrap" >≤</td><td style="text-align:center;white-space:nowrap" > </td><td style="text-align:left;white-space:nowrap" >100 000</td><td style="text-align:left;white-space:nowrap" >Expected time to perform each review<br>
+</td></tr>
+</table><!--TOC subsection id="sec42" Output-->
+<h3 id="sec42" class="subsection">Output</h3><!--SEC END --><p>
+The output contains <span style="font-style:italic">E</span> lines. Line <span style="font-style:italic">i</span> has the time employee <span style="font-style:italic">i</span> will spend writing reviews.</p><!--TOC subsection id="sec43" Sample Input-->
+<h3 id="sec43" class="subsection">Sample Input</h3><!--SEC END --><pre class="verbatim">5
+4 4 80
+1 1 40
+-1 10 60
+3 5 50
+4 8 70
+</pre><!--TOC subsection id="sec44" Sample Output-->
+<h3 id="sec44" class="subsection">Sample Output</h3><!--SEC END --><pre class="verbatim">40
+0
+240
+120
+0
+</pre>
+
+
+  
+    <hr size="2">
+    <center><b>SWERC'2016</b><br>
+      Computer Science Department<br>
+      Universidade do Porto<br>
+    <hr size="2">
+  
+  </body>
+</html>
+</td>
+</tr>
+</table>
+</center>
+</body>
+</html>

@@ -1,21 +1,29 @@
 ---
 layout: page
-title: Tryalgo posts ordered by date
+title: Most recent 8 posts
+lang: en
 ---
 
-See also our list [ordered by categories](categories).
+See also all posts [ordered by categories](categories).
 
-{% for post in site.posts %}
-  {% if post.layout == 'en' %}
+{% assign posts = site.posts | where:'layout', 'en' %}
+
+{% for post in posts limit:8 %}
   <div class="post">
             <h2>
-          {{ post.title }}
+          <a class="post-link" href="{{ post.url }}">{{ post.title }}</a>
         </h2>
-    <p class="post-meta"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></p>
+    <p class="post-meta"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time>
+        {% if post.problems %}
+            <br>Related problem:
+            {% for pb in post.problems %}
+               <a href="{{ pb[1] }}">[{{ pb[0] }}]</a>
+            {% endfor %}
+        {% endif %}
+    </p>
 
-        {{ post.excerpt }} ... <a class="post-link" href="{{ post.url }}">more</a>
-     
+        {{ post.excerpt }}
+
   </div>
-  {% endif %}
 {% endfor %}
 

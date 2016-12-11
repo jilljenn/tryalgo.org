@@ -7,6 +7,8 @@ Voici une liste de coquilles dans le livre.
 
 - page 14 : la définition d'$\Omega$ est erronée, il faut $f(n) \geq c \cdot g(n)$ (merci garkham).
 
+- page 15 : La chaîne de formatage doit contenir %.02f%% à la place de %.02f pour qu'un pourcentage s'affiche en sortie.
+
 - page 16 : (première phrase) Il se trouve que $\textsf{P} \subseteq \textsf{NP}$, l'intuition étant que si on peut construire une solution en temps polynomial, alors on peut *vérifier* une solution en temps polynomial.
 
 - page 102 : la complexité de l'algorithme pour le voyageur de commerce est $O(&#124;V&#124;^2 2^{&#124;V&#124;})$
@@ -23,7 +25,8 @@ Voici une liste de coquilles dans le livre.
 
 - page 191 (Tous les chemins pour un laser): peut en fait être réduit à un problème de couplage parfait.  Par contre le graphe n'est pas biparti, et l'algorithme de Edmond (Blossom algorithm) est long à implémenter.
 
+- page 204 (Algorithme en \\(O(n^3)\\)): il faut lire \\(S \subseteq\\{0,\ldots,n-1\\}\\) au lieu de \\( S \subseteq\\{1,\ldots,n-1\\} \\)
 
 ## Clarifications
 
-- page 35, 36 : la fonction présentée prend une liste de mots (*w*) en argument et retourne une liste de liste de mots (*reponse*).
+- page 35, 36 : la fonction présentée prend une liste de mots (*w*) en argument et renvoie une liste de liste de mots (*reponse*).
