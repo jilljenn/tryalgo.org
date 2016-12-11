@@ -16,13 +16,13 @@
       {% endif %}
 
       <nav>
-        {% if page.lang != 'en' %}<a href="{{ site.baseurl }}book">Livre</a>{% endif %}
+        <a href="{{ site.baseurl }}book">Livre</a>
         <a href="{{ site.baseurl }}code">Code</a>
         <a href="{{ site.baseurl }}contests">{% if page.lang == 'en' %}Contests{% else %}Concours{% endif %}</a>
         <a href="{{ site.baseurl }}problems">{% if page.lang == 'en' %}Problems{% else %}Problèmes{% endif %}</a>
         <a href="{{ site.baseurl }}en">Solutions</a>
         <a href="{{ site.baseurl }}fr">Blog</a>
-        {% if page.lang != 'en' %}<a href="{{ site.baseurl }}club">Club</a>{% endif %}
+        <a href="{{ site.baseurl }}club">Club</a>
         <a href="https://github.com/jilljenn/tryalgo/tree/master/tryalgo">GitHub</a>
       </nav>
     </header>
