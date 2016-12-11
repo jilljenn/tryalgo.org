@@ -4,7 +4,7 @@ title: Rendu de monnaie, bases de programmation dynamique
 author: Jill-Jênn Vie & Clémence Réda
 ---
 
-## Introduction
+## Contexte
 
 Le problème du rendu de monnaie s'énonce de façon simple : étant donné un système de pièces à disposition (1 euro, 2 euros...) et un montant à rendre, rendre ce montant avec un nombre minimal de pièces. Les applications d'une solution à ce problème sont faciles à concevoir : nul n'a envie de récupérer 1 euro en pièces de 1 centime s'il s'est aventuré à payer 2 euros pour une bouteille de soda à un distributeur. Non, vraiment personne.
 
