@@ -16,7 +16,7 @@ Une première méthode, que l'on appelle un raisonnement glouton, serait de comm
 
 L'algorithme ci-dessus  prend en argument le montant (amount, histoire de ne pas faire tache avec le reste du code), et coins, qui est notre système de pièces (ici, un tableau comportant dans la case numéro i la valeur de la ième plus petite valeur de pièce). On renvoie un tableau chosen qui comporte dans la case numéro i le nombre de pièces numéro i, dans l'ordre croissant de valeur, utilisées pour rendre la monnaie sur amount.
 
-Le reste de l'algorithme suit la démarche que l'on a décrite ci-dessus. Pour l'implémentation, voir http://livebook.inkandswitch.com/d/htXLJpCecn1h (cela vaut pour la suite de l'article).
+Le reste de l'algorithme suit la démarche que l'on a décrite ci-dessus. Pour l'implémentation, voir [ici](http://livebook.inkandswitch.com/d/htXLJpCecn1h) (cela aussi vaut pour la suite de l'article).
 
 Par exemple, pour 177 centimes, sur notre système de pièces de 2 cts, 5 cts, 10 cts, 50 cts et 1 €, on a décomposé nos 177 centimes en 1 pièce de 2 cts, 1 pièce de 5 cts, 2 pièces de 10 cts, 1 pièce de 50 cts et 1 pièce de 1 €. Donc 100 + 50 + 10x2 + 5 + 2 = 177 ! Ouf, ça marche !
 
