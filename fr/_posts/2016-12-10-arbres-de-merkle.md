@@ -27,17 +27,17 @@ Slide tirée de la présentation [*Code is not text! How graph technologies can 
 ![](/fr/images/merkle/bitcoin.png)
 
 - [Tribler](https://www.tribler.org/MerkleHashes/) qui explique qu'on a besoin qu'un nombre $\log n$ de hashes de pour certifier un tronçon parmi $n$ d'un fichier torrent (authentifié par le hash de la racine) : pas besoin de calculer tous les hashes de l'arbre.
-- Notez qu'on a également besoin du numéro du tronçon : sa décomposition en binaire permet de dire si les tronçons sont gauche ou droite, cf. [cette réponse sur Bitcoin Stack Exchange](http://bitcoin.stackexchange.com/questions/42281/what-is-the-canonical-way-of-creating-merkle-tree-branches).
+- Notez qu'on a également besoin du numéro du tronçon : sa décomposition en binaire permet de dire si les tronçons sont gauche ou droite, cf. [cette réponse sur Bitcoin Stack Exchange](http://bitcoin.stackexchange.com/questions/42281/what-is-the-canonical-way-of-creating-merkle-tree-branches#comment48760_42281).
 - Fun fact : git + BitTorrent = [IPFS](http://gsoc2016onkar.blogspot.fr/2016/06/ipfs.html) (InterPlanetary File System)
 
-# BitCoin (2009)
+# Bitcoin (2009)
 
 > *Tiens mais c'est pas mal ces arbres de Merkle, et si je fabriquais une monnaie avec ?*
 
 ![](/fr/images/merkle/nakamoto.png)
 
 - Papier fondateur : [bitcoin.org/bitcoin.pdf](http://bitcoin.org/bitcoin.pdf)
-- Curieusement, ce papier ne fait pas mention de la règle : « Pour construire un bloc, il faut trouver une nonce telle que le hash obtenu $< 2^{187}$. Si vous y parvenez, vous remportez 25 BTC soit à peu près 17500 $. »
+- Curieusement, ce papier ne fait pas mention de la règle : « Pour construire un bloc, il faut trouver une nonce telle que le hash obtenu $< 2^{187}$. Si vous y parvenez, vous remportez 25 BTC soit à peu près 17500 $. » (La valeur 187 dépend du nombre de mineurs.)
 - Ce qui me fascine, c'est que lorsqu'on construit un bloc, on ne sait pas encore si on est dans la bonne ligne de temps. C'est la popularité de notre chaîne de blocs qui nous dit si on a gagné ou pas. La chaîne la plus longue gagne.
 
 # Ethereum (2014)
@@ -66,6 +66,7 @@ DAO : decentralized autonomous organization. Bah oui tiens, pourquoi centraliser
 - [L'attaque du 17 juin 2016](https://blog.slock.it/a-dao-counter-attack-613548408dd7#.846l496no) : « *Timing is everything* » : « Il nous reste 25 jours pour sauver le monde, ça ressemble à un film mais c'est pour de vrai, mais avec de l'argent fictif »
 - [Un post sur Quora qui explique les différentes raisons pour lesquelles ça s'est mal passé](https://www.quora.com/What-are-the-details-of-the-DAO-hack-that-happened-in-June-2016)
 - [Le post-mortem](http://vessenes.com/deconstructing-thedao-attack-a-brief-code-tour/) où l'on découvre que c'est une faute de frappe qui est à l'origine de la disparition de 3,5 millions d'ether. La Faute à l'algo ?
+- Depuis cet incident, deux forks-monnaies d'Ethereum perdurent : Ethereum Classic (ETC) et Ethereum (ETH).
 
 # Certificate Transparency vs. DNSChain
 
@@ -86,3 +87,10 @@ Oui ! [Andrew Miller, Michael Hicks, Jonathan Katz, and Elaine Shi. “Authentic
 Et la grande classe, c'est qu'ils proposent [une implémentation en Caml sur GitHub](https://github.com/amiller/lambda-auth/blob/master/examples/merkle.ml).
 
 Ledit Andrew Miller expose également [son analyse d'Ethereum](https://github.com/LeastAuthority/ethereum-analyses).
+
+Des conférences [pipeau à l'IHP](http://www.societe-informatique-de-france.fr/les-journees-sif/journees-sif-blockchains/) (16/11/2016) et [moins pipeau à Télécom ParisTech](http://www.societe-informatique-de-france.fr/les-journees-sif/journees-sif-blockchains/) (15/11/2016) (lol ils abusent, ils pourraient communiquer).
+
+# Add-ons
+
+- [Namecoin](https://namecoin.org), un fork de Bitcoin pour les noms de domaine et d'autres types de données
+- [Tezos](https://tezos.com), un peu [méta](http://club-meta.fr) : les joueurs peuvent voter pour changer les règles
