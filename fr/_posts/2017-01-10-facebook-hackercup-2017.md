@@ -134,3 +134,5 @@ for t in range(T):
 Notez la regexp scandaleuse pour parser les `XdY±Z`.
 
 À bientôt, et n'oubliez pas que ce maudit concours ne tolère qu'une soumission par problème. [Voir la liste des autres concours de programmation.](/contests/)
+
+![Osaka](/fr/images/osaka.jpg)
