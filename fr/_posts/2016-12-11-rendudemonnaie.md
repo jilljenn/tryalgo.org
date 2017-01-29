@@ -16,13 +16,38 @@ Une première méthode, que l'on appelle un raisonnement glouton, serait de comm
 
 L'algorithme ci-dessus  prend en argument le montant (amount, histoire de ne pas faire tache avec le reste du code), et coins, qui est notre système de pièces (ici, un tableau comportant dans la case numéro i la valeur de la ième plus petite valeur de pièce). On renvoie un tableau chosen qui comporte dans la case numéro i le nombre de pièces numéro i, dans l'ordre croissant de valeur, utilisées pour rendre la monnaie sur amount.
 
-Le reste de l'algorithme suit la démarche que l'on a décrite ci-dessus. Pour l'implémentation, voir [ici](http://livebook.inkandswitch.com/d/htXLJpCecn1h) (cela aussi vaut pour la suite de l'article).
+Le reste de l'algorithme suit la démarche que l'on a décrite ci-dessus. Pour l'implémentation en Python, voir ci-dessous :
 
-Par exemple, pour 177 centimes, sur notre système de pièces de 2 cts, 5 cts, 10 cts, 50 cts et 1 €, on a décomposé nos 177 centimes en 1 pièce de 2 cts, 1 pièce de 5 cts, 2 pièces de 10 cts, 1 pièce de 50 cts et 1 pièce de 1 €. Donc 100 + 50 + 10x2 + 5 + 2 = 177 ! Ouf, ça marche !
+{% highlight python %}
+def moneyback(amount, coins):
+    n = len(coins)
+    chosen = [0] * n 
+    for i in range(n - 1, -1, -1):
+        while amount >= coins[i]: 
+            amount -= coins[i] 
+            chosen[i] += 1 
+    assert amount == 0 
+    return chosen  # 
+{% endhighlight %}
+
+L'algorithme ci-dessus  prend en argument le montant (amount, histoire de ne pas faire tache avec le reste du code), et coins, qui est notre système de pièces (ici, un tableau comportant dans la case numéro i la valeur de la ième plus petite valeur de pièce). On renvoie un tableau chosen qui comporte dans la case numéro i le nombre de pièces numéro i, dans l'ordre croissant de valeur, utilisées pour rendre la monnaie sur amount.
+
+Petit commentaire du code : à la ligne 4, le -1 permet de parcourir le tableau coins dans l'ordre décroissant du numéro de cases, pour récupérer la plus grande valeur de pièce. A la ligne 5, on recherche la plus grande valeur de pièce inférieur au montant qu'il reste à rendre. A la ligne 6, on utilise la pièce trouvée, et on met à jour le montant qu'il reste à rendre (comme dans la vie, la vraie). A la ligne 7, on augmente donc le nombre de pièces de cette valeur utilisées pour rendre la monnaie sur le montant initial. A la ligne 8, on vérifie que l'on a bien rendu toute la monnaie (sinon le client va râler !). A la ligne 9, on retourne le tableau contenant le nombre de pièces rendues de chaque type.
+
+Par exemple, en utilisant l'algorithme ci-dessus :
+
+{% highlight python %}
+amount = 177
+coins = [2, 5, 10, 50, 100]
+
+moneyback(amount, coins)
+{% endhighlight %}
+
+En effet, pour 177 centimes, sur notre système de pièces de 2 cts, 5 cts, 10 cts, 50 cts et 1 €, on a décomposé nos 177 centimes en 1 pièce de 2 cts, 1 pièce de 5 cts, 2 pièces de 10 cts, 1 pièce de 50 cts et 1 pièce de 1 €. Donc 100 + 50 + 10x2 + 5 + 2 = 177 ! Ouf, ça marche !
 
 Hum, vraiment ?
 
-Supposons à présent que Bob souhaite acheter un jus de tomate à 1,59 €, et qu'il ait entré 2 euros dans la machine. Le montant à rendre est donc 41 centimes. Vous voyez que l'algorithme (dans le lien ci-dessus) retourne une erreur.
+Supposons à présent que Bob souhaite acheter un jus de tomate à 1,59 €, et qu'il ait entré 2 euros dans la machine. Le montant à rendre est donc 41 centimes. Si vous faites tourner l'algorithme ci-dessus, il va crasher. Il VA crasher, croyez-moi.
 
 Que s'est-il donc passé ? Reprenons l'algorithme calmement, nonobstant le fait qu'il vient de nous crasher/cracher à la figure (pas très sympa). L'exception relevée souligne que l'on n'a pas rendu (apparemment) le bon montant. Prenons notre bon (?) vieux système 2-5-10-50-100. On doit rendre 41 centimes. Cela élimine déjà la possibilité de rendre avec une pièce de 1€ ou de 50 cts. On peut prendre des pièces de 10 cts, puisque 10 cts < 41 cts.
 
@@ -52,13 +77,57 @@ Déduisons de cet exemple la démarche générale (pour deviner une relation de 
 
 Pour rendre un montant m avec des pièces de valeur inférieure ou égale à v (problème (m,v)), si v est plus grand strictement que m, alors on retourne la solution du problème (m,v') où v' est la plus grande valeur de pièce strictement inférieure à v; sinon, si n est la solution optimale du problème (m-v,v), alors on retourne 1+n.
 
-Vous pouvez voir l'algorithme implémenté sur la page précédente.
+Implémentons alors l'algorithme suivant la démarche décrite plus haut.
+
+{% highlight python %}
+def moneyback_dyn(amount, coins):
+    n = len(coins)
+    least_coins = [[float('inf')] * (amount + 1) for _ in range(n)]
+    for sub_amount in range(amount + 1): 
+        if sub_amount % coins[0] == 0: 
+            least_coins[0][sub_amount] = sub_amount // coins[0]
+    for i in range(1, n): 
+        for j in range(amount + 1):
+            least_coins[i][j] = least_coins[i - 1][j] 
+            if coins[i] <= j: 
+                if least_coins[i][j - coins[i]] + 1 < least_coins[i][j]:
+                    least_coins[i][j] = least_coins[i][j - coins[i]] + 1
+    chosen = [0] * n
+    j = amount
+    i = n - 1
+    while j: 
+        if j >= coins[i]:
+            if least_coins[i][j - coins[i]] + 1 == least_coins[i][j]: 
+                chosen[i] += 1 
+                j -= coins[i] 
+                continue 
+        i -= 1
+    return chosen
+{% endhighlight %}
+
+Commentaire du code : on initialise la matrice least_coins telle que least_coins[i][j] donne le nombre minimal de pièces pour un rendu de j centimes avec des pièces de valeur inférieure ou égale à celle de la pièce numéro i du système de pièces. Les cases sont initialisées à +infini : tout nombre fini de pièces est inférieur à +infini... Pour la première boucle "for", on fait varier le montant dans notre problème dans l'ordre croissant (ici, ça n'a pas d'importance, puisque la solution ne dépendra d'un autre problème, mais après, ce sera capital !).
+
+Pour la condition "sub_amount % coins[0] == 0" : si le montant à rendre est un multiple de la valeur de pièce la plus petite du système, alors le nombre minimal de pièces pour ce problème (coins[0],sub_amount) sera le nombre de pièces de cette valeur que l'on utilise pour rendre la monnaie.
+
+Pour la deuxième boucle "for", on fait varier la plus grande valeur de pièce disponible dans le problème, dans l'ordre croissant. Pour la première boucle interne, on fait varier le montant dans le problème dans l'ordre croissant, puisque l'on va utiliser les solutions de problèmes plus petits pour résoudre les plus gros. A la ligne 8 : le nombre obtenu pour le problème avec les pièces de valeur inférieure à celle de la pièce numéro i-1 pour rendre j centimes est toujours plus petit que +infini. A la ligne 9, la condition correspond au cas où la pièce considérée est inférieure au montant que l'on doit rendre.
+
+La condition "least_coins[i][j - coins[i]] + 1 < least_coins[i][j]" correspond à la condition "le nombre de pièces utilisées de valeur inférieure ou égale à celle de la ième pièce (valeur supérieure à celle de la (i-1)ème pièce) est strictement inférieur à celui du problème (coins[i-1],j)" (voir l'initialisation de least_coins[i][j]). Si cette condition est vérifiée, alors on choisit cette solution pour le tableau least_coins.
+
+Une fois que l'on a passé les deux boucles imbriquées, least_coins[n - 1][amount] contient le nombre minimal de pièces pour notre problème initial. On reconstruit alors dans le reste de l'algorithme le tableau chosen que l'on a vu à l'algorithme glouton.
+
+Pour la boucle "while", la condition correspond au cas où j est différent de 0 (on sait que j finira par atteindre 0, puisque l'on a trouvé une solution avec l'algorithme précédent).
+
+La condition "j >= coins[i]" signifie que le montant est supérieur à la pièce considérée.
+
+Si la condition "least_coins[i][j - coins[i]] + 1 == least_coins[i][j]" est vérifiée (autrement dit, dans l'algorithme on a choisi la solution qui utilise au moins une pièce de valeur coins[i]), alors on augmente alors le nombre de pièces de valeur coins[i] utilisées pour rendre amount, on décroît le montant courant à rendre et on revient à la ligne du while (et on ne passe pas par la -case départ-).
+
+Enfin, on ne lit la ligne "i -= 1" qui décrémente i que si on n'a pas pu utiliser de pièces de valeur coins[i] pour rendre le montant courant j.
 
 ## Analyse de l'algorithme de programmation dynamique
 
 Avant toute chose : cet algorithme termine-t-il ? Nous pouvons répondre immédiatement : oui, car pour la construction du tableau least_coins, on n'a que des boucles for, qui donnent explicitement le nombre (fini) de boucles de l'algorithme. On a justifié aussi dans l'algorithme que la boucle while pour la construction de chosen terminait.
 
-Cela vérifié, faisons tourner cet algorithme à la main sur notre exemple. Il est bon aussi de le tester sur des exemples plus simples pour être au moins relativement convaincu qu'il donne le bon résultat.
+Cela vérifié, faisons tourner cet algorithme à la main sur notre exemple (il sera facile de vérifier le résultat en faisant tourner l'implémentation ci-dessus). Il est bon aussi de le tester sur des exemples plus simples pour être au moins relativement convaincu qu'il donne le bon résultat.
 
 Donc, pour les 41 cts que Bob attend désespérément, à rendre avec des pièces de valeur 2, 5 et 10 cts, si T[i][j] = least_coins[i][j] :
 
