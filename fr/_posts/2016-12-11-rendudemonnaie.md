@@ -27,7 +27,7 @@ def moneyback(amount, coins):
             amount -= coins[i] 
             chosen[i] += 1 
     assert amount == 0 
-    return chosen  # 
+    return chosen
 {% endhighlight %}
 
 L'algorithme ci-dessus  prend en argument le montant (amount, histoire de ne pas faire tache avec le reste du code), et coins, qui est notre système de pièces (ici, un tableau comportant dans la case numéro i la valeur de la ième plus petite valeur de pièce). On renvoie un tableau chosen qui comporte dans la case numéro i le nombre de pièces numéro i, dans l'ordre croissant de valeur, utilisées pour rendre la monnaie sur amount.
