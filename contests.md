@@ -45,3 +45,7 @@ Voici une liste des compétitions de programmation les plus célèbres.
 - [UVA](https://uva.onlinejudge.org/)
 - [SPOJ](http://www.spoj.com/)
 - [France-ioi](http://www.france-ioi.org/)
+
+## Calendrier
+
+<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showCalendars=0&amp;height=600&amp;wkst=2&amp;hl=fr&amp;bgcolor=%23FFFFFF&amp;src=vf8po6ltttl8dniua5u01u4c64%40group.calendar.google.com&amp;color=%2329527A&amp;ctz=Europe%2FParis" style="border-width:0" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
