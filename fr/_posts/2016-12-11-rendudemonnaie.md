@@ -34,12 +34,12 @@ On note pour tout tableau T, T[i] la valeur de la *i*ème case de T, et *n* le n
 
 En pseudocode, cela peut donner :
 
-Pour i allant de 1 à n
-    Tant que *amount* >= *coins*[i]
-          *amount* <- *amount* - *coins*[i]
-          *chosen*[i] <- *chosen*[i] + 1
-    fin Tant que
-Fin Pour
+Pour i allant de 1 à n\\
+    Tant que *amount* >= *coins*[i]\\
+          *amount* <- *amount* - *coins*[i]\\
+          *chosen*[i] <- *chosen*[i] + 1\\
+    fin Tant que\\
+Fin Pour\\
 Retourner le tableau *chosen*
 
 
