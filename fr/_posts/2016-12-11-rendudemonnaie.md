@@ -131,10 +131,26 @@ Initialisation du tableau least_coins
 //least_coins[n][amount] contient le nombre minimal de pièces rendues pour le montant amount
 //avec des pièces de valeur inférieure ou égal à coins[n]
 //On cherche maintenant à récupérer la valeur de chaque pièce rendue
-
+//On initialise une variable j avec pour valeur la valeur de la variable amount
+j <- amount
+i <- n
+Tant que j est différent de 0
+   //On considère les pièces dans l'ordre décroissant de valeur
+    Si j >= coins[i] 
+        //Si la solution minimale pour le problème (j, coins[i]) est
+        //celle obtenue en enlevant une pièce de valeur coins[i] au montant j
+        Si least_coins[i][j - coins[i]] + 1 = least_coins[i][j]
+            //Alors on ajoute dans la case i du tableau chosen 1 (i.e. on rend une autre
+            //pièce de valeur coins[i])
+            1) chosen[i] <- chosen[i] + 1
+            2) j <- j - coins[i]
+        Sinon
+            //Sinon, on ne peut pas utiliser de nouvelle pièce de valeur coins[i]
+            1) i <- i - 1
+Retourner le tableau chosen
 {% endhighlight %}
 
-Implémentons alors l'algorithme suivant la démarche décrite plus haut en Python.
+Implémentons alors l'algorithme en Python.
 
 {% highlight python %}
 def moneyback_dyn(amount, coins):
@@ -162,46 +178,28 @@ def moneyback_dyn(amount, coins):
     return chosen
 {% endhighlight %}
 
-Commentaire du code : Pour la première boucle "for", on fait varier le montant dans notre problème dans l'ordre croissant (ici, ça n'a pas d'importance, puisque la solution ne dépendra d'un autre problème, mais après, ce sera capital !).
-
-Pour la condition "sub_amount % coins[0] == 0" : si le montant à rendre est un multiple de la valeur de pièce la plus petite du système, alors le nombre minimal de pièces pour ce problème (coins[0],sub_amount) sera le nombre de pièces de cette valeur que l'on utilise pour rendre la monnaie.
-
-Pour la deuxième boucle "for", on fait varier la plus grande valeur de pièce disponible dans le problème, dans l'ordre croissant. Pour la première boucle interne, on fait varier le montant dans le problème dans l'ordre croissant, puisque l'on va utiliser les solutions de problèmes plus petits pour résoudre les plus gros. A la ligne 8 : le nombre obtenu pour le problème avec les pièces de valeur inférieure à celle de la pièce numéro i-1 pour rendre j centimes est toujours plus petit que +infini. A la ligne 9, la condition correspond au cas où la pièce considérée est inférieure au montant que l'on doit rendre.
-
-La condition "least_coins[i][j - coins[i]] + 1 < least_coins[i][j]" correspond à la condition "le nombre de pièces utilisées de valeur inférieure ou égale à celle de la ième pièce (valeur supérieure à celle de la (i-1)ème pièce) est strictement inférieur à celui du problème (coins[i-1],j)" (voir l'initialisation de least_coins[i][j]). Si cette condition est vérifiée, alors on choisit cette solution pour le tableau least_coins.
-
-Une fois que l'on a passé les deux boucles imbriquées, least_coins[n - 1][amount] contient le nombre minimal de pièces pour notre problème initial. On reconstruit alors dans le reste de l'algorithme le tableau chosen que l'on a vu à l'algorithme glouton.
-
-Pour la boucle "while", la condition correspond au cas où j est différent de 0 (on sait que j finira par atteindre 0, puisque l'on a trouvé une solution avec l'algorithme précédent).
-
-La condition "j >= coins[i]" signifie que le montant est supérieur à la pièce considérée.
-
-Si la condition "least_coins[i][j - coins[i]] + 1 == least_coins[i][j]" est vérifiée (autrement dit, dans l'algorithme on a choisi la solution qui utilise au moins une pièce de valeur coins[i]), alors on augmente alors le nombre de pièces de valeur coins[i] utilisées pour rendre amount, on décroît le montant courant à rendre et on revient à la ligne du while (et on ne passe pas par la -case départ-).
-
-Enfin, on ne lit la ligne "i -= 1" qui décrémente i que si on n'a pas pu utiliser de pièces de valeur coins[i] pour rendre le montant courant j.
-
 ## Analyse de l'algorithme de programmation dynamique
 
-Avant toute chose : cet algorithme termine-t-il ? Nous pouvons répondre immédiatement : oui, car pour la construction du tableau least_coins, on n'a que des boucles for, qui donnent explicitement le nombre (fini) de boucles de l'algorithme. On a justifié aussi dans l'algorithme que la boucle while pour la construction de chosen terminait.
+Avant toute chose : cet algorithme termine-t-il ? Nous pouvons répondre immédiatement : oui, car pour la construction du tableau *least_coins*, on n'a que des boucles *for*, qui donnent explicitement le nombre (fini) de boucles de l'algorithme. On a justifié aussi dans l'algorithme que la boucle *while* pour la construction de *chosen* terminait.
 
 Cela vérifié, faisons tourner cet algorithme à la main sur notre exemple (il sera facile de vérifier le résultat en faisant tourner l'implémentation ci-dessus). Il est bon aussi de le tester sur des exemples plus simples pour être au moins relativement convaincu qu'il donne le bon résultat.
 
-Donc, pour les 41 cts que Bob attend désespérément, à rendre avec des pièces de valeur 2, 5 et 10 cts, si T[i][j] = least_coins[i][j] :
+Donc, pour les 41 cts que Bob attend désespérément, à rendre avec des pièces de valeur 2, 5 et 10 cts :
 
-T[10][41] = 1 + T[10][31] = 1 + 1 + T[10][21] = 1 + 1 + 1 + T[10][11]
+*least_coins*[10][41] = 1 + *least_coins*[10][31] = 1 + 1 + *least_coins*[10][21] = 1 + 1 + 1 + *least_coins*[10][11]
 
-Or T[5][11] + 1 = 1 + T[5][6] = 1 + T[2][6] = 1 + 1 + 1 + 1 + T[2][0] = 4 est inférieur à T[10][11] (car le tableau least_coins est initialisé à infini. C'est bizarre dit comme cela, mais en pratique, c'est juste un très grand entier)
+Or *least_coins*[5][11] + 1 = 1 + *least_coins*[5][6] = 1 + *least_coins*[2][6] = 1 + 1 + 1 + 1 + *least_coins*[2][0] = 4 est inférieur à *least_coins*[10][11] (car le tableau least_coins est initialisé à infini. C'est bizarre dit comme cela, mais en pratique, c'est juste un très grand entier)
 
-Et de même, T[5][6] est supérieur à T[2][6] = 3 pour la même raison.
+Et de même, *least_coins*[5][6] est supérieur à *least_coins*[2][6] = 3 pour la même raison.
 
-Il en résulte que T[10][41] = 3 + 4 = 7 pièces (3 de 10 cts, 1 de 5 cts, 3 de 2 cts).
+Il en résulte que *least_coins*[10][41] = 3 + 4 = 7 pièces (3 de 10 cts, 1 de 5 cts, 3 de 2 cts).
 
 ## Pour aller plus loin
 
 L'exemple ci-dessus vous a peut-être convaincu, mais ce n'est pas assez rigoureux pour montrer que l'algorithme donne le bon résultat pour tout problème de rendu de monnaie, c'est-à-dire qu'il est correct. Toutefois, l'un des avantages les plus importants de la programmation dynamique est que la correction de l'algorithme tombe pratiquement tout crue. C'est une (sorte de) démonstration par récurrence. On montre que la solution trouvée pour le cas de base est optimale, puis que la relation de récurrence donne une solution optimale à partir des solutions optimales des sous-problèmes.
 
-La programmation dynamique permet de réaliser les calculs avec un temps optimal, mais pas forcément en espace. La plupart du temps, on stocke les calculs intermédiaires pour les sous-problèmes dans un tableau/une matrice, par exemple least_coins ici. Une façon d'encore limiter le temps de calcul est d'appeler récursivement sur la relation de récurrence, au lieu de calculer itérativement : autrement dit, créer un tableau, faire une fonction rendu(valeur maximale des pièces, montant) qui récupère la valeur associée dans le tableau si elle est déjà calculée, et qui sinon le complète. On l'appelle alors avec les paramètres de notre problème global.
+La programmation dynamique permet de réaliser les calculs avec un temps optimal, mais pas forcément en espace. La plupart du temps, on stocke les calculs intermédiaires pour les sous-problèmes dans un tableau ou une matrice, par exemple *least_coins* ici. Une façon d'encore limiter le temps de calcul est d'appeler récursivement sur la relation de récurrence, au lieu de calculer itérativement : autrement dit, créer un tableau, faire une fonction rendu(valeur maximale des pièces, montant) qui récupère la valeur associée dans le tableau si elle est déjà calculée, et qui sinon le complète. On l'appelle alors avec les paramètres de notre problème global.
 
-Cela permet de ne calculer que les sous-problèmes dont nous avons besoin, et pas tous. La terminaison est peut-être moins évidente à déceler dans cette version récursive, mais la valeur des arguments de la fonction appelée décroît strictement jusqu'à arriver aux paramètres pour le cas de base, donc l'algorithme termine.
+Cela permet de ne calculer que les sous-problèmes dont nous avons besoin, et pas tous. La terminaison est peut-être moins évidente à déceler dans cette version récursive, mais la valeur des arguments de la fonction appelée décroît strictement (au sens que l'on a donné dans l'article) jusqu'à arriver aux paramètres pour le cas de base, donc l'algorithme termine.
 
 Enfin, revenons sur l'algorithme glouton précédent. En réalité, il n'est pas totalement mauvais : il est même optimal en temps et en espace, sous certaines conditions portant sur le système de monnaie, qui est alors dit canonique : ce serait le cas de notre système si nous lui avions ajouté la pièce de 1 ct. La raison étant que l'on peut rendre n'importe quelle somme en pièces de 1 ct, même si ce n'est pas très pratique. Il est intéressant d'ailleurs de noter qu'aujourd'hui la plupart des distributeurs utilisent cet algorithme glouton, essentiellement car il est très rapide par rapport à la programmation dynamique. Et sans doute parce que les distributeurs sont plus résistants aux coups de pied qu'il n'y paraît.
