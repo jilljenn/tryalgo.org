@@ -43,10 +43,10 @@ Dans le cas où Charlotte préfère Cédric à Bernard, le mieux est alors de ro
 Formalisons l'intuition décrite ci-dessus. Soient M et F les deux groupes disjoints d'entités à associer. Chaque élément de M et de F n'appartient au début à aucun couple, et soit L[*i*] la liste de préférence d'éléments de F de l'élément *i* de M, triée dans l'ordre croissant de préférence, telle que tout élément de cette liste n'a pas encore été envisagé pour former un couple avec l'élément *i*. Soit également Lf[*i*] la liste triée par ordre de préférence d'éléments de M de l'élément *i* de F. Il est important de constater que les listes Lf ne seront pas modifiées durant l'algorithme, contrairement aux listes L.
 
 {% highlight python %}
-Tant qu'il existe un élément *i* de M qui n'est dans aucun couple, tel que L[i] soit non vide
+Tant qu il existe un élément *i* de M qui n est dans aucun couple, tel que L[i] soit non vide
      1) prendre un tel élément m
      2) retirer le premier élément f de la liste L[m]
-     Si f n'appartient à aucun couple :
+     Si f n appartient à aucun couple :
        a) alors créer le couple (m,f)
        b) sinon considérer le couple actuel (m2,f)
            Si m2 est placé avant m dans Lf[f]
