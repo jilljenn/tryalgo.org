@@ -34,14 +34,13 @@ On note pour tout tableau T, T[i] la valeur de la *i*ème case de T, et *n* le n
 
 En pseudocode, cela peut donner :
 
-Pour i allant de 1 à n\\
-    Tant que *amount* >= *coins*[i]\\
-          *amount* <- *amount* - *coins*[i]\\
-          *chosen*[i] <- *chosen*[i] + 1\\
-    fin Tant que\\
-Fin Pour\\
-Retourner le tableau *chosen*
-
+{% highlight python %}
+Pour i allant de 1 à n
+    tant que *amount* >= *coins*[i] 
+        1) *amount* <- *amount* - *coins*[i]
+        2) *chosen*[i] <- *chosen*[i] + 1
+retourner le tableau *chosen*
+{% endhighlight %}
 
 Pour l'implémentation en Python, voir ci-dessous :
 
@@ -79,33 +78,44 @@ Supposons à présent que Bob souhaite acheter un jus de tomate à 1,59 €, et 
 
 Que s'est-il donc passé ? Reprenons l'algorithme calmement, nonobstant le fait qu'il vient de nous crasher/cracher à la figure (pas très sympa). L'exception relevée souligne que l'on n'a pas rendu (apparemment) le bon montant, ce qui correspond à la ligne "assert amount == 0" dans le code Python. Prenons notre bon (?) vieux système 2-5-10-50-100. On doit rendre 41 centimes. Cela élimine déjà la possibilité de rendre avec une pièce de 1€ ou de 50 cts. On peut prendre des pièces de 10 cts, puisque 10 cts < 41 cts.
 
-On prend alors 4 pièces de 10 centimes et... on reste bloqué. Car il faut rendre encore 1 centime ! Si la machine était douée de parole, elle pourrait éventuellement convaincre le client que la perte d'un ridicule centime est bien futile. Si le client avait tout son temps, la machine pourrait reprendre ses calculs, et s'arrêter à 3 pièces de 10 centimes, puis regarder les autres pièces. On appelle cela faire du *backtracking* : autrement dit, si un calcul plante, on revient sur nos pas, et on reprend nos calculs depuis une position qui nous permet de choisir une autre façon de calculer, par exemple ici, choisir seulement 3 pièces de 10 centimes et chercher à décomposer le montant restant avec des pièces de 5 et 2 centimes. Il est clair que non seulement cette stratégie ne garantit pas la minimalité du nombre de pièces, car la machine va crier victoire dès qu'elle aura trouvé une solution, même non optimale, mais qu'en plus, cela risque de prendre un certain temps, puisqu'on peut faire les calculs, dans le pire cas, pour toute combinaison de pièces. Ouf, c'était la parenthèse backtracking.
+On prend alors 4 pièces de 10 centimes et... on reste bloqué. Car il faut rendre encore 1 centime ! Si la machine était douée de parole, elle pourrait éventuellement convaincre le client que la perte d'un ridicule centime est bien futile. Si le client avait tout son temps, la machine pourrait reprendre ses calculs, et s'arrêter à 3 pièces de 10 centimes, puis regarder les autres pièces. On appelle cela faire du *backtracking* : autrement dit, si un calcul plante, on revient sur nos pas, et on reprend nos calculs depuis une position qui nous permet de choisir une autre façon de calculer, par exemple ici, choisir seulement 3 pièces de 10 centimes et chercher à décomposer le montant restant avec des pièces de 5 et 2 centimes. Il est clair que non seulement cette stratégie ne garantit pas la minimalité du nombre de pièces, car la machine va crier victoire dès qu'elle aura trouvé une solution, même non optimale, mais qu'en plus, cela risque de prendre un certain temps, puisqu'on peut faire les calculs, dans le pire cas, pour toute combinaison de pièces. Ouf, c'était la parenthèse *backtracking*.
 
 Donc, nous sommes bien dans la vie, la vraie, et la seule issue, qui semble inéluctable, est la destruction de la machine par un coup de pied bien placé. Cependant, il existe une solution avec un nombre de pièces minimal : 3 pièces de 10 centimes, 1 pièce de 5 centimes et 3 pièces de 2 centimes. Est-ce donc possible de trouver une solution autrement que par intervention divine ? Bien sûr !
 
 ## Programmation dynamique
 
-Avant d'aborder l'algorithme, quelques notions théoriques sur la programmation dynamique, qui en est le principe clé. Avec l'exemple précédent, nous avons entraperçu un algorithme glouton (qui, dans les grandes lignes, fonce sur la première possibilité optimale qui se présente) et un algorithme avec du backtracking (qui calcule sans réflexion et qui, en cas d'impasse, revient en arrière pour reprendre ses calculs), ainsi que leurs inconvénients ici. La programmation dynamique, lorsqu'elle est applicable, permet de s'affranchir des deux difficultés présentées.
+Avant d'aborder l'algorithme, quelques notions théoriques sur la *programmation dynamique*, qui en est le principe clé. Avec l'exemple précédent, nous avons entraperçu un algorithme glouton (qui, dans les grandes lignes, fonce sur la première possibilité, qui paraît optimale, qui se présente) et un algorithme avec du backtracking (qui calcule sans réflexion et qui, en cas d'impasse, revient en arrière pour reprendre ses calculs), ainsi que leurs inconvénients ici. La programmation dynamique, lorsqu'elle est applicable, permet de s'affranchir des deux difficultés présentées.
 
-Qu'est-ce qu'on voudrait ? Un programme qui  : rend toujours (dans l'idéal...) la monnaie, quels que soient le système de pièces et le montant, dans un temps raisonnable (donc pas toi, backtracking) et qui garantit rendre la monnaie avec un nombre de pièces minimal.
+Qu'est-ce qu'on voudrait ? Un programme qui : rend toujours (dans l'idéal...) la monnaie, quels que soient le système de pièces et le montant, dans un temps raisonnable (donc pas toi, backtracking) et qui garantit rendre la monnaie avec un nombre de pièces minimal.
 
-Une idée serait de pouvoir calculer en "peu de temps" la solution pour notre problème incrémentalement, c'est-à-dire en calculant petit à petit la solution, et en particulier, en s'aidant des calculs sur des problèmes plus petits pour résoudre le problème initial plus gros. Un choix astucieux des plus petits problèmes à considérer est donc primordial.
+Une idée serait de pouvoir calculer en "peu de temps" la solution pour notre problème incrémentalement, c'est-à-dire en calculant petit à petit la solution, et en particulier, en s'aidant des calculs sur des problèmes plus petits pour résoudre le problème initial plus gros. Un choix astucieux de l'ordre des plus petits problèmes à considérer est donc primordial.
 
 Formalisons cette idée un peu vague.
 
-En effet, soit un problème à plusieurs types de paramètres : dans l'exemple qui nous intéresse, on a deux types de paramètres, le système de pièces, avec 5 instances, et le montant à rendre, que l'on peut découper en 42 instances : 0 euro, 1 centime, 2 centimes, ..., 41 centimes. On cherche d'abord à décomposer le problème en sous-problèmes en ses paramètres, qui seront supposés plus rapides et plus simples à résoudre : ici par exemple, on a 5x42 sous-problèmes, qui sont de chercher à rendre 0, 1, ..., 41 centimes avec des pièces de valeur inférieure au égale à 2 centimes, 5 centimes, 10 centimes, 50 centimes et 1 euro.
+En effet, soit un problème à plusieurs types de paramètres : dans l'exemple qui nous intéresse, on a deux types de paramètres :
+* le système de pièces, avec 5 instances;
+* le montant à rendre, que l'on peut découper en 42 instances : 0 euro, 1 centime, 2 centimes, ..., 41 centimes.
 
-Pour cela, on cherche d'abord un ou plusieurs cas de base : les cas où on peut répondre le plus rapidement sont les 5 sous-problèmes qui consistent à rendre 0 euro avec des pièces (ça devrait aller), et également les problèmes qui consistent à rendre de la monnaie avec des pièces de 2 cts uniquement, dont on ne peut déduire des sous-problèmes, vu que la pièce de 2 cts est la pièce de plus petite valeur de notre système de monnaie.
+On cherche d'abord à décomposer le problème en sous-problèmes en ces différents paramètres, qui seront supposés plus rapides et plus simples à résoudre : ici par exemple, on a 5x42 sous-problèmes, qui sont "chercher à rendre 0/1/ .../ 41 centimes avec des pièces de valeur inférieure au égale à 2 centimes/5 centimes/10 centimes/50 centimes/1 euro".
 
-Puis, pour récupérer la solution du problème global, on cherche une relation (dite de récurrence) impliquant un ou des sous-problèmes bien choisis qui répondra à un problème de taille supérieure. Puis on choisit un ordre de résolution pour cette famille de sous-problèmes qui permettra d'exploiter la relation de récurrence.
+Pour cela, on cherche d'abord un ou plusieurs cas de base : les cas où on peut répondre le plus rapidement sont les cinq sous-problèmes qui consistent à rendre 0 euro avec des pièces (ça devrait aller), et également les cinq sous-problèmes qui consistent à rendre de la monnaie avec des pièces de 2 cts uniquement, dont on ne peut déduire des sous-problèmes (qui porteraient sur des pièces de valeur plus petite strictement que 2 centimes), vu que la pièce de 2 cts est la pièce de plus petite valeur de notre système de monnaie.
 
-Dans notre exemple, si on veut rendre 20 centimes avec des pièces de valeur inférieure ou égale à 5 cts, on cherche à ajouter une pièce de 5 cts, puis à retrouver la solution minimale pour rendre 15 cts avec des pièces de valeur inférieure ou égale à 5 cts. On fait alors appel au sous-problème (15 cts, 5 cts) qui est bien strictement plus petit que notre problème (20 cts, 5 cts). Or la solution optimale pour rendre 15 cts en pièces de 2 ou 5 cts est en 3 pièces (de 5 centimes). Donc la solution optimale de (20 cts, 5 cts) est donc 1 + 3 = 4 pièces.
+Puis, pour récupérer la solution du problème global, on cherche une relation (dite *de récurrence*) impliquant un ou des sous-problèmes bien choisis qui répondra à un problème de taille supérieure. Puis on choisit un ordre de résolution pour cette famille de sous-problèmes qui permettra d'exploiter la relation de récurrence, pour partir des sous-problèmes les plus simples, résolus ci-dessus, pour arriver au problème qui nous intéresse.
+
+Pour éclaircir ce fouillis qui doit paraître nébuleux, par exemple, si on veut rendre 20 centimes avec des pièces de valeur inférieure ou égale à 5 cts, on cherche à retirer une pièce de 5 cts au montant courant, puis à trouver la solution optimale au problème "rendre 20-5=15 cts avec des pièces de valeur inférieure ou égale à 5 cts". On fait alors appel au sous-problème (15 cts, 5 cts) qui est bien strictement plus petit que notre problème (20 cts, 5 cts), avec (a, b) < (c, d) si et seulement si a < c ou a = c et b < d. Or la solution optimale pour rendre 15 cts en pièces de 2 ou 5 cts est en 3 pièces (de 5 centimes). Donc la solution optimale de (20 cts, 5 cts) est donc 1 + 3 = 4 pièces en tout (4 pièces de 5 centimes ici).
 
 Déduisons de cet exemple la démarche générale (pour deviner une relation de récurrence, rien ne vaut un exemple).
 
-Pour rendre un montant m avec des pièces de valeur inférieure ou égale à v (problème (m,v)), si v est plus grand strictement que m, alors on retourne la solution du problème (m,v') où v' est la plus grande valeur de pièce strictement inférieure à v; sinon, si n est la solution optimale du problème (m-v,v), alors on retourne 1+n.
+Pour rendre un montant *m* avec des pièces de valeur inférieure ou égale à *v* (problème (*m*,*v*)), si *v* est plus grand strictement que *m*, alors on retourne la solution (le nombre de pièces rendues) du problème (*m*,*v'*) où *v'* est la plus grande valeur de pièce strictement inférieure à *v*; sinon, si *n* est la solution optimale (le nombre minimal de pièces rendues) du problème (*m-v*,*v*), alors on retourne *1+n*.
 
-Implémentons alors l'algorithme suivant la démarche décrite plus haut.
+Ecrivons la démarche précédente en pseudocode. On initialise la matrice (un tableau qui contient dans chaque case un tableau) *least_coins* telle que *least_coins*[i][j] donne le nombre minimal de pièces pour un rendu de *j* centimes avec des pièces de valeur inférieure ou égale à celle de la *i*ème plus petite pièce du système de pièces. Les cases de *least_coins* sont initialisées à *+infini* (car tout nombre fini de pièces est inférieur à *+infini*...).
+
+{% highlight python %}
+Initialisation du tableau *least_coins*
+
+{% endhighlight %}
+
+Implémentons alors l'algorithme suivant la démarche décrite plus haut en Python.
 
 {% highlight python %}
 def moneyback_dyn(amount, coins):
@@ -133,7 +143,7 @@ def moneyback_dyn(amount, coins):
     return chosen
 {% endhighlight %}
 
-Commentaire du code : on initialise la matrice least_coins telle que least_coins[i][j] donne le nombre minimal de pièces pour un rendu de j centimes avec des pièces de valeur inférieure ou égale à celle de la pièce numéro i du système de pièces. Les cases sont initialisées à +infini : tout nombre fini de pièces est inférieur à +infini... Pour la première boucle "for", on fait varier le montant dans notre problème dans l'ordre croissant (ici, ça n'a pas d'importance, puisque la solution ne dépendra d'un autre problème, mais après, ce sera capital !).
+Commentaire du code : Pour la première boucle "for", on fait varier le montant dans notre problème dans l'ordre croissant (ici, ça n'a pas d'importance, puisque la solution ne dépendra d'un autre problème, mais après, ce sera capital !).
 
 Pour la condition "sub_amount % coins[0] == 0" : si le montant à rendre est un multiple de la valeur de pièce la plus petite du système, alors le nombre minimal de pièces pour ce problème (coins[0],sub_amount) sera le nombre de pièces de cette valeur que l'on utilise pour rendre la monnaie.
 
