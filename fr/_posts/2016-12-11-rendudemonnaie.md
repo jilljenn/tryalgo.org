@@ -36,10 +36,10 @@ En pseudocode, cela peut donner :
 
 {% highlight python %}
 Pour i allant de 1 à n
-    tant que *amount* >= *coins*[i] 
-        1) *amount* <- *amount* - *coins*[i]
-        2) *chosen*[i] <- *chosen*[i] + 1
-retourner le tableau *chosen*
+    tant que amount >= coins[i] 
+        1) amount <- amount - coins[i]
+        2) chosen[i] <- chosen[i] + 1
+retourner le tableau chosen
 {% endhighlight %}
 
 Pour l'implémentation en Python, voir ci-dessous :
@@ -88,7 +88,7 @@ Avant d'aborder l'algorithme, quelques notions théoriques sur la *programmation
 
 Qu'est-ce qu'on voudrait ? Un programme qui : rend toujours (dans l'idéal...) la monnaie, quels que soient le système de pièces et le montant, dans un temps raisonnable (donc pas toi, backtracking) et qui garantit rendre la monnaie avec un nombre de pièces minimal.
 
-Une idée serait de pouvoir calculer en "peu de temps" la solution pour notre problème incrémentalement, c'est-à-dire en calculant petit à petit la solution, et en particulier, en s'aidant des calculs sur des problèmes plus petits pour résoudre le problème initial plus gros. Un choix astucieux de l'ordre des plus petits problèmes à considérer est donc primordial.
+Une idée serait de pouvoir calculer en "peu de temps" la solution pour notre problème *incrémentalement*, c'est-à-dire en calculant petit à petit la solution, et en particulier, en s'aidant des calculs sur des problèmes plus petits pour résoudre le problème initial plus gros. Un choix astucieux de l'ordre des plus petits problèmes à considérer est donc primordial.
 
 Formalisons cette idée un peu vague.
 
