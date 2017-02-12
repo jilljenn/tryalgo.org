@@ -6,11 +6,11 @@ author: Jill-Jênn Vie & Clémence Réda
 
 ## Contexte
 
-Le problème du rendu de monnaie s'énonce de façon simple : étant donné un système de pièces à disposition (1 euro, 2 euros...) et un montant à rendre, rendre ce montant avec un nombre minimal de pièces. Les applications d'une solution à ce problème sont faciles à concevoir : nul n'a envie de récupérer 1 euro en pièces de 1 centime s'il s'est aventuré à payer 2 euros pour une bouteille de soda à un distributeur. Non, vraiment personne.
+Le problème du rendu de monnaie s'énonce de façon simple : \textbf{étant donné un système de pièces à disposition (je ne peux rendre que des pièces de 50 centimes, 1 euro, 2 euros...) et un montant à rendre, rendre ce montant avec un nombre minimal de pièces du système que l'on s'est donné}. Les applications d'une solution à ce problème sont faciles à concevoir : nul n'a envie de récupérer 1 euro en pièces de 1 centime s'il s'est aventuré à payer 2 euros pour une malheureuse bouteille de soda à un distributeur. Non, vraiment personne.
 
 ## Une première méthode
 
-Imaginons un distributeur de boissons un peu particulier, quelque part dans l'Union européenne, qui rend la monnaie, en pièces de 2 centimes, 5 centimes, 10 centimes, 50 centimes et 1 euro.
+Imaginons un distributeur de boissons un peu particulier, quelque part dans l'Union européenne, qui rend la monnaie, uniquement en pièces de 2 centimes, 5 centimes, 10 centimes, 50 centimes et 1 euro.
 
 Une première méthode, que l'on appelle un raisonnement glouton, serait de commencer par les pièces de plus grande valeur, et décroître le montant à rendre jusqu'à ce que ce dernier soit inférieur à la valeur de la pièce. On considère alors la plus grande valeur de pièce inférieure au montant, et on itère le raisonnement jusqu'à ce que le montant atteigne zéro.
 
