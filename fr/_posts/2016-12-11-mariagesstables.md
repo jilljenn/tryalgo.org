@@ -4,11 +4,11 @@ title: Mariages stables, ou comment marier le Prix Nobel d'économie aux sites d
 author: Jill-Jênn Vie & Clémence Réda
 ---
 
-Note : Une partie de cet article a été reprise d'[ici](http://binaire.blog.lemonde.fr/2016/10/17/a-p-b-la-vie-apres-le-bac/), mais pas de panique, c'était à moi.
+Note : Une partie de cet article a été reprise d'[ici](http://binaire.blog.lemonde.fr/2016/10/17/a-p-b-la-vie-apres-le-bac/), mais pas de panique, je suis une co-auteure.
 
 ## Contexte
 
-La question du mariage stable en informatique, loin d'être une affaire de moeurs plus ou moins libres, intervient assez régulièrement dans des domaines divers de notre vie quotidienne, d'Admission Post Bac à Meetic. Il est à noter que ce problème peut se poser aussi en économie, et que sa résolution algorithmique a valu à l'un de ses concepteurs un Prix Nobel.
+La question du mariage stable en informatique, loin d'être une affaire de moeurs plus ou moins libres, intervient assez régulièrement dans des domaines divers de notre vie quotidienne, d'Admission Post Bac à Meetic. Il est à noter que ce problème peut se poser aussi en économie, et que sa résolution algorithmique a valu à l'un de ses concepteurs (Shapley) un Prix Nobel d'économie.
 
 Mais revenons à nos mariages. Le point commun (du moins, celui qui nous intéresse) entre Meetic et Admission Post Bac ? Former de façon optimale des couples d'éléments de deux groupes distincts d'individus ou d'entités: bacheliers/établissements de l'enseignement supérieur, hommes/femmes, ... L'optimalité dans un mariage s'agissant traditionnellement d'éviter que l'un des partenaires ne parte chercher son bonheur ailleurs (autrement dit, que deux personnes qui sont engagées dans deux mariages différents se préfèrent à leurs conjoints respectifs) chaque élément pour les deux groupes exprime une liste de préférences qu'il faut respecter au mieux.
 
@@ -16,7 +16,13 @@ Mais revenons à nos mariages. Le point commun (du moins, celui qui nous intére
 
 Prenons l'exemple d'une application de rencontres telle que Meetic. Vous êtes chargé(e) de faire enfin rencontrer l'amour à d'irascibles célibataires (hétérosexuels, pour simplifier). Vous faites alors la connnaissance d'Anna, Bérénice et Charlotte, et d'Alain, Bernard et Cédric.
 
-Résumons les objectifs à atteindre : (1) sachant qu'il existe le même nombre d'individus pour chaque groupe, il faut marier tous les individus, (2) la polygamie n'étant donc pas autorisée dans cette version de l'algorithme, il faut qu'à un élément de l'un des groupes ne soit associé qu'un seul et unique élément de l'autre groupe, (3) il faut avoir une méthode qui nous assure qu'il n'existe pas de couples (Ariane, Adrien) et (Solal, Isolde) tels qu'Ariane préfère Solal à Adrien et que Solal préfère Ariane à Isolde, ou que Adrien préfère Isolde à Ariane et qu'Isole préfère Adrien à Solal, ce qui constituent des cas de mariage instables.
+Résumons les objectifs à atteindre : 
+
+* Sachant qu'il existe le même nombre d'individus pour chaque groupe, il faut marier tous les individus;
+
+* La polygamie n'étant donc pas autorisée dans cette version de l'algorithme, il faut qu'à un élément de l'un des groupes ne soit associé qu'un seul et unique élément de l'autre groupe;
+
+* Il faut avoir une méthode qui nous assure qu'il n'existe pas de couples (Ariane, Adrien) et (Solal, Isolde) tels qu'Ariane préfère Solal à Adrien et que Solal préfère Ariane à Isolde, ou que Adrien préfère Isolde à Ariane et qu'Isole préfère Adrien à Solal, ce qui constituent des cas de mariage instables.
 
 Une méthode naïve de faire naître l'alchimie entre ces êtres serait de tirer aléatoirement un membre de chaque sexe et d'organiser une rencontre. Cependant, Anna peut avoir rencontré Bernard, et Charlotte, Alain, puis avoir toutes deux décidé d'entamer une relation sans attendre de voir les autres célibataires. Puis plus tard, lors d'un dîner à quatre en l'honneur de leur célibat perdu, Charlotte peut très bien réaliser qu'elle préfère Bernard à son compagnon actuel, et Bernard se dire qu'après tout, Charlotte lui est plus sympathique qu'Anna : bam, mariage instable.
 
@@ -34,29 +40,33 @@ Prenons l'un des hommes arbitrairement -nous verrons plus tard que l'ordre n'inf
 
 Dans le cas où Charlotte préfère Cédric à Bernard, le mieux est alors de rompre le couple Charlotte/Bernard, et d'associer finalement Cédric à Charlotte, et Bernard à Bérénice. Le couple Anna/Alain est conservé. Vous obtenez un mariage stable -victoire !
 
-Formalisons l'intuition décrite ci-dessus. Soient M et F les deux groupes disjoints d'entités à associer. Chaque élément de M et de F n'appartient au début à aucun couple, et soit L[i] la liste de préférence d'éléments de F de l'élément i de M, triée dans l'ordre croissant de préférence, telle que tout élément de cette liste n'a pas encore été envisagé pour former un couple avec l'élément i. Soit également Lf[i] la liste triée par ordre de préférence d'éléments de M de l'élément i de F. Il est important de constater que les listes Lf ne seront pas modifiées durant l'algorithme, contrairement aux listes L.
+Formalisons l'intuition décrite ci-dessus. Soient M et F les deux groupes disjoints d'entités à associer. Chaque élément de M et de F n'appartient au début à aucun couple, et soit L[*i*] la liste de préférence d'éléments de F de l'élément *i* de M, triée dans l'ordre croissant de préférence, telle que tout élément de cette liste n'a pas encore été envisagé pour former un couple avec l'élément *i*. Soit également Lf[*i*] la liste triée par ordre de préférence d'éléments de M de l'élément *i* de F. Il est important de constater que les listes Lf ne seront pas modifiées durant l'algorithme, contrairement aux listes L.
 
-Tant qu'il existe un élément i de M qui n'est dans aucun couple, tel que L[i] soit non vide
-
-1) prendre un tel élément m
-2) retirer le premier élément f de la liste L[m]. Si f n'appartient à aucun couple :
-3) a) alors créer le couple (m,f)
-3) b) sinon considérer le couple actuel (m',f). Si m' est placé avant m dans Lf[f] :
-3) a) i) alors ne rien modifier
-3) a) ii) sinon rompre le couple (m',f) et créer le nouveau couple (m,f)
-
-Fin du tant que
+{% highlight python %}
+Tant qu'il existe un élément *i* de M qui n'est dans aucun couple, tel que L[i] soit non vide
+     1) prendre un tel élément m
+     2) retirer le premier élément f de la liste L[m]
+     Si f n'appartient à aucun couple :
+       a) alors créer le couple (m,f)
+       b) sinon considérer le couple actuel (m2,f)
+           Si m2 est placé avant m dans Lf[f]
+              A) ne rien modifier
+              B) sinon rompre le couple (m2,f) 
+              et créer le nouveau couple (m,f)
 Retourner la liste des couples créés
+{% endhighlight %}
 
 L'instruction "ne rien modifier" peut paraître surprenante et faire douter de la terminaison de l'algorithme. Mais on peut constater que le nombre d'éléments dans l'ensemble des listes L décroît strictement à chaque boucle tant que et finira par atteindre zéro, car on envisage une association à chaque fois. Ouf, vous n'y passerez pas la nuit.
 
-Faisons tourner cet algorithme à la main. On associe à Alain le nombre 1, à Bernard 2 et à Cédric 3. De même, on associe à Anna le nombre 1, à Bérénice 2 et à Charlotte 3. On peut donc avoir en entrée de l'exemple précédent :
+## Faisons tourner cet algorithme à la main
+
+On associe à Alain le nombre 1, à Bernard 2 et à Cédric 3. De même, on associe à Anna le nombre 1, à Bérénice 2 et à Charlotte 3. On peut donc avoir en entrée de l'exemple précédent :
 
 L[1] = {1,3,2}, L[2] = {3,2,1}, L[3] = {3,1,2}
 
 Lf[1] = {1,2,3}, Lf[2] = {3,1,2}, Lf[3] = {1,2,3}
 
-Soit couples la liste (initialisée à vide) qui contient les couples de personnes associées.
+Soit *couples* la liste (initialisée à vide) qui contient les couples de personnes associées.
 
 Prenons m = 1 (Alain). Le premier élément de L[1] est 1 (Anna). On ajoute donc à couples la paire (1,1).
 
@@ -64,7 +74,7 @@ A la deuxième itération, on considère m = 2 (Bernard). Le premier élément d
 
 A la troisième itération, on considère m = 3 (Cédric). Le premier élément de L[3] est 3 (Charlotte). Comme Charlotte est déjà associée à Bernard, on considère Lf[3] la liste de préférences de Charlotte. Comme 2 (Bernard) est placé avant 3 (Cédric) dans LF[3], Charlotte reste avec Bernard, et on associe à Cédric Bérénice. On ajoute alors à couples la paire (3,2).
 
-Tous les éléments de M étant associés, on stoppe l'algorithme. couples contient alors (1,1),(2,3),(3,2). Et on vérifie que cela forme un mariage stable -qui ne présente pas de cas d'instabilité. 
+Tous les éléments de M étant associés, on stoppe l'algorithme. couples contient alors (1,1),(2,3),(3,2). Et on vérifie que cela forme un mariage stable -qui ne présente pas de cas d'instabilité comme présenté ci-dessus. 
 
 ## Pour aller plus loin
 
