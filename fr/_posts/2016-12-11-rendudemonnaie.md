@@ -135,7 +135,7 @@ Initialisation du tableau least_coins
 j <- amount
 i <- n
 Tant que j est différent de 0
-   //On considère les pièces dans l'ordre décroissant de valeur
+   //On considère les pièces dans l ordre décroissant de valeur
     Si j >= coins[i] 
         //Si la solution minimale pour le problème (j, coins[i]) est
         //celle obtenue en enlevant une pièce de valeur coins[i] au montant j
