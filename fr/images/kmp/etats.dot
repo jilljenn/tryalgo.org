@@ -1,18 +1,15 @@
 digraph g {
 rankdir=LR;
-etat0 -> etat1 [label=p];
-etat1 -> etat0 [label=p];
-etat1 -> etat2 [label=e];
-etat2 -> etat3 [label=a];
-etat2 -> etat1 [label=e];
-etat2 -> etat0 [label=p];
-etat3 -> etat0 [label=p];
-etat3 -> etat1 [label=e];
-etat3 -> etat2 [label=a];
-etat3 -> etat4 [label=u];
-etat4 -> etat0 [label=p];
-etat4 -> etat1 [label=e];
-etat4 -> etat2 [label=a];
-etat4 -> etat3 [label=u];
-etat4 -> etat5 [label=x];
+etat0 -> etat1 [label=a];
+etat0 -> etat0 [label=b];
+etat1 -> etat2 [label=b];
+etat1 -> etat1 [label=a];
+etat2 -> etat3 [label=b];
+etat2 -> etat1 [label=a];
+etat3 -> etat4 [label=a];
+etat3 -> etat0 [label=b];
+etat4 -> etat5 [label=a];
+etat4 -> etat2 [label=b];
+etat5 -> etat1 [label=a];
+etat5 -> etat6 [label=b];
 }
