@@ -15,7 +15,7 @@ Pourrez-vous résoudre cette énigme du jeu Le Compte est bon ?
 
  
 
-(C'est passé à la télé en 1997.)
+(C'est passé à la télé en 1997, et la solution est cocasse.)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/pfa3MHLLSWI?ecver=1" frameborder="0" allowfullscreen></iframe>
 
