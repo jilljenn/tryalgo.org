@@ -11,6 +11,8 @@ Voici une liste de coquilles dans le livre.
 
 - page 16 : (première phrase) Il se trouve que $\textsf{P} \subseteq \textsf{NP}$, l'intuition étant que si on peut construire une solution en temps polynomial, alors on peut *vérifier* une solution en temps polynomial.
 
+- page 70: À tout moment donnée on maintient dans *open* le nombre d'intervalles ouverts. - Il fallait lire *nb_open*.
+
 - page 102 : la complexité de l'algorithme pour le voyageur de commerce est $O(&#124;V&#124;^2 2^{&#124;V&#124;})$
 
 - page 112 : dans le code de dist_grid, le *break* devrait être *continue*.
@@ -18,6 +20,8 @@ Voici une liste de coquilles dans le livre.
 - page 143 (légende 9.9): ... décomposition en chaînes *minimum* dans G ...
 
 - page 146 (fonction tree_adj_to_prec): la ligne n = len(graph) peut être omise.
+
+- page 147 (fonction extract): la concaténation à une chaîne ayant une complexité linéaire, la complexité de la fonction `extract` est en O(n^2). Pour arriver à une complexité linéaire il faudrait coder le préfixe par une liste chaînée. Cette liste est ensuite transformée en temps linéaire en un mot de code lors du traitement d'une feuille. Voir ce [code](http://pythonhosted.org/tryalgo/_modules/tryalgo/huffman.html#extract).
 
 - page 153 : Donc on peut choisir un sommet arbitraire r, déterminer un sommet v1 de distance maximale de *r*, puis à nouveau déterminer un sommet v2 de distance maximale de v1.
 

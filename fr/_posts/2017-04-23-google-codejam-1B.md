@@ -11,7 +11,7 @@ Nous décrivons ici des solutions pour la ronde 1B du concours [Google Codejam 2
 Une ligne de longueur D kilomètres. Il y a n chevaux. Le cheval i se trouve au temps 0 à la position Ki et il marche avec une vitesse Si vers la destination au kilomètre D. Il lui faut (D-Ki)/Si heures pour arriver à la destination s'il était tout seul.  Le temps d'arrivée le plus tard sur tous les chevaux est le maximum sur cette fraction, disons T, et comme les chevaux ne se dépassent pas, Annie peut arriver au plus tôt au temps T. Donc le cheval d'Annie doit se déplacer avec la vitesse D/T.
 La complexité de l'algorithme est linéaire.
 
-![]({{site.baseurl}}/fr/images/Steed-2-Cruise-Control.svn)
+![](/fr/images/Steed-2-Cruise-Control.svn)
 
 
 # Stable Neigh-bors
@@ -19,7 +19,7 @@ La complexité de l'algorithme est linéaire.
 Considérons les instances courtes d'abord, qui ne contiennent que des couleurs élémentaires. Il faut placer r licornes rouges, b bleues et y jaunes dans une liste circulaire tel que deux licornes adjacentes soient de couleurs différentes. Supposons pour simplifier que les nombres soit ordonnées y ≤ b ≤ r.  Alors les positions des licornes rouges décomposent la liste en r intervalles qui doivent être remplis par les autres couleurs. Ceci n'est possible seulement si y + b ≥ r.
 Une telle solution peut être construite comme suit. D'abord on place une licorne bleue dans chacune des b premiers intervalles.  Il n'y a pas de risque à avoir deux licornes bleues dans le même intervalle car b ≤ r. Puis on place les y licornes jaunes dans les intervalles suivants, en débordant de nouveau sur les premiers intervalles si nécessaire.  Il n'y a pas de risque à avoir deux licornes jaunes dans un même intervalle car y ≤ r.
 
-![]({{site.baseurl}}/fr/images/Stable-Neigh-bors.svn)
+![](/fr/images/Stable-Neigh-bors.svn)
 
 Maintenant considérons les instances longues, qui comportent également o licornes oranges, g vertes et v violettes.  Chacune de ces licornes doivent être entourées d'une licorne de la couleur complémentaire, par exemple vert doit être entre deux rouges.
 
