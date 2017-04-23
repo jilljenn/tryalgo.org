@@ -1,7 +1,7 @@
 ---
 layout: fr
 title: Google Codejam 2017 - 1B
-author: Christoph Dürr et Lê Thang Huong
+author: Christoph Dürr et Lê Thang Hương
 ---
 
 Nous décrivons ici des solutions pour la ronde 1B du concours [Google Codejam 2017](https://code.google.com/codejam/contest/8294486/dashboard).
