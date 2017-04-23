@@ -16,12 +16,12 @@ La complexité de l'algorithme est linéaire.
 
 # Stable Neigh-bors
 
-Considérons les instances courtes d'abord, qui ne contiennent que des couleurs élémentaires. Il faut placer r licornes rouges, b bleues et y jaunes dans une liste circulaire tel que deux licornes adjacentes soient de couleurs différentes. Supposons pour simplifier que les nombres soit ordonnées y ≤ b ≤ r.  Alors les positions des licornes rouges décomposent la liste en r intervalles qui doivent être remplis par les autres couleurs. Ceci n'est possible seulement si y + b ≥ r.
+Considérons les instances courtes d'abord, qui ne contiennent que des couleurs élémentaires. Il faut placer r licornes rouges, b bleues et y jaunes dans une liste circulaire tel que deux licornes adjacentes soient de couleurs différentes. Supposons pour simplifier que les nombres soient ordonnés y ≤ b ≤ r.  Alors les positions des licornes rouges décomposent la liste en r intervalles qui doivent être remplis par les autres couleurs. Ceci n'est possible seulement si y + b ≥ r.
 Une telle solution peut être construite comme suit. D'abord on place une licorne bleue dans chacune des b premiers intervalles.  Il n'y a pas de risque à avoir deux licornes bleues dans le même intervalle car b ≤ r. Puis on place les y licornes jaunes dans les intervalles suivants, en débordant de nouveau sur les premiers intervalles si nécessaire.  Il n'y a pas de risque à avoir deux licornes jaunes dans un même intervalle car y ≤ r.
 
 ![](/fr/images/Stable-Neigh-bors.svg){:width="600"}
 
-Maintenant considérons les instances longues, qui comportent également o licornes oranges, g vertes et v violettes.  Chacune de ces licornes doivent être entourées d'une licorne de la couleur complémentaire, par exemple vert doit être entre deux rouges.
+Maintenant considérons les instances longues, qui comportent également o licornes oranges, g vertes et v violettes.  Chacune de ces licornes doit être entourée d'une licorne de la couleur complémentaire, par exemple vert doit être entre deux rouges.
 
 L'idée est alors de construire d'abord une solution avec les couleurs élémentaires, comportant r-g licornes rouges, b-o bleues et y-v jaunes.  Puis pour chacune des couleurs mixtes, par exemple vert, on cherche une licorne rouge et on insère devant elle une séquence de licornes alternants rouge et vert et de longueur 2g.
 Dans le cas limite où g est égal à r, il faut que ceux-ci soient les seules couleurs de l'instance pour qu'une solution soit possible.
