@@ -5,11 +5,12 @@ title: Résolution de problèmes algorithmiques
 
 ## Derniers posts
 
-- 14/03 [Le Compte est bon ?](/fr/2017/03/14/le-compte-est-bon/) par Jill-Jênn Vie
-- 05/03 [Programme ta culture !](/programme-ta-culture/) par Jill-Jênn Vie
-- 27/02 [Qualifications Google Hash Code 2017](/fr/2017/02/27/solutions-google-hash-code-2017-streaming-videos/) par Christoph Dürr & Finn Völkel
-- 10/01 [Qualifications Facebook Hacker Cup 2017](/fr/2017/01/10/facebook-hackercup-2017/), par Jill-Jênn Vie
-- 11/12 [Rendu de monnaie, bases de programmation dynamique](/fr/2016/12/11/rendudemonnaie/), par Clémence Réda
+<ul>
+{% for post in site.posts limit:5 %}
+    <li> {{ post.date | date: "%d/%m" }} <a href="{{ post.url }}">{{ post.title }}</a> by {{ post.author }}
+    </li>
+{% endfor %}
+</ul>
 
 ## Dernières conférences
 
