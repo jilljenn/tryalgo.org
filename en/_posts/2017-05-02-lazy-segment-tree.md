@@ -2,6 +2,7 @@
 layout: en
 title:  "Lazy segment tree"
 category: data structures
+author: Christoph Dürr
 ---
 
 Maintain a numerical table `tab` that implements the following operations in logarithmic time: for a range of table indices, query the maximum value, query the minimum value, query the sum, set all entries of that range to some value, add some value to all entries of that range.
