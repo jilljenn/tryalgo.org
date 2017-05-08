@@ -30,38 +30,7 @@ On prépare toutes les données pour vous, et vous en faites ce que bon vous sem
 
 # Activités
 
-## Exploration de grosses données
-
-- Liste des mots du scrabble
-    - Combien y a-t-il de mots de la langue française finissant par un K ?
-    - Quels sont les mots qu'on peut former avec un jeu de lettres donné ?
-- Pendu ?
-    - Quelle est la liste des mots possibles à un moment donné de la partie ? (Mettre des jeunes en binôme où l'un des deux essaie de tricher.)
-    - Calculer le meilleur coup possible ?
-- [Top 250 d'IMDb](http://jill-jenn.net/algo/stage-python/dictionnaires.html)
-    - Requêtes de base de données (qui a réalisé tel film, etc.)
-- Données sous forme de graphe (visualisation Neo4j)
-- Analyse de fichiers de sous-titres ? (lexique récurrent chez Tarantino vs. Woody Allen)
-
-## Création artistique numérique
-
-Composition assistée par ordinateur.
-
-- De texte, à partir de mots d'un corpus
-    - Que se passe-t-il si on compose des phrases à partir de deux romans différents ?
-- Musicale : markov.py
-    - [Trinket](https://trinket.io/music) : framework Python pour dessiner ou écrire de la musique
-    - MML pour générer du midi
-    - PMX pour générer des partitions et du midi
-- Génération d'images
-    - [Rosaces de code.org](https://code.org/frozen) à partir de blocs d'instructions (Blockly)
-    - Fractales : [courbe du dragon](http://jill-jenn.net/algo/stage-python/projets.html)
-    - Réalisation de mosaïque à partir de photos existantes ?
-
-## Recommandation de films
-
-- Comment automatiquement recommander des films à un utilisateur en fonction de ses goûts ? Cf. [slides de Girls Can Code! 2016](https://github.com/mangaki/movielens)
-- Comment sortir les gens de leur zone de confort pour leur faire découvrir des œuvres nouvelles ?
+Voir dans notre post [Nos conseils pour l'option ICN](/fr/2017/05/08/conseils-option-icn/) du 08/05/2017.
 
 
 # Questions
