@@ -20,6 +20,7 @@ images: 		      "/en/images/"
 author:
   name:           'Jill-Jênn Vie'
   url:            https://twitter.com/jjvie
+  twitter:        jjvie
 
 paginate:         5
 paginate_path:    '/posts/page:num/'
