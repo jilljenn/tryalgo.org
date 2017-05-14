@@ -1,9 +1,12 @@
 ---
 layout: fr
 title: Structures de données
+excerpt_separator: <!--more-->
 ---
 
 Voici une structure de données des structures de données.
+
+<!--more-->
 
 Une relation A -> B signifie « *B est un cas particulier de A* ».  
 Une relation en pointillés A -> B signifie « *A peut être implémenté par B* ».  

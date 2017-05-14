@@ -1,6 +1,7 @@
 ---
 layout: fr
 title: Compte rendu de l'atelier n° 1
+excerpt_separator: <!--more-->
 ---
 
 ## Table des matières
@@ -22,6 +23,8 @@ title: Compte rendu de l'atelier n° 1
 - [Utilisation d'une API de météo](#meteo)
 - [Jeu des boîtes](#boites)
 - [Parcours du graphe de Paris](#paris)
+
+<!--more-->
 
 **Ressources**
 

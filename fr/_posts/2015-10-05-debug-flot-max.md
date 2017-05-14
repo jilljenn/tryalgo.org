@@ -1,6 +1,7 @@
 ---
 layout: fr
 title: Debuggue mon flot max (si t'es cap)
+excerpt_separator: <!--more-->
 ---
 
 Pourquoi sur le graphe de capacités suivantes :
@@ -9,7 +10,9 @@ Pourquoi sur le graphe de capacités suivantes :
 
 J'obtiens un flot max à 13 :
 
-<img src="/static/B-13.png" />
+<img src="/static/B-13.png" />o
+
+<!--more-->
 
 Alors qu'il en existe un à 22 :
 

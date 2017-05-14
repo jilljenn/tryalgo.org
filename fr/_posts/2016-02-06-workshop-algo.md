@@ -1,6 +1,7 @@
 ---
 layout: fr
 title: Compte rendu du workshop algo n° 1
+excerpt_separator: <!--more-->
 ---
 
 Présents :
@@ -12,6 +13,8 @@ Présents :
 - Thomas Domingues
 - Jill-Jênn Vie
 - X
+
+<!--more-->
 
 ## Pour débuter en algo
 

@@ -2,6 +2,7 @@
 layout: fr
 title: "Arbres de Merkle : la structure de données à l'origine de git, BitTorrent, Bitcoin, Ethereum, The DAO et autres blockchains"
 author: Jill-Jênn Vie
+excerpt_separator: <!--more-->
 ---
 
 # Merkle trees (1979)
@@ -9,6 +10,8 @@ author: Jill-Jênn Vie
 ![](/fr/images/merkle/merkle.jpg)
 
 Le principe est simple : calculer le hash d'un nœud à partir d'un hash de ses fils. Dans un arbre binaire, pour un nœud ayant pour fils $h_1$ et $h_2$ : $$ h(noeud) = h(h1, h2) $$.
+
+<!--more-->
 
 Cette structure de données sera à l'origine de tout ce que je vais présenter.
 

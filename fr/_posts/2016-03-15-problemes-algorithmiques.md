@@ -1,9 +1,12 @@
 ---
 layout: fr
+excerpt_separator: <!--more-->
 title: Résolution de problèmes algorithmiques
 ---
 
 On peut distinguer trois types de problèmes.
+
+<!--more-->
 
 ## 1. Résolution de problèmes algorithmiques
 
