@@ -20,7 +20,7 @@ Et elle sera gratuite pour tous les enseignants, académiques et les membres d'a
 (notamment par [Ch'ti Code](https://wikis.univ-lille1.fr/chticode/), université de Lille)
 - Des outils pour organiser des compétitions de programmation  
 (par Antoine Pietri, ingénieur [Inria](https://www.inria.fr) et [Prologin](https://prologin.org))
-- Diverses ressources utiles à l'option Informatique pour tous en prépa.
+- Diverses ressources utiles à l'option Informatique pour tous en prépa (ex. simulation de circuits avec [PySpice](http://fabricesalvaire.github.io/PySpice/) de Fabrice Salvaire).
 
 Mais aussi :
 
