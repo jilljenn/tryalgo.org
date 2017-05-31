@@ -28,6 +28,14 @@ Now consider a value v appearing as the maximum of some rows and some columns.  
 
 Suppose that some value v is only the maximum in some rows but not in a column. Then you can just select an arbitrary entry v in each of these row, and decrease to 1 all other entries v from these rows.
 
+### Overall algorithm
+
+- Given input matrix M build binary matrix G of same dimension with G[i,j]=1 iff M[i,j]=rowmax(i) and M[i,j]=colmax(j).
+- Compute maximum bipartite matching B for the bipartite graph with adjacency matrix G
+- For any all-zero row i in B, set B[i,j]=1 to an arbitrary entry with M[i,j]=maxrow(i)
+- For any all-zero column j in B, set B[i,j]=1 to an arbitrary entry with M[i,j]=maxcol(j)
+- decrease M[i,j] to 1 iff M[i,j]>1 and B[i,j]==0
+
 ### Complexity
 
 The simplest bipartite matching algorithm has complexity $O(n m)$ where n is the number of vertices and m the number of edges. In your case nm is upper bounded by 2 000 000.  The matching algorithm has to be executed several times but on graphs that correspond to disjoint entries of the matrix, hence the overall time complexity is within a few million operations.
