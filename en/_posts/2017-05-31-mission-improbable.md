@@ -1,7 +1,7 @@
 ---
 layout: en
 title:  "Mission improbable"
-category: bipartite matching
+category: matching
 author: Christoph Dürr
 ---
 
@@ -22,7 +22,7 @@ A positive entry that is neither the maximum in its row nor in its column can be
 Now consider a value v appearing as the maximum of some rows and some columns.  In the intersection of those rows and columns are some entries of value v.  We want to decrease as many values to 1 as possible, keeping a minimum number of values at v such to preserve the maximum of each these rows and columns.  Consider the bipartite graph with a vertex for each row of maximum v and a vertex for each column of maximum v. There is an edge for each entry of value v.  In this graph you want to select a minimum edge set that covers each vertex. This reduces in finding a maximum bipartite matching in that graph, and to complete it with arbitrary edges for each unmatched vertex.
 
 
-![]({{site.images}}mission-improbable.svg "The graph corresponding to the instance depicted in the problem description.  Here we took the union over all values v." ){:width="400"}
+![]({{site.images}}mission-improbable.svg "The graph corresponding to the instance depicted in the problem description.  Here we took the union over all values v." ){:width="600"}
 
 ### Special case
 
