@@ -10,24 +10,28 @@ La conférence [PyParis.org](http://www.pyparis.org) aura lieu les 12–13 juin 
 
 ## Une session spéciale *Python dans l'éducation* mardi 13 juin
 
-Et elle sera gratuite pour tous les enseignants, académiques et les membres d'associations dédiées à l'apprentissage du code !
+Et elle sera **gratuite pour tous les enseignants**, académiques et les membres d'associations dédiées à l'apprentissage du code !
 
-**Pour en bénéficier :** entrez le code promo **EPI4PY** en [réservant vos billets](https://www.weezevent.com/pyparis).
+<a style="color: #d4273d">**Pour en bénéficier :** entrez le code promo **EPI4PY** en [réservant vos billets](https://www.weezevent.com/pyparis).</a>
 
 ### Au programme du cycle Éducation
 
-- Divers retours d'expérience de Python pour l'enseignement de l'informatique  
-(notamment par [Ch'ti Code](https://wikis.univ-lille1.fr/chticode/), université de Lille)
-- Des outils pour organiser des compétitions de programmation  
+- Divers retours d'expérience de Python pour l'enseignement de l'informatique
+    - par [Ch'ti Code](https://wikis.univ-lille1.fr/chticode/), université de Lille
+    - par Jill-Jênn Vie pour faire découvrir l'IA à des jeunes
+
+- Des outils pour organiser des **compétitions de programmation**  
 (par Antoine Pietri, ingénieur [Inria](https://www.inria.fr) et [Prologin](https://prologin.org))
-- Diverses ressources utiles à l'option Informatique pour tous en prépa (ex. simulation de circuits avec [PySpice](http://fabricesalvaire.github.io/PySpice/) de Fabrice Salvaire).
-- Une table ronde sur des retours d'expérience de deux auteurs de MOOC sur Python
-- Faire découvrir l'IA à des jeunes par des activités ludiques  
-(par Jill-Jênn Vie)
+
+- Diverses ressources utiles à l'option **Informatique pour tous** en prépa  
+(ex. simulation de circuits avec [PySpice](http://fabricesalvaire.github.io/PySpice/) de Fabrice Salvaire).
+
+- Une **table ronde** sur des retours d'expérience de deux auteurs de MOOC sur Python
 
 Mais aussi :
 
 - Une keynote *Python in Education (Politics, People and Programming)* par Nicholas Tollervey, l'auteur du PDF gratuit [*Python in Education*](http://www.oreilly.com/programming/free/python-in-education.csp) (40 p.)
+
 - Un tutorial [micro:bit](http://microbit.org/fr/) : un ordinateur ARM
 conçu par la BBC pour enseignement de l'informatique au Royaume-Uni
 (offert à un million d'Anglais de 11–12 ans).
