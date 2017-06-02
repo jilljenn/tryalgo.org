@@ -21,6 +21,9 @@ Et elle sera gratuite pour tous les enseignants, académiques et les membres d'a
 - Des outils pour organiser des compétitions de programmation  
 (par Antoine Pietri, ingénieur [Inria](https://www.inria.fr) et [Prologin](https://prologin.org))
 - Diverses ressources utiles à l'option Informatique pour tous en prépa (ex. simulation de circuits avec [PySpice](http://fabricesalvaire.github.io/PySpice/) de Fabrice Salvaire).
+- Une table ronde sur des retours d'expérience de deux auteurs de MOOC sur Python
+- Faire découvrir l'IA à des jeunes par des activités ludiques  
+(par Jill-Jênn Vie)
 
 Mais aussi :
 
