@@ -9,7 +9,7 @@ Given n integers and a target value form an arithmetic expression evaluating to 
 
 ## Summary
 
-You are given the integers 3, 100, 8, 8, 10, 6 and need to approach the target alue 683.  The allowed operations are addition, multiplication, subtraction (only if the result is positive) and division (only if the result is integer).  And every given integer can appear at most once in the solution. A solution in this example would be
+You are given the integers 3, 100, 8, 8, 10, 6 and need to approach the target value 683.  The allowed operations are addition, multiplication, subtraction (only if the result is positive) and division (only if the result is integer).  And every given integer can appear at most once in the solution. A solution in this example would be
 
     6 * 100 + 8 * 10 + 3 = 683.
 
