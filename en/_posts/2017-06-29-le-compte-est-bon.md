@@ -50,14 +50,13 @@ def arithm_expr_target(x, target):
     :complexity: huge
     """
     n = len(x)
-    expr = {}  # dict. of dict. expr[S][va] = string of expr. of value val using only values from set S
+    expr = [{} for _ in range(1 << n)]  # expr[S][val] = string of expr. of value val using only values from set S
     for i in range(n):
         expr[1 << i] = {x[i]: str(x[i])}   # store singletons
-    all = (1 << n) - 1
-    for S in range(3, all + 1): # 3 = first number which is not a power of 2
-        if S in expr:
+    tout = (1 << n) - 1
+    for S in range(3, tout + 1): # 3 = first number which is not a power of 2
+        if expr[S] != {}:
             continue             # in that case S is a power of 2
-        expr[S] = {}
         for L in range(1, S):    # decompose set S into non-empty sets L and R
             if L & S == L:
                 R = S ^ L
@@ -68,17 +67,17 @@ def arithm_expr_target(x, target):
                         expr[S][vL] = eL
                         if vL > vR:        # difference cannot become negative
                             expr[S][vL - vR] = "(%s-%s)" % (eL, eR)
-                        if L < R:   # break symmetry
+                        if L < R:   # briser la symétrie
                             expr[S][vL + vR] = "(%s+%s)" % (eL, eR)
                             expr[S][vL * vR] = "(%s*%s)" % (eL, eR)
                         if vR != 0 and vL % vR == 0:  # only integer divisions
                             expr[S][vL // vR] = "(%s/%s)" % (eL, eR)
-    # find closest expression to target value
+    # chercher expression la plus proche du but
     for dist in range(target + 1):
         for sign in [-1, +1]:
             val = target + sign * dist
-            if val in expr[all]:
-                return "%s=%i" % (expr[all][val], val)
-    # we never reach this part provided x contains numbers between 0 and target
+            if val in expr[tout]:
+                return "%s=%i" % (expr[tout][val], val)
+    # partie jamais atteinte si x contient des nombres entre 0 et but
     pass
 {% endhighlight %}
