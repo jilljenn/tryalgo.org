@@ -19,10 +19,11 @@ author: Jill-Jênn Vie
 
     pip install sympy
 
-- [Someone doing approximate matrix differentiation](https://zulko.wordpress.com/2012/04/15/symbolic-matrix-differentiation-with-sympy/)
-- [Tests for differentiation with tensors](https://github.com/sympy/sympy/blob/49649c2bd0488840fe1cb47184e35b0fb42c7098/sympy/tensor/tests/test_indexed.py) (GitHub)
+- [Someone doing approximate matrix differentiation with SymPy](https://zulko.wordpress.com/2012/04/15/symbolic-matrix-differentiation-with-sympy/) (by propagating his own rules recursively on the expression tree)
 - [Derivatives by array](http://docs.sympy.org/latest/modules/tensor/array.html#derivatives-by-array): it can derivate by vector, do a symbolic differentiation.
-- [Output towards TensorFlow](http://docs.sympy.org/latest/modules/utilities/lambdify.html#sympy.utilities.lambdify.lambdify)
+- [Common Subexpression Detection and Collection](http://docs.sympy.org/latest/modules/rewriting.html#module-sympy.simplify.cse_main), it's actually [a nice problem](https://en.wikipedia.org/wiki/Common_subexpression_elimination)
+- [Output into TensorFlow format](http://docs.sympy.org/latest/modules/utilities/lambdify.html#sympy.utilities.lambdify.lambdify)
+- [Tests for differentiation with tensors](https://github.com/sympy/sympy/blob/49649c2bd0488840fe1cb47184e35b0fb42c7098/sympy/tensor/tests/test_indexed.py) (GitHub)
 
 See [this interesting Jupyter notebook](https://github.com/jilljenn/tryalgo.org/blob/master/_notebooks/SymPy%20Demo.ipynb)!
 
