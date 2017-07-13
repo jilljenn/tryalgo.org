@@ -24,13 +24,13 @@ author: Jill-Jênn Vie
 - [Derivatives by array](http://docs.sympy.org/latest/modules/tensor/array.html#derivatives-by-array): it can derivate by vector, do a symbolic differentiation.
 - [Output towards TensorFlow](http://docs.sympy.org/latest/modules/utilities/lambdify.html#sympy.utilities.lambdify.lambdify)
 
-See [this interesting Jupyter notebook]()!
+See [this interesting Jupyter notebook](https://github.com/jilljenn/tryalgo.org/blob/master/_notebooks/SymPy%20Demo.ipynb)!
 
 ## SageMath
 
 [Try it on CoCalc](https://cocalc.com) (formerly SageMathCloud).
 
-You can load this [SageMath worksheet]().
+You can [download this SageMath worksheet (logreg.sagews)](https://github.com/jilljenn/tryalgo.org/tree/master/_notebooks) to load it there.
 
 - Many tools about block design in combinatorics, Galois fields, etc.
 - Really used by cryptographers.
