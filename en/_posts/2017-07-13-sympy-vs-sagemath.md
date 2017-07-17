@@ -18,7 +18,7 @@ author: Jill-Jênn Vie
 
 ## SymPy
 
-[Try SymPy in your brother](http://docs.sympy.org/latest/tutorial/intro.html#a-more-interesting-example) (live shell on every page, wow!).
+[Try SymPy in your browser](http://docs.sympy.org/latest/tutorial/intro.html#a-more-interesting-example) (live shell on every page, wow!).
 
     pip install sympy
 
