@@ -11,18 +11,18 @@
         <a href="/index-en"><img src="/public/english.png" style="float: right" /></a>
         <a href="/" class="site-avatar"><img src="{{ site.avatar }}" alt="{{ site.title }}" /></a>
         <div class="site-info">
-          <h1 class="site-name"><a href="{{ site.baseurl }}">{{ site.description }}</a></h1>
+          <h1 class="site-name"><a href="{{ site.url }}/">{{ site.description }}</a></h1>
         </div>
       {% endif %}
 
       <nav>
-        <a href="{{ site.baseurl }}book">Livre</a>
-        <a href="{{ site.baseurl }}code">Code</a>
-        <a href="{{ site.baseurl }}contests">{% if page.lang == 'en' %}Contests{% else %}Concours{% endif %}</a>
-        <a href="{{ site.baseurl }}problems">{% if page.lang == 'en' %}Problems{% else %}Problèmes{% endif %}</a>
-        <a href="{{ site.baseurl }}en">Solutions</a>
-        <a href="{{ site.baseurl }}fr">Blog</a>
-        <a href="{{ site.baseurl }}club">Club</a>
+        <a href="{{ site.url }}/book">Livre</a>
+        <a href="{{ site.url }}/code">Code</a>
+        <a href="{{ site.url }}/contests">{% if page.lang == 'en' %}Contests{% else %}Concours{% endif %}</a>
+        <a href="{{ site.url }}/problems">{% if page.lang == 'en' %}Problems{% else %}Problèmes{% endif %}</a>
+        <a href="{{ site.url }}/en">Solutions</a>
+        <a href="{{ site.url }}/fr">Blog</a>
+        <a href="{{ site.url }}/club">Club</a>
         <a href="https://github.com/jilljenn/tryalgo/tree/master/tryalgo">GitHub</a>
       </nav>
     </header>
