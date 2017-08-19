@@ -13,7 +13,7 @@ tagline:          'Un livre de programmation'
 description:      'Résolution de problèmes algorithmiques'
 description_en:   'Algorithmic Problem Solving'
 metadescription:  "Programmation efficace - Les 128 algorithmes qu'il faut avoir compris et codés dans sa vie. Sortie le 1er mars 2016."
-url:              http://tryalgo.org/
+url:              http://tryalgo.org
 baseurl:          "/"
 images: 		      "/en/images/"
 
