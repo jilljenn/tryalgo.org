@@ -57,7 +57,7 @@ We are going to prove:
 
 > If you have to answer $Q$ range queries _that can be updated_ in $O(T)$ on an array of size $n$, you can solve them in $O(Q \log Q + (n + Q)\sqrt n  \times T)$.
 
-Let's note the queries $[a, b]$. "_that can be updated_" means you can maintain a program state to compute $[a±1, b]$ or $[a, b±1]$ from $[a, b]$.
+Let's note the queries $[a, b]$. "_that can be updated_" means you can compute the program state associated with $[a±1, b]$ or $[a, b±1]$ from the program state associated with $[a, b]$.
 
 We can already compute all the possible queries in $O(T n^2)$  by looping on $a$ and $b$.
 
