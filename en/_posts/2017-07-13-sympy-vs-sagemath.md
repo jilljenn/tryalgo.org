@@ -5,6 +5,42 @@ category: arithmetics
 author: Jill-Jênn Vie
 ---
 
+## Get Started
+
+    python3 -m venv venv
+    . venv/bin/activate  # Load a virtualenv (optional)
+
+But if you don't need a virtualenv, you can directly do:
+
+    pip install sympy
+    python
+    >>> from sympy import Symbol, log, exp, pprint
+    >>> u = sympy.Symbol('u')
+    >>> v = sympy.Symbol('v')
+    >>> x = sympy.Symbol('x')
+    >>> f = x * v * u - log(1 + exp(v * u))
+    >>> f.diff(u)  # df/du
+    v*x - v*exp(u*v)/(exp(u*v) + 1)
+    >>> pprint(f.diff(u))
+              u⋅v 
+           v⋅ℯ    
+    v⋅x - ────────
+           u⋅v    
+          ℯ    + 1
+    >>> pprint(f.diff(u).diff(u))  # d2f/du2
+       2  u⋅v      2  2⋅u⋅v 
+      v ⋅ℯ        v ⋅ℯ      
+    - ──────── + ───────────
+       u⋅v                 2
+      ℯ    + 1   ⎛ u⋅v    ⎞ 
+                 ⎝ℯ    + 1⎠ 
+
+So if $f = xv^T u - \log(1 + \exp(v^T u))$,
+
+$$ \frac{\partial^2 f}{ {\partial u}^2 } = \left[\frac{\exp u^T v}{1 + \exp u^T v} + \frac{\exp 2 u^T v}{ {(1 + \exp u^T v)}^2}\right] v v^T. $$
+
+(Yes. We cheated.)
+
 ## Automatic differentiation
 
 - [What automatic differentiation looks like](https://en.wikipedia.org/wiki/Automatic_differentiation).
