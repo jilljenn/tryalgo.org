@@ -7,9 +7,9 @@ author: <a href="https://louisabraham.github.io/">Louis Abraham</a>
 In this article, I talk about [this problem](https://www.hackerrank.com/contests/w34/challenges/path-statistics/problem) (of HackerRank). Try to solve it first!
 
 > You are given a tree with $n$ nodes, that is, an acyclic connected graph, where each node $i$ is assigned a value $c_i$.
-
+>
 > You must answer $q$ queries in the form `u v k`. For each query, find and print the $k^{th}$ most frequent value on the path between $u$ and $v$. If two values appear the same number of times, for tie-breaking, the smaller number is considered less frequent than, the bigger one.
-
+>
 > Constraints: $n, q ≤ 5 * 10^4$
 
 ## From trees to arrays
@@ -57,7 +57,7 @@ We are going to prove:
 
 > If you have to answer $Q$ range queries _that can be updated_ in $O(T)$ on an array of size $n$, you can solve them in $O(Q \log Q + (n + Q)\sqrt n  \times T)$.
 
-Let's note the queries $[a, b]$. "_that can be updated_" means you can maintain a program state to compute $[a±1, b]$ or $[a, b±1]$ from $[a, b]$.
+Let's note the queries $[a, b]$. "_that can be updated_" means you can compute the program state associated with $[a±1, b]$ or $[a, b±1]$ from the program state associated with $[a, b]$.
 
 We can already compute all the possible queries in $O(T n^2)$  by looping on $a$ and $b$.
 
