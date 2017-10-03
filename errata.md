@@ -11,11 +11,15 @@ Voici une liste de coquilles dans le livre.
 
 - page 16 : (première phrase) Il se trouve que $\textsf{P} \subseteq \textsf{NP}$, l'intuition étant que si on peut construire une solution en temps polynomial, alors on peut *vérifier* une solution en temps polynomial.
 
+- page 49 : dans cette implémentation *mirror* vaut -1 lors de la première itération. Ceci n'est pas un problème dans Python, car le dernier élément de *p* vaut 0.  Mais une meilleure implémentation qui fonctionnerait également pour d'autres languages de programmation, initialiserait *c* et *d* à 1 et on débuterait la boucle avec *i=2*.
+
 - page 70: À tout moment donnée on maintient dans *open* le nombre d'intervalles ouverts. - Il fallait lire *nb_open*.
 
 - page 102 : la complexité de l'algorithme pour le voyageur de commerce est $O(&#124;V&#124;^2 2^{&#124;V&#124;})$
 
 - page 112 : dans le code de dist_grid, le *break* devrait être *continue*.
+
+- page 126 : la ligne 9 *n=len(G)* du code est inutile par la présence de la même instruction en ligne 3.
 
 - page 143 (légende 9.9): ... décomposition en chaînes *minimum* dans G ...
 
