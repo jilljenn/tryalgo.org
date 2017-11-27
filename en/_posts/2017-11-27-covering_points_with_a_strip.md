@@ -1,10 +1,13 @@
 ---
 layout: en
+category: geometry
 title: "Covering points with a strip"
 author: Christoph Dürr
+problems:
+    "swerc:Blowing candles": https://domjudge.di.ens.fr/public/problem.php?id=7
 ---
 
-Given n points in the 2-dimensional plane find a strip with minimal width that covers all the points.  Read [problem statement](https://domjudge.di.ens.fr/public/problem.php?id=7) (of SWERC'2017) first.
+Given n points in the 2-dimensional plane find a strip with minimal width that covers all the points.
 
 ## Convex hull
 
