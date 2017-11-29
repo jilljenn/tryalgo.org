@@ -4,7 +4,7 @@ category: geometry
 title: "Covering points with a strip"
 author: Christoph Dürr
 problems:
-    "swerc:Blowing candles": https://domjudge.di.ens.fr/public/problem.php?id=7
+    "swerc:Blowing candles": https://swerc.eu/theme/results/official/public/problem_112.pdf
 ---
 
 Given n points in the 2-dimensional plane find a strip with minimal width that covers all the points.
