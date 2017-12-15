@@ -39,15 +39,15 @@
 </defs>
 <g id="surface1">
 <rect x="0" y="0" width="207" height="145" style="fill:rgb(100%,100%,100%);fill-opacity:1;stroke:none;"/>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,63.922119%,37.254333%);fill-opacity:1;" d="M 90 145 L 109.5 42.625 L 207 28 L 207 145 Z M 90 145 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,56.861877%,30.195618%);fill-opacity:1;" d="M 90 145 L 109.5 42.625 L 207 28 L 207 145 Z M 90 145 "/>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
   <use xlink:href="#glyph0-1" x="145.76" y="141.026"/>
 </g>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(84.313965%,51.373291%,100%);fill-opacity:1;" d="M 103.5 43.75 C 103.5 38.929688 49.5 10 49.5 10 L 0 145 L 81 145 C 81 145 103.5 48.570312 103.5 43.75 Z M 103.5 43.75 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(79.998779%,39.99939%,100%);fill-opacity:1;" d="M 103.5 43.75 C 103.5 38.929688 49.5 10 49.5 10 L 0 145 L 81 145 C 81 145 103.5 48.570312 103.5 43.75 Z M 103.5 43.75 "/>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
   <use xlink:href="#glyph0-2" x="49.526" y="141.026"/>
 </g>
-<path style="fill-rule:nonzero;fill:rgb(45.097351%,98.823547%,83.921814%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 302.046875 255.953125 C 307.320312 261.226562 307.320312 269.773438 302.046875 275.046875 C 296.773438 280.320312 288.226562 280.320312 282.953125 275.046875 C 277.679688 269.773438 277.679688 261.226562 282.953125 255.953125 C 288.226562 250.679688 296.773438 250.679688 302.046875 255.953125 " transform="matrix(0.5,0,0,0.5,-36,-125)"/>
+<path style="fill-rule:nonzero;fill:rgb(39.99939%,100%,79.998779%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 302.046875 255.953125 C 307.320312 261.226562 307.320312 269.773438 302.046875 275.046875 C 296.773438 280.320312 288.226562 280.320312 282.953125 275.046875 C 277.679688 269.773438 277.679688 261.226562 282.953125 255.953125 C 288.226562 250.679688 296.773438 250.679688 302.046875 255.953125 " transform="matrix(0.5,0,0,0.5,-36,-125)"/>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
   <use xlink:href="#glyph0-3" x="107.85" y="10.638001"/>
 </g>
