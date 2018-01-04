@@ -11,7 +11,9 @@ Voici une liste de coquilles dans le livre.
 
 - page 16 : (première phrase) Il se trouve que $\textsf{P} \subseteq \textsf{NP}$, l'intuition étant que si on peut construire une solution en temps polynomial, alors on peut *vérifier* une solution en temps polynomial.
 
-- page 49 : dans cette implémentation *mirror* vaut -1 lors de la première itération. Ceci n'est pas un problème dans Python, car le dernier élément de *p* vaut 0.  Mais une meilleure implémentation qui fonctionnerait également pour d'autres languages de programmation, initialiserait *c* et *d* à 1 et on débuterait la boucle avec *i=2*.
+- page 49 : dans cette implémentation *mirror* vaut -1 lors de la première itération. Ceci n'est pas un problème dans Python, car le dernier élément de *p* vaut 0.  Mais une meilleure implémentation qui fonctionnerait également pour d'autres langages de programmation, initialiserait *c* et *d* à 1 et on débuterait la boucle avec *i=2*.
+
+- page 54 : Observation clé ... alors forcément une des lettres $x_i,x_j$ n'est pas couplée. Il faudrait lire $x_i, y_j$.  Aussi ici A[i,j] est une plus longue sous-séquence maximale, alors que dans l'implémentation A[i][j] en est la longueur.
 
 - page 70: À tout moment donnée on maintient dans *open* le nombre d'intervalles ouverts. - Il fallait lire *nb_open*.
 
@@ -39,4 +41,4 @@ Voici une liste de coquilles dans le livre.
 
 ## Clarifications
 
-- page 35, 36 : la fonction présentée prend une liste de mots (*w*) en argument et renvoie une liste de liste de mots (*reponse*).
+- page 35, 36 : la fonction présentée prend une liste de mots (*w*) en argument et renvoie une liste de liste de mots (*réponse*).
