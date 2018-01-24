@@ -119,9 +119,9 @@ while stack:
 
 Il existe un modèle naturel par programmation linéaire à variables entières (MIP) pour ce problème. Les variables de décision sont associées aux rectangles, et pour chaque cellule de la grille il a une contrainte qui assure qu'au plus un rectangle de la solution couvre la cellule.  Les solveurs de MIP n'arrivent pas à traiter convenablement l'instance qui décrit le problème pour la grille entière.
 
-Alors nous avons entrepris de couvrir la grille par des régions de dimension carré et de résoudre le MIP restreint à chacune des régions.  Concrètement nous avons choisit des régions qui se chevauchement légèrement, pour ne pas interdire de notre solution des rectangles qui seraient à cheval entre les région.
+Alors nous avons entrepris de couvrir la grille par des régions de dimension carré et de résoudre le MIP restreint à chacune des régions.  Concrètement nous avons choisit des régions qui se chevauchent légèrement, pour ne pas interdire de notre solution des rectangles qui seraient à cheval entre les régions.
 
-Concrètement pour une région R, nous enlevons d'abord les rectangles de la solution courante qui sont inclus dans R.  Puis nous construisons le modèle MIP restreint au sous problème induit par la région R, en évitant des cellules de R déjà couverts par des rectangles de la solution courante intersectant R sans être inclus.
+Concrètement pour une région R, nous enlevons d'abord les rectangles de la solution courante qui sont inclus dans R.  Puis nous construisons le modèle MIP restreint au sous problème induit par la région R, en évitant des cellules de R déjà couvertes par des rectangles de la solution courante intersectant R sans être inclus.
 
 Voici les résultats obtenus avec cette approche. Si vous voulez vraiment savoir, l'implémentation a utilisée le solveur SCIP 3.2 sur un processeur 1,6 GHz Intel Core i5.
 
@@ -135,7 +135,7 @@ Voici les résultats obtenus avec cette approche. Si vous voulez vraiment savoir
 
 # Conclusion
 
-Il manque encore plusieurs expériences, pour pouvoir faire une conclusion définitive. Par exemple une recherche par branchement et élagage ou alors une combinaison de la méthode de coupe par guillotine et d'un solveur MIP pour tous les régions suffisamment petites.  Mais au vu des résultats il semble que la méthode de coupe par guillotine donne de très bons résultats pour un code assez facile à mettre en œuvre.
+Il manque encore plusieurs expériences, pour pouvoir faire une conclusion définitive. Par exemple une recherche par branchement et élagage (branch and bound) ou alors une combinaison de la méthode de coupe par guillotine et d'un solveur MIP pour toutes les régions suffisamment petites.  Mais au vu des résultats il semble que la méthode de coupe par guillotine donne de très bons résultats pour un code assez facile à mettre en œuvre.
 
 Je remercie Pascale Bendotti et Pierre Fouilhoux pour des discussions qui ont aidé à l'élaboration de ces expériences.
 
