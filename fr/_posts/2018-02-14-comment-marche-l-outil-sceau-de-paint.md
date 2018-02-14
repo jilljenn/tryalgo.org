@@ -32,7 +32,7 @@ A partir de ce moment, vous savez quoi faire. Etant donné la couleur courante e
 
 Par exemple, pour le graphe ci-dessus, les noeuds 2 et 3 sont accessibles depuis le noeud 1 (et réciproquement). Les noeuds 4 et 5 ne sont pas accessibles depuis le noeud 1.
 
-Heureusement, on connaît des algorithmes qui énumèrent les noeuds accessibles depuis un noeud fixés. Et voilà, c'est bon, vous avez résolu le problème. Ecrivons toutefois pour de bon l'algorithme en Python.
+Heureusement, on connaît des algorithmes qui énumèrent les noeuds accessibles depuis un noeud fixé (ce sont les parcours en profondeur et en largeur qui sont présentés dans la prochaine section). Et voilà, c'est bon, vous avez résolu le problème. Ecrivons toutefois pour de bon l'algorithme en Python.
 
 ## Algorithme de remplissage par diffusion (ou "Flood Fill")
 
