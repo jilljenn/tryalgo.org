@@ -1,6 +1,6 @@
 ---
 layout: fr
-title: Comment marche l'outil "Sceau" de Paint ?
+title: Comment marche l'outil "Seau" de Paint ?
 author: Clémence Réda
 ---
 
@@ -8,7 +8,7 @@ author: Clémence Réda
 
 Le titre se suffit à lui-même. Ssh. Ne vous inquiétez pas. Personne ne vous jugera pour ne (jamais) vous être posé la question.
 
-Pour rappeler ce qu'est cet outil pour les néophytes en graphisme, l'outil "Sceau" (ou outil de remplissage, selon le logiciel) est une fonctionnalité qui permet de colorier tous les pixels de la même couleur que celui que vous avez sélectionné sur votre image avec la couleur courante. Par exemple, si jamais vous avez tenté de faire une carte maison pour la Saint Valentin, et que vous n'aviez pas envie de vous amuser à colorier à la brosse les petits coeurs, vous avez pu utiliser cet outil (le curseur est marqué en vert ci-dessous; la couleur courante est ici le rouge) :
+Pour rappeler ce qu'est cet outil pour les néophytes en graphisme, l'outil "Seau" (ou outil de remplissage, selon le logiciel) est une fonctionnalité qui permet de colorier tous les pixels de la même couleur que celui que vous avez sélectionné sur votre image avec la couleur courante. Par exemple, si jamais vous avez tenté de faire une carte maison pour la Saint Valentin, et que vous n'aviez pas envie de vous amuser à colorier à la brosse les petits coeurs, vous avez pu utiliser cet outil (le curseur est marqué en vert ci-dessous; la couleur courante est ici le rouge) :
 
 <img src="/fr/images/paint/jeveuxcolorier.png" style="float: center"/>
 
