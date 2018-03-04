@@ -11,7 +11,7 @@ Compute for every integer n between 0 and N (excluded), the minimum number of op
 
 ## Key ingredient
 
-The key ingredient is the [ieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes). This is simple procedure to find all prime numbers below some given integer N. Simply fill a boolean table T, which initially is all True, except for indexes 0 and 1.  Process from index 2 to N (excluded).  When processing p, if T[p] is True, then we know that p is a prime. Now set T[ap] to False for all integers a at least 2, (not exceeding the table size).
+The key ingredient is the [sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes). This is simple procedure to find all prime numbers below some given integer N. Simply fill a boolean table T, which initially is all True, except for indexes 0 and 1.  Process from index 2 to N (excluded).  When processing p, if T[p] is True, then we know that p is a prime. Now set T[ap] to False for all integers a at least 2, (not exceeding the table size).
 
 This procedure takes time $O(N \log N)$.
 
