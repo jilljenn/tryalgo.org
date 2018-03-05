@@ -29,6 +29,8 @@ The idea is to compute for every n --- in the range 0 to N --- the distance d[n]
 The key difficulty is to find the non-trivial factors for a given integer n.  By *non-trival* we mean factors that are *strictly* between 1 and $n$.  One possibility is to use the sieve of Eratosthenes. Let *F[n]* be the list of all primes dividing $n$. If $p^2$ divides n then p is present twice in the list.
 The table F is filled up in order of increasing indexes.
 
+*Side-note:* we experimented  using a dictionary instead of a list, associating the value 2 to the key p if $p^2$ divides $n$ but not $p^3$.  This gave almost no improvement.
+
 Initially all entries of F are empty.  Then for every $p$ from 2 to $N$, we check if *F[p]* is empty. If it is the case, then $p$ is a prime number and we proceed as follows. For every integer multiple of $p$ not exceeding $N$, namely $p, 2p, 3p$ etc we add $p$ to its list stored in *F*.  Then for every integer multiple of $p^2$ we add again $p$ to its list stored in *F*. And we repeat so for all integer powers of *p*, not exceeding $N$.
 
 Just to create confusion we renamed *F* as *decomp* in the following implementation.
