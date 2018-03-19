@@ -9,9 +9,13 @@ Voici une liste de coquilles dans le livre.
 
 - page 15 : La chaîne de formatage doit contenir %.02f%% à la place de %.02f pour qu'un pourcentage s'affiche en sortie.
 
+- page 15 : Dans la definition de $f\in\Omega(g)$, il faut lire $f(n) \geq \ldots$ au lieu de $f(n)\leq \ldots$.
+
 - page 16 : (première phrase) Il se trouve que $\textsf{P} \subseteq \textsf{NP}$, l'intuition étant que si on peut construire une solution en temps polynomial, alors on peut *vérifier* une solution en temps polynomial.
 
 - page 21: la ligne self.n=0 est inutile. Tout le code utilise len.
+
+- page 37: The string "None" should be the keyword None.
 
 - page 49 : dans cette implémentation *mirror* vaut -1 lors de la première itération. Ceci n'est pas un problème dans Python, car le dernier élément de *p* vaut 0.  Mais une meilleure implémentation qui fonctionnerait également pour d'autres langages de programmation, initialiserait *c* et *d* à 1 et on débuterait la boucle avec *i=2*.
 
