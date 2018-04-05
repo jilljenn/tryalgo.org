@@ -122,6 +122,8 @@ Cet algorithme termine, puisqu'on inspecte un à un, dans l'ordre, les élément
 
 De plus, une insertion ne peut augmenter la taille de la PLSC qu'au maximum de 1, or subseq est une sous-séquence croissante de taille s+1, où s est la taille de la PLSC pour lst1 à l'étape i-1, donc subseq est maximale. Donc pour tout i, subseq reste une PLSC de la liste courante lst1 à l'étape i.
 
+De plus, on ne modifie lst1 (autrement dit, on n'effectue un mouvement d'insertion) que lorsqu'on ajoute un élément à subseq, jusqu'à ce que subseq soit de taille n. Donc on n'effectue que n-s mouvements, où s est la taille de la PLSC à l'étape initiale.
+
 Une implémentation en Python de l'algorithme est disponible ci-dessous :
 
 {% highlight python %}
