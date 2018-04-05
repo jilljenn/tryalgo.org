@@ -6,7 +6,7 @@ author: Clémence Réda
 
 ## Le problème ##
 
-Une permutation d'un intervalle d'entiers de 1 à n est un ordonnement des entiers de cet intervalle. C'est donc toujours une liste de taille n, où chaque entier de l'intervalle apparaît une et une seule fois.
+Une permutation d'un intervalle d'entiers de 1 à n est un ordonnancement des entiers de cet intervalle. C'est donc toujours une liste de taille n, où chaque entier de l'intervalle apparaît une et une seule fois.
 
 Considérons deux permutations de l'intervalle d'entiers de 1 à 4 inclus:
 
