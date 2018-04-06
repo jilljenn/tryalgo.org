@@ -87,11 +87,11 @@ class Graph:
 
     def add_node(self, name):
         assert name not in self.name2node
-        id = self.name2node[name] = len(self.name2node)
+        self.name2node[name] = len(self.name2node)
         self.node2name.append(name)
         self.neighbors.append([])
         self.weights.append({})
-        return id
+        return self.name2node[name]
 
     def add_edge(self, name_u, name_v, weight_uv=None):
         self.add_arc(name_u, name_v, weight_uv)
