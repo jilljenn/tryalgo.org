@@ -77,7 +77,7 @@ class Graph:
         self.neighbors = []
         self.name2node = {}
         self.node2name = []
-        self.weights = []
+        self.weight = []
 
     def __len__(self):
         return len(self.node2name)
@@ -90,7 +90,7 @@ class Graph:
         self.name2node[name] = len(self.name2node)
         self.node2name.append(name)
         self.neighbors.append([])
-        self.weights.append({})
+        self.weight.append({})
         return self.name2node[name]
 
     def add_edge(self, name_u, name_v, weight_uv=None):
@@ -101,7 +101,7 @@ class Graph:
         u = self.name2node[name_u]
         v = self.name2node[name_v]
         self.neighbors[u].append(v)
-        self.weights[u][v] = weigh_uv
+        self.weight[u][v] = weight_uv
 {% endhighlight %}
 
 
@@ -111,6 +111,7 @@ To illustrated the above graph class, we refer to a problem posted in the [Battl
 
 Clearly this is a *min s-t-cut* problem, it is a just a matter of finding the right graph. For this purpose we have 2 vertices for every grid cell (i,j), namely a vertex (IN,i,j) and a vertex (OUT,i,j). If (i',j') is adjacent to (i,j), then there is an arc from (OUT,i,j) to (IN,i',j') of infinite capacity.  In addition there is an arc from (IN,i,j) to (OUT,i,j) with capacity 0 if the cell is a wall, capacity 1 if the cell is a door and capacity infinite otherwise.
 
+
 In this graph there are two more vertices, a source s that is connected to every vertex (IN,i,j) for cells containing a person, and a target vertex t that is connected from every vertex (OUT,i,j) for cells containing a duck. If the maximum s-t-flow in this graph has infinite value then  persons cannot be separated from  ducks.  Otherwise the value of the flow is the answer.  The infinite capacity can be represented by  the number of cells in the grid.
 
 
@@ -118,3 +119,46 @@ In this graph there are two more vertices, a source s that is connected to every
 
 In the graph on the right, the arcs of capacity 0 are not depicted, the black arcs have infinite capacity, and the red arc has unit capacity.
 
+This is how the graph could be build using our class.
+
+{% highlight python %}
+# the given grid is a 2 dimensional array, with constants EMPTY, PERSON, DUCK, WALL and DOOR
+rows = range(len(grid))
+cols = range(len(grid[0]))
+
+infinity = len(grid) * len(grid[0])   # big enough number
+
+G = Graph()
+
+IN = 0              # constants
+OUT = 1
+SOURCE = "source"
+SINK = "sink"
+
+G.add_node(SOURCE)
+G.add_node(SINK)
+
+
+for i in rows:
+  for j in cols:
+    G.add_node((IN, i, j))
+    G.add_node((OUT, i, j))
+    if grid[i][j] == DOOR:
+      G.add_arc((IN, i, j), (OUT, i, j), 1)
+    elif grid[i][j] != WALL:
+      G.add_arc((IN, i, j), (OUT, i, j), infinity)
+
+
+for i in rows:
+  for j in cols:
+    if grid[i][j] == PERSON:
+      G.add_arc(SOURCE, (IN, i, j), infinity)
+    elif ....
+
+for u in range(len(G)):
+  for v in G[u]:
+    if u not in G[v]:
+      G.add_arc(v, u, 0)   # flow algorithms need existence of symmetric arcs
+
+....
+{% endhighlight %}
