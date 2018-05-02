@@ -25,6 +25,8 @@ Voici une liste de coquilles dans le livre.
 
 - page 102 : la complexité de l'algorithme pour le voyageur de commerce est $O(&#124;V&#124;^2 2^{&#124;V&#124;})$
 
+- page 110 : la boucle extérieur doit se faire au plus n fois, pas n+2.
+
 - page 112 : dans le code de dist_grid, le *break* devrait être *continue*.
 
 - page 126 : la ligne 9 *n=len(G)* du code est inutile par la présence de la même instruction en ligne 3.
