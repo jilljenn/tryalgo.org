@@ -1,0 +1,11 @@
+graph {
+node [style=filled shape=circle]
+A;
+B;
+C;
+D;
+A -- B;
+B -- C;
+C -- D;
+D -- A;
+}
