@@ -62,7 +62,7 @@ Essayons d'appliquer cette méthode au graphe ci-dessus, avant de passer à l'im
 + Regardons les tâches nouvellement accessibles. La tâche "Mélanger eau et poudre" est maintenant accessible. Associons-lui le numéro 4.
 + Regardons les tâches nouvellement accessibles. Aucune tâche n'est accessible, et tous les noeuds sont visités : on retourne l'ordre d'évaluation que l'on a obtenu.
 
-On peut observer aussi du coup que la détection des graphes cycliques peut aussi s'effectuer à l'intérieur de l'algorithme (et non plus en faisant un parcours de graphe au préalable, ce qui peut être sympathique pour réduire le temps de calcul) : on peut regarder si on ne trouve pas de noeud sans dépendances alors qu'il reste des noeuds non visités (condition 1) ou si on n'a pas déjà attribué un numéro d'évaluation à l'une des tâches nouvellement accessibles (condition 2). Si c'est le cas, on est alors tombé sur un cycle, et on retourne une erreur. 
+On peut observer aussi du coup que la détection des graphes cycliques peut aussi s'effectuer à l'intérieur de l'algorithme (et non plus en faisant un parcours de graphe au préalable, ce qui peut être sympathique pour réduire le temps de calcul) : on peut regarder si on ne trouve pas de noeud sans dépendances/noeuds accessibles alors qu'il reste des noeuds non visités (condition 1) ou si on n'a pas déjà attribué un numéro d'évaluation à l'une des tâches nouvellement accessibles (condition 2). Si c'est le cas, on est alors tombé sur un cycle, et on retourne une erreur. 
 
 Sinon, on retourne l'ensemble des numéros de noeuds, qui constitue ce que l'on appelle un *tri topologique*, noté *f*, qui satisfait la condition suivante : pour tous noeuds *a* et *b* du graphe, si f(*a*) < f(*b*), alors (*b*, *a*) ("*a* dépend de *b*") n'est pas un arc du graphe. 
 
@@ -105,7 +105,7 @@ def kahn(L):
 		// sans dépendances non visités
 		noeud = accessibles.pop()
 		// Si ordre[noeud] > 0 (noeud déjà visité)
-		// alors on a trouvé un cycle
+		// alors on a trouvé un cycle (condition 2 de cycle)
 		if (ordre[noeud] > 0):
 			return []
 		// Sinon, attribuons le numéro i à ce noeud
@@ -130,7 +130,7 @@ def kahn(L):
 				accessibles.append(no)
 		// Si on ne trouve pas de noeud accessibles
 		// et qu'il y a encore des noeuds non visités
-		// on a alors trouvé un cycle (condition 2 de cycle)
+		// on a alors trouvé un cycle (condition 1 de cycle)
 		if (len(accessibles) == 0 and i < n):
 			return []
 		// et on itère !
