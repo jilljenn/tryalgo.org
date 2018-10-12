@@ -29,7 +29,7 @@ La détection d'ordres d'évaluation impossibles se fait, comme dans l'exemple c
 ```python
 a = 3
 c = a + b
-// Python râle
+# Python râle
 > NameError: name 'c' is not defined
 ```
 
@@ -75,102 +75,102 @@ On remarque en fait que les noeuds sans dépendances sont des tâches accessible
 Pour faciliter la compréhension, on garde une liste de noeuds accessibles, et un tableau *ordre* qui dénote les noeuds non visités et visités (on pourrait ne conserver que le tableau *ordre* qui dénoterait les noeuds non visités non accessibles, accessibles, et visités).
 
 ```python
-// L est la liste des listes d'adjacence du graphe de dépendances
+# L est la liste des listes d'adjacence du graphe de dépendances
 def kahn(L):
-	// n nombre de noeuds
+	# n nombre de noeuds
 	n = len(L)
-	// numéro d'évaluation courant à attribuer
+	# numéro d'évaluation courant à attribuer
 	i = 0
-	// ordre d'évaluation à compléter
-	// si ordre[noeud] == 0 alors on a accès au noeud mais on ne l'a pas traité
-	// si ordre[noeud] > 0 alors on a traité le noeud
+	# ordre d'évaluation à compléter
+	# si ordre[noeud] == 0 alors on a accès au noeud mais on ne l'a pas traité
+	# si ordre[noeud] > 0 alors on a traité le noeud
 	ordre = [0]*n
-	// on initialise la liste des noeuds accessibles
-	// par les noeuds sans dépendances non visités
-	// i.e. les noeuds qui n'apparaissent dans aucune
-	// liste d'adjacence
-	// On agrège les listes d'adjacence
+	# on initialise la liste des noeuds accessibles
+	# par les noeuds sans dépendances non visités
+	# i.e. les noeuds qui n'apparaissent dans aucune
+	# liste d'adjacence
+	# On agrège les listes d'adjacence
 	avec_dep = [dep for liste in L for dep in liste]
 	accessibles = []
 	for noeud in range(n):
 		if (not(noeud in avec_dep)):
 			accessibles.append(noeud)
-	// S'il n'existe pas de noeuds sans dépendances
-	// alors on a trouvé un cycle (condition 1 de cycle)
+	# S'il n'existe pas de noeuds sans dépendances
+	# alors on a trouvé un cycle (condition 1 de cycle)
 	if (len(accessibles) == 0):
 		return []
-	// tant que l'on n'a pas visité tous les noeuds
+	# tant que l'on n'a pas visité tous les noeuds
 	while (len(accessibles) > 0):
-		// Sinon, retirer un noeud dans la liste des noeuds
-		// sans dépendances non visités
+		# Sinon, retirer un noeud dans la liste des noeuds
+		# sans dépendances non visités
 		noeud = accessibles.pop()
-		// Si ordre[noeud] > 0 (noeud déjà visité)
-		// alors on a trouvé un cycle (condition 2 de cycle)
+		# Si ordre[noeud] > 0 (noeud déjà visité)
+		# alors on a trouvé un cycle (condition 2 de cycle)
 		if (ordre[noeud] > 0):
 			return []
-		// Sinon, attribuons le numéro i à ce noeud
+		# Sinon, attribuons le numéro i à ce noeud
 		i += 1
 		ordre[noeud] = i
-		// Regardons les tâches nouvellement accessibles
-		// depuis noeud
-		// i.e. où tous les noeuds dont elles dépendent
-		// ont été traités
+		# Regardons les tâches nouvellement accessibles
+		# depuis noeud
+		# i.e. où tous les noeuds dont elles dépendent
+		# ont été traités
 		for no in L[noeud]:
-			// Listons les dépendances restant non résolues de no
+			# Listons les dépendances restant non résolues de no
 			dep_non_resolues = []
 			for nn in range(n):
 				if (no in L[nn]):
 					if (ordre[nn] == 0):
 						dep_non_resolues.append(nn)
-					// et supprimons les dépendances résolues
+					# et supprimons les dépendances résolues
 					else:
 						L[nn].remove(no)
-			// no est accessible si et seulement si
+			# no est accessible si et seulement si
 			if (len(dep_non_resolues) == 0):
 				accessibles.append(no)
-		// Si on ne trouve pas de noeud accessibles
-		// et qu'il y a encore des noeuds non visités
-		// on a alors trouvé un cycle (condition 1 de cycle)
+		# Si on ne trouve pas de noeud accessibles
+		# et qu'il y a encore des noeuds non visités
+		# on a alors trouvé un cycle (condition 1 de cycle)
 		if (len(accessibles) == 0 and i < n):
 			return []
-		// et on itère !
+		# et on itère !
 	return(ordre)
 ```
 
 On teste les exemples précédents : 
 
 ```python
-// "Début des cours" = noeud 0, "Scolarité ouverte" = noeud 1,
-// "Certificat" = noeud 2, "Chambre univ." = noeud 3,
-// "Relative sérénité" = noeud 4 
+# "Début des cours" = noeud 0, "Scolarité ouverte" = noeud 1,
+# "Certificat" = noeud 2, "Chambre univ." = noeud 3,
+# "Relative sérénité" = noeud 4 
 exemple1 = [
-	// Noeuds auxquels on accède directement par le noeud 0
-	// i.e. les noeuds qui dépendent du noeud 1
+	# Noeuds auxquels on accède directement par le noeud 0
+	# i.e. les noeuds qui dépendent du noeud 1
 	[1, 4],
-	// Noeuds auxquels on accède directement par le noeud 1
+	# Noeuds auxquels on accède directement par le noeud 1
 	[2],
 	[3],
 	[0],
 	[]
 ]
 print(kahn(exemple1))
-// Indices 0 1 2 3 4
+# Indices 0 1 2 3 4
 > []
 ```
 
 ```python
-// "Bouillir l'eau" = noeud 0, "Verser dans mug" = noeud 1,
-// "Chocolat en poudre" = noeud 2, "Mélanger eau et poudre" = noeud 3
+# "Bouillir l'eau" = noeud 0, "Verser dans mug" = noeud 1,
+# "Chocolat en poudre" = noeud 2, "Mélanger eau et poudre" = noeud 3
 exemple2 = [
-	// Noeuds auxquels on accède directement par le noeud 0
+	# Noeuds auxquels on accède directement par le noeud 0
 	[1],
-	// Noeuds auxquels on accède directement par le noeud 1
+	# Noeuds auxquels on accède directement par le noeud 1
 	[3],
 	[3],
 	[]
 ]
 print(kahn(exemple2))
-// Indices 0 1 2 3
+# Indices 0 1 2 3
 > [2, 3, 1, 4]
 ```
 

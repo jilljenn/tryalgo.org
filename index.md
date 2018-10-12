@@ -30,13 +30,15 @@ Ce site regroupe les ressources suivantes :
 
 Voici un pseudo-code à appliquer pour apprendre un max d'algorithmes :
 
-    import tryalgo                 # import all you can eat
+```python
+import tryalgo                 # import all you can eat
 
-    try:
-      problem = read(statement)    # needs organisation
-      algo = solve(problem)        # needs skills
-      solution = implement(algo)   # needs experience
-      answer = submit(solution)
-      assert answer == "Accept"
-    except Submission_error:
-      learn_more()
+try:
+  problem = read(statement)    # needs organisation
+  algo = solve(problem)        # needs skills
+  solution = implement(algo)   # needs experience
+  answer = submit(solution)
+  assert answer == "Accept"
+except Submission_error:
+  learn_more()
+```

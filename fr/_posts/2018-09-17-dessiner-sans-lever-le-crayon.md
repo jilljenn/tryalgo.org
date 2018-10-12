@@ -61,19 +61,19 @@ En effet, si on note A et B les deux noeuds avec un nombre impair d'arêtes, en 
 Il reste à tester de façon algorithmique le degré (c'est-à-dire, le nombre d'arêtes reliées à) des noeuds du graphe en entrée. Si on choisit la représentation en [matrice d'adjacence](http://tryalgo.org/fr/2017/02/20/dijkstra/) d'un graphe non orienté simple, on peut calculer le degré d'un noeud en sommant les coefficients de la colonne d'indice associé à ce noeud. Puis on compte le nombre de noeuds de degré impair.
 
 ```python
-// M est la matrice d'adjacence (liste de colonnes de la matrice)
+# M est la matrice d'adjacence (liste de colonnes de la matrice)
 def est_tracable(M):
 	n = len(M)
-	// Sommer les coefficients de chaque colonne de M
-	// degres[i] donne le degré du coefficient d'indice i
+	# Sommer les coefficients de chaque colonne de M
+	# degres[i] donne le degré du coefficient d'indice i
 	degres = [sum(M[i]) for i in range(n)]
 	nb_impair = 0
 	for i in range(n):
-		// Si degres[i] modulo 2 (le reste de degres[i] par 2) est égal à 1
-		// i.e. si degres[i] est impair
+		# Si degres[i] modulo 2 (le reste de degres[i] par 2) est égal à 1
+		# i.e. si degres[i] est impair
 		if (degres[i]%2 == 1):
 			nb_impair += 1
-	// On retourne Vrai si le graphe est eulérien ou semi-eulérien
+	# On retourne Vrai si le graphe est eulérien ou semi-eulérien
 	return(nb_impair == 0 or nb_impair == 2)
 ```
 

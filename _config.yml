@@ -1,7 +1,10 @@
 # Dependencies
-markdown:         kramdown
-highlighter:      rouge
-gems: ["jekyll-paginate"]
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'aaa'
+plugins: ["jekyll-paginate"]
 
 # Permalinks
 permalink:        pretty
@@ -26,7 +29,7 @@ paginate:         5
 paginate_path:    '/posts/page:num/'
 
 # Custom vars
-version:          2.1.0
+version:          3
 
 github:
   tryalgo:        https://github.com/jilljenn/tryalgo
