@@ -114,38 +114,38 @@ Petit précis mathématique, utile pour la résolution du cas de base avec la pi
 
 {% highlight python %}
 Initialisation du tableau least_coins
-    //Cas de base
+    # Cas de base
     Pour tout montant m, où 0 <= m <= amount
         Si dans la division euclidienne de m par coins[1], r = 0
            alors least_coins[0][m] <- q
     Pour i, 1 <= i <= n
         Pour j, 0 <= j <= amount
-             //On donne la valeur du problème (j, coins[i-1])
-             //à la solution du problème (j, coins[i])
+             # On donne la valeur du problème (j, coins[i-1])
+             # à la solution du problème (j, coins[i])
              1) least_coins[i][j] <- least_coins[i-1][j]
-             //Si retirer la pièce de valeur coins[i] au montant courant
-             //permet de rendre moins de pièces que la solution du problème
-             //(j, coins[i-1])
+             # Si retirer la pièce de valeur coins[i] au montant courant
+             # permet de rendre moins de pièces que la solution du problème
+             # (j, coins[i-1])
              2) Si coins[i] <= j et least_coins[i][j - coins[i]]+1 < least_coins[i][j]
                     least_coins[i][j] <- least_coins[i][j - coins[i]] + 1
-//least_coins[n][amount] contient le nombre minimal de pièces rendues pour le montant amount
-//avec des pièces de valeur inférieure ou égal à coins[n]
-//On cherche maintenant à récupérer la valeur de chaque pièce rendue
-//On initialise une variable j avec pour valeur la valeur de la variable amount
+# least_coins[n][amount] contient le nombre minimal de pièces rendues pour le montant amount
+# avec des pièces de valeur inférieure ou égal à coins[n]
+# On cherche maintenant à récupérer la valeur de chaque pièce rendue
+# On initialise une variable j avec pour valeur la valeur de la variable amount
 j <- amount
 i <- n
 Tant que j est différent de 0
-   //On considère les pièces dans l ordre décroissant de valeur
+   # On considère les pièces dans l ordre décroissant de valeur
     Si j >= coins[i] 
-        //Si la solution minimale pour le problème (j, coins[i]) est
-        //celle obtenue en enlevant une pièce de valeur coins[i] au montant j
+        # Si la solution minimale pour le problème (j, coins[i]) est
+        # celle obtenue en enlevant une pièce de valeur coins[i] au montant j
         Si least_coins[i][j - coins[i]] + 1 = least_coins[i][j]
-            //Alors on ajoute dans la case i du tableau chosen 1 (i.e. on rend une autre
-            //pièce de valeur coins[i])
+            # Alors on ajoute dans la case i du tableau chosen 1 (i.e. on rend une autre
+            # pièce de valeur coins[i])
             1) chosen[i] <- chosen[i] + 1
             2) j <- j - coins[i]
         Sinon
-            //Sinon, on ne peut pas utiliser de nouvelle pièce de valeur coins[i]
+            # Sinon, on ne peut pas utiliser de nouvelle pièce de valeur coins[i]
             1) i <- i - 1
 Retourner le tableau chosen
 {% endhighlight %}
@@ -158,7 +158,7 @@ def moneyback_dyn(amount, coins):
     least_coins = [[float('inf')] * (amount + 1) for _ in range(n)]
     for sub_amount in range(amount + 1): 
         if sub_amount % coins[0] == 0: 
-            least_coins[0][sub_amount] = sub_amount // coins[0]
+            least_coins[0][sub_amount] = sub_amount #  coins[0]
     for i in range(1, n): 
         for j in range(amount + 1):
             least_coins[i][j] = least_coins[i - 1][j] 

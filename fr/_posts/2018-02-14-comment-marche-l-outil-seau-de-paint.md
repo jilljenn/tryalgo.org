@@ -39,57 +39,57 @@ Heureusement, on connaît des algorithmes qui énumèrent les noeuds accessibles
 L'algorithme n'utilise pas les raccourcis d'écriture de Python, pour plus de lisibilité.
 
 {% highlight python %}
-// feuille est la feuille de travail de Paint, i.e. un graphe
-// sous forme de listes d'adjacence (voir l'article sur Dijkstra)
-// Un pixel est identifié par un entier et par une couleur
-// i est l'identifiant du pixel initial
-// courante est la couleur courante 
+# feuille est la feuille de travail de Paint, i.e. un graphe
+# sous forme de listes d'adjacence (voir l'article sur Dijkstra)
+# Un pixel est identifié par un entier et par une couleur
+# i est l'identifiant du pixel initial
+# courante est la couleur courante 
 def remplissage(feuille, i, courante):
-	// remplacer est la couleur à remplacer par la couleur
-	// courante (c'est la couleur du pixel initial)
-	// voisins est la liste d'identifiants entiers de 
-	// pixels voisins du pixel initial i
+	# remplacer est la couleur à remplacer par la couleur
+	# courante (c'est la couleur du pixel initial)
+	# voisins est la liste d'identifiants entiers de 
+	# pixels voisins du pixel initial i
 	[remplacer, voisins] = feuille[i]
-	// On remplace la couleur du pixel initial par la
-	// couleur courante
+	# On remplace la couleur du pixel initial par la
+	# couleur courante
 	feuille[i] = [courante, voisins]
-	// On stocke les pixels accessibles depuis le noeud i
-	// qui sont potentiellement coloriés avec la couleur à remplacer
+	# On stocke les pixels accessibles depuis le noeud i
+	# qui sont potentiellement coloriés avec la couleur à remplacer
 	pixels_accessibles = voisins
-	// On note les pixels que l'on a déjà vu (pour ne pas 
-	// se retrouver dans une boucle de traitement infinie...)
+	# On note les pixels que l'on a déjà vu (pour ne pas 
+	# se retrouver dans une boucle de traitement infinie...)
 	pixels_deja_vus = [False]*len(feuille)
-	// Tant que la liste de pixels à inspecter 
-	// n'est pas vide (bonjour, c'est une pile)
+	# Tant que la liste de pixels à inspecter 
+	# n'est pas vide (bonjour, c'est une pile)
 	while (len(pixels_accessibles) != 0):
-		// Retirer le premier pixel de la liste
+		# Retirer le premier pixel de la liste
 		p = pixels_accessibles[0]
-		// On note que l'on a vu ce pixel
+		# On note que l'on a vu ce pixel
 		pixels_deja_vus[p] = True
 		pixels_accessibles = pixels_accessibles[1:]
-		// Récupérer sa couleur et ses voisins
+		# Récupérer sa couleur et ses voisins
 		[c, v] = feuille[p]
 		if (c == remplacer):
-			// Changer sa couleur
+			# Changer sa couleur
 			feuille[p] = [courante, v]
 			voisins_a_ajouter = []
-			// On ajoute les voisins non vus de ce pixel
-			// dans la liste de pixels à inspecter
-			// puisque accessibles depuis le noeud initial
-			// et peut-être coloriés avec la couleur à remplacer
+			# On ajoute les voisins non vus de ce pixel
+			# dans la liste de pixels à inspecter
+			# puisque accessibles depuis le noeud initial
+			# et peut-être coloriés avec la couleur à remplacer
 			for voisin in v:
 				if (not pixels_deja_vus[voisin]):
 					pixels_accessibles = [voisin] + pixels_accessibles
-		// Et on itère !
-		// Comme on inspecte les pixels par ordre antichronologique 
-		// d'ajout dans la liste (c'est-à-dire, les pixels vus en premier
-		// sont les pixels ajoutés le plus récemment dans la liste), 
-		// on dit qu'on fait un parcours en profondeur des noeuds du graphe.
-		// Sinon, on fait un parcours en largeur des noeuds du graphe.
-		// (en remplaçant la ligne "pixels_accessibles = [voisin] + pixels_accessibles"
-		// par "pixels_accessibles += [voisin]")
-	// A cette étape, on a parcouru tous les pixels accessibles depuis le noeud initial
-	// et qui étaient de la couleur à remplacer
+		# Et on itère !
+		# Comme on inspecte les pixels par ordre antichronologique 
+		# d'ajout dans la liste (c'est-à-dire, les pixels vus en premier
+		# sont les pixels ajoutés le plus récemment dans la liste), 
+		# on dit qu'on fait un parcours en profondeur des noeuds du graphe.
+		# Sinon, on fait un parcours en largeur des noeuds du graphe.
+		# (en remplaçant la ligne "pixels_accessibles = [voisin] + pixels_accessibles"
+		# par "pixels_accessibles += [voisin]")
+	# A cette étape, on a parcouru tous les pixels accessibles depuis le noeud initial
+	# et qui étaient de la couleur à remplacer
 	return(feuille)
 {% endhighlight %}
 

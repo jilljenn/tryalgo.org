@@ -119,20 +119,20 @@ couleurs = ["white",
 	"cyan", "purple", "grey"]
 
 def colorier_graphe(graphe):
-	// noeuds est une liste d'éléments (nom du noeud, couleur du noeud)
-	// aretes est une matrice d'adjacence
+	# noeuds est une liste d'éléments (nom du noeud, couleur du noeud)
+	# aretes est une matrice d'adjacence
 	noeuds, aretes = graphe
 	nn = len(noeuds)
-	// Propriété "couleurs interdites" pour les noeuds
-	// vide pour le moment (qui contiendra des couples (couleur, noeud voisin);
-	// garder le noeud d'où provient la contrainte nous permettra de backtracker)
-	// On convertit les couleurs en nombres pour faciliter les comparaisons
+	# Propriété "couleurs interdites" pour les noeuds
+	# vide pour le moment (qui contiendra des couples (couleur, noeud voisin);
+	# garder le noeud d'où provient la contrainte nous permettra de backtracker)
+	# On convertit les couleurs en nombres pour faciliter les comparaisons
 	sommets = [[x[0], couleurs.index(x[1]), []] for x in noeuds]
-	// Garder une trace des noeuds déjà coloriés
+	# Garder une trace des noeuds déjà coloriés
 	est_colorie = [False for i in range(nn)]
 	noeud_colorie_indices = []
 	for i in range(nn):
-		// 0 est non colorié
+		# 0 est non colorié
 		if (not(sommets[i][1] == 0)):
 			noeud_colorie_indices.append(i)
 			est_colorie[i] = True
@@ -146,53 +146,53 @@ def backtracking_colorier(est_colorie, sommets, aretes, noeud_colorie_indices):
 	nn = len(sommets)
 	from math import sqrt
 	nb_couleurs = int(sqrt(nn))
-	// S'il existe des noeuds dont la couleur doit être propagée
+	# S'il existe des noeuds dont la couleur doit être propagée
 	while (len(noeud_colorie_indices) > 0):
 		noeud_indice = noeud_colorie_indices.pop()
 		couleur = sommets[noeud_indice][1]
-		// Propagation de la contrainte sur 
-		// la couleur aux voisins du noeud
+		# Propagation de la contrainte sur 
+		# la couleur aux voisins du noeud
 		for i in range(nn):
 			if (aretes[i][noeud_indice]):
-				// Alors le noeud d'indice i est un voisin du 
-				// noeud d'indice noeud_indice
-				// On met à jour sa propriété "couleurs interdites"
+				# Alors le noeud d'indice i est un voisin du 
+				# noeud d'indice noeud_indice
+				# On met à jour sa propriété "couleurs interdites"
 				sommets[i][2] += [[couleur, noeud_indice]]
-	// Si tous les noeuds sont coloriés
-	// retourner l'ensemble des sommets et leurs couleurs
+	# Si tous les noeuds sont coloriés
+	# retourner l'ensemble des sommets et leurs couleurs
 	if (all(est_colorie)):
 		return(sommets)
-	// Sinon, on considère un noeud non colorié
-	// (on recherche le premier indice tel que l'élément
-	// correspondant ne soit pas colorié
-	// Tous les noeuds ont au moins une couleur disponible
-	// sinon, on aura retourné une exception avant
+	# Sinon, on considère un noeud non colorié
+	# (on recherche le premier indice tel que l'élément
+	# correspondant ne soit pas colorié
+	# Tous les noeuds ont au moins une couleur disponible
+	# sinon, on aura retourné une exception avant
 	noeud_non_colorie_indice = est_colorie.index(False)
 	couleurs_interdites = [paire[0] for paire in sommets[noeud_non_colorie_indice][2]]
 	couleurs_disponibles = filter(lambda x: not(x in couleurs_interdites), range(1, nb_couleurs+1))
-	// Si le noeud ne peut être colorié
+	# Si le noeud ne peut être colorié
 	if (len(couleurs_disponibles) == 0):
 		return("BACKTRACKING")
-	// Sinon on le colorie par une couleur disponible
+	# Sinon on le colorie par une couleur disponible
 	couleur_choisie = min(couleurs_disponibles)
 	est_colorie[noeud_non_colorie_indice] = True
 	sommets[noeud_non_colorie_indice][1] = couleur_choisie
 	noeud_colorie_indices = [noeud_non_colorie_indice]
 	res = backtracking_colorier(est_colorie, sommets, aretes, noeud_colorie_indices)
-	// Backtracking
+	# Backtracking
 	if (res == "BACKTRACKING"):
-		// On ajoute la couleur actuelle du noeud à la liste des couleurs interdites
+		# On ajoute la couleur actuelle du noeud à la liste des couleurs interdites
 		couleurs_interdites = sommets[noeud_non_colorie_indice][2]
 		sommets[noeud_non_colorie_indice][2] += [[sommets[noeud_non_colorie_indice][1], "backtracking"]]
-		// On "décolorie" le noeud
+		# On "décolorie" le noeud
 		sommets[noeud_non_colorie_indice][1] = 0
 		est_colorie[noeud_non_colorie_indice] = False
-		// On annule les contraintes sur ses voisins
-		// (d'où l'intérêt de conserver le noeud voisin qui donne la contrainte)
+		# On annule les contraintes sur ses voisins
+		# (d'où l'intérêt de conserver le noeud voisin qui donne la contrainte)
 		for i in range(nn):
 			if (aretes[i][noeud_non_colorie_indice]):
 				sommets[i][2] = filter(lambda paire:not(paire[1]==noeud_non_colorie_indice), sommets[i][2])
-		// Et on recommence !
+		# Et on recommence !
 		return(backtracking_colorier(est_colorie, sommets, aretes, noeud_colorie_indices))
 	else:
 		return(res)
@@ -290,72 +290,72 @@ En convertissant cette solution en grille complète de sudoku, on obtient :
 La fonction suivante en Python peut tester si cette solution respecte les règles du sudoku à notre place :
 
 ```python
-// On teste si une liste a des répétitions
-// en testant si la longueur de la liste
-// en entrée est égale à la longueur de la
-// la liste dans laquelle on a supprimé 
-// toutes les répétitions
+# On teste si une liste a des répétitions
+# en testant si la longueur de la liste
+# en entrée est égale à la longueur de la
+# la liste dans laquelle on a supprimé 
+# toutes les répétitions
 def est_unique(liste):
 	sans_repetitions = list(set(liste))
 	return(len(liste) == len(sans_repetitions))
 
-// On teste si la solution respecte les 
-// règles du grille
-// On suppose que toutes les valeurs de la grille
-// sont comprises entre 1 et 9
+# On teste si la solution respecte les 
+# règles du grille
+# On suppose que toutes les valeurs de la grille
+# sont comprises entre 1 et 9
 def tester_solution(grille):
 	nb_lignes = len(grille)
-	// Toutes les lignes ont la même longueur
+	# Toutes les lignes ont la même longueur
 	nb_colonnes = len(grille[0])
 	nb_sous_grilles = len(grille)
-	// ex. 9 pour une grille de taille 9 x 9
+	# ex. 9 pour une grille de taille 9 x 9
 	colonnes = []
 	for j in range(nb_colonnes):
 		colonne = []
-		// On met dans la même colonne 
-		// tous les éléments à la position j
-		// dans chaque ligne
+		# On met dans la même colonne 
+		# tous les éléments à la position j
+		# dans chaque ligne
 		for i in range(nb_lignes):
 			colonne.append(grille[i][j])
-		// On ajoute la colonne à la liste des colonnes
+		# On ajoute la colonne à la liste des colonnes
 		colonnes += [colonne]
-	// Construire les sous-grilles de taille (racine carré de la 
-	// taille de la grille initiale), qu'on note r
-	// La sous-grille qui commence à la ligne i 
-	// et la colonne j (le coefficient en haut à gauche est
-	// la position (i,j)) comporte les coefficients
-	// aux positions (i, j), (i, j+1), (i, j+2), ..., (i, j+r-1)
-	// (i+1, j), (i+1, j+1), (i+1, j+2), ..., (i+1, j+r-1)
-	// (i+2, j), (i+2, j+1), (i+2, j+2), ..., (i+2, j+r-1)
-	// ...
-	// (i+r-1, j), ..., (i+r-1, j+r-1)
-	// Attention à l'indexage en Python qui commence à zéro !
+	# Construire les sous-grilles de taille (racine carré de la 
+	# taille de la grille initiale), qu'on note r
+	# La sous-grille qui commence à la ligne i 
+	# et la colonne j (le coefficient en haut à gauche est
+	# la position (i,j)) comporte les coefficients
+	# aux positions (i, j), (i, j+1), (i, j+2), ..., (i, j+r-1)
+	# (i+1, j), (i+1, j+1), (i+1, j+2), ..., (i+1, j+r-1)
+	# (i+2, j), (i+2, j+1), (i+2, j+2), ..., (i+2, j+r-1)
+	# ...
+	# (i+r-1, j), ..., (i+r-1, j+r-1)
+	# Attention à l'indexage en Python qui commence à zéro !
 	sous_grilles = []
 	from math import sqrt
 	r = int(sqrt(len(grille)))
 	indices_depart = [r*i for i in range(r)]
 	for i in indices_depart:
 		for j in indices_depart:
-			// Le coefficient de départ est (i, j)
+			# Le coefficient de départ est (i, j)
 			sous_grille = []
 			for k in [i+ui for ui in range(r)]:
 				for l in [j+uj for uj in range(r)]:
 					sous_grille.append(grille[k][l])
 			sous_grilles += [sous_grille]
-	// pour chaque ligne, on teste
-	// s'il y a des répétitions
+	# pour chaque ligne, on teste
+	# s'il y a des répétitions
 	for i in range(nb_lignes):
 		if (not est_unique(grille[i])):
 			return(False)
-	// pour chaque colonne
+	# pour chaque colonne
 	for i in range(nb_colonnes):
 		if (not est_unique(colonnes[i])):
 			return(False)
-	// pour chaque sous-grille
+	# pour chaque sous-grille
 	for i in range(nb_sous_grilles):
 		if (not est_unique(sous_grilles[i])):
 			return(False)
-	// Sinon, toutes les conditions ont été remplies
+	# Sinon, toutes les conditions ont été remplies
 	return(True)
 ```
 
@@ -376,97 +376,97 @@ Bon, je vous ai donné la solution sans trop me justifier. Ce serait bien de vé
 En gage de bonne foi, voilà le code Python correspondant à ces transformations :
 
 ```python
-// Créer le graphe et produire une image PNG
-// en utilisant GraphViz, que vous pouvez aussi voir
-// dans la boîte à outils de Tryalgo
-// (http://tryalgo.org/toolbox/)
+# Créer le graphe et produire une image PNG
+# en utilisant GraphViz, que vous pouvez aussi voir
+# dans la boîte à outils de Tryalgo
+# (http://tryalgo.org/toolbox/)
 def construire_graphe(grille):
 	from subprocess import call
 	couleurs_cases = couleurs[:len(grille)+1] 
 	filename="sudoku" + str(len(grille))*2
 	sudoku = "graph {\n"
-	// Dimension de la grille
+	# Dimension de la grille
 	n = len(grille)
-	// Liste de noms et couleurs de noeuds
+	# Liste de noms et couleurs de noeuds
 	noeuds = []
-	// Le coefficient d'indice (i, j) est à la position n*i+j
-	// dans la liste noeuds
+	# Le coefficient d'indice (i, j) est à la position n*i+j
+	# dans la liste noeuds
 	for i in range(n):
 		for j in range(n):
 			nom = "\"(" + str(i+1) + ", " + str(j+1) + ")\""
 			couleur = couleurs_cases[grille[i][j]]
 			noeuds.append([nom, couleur])
-			// Ajouter le noeud au fichier DOT
+			# Ajouter le noeud au fichier DOT
 			sudoku += "node [style=filled fillcolor=" + couleur
 			sudoku += " shape=circle]\n"
 			sudoku += nom + ";\n"
-	// Matrice d'adjacence pour le graphe
-	// aretes[i][j] = True si et seulement si le noeud i
-	// et le noeud j sont voisins
+	# Matrice d'adjacence pour le graphe
+	# aretes[i][j] = True si et seulement si le noeud i
+	# et le noeud j sont voisins
 	aretes = [[False]*(n*n) for j in range(n*n)]
 	for i in range(n):
 		for j in range(n):
 			for k in range(n):
-				// Voisinage par ligne
+				# Voisinage par ligne
 				aretes[n*i+j][n*i+k] = True
-				// Voisinage par colonne
+				# Voisinage par colonne
 				aretes[n*i+j][n*k+j] = True
-			// Voisinage par sous-grille
-			// Remarquer que toutes les positions de 
-			// coefficients d'une même sous-grille 
-			// (numéros de ligne et de colonne)
-			// ont le même quotient q pour la division 
-			// euclidienne par r, où r est 
-			// la racine carré de la taille de la
-			// grille initiale
-			// (voir le commentaire de la fonction
-			// est_unique)
+			# Voisinage par sous-grille
+			# Remarquer que toutes les positions de 
+			# coefficients d'une même sous-grille 
+			# (numéros de ligne et de colonne)
+			# ont le même quotient q pour la division 
+			# euclidienne par r, où r est 
+			# la racine carré de la taille de la
+			# grille initiale
+			# (voir le commentaire de la fonction
+			# est_unique)
 			from math import sqrt
 			r = int(sqrt(n))
-			// Valeurs de quotient
+			# Valeurs de quotient
 			q_i, q_j = int(i/r), int(j/r)
-			// On énumère les valeurs possibles de reste
-			// 0, 1, 2, ..., r-1
+			# On énumère les valeurs possibles de reste
+			# 0, 1, 2, ..., r-1
 			for reste_i in range(r):
 				for reste_j in range(r):
-					// Enumérer les coordonnées de noeuds (ii, jj)
+					# Enumérer les coordonnées de noeuds (ii, jj)
 					ii = r*q_i+reste_i
 					jj = r*q_j+reste_j
 					aretes[n*i+j][n*ii+jj] = True
-	// On ne met pas de boucle élémentaire
-	// autrement dit, d'arête d'un noeud vers lui-même
+	# On ne met pas de boucle élémentaire
+	# autrement dit, d'arête d'un noeud vers lui-même
 	for i in range(n*n):
-		// Pour éviter de mettre une boucle élémentaire
-		// et parce que la matrice d'adjacence est ici symétrique
-		// (le graphe est non orienté)
+		# Pour éviter de mettre une boucle élémentaire
+		# et parce que la matrice d'adjacence est ici symétrique
+		# (le graphe est non orienté)
 		for j in range(i+1, n*n):
 			if (aretes[i][j]):
 				sudoku += noeuds[i][0] + " -- " + noeuds[j][0] + ";\n"
 		aretes[i][i] = False
 	graphe = [noeuds, aretes]
 	sudoku += "}"
-	// On crée le fichier DOT associé au graphe
+	# On crée le fichier DOT associé au graphe
 	with open(filename+".dot", "w") as f:
 		f.write(sudoku)
-	// Conversion du fichier DOT en image PNG
+	# Conversion du fichier DOT en image PNG
 	call("dot -Tpng " + filename + ".dot > " + filename + ".png", shell=True)
 	return(graphe)
 
 def reconstruire_grille(graphe):
 	noeuds, aretes = graphe
 	from math import sqrt
-	// On a n^2 cases, où n est la taille de la grille
+	# On a n^2 cases, où n est la taille de la grille
 	n = int(sqrt(len(noeuds)))
 	grille = []
 	for i in range(n):
 		ligne = []
 		for j in range(n):
 			couleur = noeuds[n*i+j][1]
-			// Retrouve l'indice de l'élément couleur
-			// dans le tableau couleurs
+			# Retrouve l'indice de l'élément couleur
+			# dans le tableau couleurs
 			valeur = couleurs.index(couleur)
 			ligne.append(valeur)
-		// On met la ième ligne dans la grille
+		# On met la ième ligne dans la grille
 		grille += [ligne]
 	return(grille)
 ```

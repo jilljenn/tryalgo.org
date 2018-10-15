@@ -30,13 +30,13 @@ def insert_before(ls, move):
 	[pos, new_pos] = move
 	n = len(ls)
 	new_ls = [0]*n
-	// On place l'élément à sa nouvelle position
+	# On place l'élément à sa nouvelle position
 	new_ls[new_pos] = ls[pos]
 	other_elements = []
 	for i in range(n):
 		if (not (i == pos)):
 			other_elements = [ls[i]] + other_elements
-	// On ajoute les autres éléments
+	# On ajoute les autres éléments
 	for i in range(n):
 		if (new_ls[i] == 0):
 			new_ls[i] = other_elements.pop()
@@ -55,8 +55,8 @@ Par exemple, on passe de la première liste à la deuxième en deux mouvements :
 > lst1 = insert_before(lst1, [2, 0])
 > lst1
 [3, 4, 2, 1]
-// Pour tout i, i vérifie l'égalité entre les éléments
-// à la position i respectivement dans ls1 et ls2
+# Pour tout i, i vérifie l'égalité entre les éléments
+# à la position i respectivement dans ls1 et ls2
 > all([ls1[i] == ls2[i] for i in range(len(lst2))])
 True
 {% endhighlight %}
@@ -66,8 +66,8 @@ True
 C'est un problème de tri de tableau (placer tous les éléments à la bonne position en fonction de leur valeur), avec un ordre sur les entiers qui est donné par la liste d'arrivée. Si cette dernière est [1, 2, 3, ..., n-1, n], alors c'est l'ordre naturel sur les entiers tel qu'on le connaît. Par souci de clarté dans la suite, on va se placer dans ce dernier cas, quitte à remplacer l'ordre naturel sur les entiers "<" par la fonction "compare" suivante :
 
 {% highlight python %}
-// Comparer les positions des deux éléments e1 et e2
-// dans la liste lst2
+# Comparer les positions des deux éléments e1 et e2
+# dans la liste lst2
 def compare(e1, e2, lst2):
 	pos1 = lst2.index(e1)
 	pos2 = lst2.index(e2)
@@ -127,47 +127,47 @@ De plus, on ne modifie lst1 (autrement dit, on n'effectue un mouvement d'inserti
 Une implémentation en Python de l'algorithme est disponible ci-dessous :
 
 {% highlight python %}
-// ls1 est la liste de départ
-// ls2 est la liste d'arrivée
-// subseq est une plus longue sous-séquence de ls1
-// (pour l'ordre donné par ls2)
+# ls1 est la liste de départ
+# ls2 est la liste d'arrivée
+# subseq est une plus longue sous-séquence de ls1
+# (pour l'ordre donné par ls2)
 def moves(ls1, ls2, subseq):
 	moves = []
 	n = len(ls2)
 	ls = ls1
 	for i in range(n):
-		// Elément à éventuellement déplacer
+		# Elément à éventuellement déplacer
 		current = ls2[i]
-		// Si l'élément est déjà bien placé 
-		// dans la PLSC, alors il ne sera pas déplacé
-		// et on inspecte le prochain élément
+		# Si l'élément est déjà bien placé 
+		# dans la PLSC, alors il ne sera pas déplacé
+		# et on inspecte le prochain élément
 		if (current in subseq):
 			continue
 		else:
-			// Sinon, on va chercher où se trouve
-			// cet élément relativement aux entiers
-			// présents dans la PLSC
-			// On cherche donc le prochain élément de la liste
-			// qui apparaît dans la PLSC
+			# Sinon, on va chercher où se trouve
+			# cet élément relativement aux entiers
+			# présents dans la PLSC
+			# On cherche donc le prochain élément de la liste
+			# qui apparaît dans la PLSC
 			exists_next = False
 			index_current = ls.index(current)
 			for j in range(i+1, n):
 				next = ls2[j]
 				if (next in subseq):
-					// next est le prochain élément de la liste
-					// apparaissant dans la PLSC
+					# next est le prochain élément de la liste
+					# apparaissant dans la PLSC
 					index_next = ls.index(next)
-					// (*)
+					# (*)
 					if (index_current < index_next):
 						index_next -= 1
-					// On va insérer l'élément courant
-					// avant next
+					# On va insérer l'élément courant
+					# avant next
 					moves.append([index_current, index_next])
 					exists_next = True
 					break
 			if (not exists_next):
 				moves.append([index_current, (n-1)])
-			// On applique le mouvement d'insertion à la liste courante
+			# On applique le mouvement d'insertion à la liste courante
 			ls = insert_before(ls, moves[-1])
 	return moves
 {% endhighlight %}
