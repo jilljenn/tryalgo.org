@@ -5,11 +5,9 @@ title: Errata
 
 Voici une liste de coquilles dans le livre.
 
-- page 14 : la définition d'$\Omega$ est erronée, il faut $f(n) \geq c \cdot g(n)$ (merci garkham).
+- page 15 : Dans la definition de $f\in\Omega(g)$, il faut $f(n) \geq c \cdot g(n)$ au lieu de $f(n)\leq c \cdot g(n)$ (merci [@_garkham](https://twitter.com/_garkham)).
 
 - page 15 : La chaîne de formatage doit contenir %.02f%% à la place de %.02f pour qu'un pourcentage s'affiche en sortie.
-
-- page 15 : Dans la definition de $f\in\Omega(g)$, il faut lire $f(n) \geq \ldots$ au lieu de $f(n)\leq \ldots$.
 
 - page 16 : (première phrase) Il se trouve que $\textsf{P} \subseteq \textsf{NP}$, l'intuition étant que si on peut construire une solution en temps polynomial, alors on peut *vérifier* une solution en temps polynomial.
 

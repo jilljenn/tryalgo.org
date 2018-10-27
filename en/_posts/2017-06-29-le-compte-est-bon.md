@@ -38,7 +38,7 @@ These operations need to be done for all sets $S$ in a lexicographical order tha
 
 ### Implementation details
 
-Since $n$ is a very small number it is most convenient for us to represents sets as integers. For example the set $S=\{1,3,4\}$ is represented as the integer $2^0 + 2^3 + 2^4$.  This has the advantage that bit manipulation operators can be used to encode set operators. For example the bitwise and denoted `&` corresponds to the intersection and the test `L & S == L` tests whether the set encoded by $L$ is a subset of the set encoded by $S$.
+Since $n$ is a very small number it is most convenient for us to represents sets as integers. For example the set $S={0,3,4}$ is represented as the integer $2^0 + 2^3 + 2^4$.  This has the advantage that bit manipulation operators can be used to encode set operators. For example the bitwise and denoted `&` corresponds to the intersection and the test `L & S == L` tests whether the set encoded by $L$ is a subset of the set encoded by $S$.
 
 
 {% highlight python %}
