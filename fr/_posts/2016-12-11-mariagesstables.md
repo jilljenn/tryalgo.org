@@ -40,7 +40,7 @@ Prenons l'un des hommes arbitrairement -nous verrons plus tard que l'ordre n'inf
 
 Dans le cas où Charlotte préfère Cédric à Bernard, le mieux est alors de rompre le couple Charlotte/Bernard, et d'associer finalement Cédric à Charlotte, et Bernard à Bérénice. Le couple Anna/Alain est conservé. Vous obtenez un mariage stable -victoire !
 
-Formalisons l'intuition décrite ci-dessus. Soient M et F les deux groupes disjoints d'entités à associer. Chaque élément de M et de F n'appartient au début à aucun couple, et soit L[*i*] la liste de préférence d'éléments de F de l'élément *i* de M, triée dans l'ordre croissant de préférence, telle que tout élément de cette liste n'a pas encore été envisagé pour former un couple avec l'élément *i*. Soit également Lf[*i*] la liste triée par ordre de préférence d'éléments de M de l'élément *i* de F. Il est important de constater que les listes Lf ne seront pas modifiées durant l'algorithme, contrairement aux listes L.
+Formalisons l'intuition décrite ci-dessus. Soient M et F les deux groupes disjoints d'entités à associer. Chaque élément de M et de F n'appartient au début à aucun couple, et soit L[*i*] la liste de préférence d'éléments de F de l'élément *i* de M, triée dans l'ordre **décroissant** de préférence, telle que tout élément de cette liste n'a pas encore été envisagé pour former un couple avec l'élément *i*. Soit également Lf[*i*] la liste triée par ordre de préférence d'éléments de M de l'élément *i* de F. Il est important de constater que les listes Lf ne seront pas modifiées durant l'algorithme, contrairement aux listes L.
 
 {% highlight python %}
 Tant qu il existe un élément i de M qui n est dans aucun couple
