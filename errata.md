@@ -15,6 +15,8 @@ Voici une liste de coquilles dans le livre.
 
 - page 37: The string "None" should be the keyword None.
 
+- page 44: dans la définition de chaîne en puissance, $y^k$ est bien sûr $y$ concaténé $k$ fois, pas $n$.
+
 - page 49 : dans cette implémentation *mirror* vaut -1 lors de la première itération. Ceci n'est pas un problème dans Python, car le dernier élément de *p* vaut 0.  Mais une meilleure implémentation qui fonctionnerait également pour d'autres langages de programmation, initialiserait *c* et *d* à 1 et on débuterait la boucle avec *i=2*.
 
 - page 54 : Observation clé ... alors forcément une des lettres $x_i,x_j$ n'est pas couplée. Il faudrait lire $x_i, y_j$.  Aussi ici A[i,j] est une plus longue sous-séquence maximale, alors que dans l'implémentation A[i][j] en est la longueur.
