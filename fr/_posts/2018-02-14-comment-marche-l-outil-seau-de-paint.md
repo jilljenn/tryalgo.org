@@ -2,6 +2,7 @@
 layout: fr
 title: Comment marche l'outil "Seau" de Paint ?
 author: Clémence Réda
+thumbnail: "/fr/images/paint/jeveuxcolorier.png"
 ---
 
 ## Contexte

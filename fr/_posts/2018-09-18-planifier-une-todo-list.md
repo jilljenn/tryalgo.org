@@ -2,6 +2,7 @@
 layout: fr
 title: Comment planifier une <em>todo-list</em> ?
 author: Clémence Réda
+thumbnail: "/fr/images/todolist/graphe-dependance.png"
 ---
 
 ## Introduction

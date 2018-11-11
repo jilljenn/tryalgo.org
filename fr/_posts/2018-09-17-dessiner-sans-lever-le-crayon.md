@@ -2,6 +2,7 @@
 layout: fr
 title: Dessiner sans lever le crayon !
 author: Clémence Réda
+thumbnail: "/fr/images/eulerien/maison.png"
 ---
 
 ## Introduction

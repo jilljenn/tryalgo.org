@@ -2,6 +2,7 @@
 layout: fr
 title: Rendu de monnaie, bases de programmation dynamique
 author: Jill-Jênn Vie & Clémence Réda
+thumbnail: ""
 ---
 
 ## Contexte

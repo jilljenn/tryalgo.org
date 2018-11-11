@@ -2,6 +2,7 @@
 layout: fr
 title: Utiliser Paint pour les sudokus
 author: Clémence Réda
+thumbnail: ""
 ---
 
 ## Introduction

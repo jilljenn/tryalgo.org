@@ -2,6 +2,7 @@
 layout: fr
 title: Mariages stables, ou comment marier le Prix Nobel d'économie aux sites de rencontres
 author: Jill-Jênn Vie & Clémence Réda
+thumbnail: ""
 ---
 
 Note : Une partie de cet article a été reprise d'[ici](http://binaire.blog.lemonde.fr/2016/10/17/a-p-b-la-vie-apres-le-bac/), mais pas de panique, je suis une co-auteure.

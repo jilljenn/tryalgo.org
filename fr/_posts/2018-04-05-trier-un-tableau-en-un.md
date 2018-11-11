@@ -2,6 +2,7 @@
 layout: fr
 title: Trier un tableau en un nombre minimal d'étapes d'insertion
 author: Clémence Réda
+thumbnail: ""
 ---
 
 ## Le problème ##
