@@ -14,13 +14,15 @@ This website gathers the following resources:
 
 Here is a pseudocode in order to optimize your learning:
 
-    import tryalgo                 # import all you can eat
+```python
+import tryalgo                 # import all you can eat
 
-    try:
-      problem = read(statement)    # needs organisation
-      algo = solve(problem)        # needs skills
-      solution = implement(algo)   # needs experience
-      answer = submit(solution)
-      assert answer == "Accept"
-    except Submission_error:
-      learn_more()
+try:
+    problem = read(statement)    # needs organisation
+    algo = solve(problem)        # needs skills
+    solution = implement(algo)   # needs experience
+    answer = submit(solution)
+    assert answer == "Accept"
+except SubmissionError:
+    learn_more()
+```

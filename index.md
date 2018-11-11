@@ -14,7 +14,7 @@ title: Résolution de problèmes algorithmiques
 
 ## Dernières conférences
 
-- **AlphaGo explained** (slides bientôt) par Étienne Simon & JJV
+- **AlphaGo explained** par Étienne Simon & JJV
 - [**Arbres de Merkle : la structure de données à l'origine de git, BitTorrent, Bitcoin, Ethereum, The DAO et autres blockchains**](/fr/2016/12/10/arbres-de-merkle/) par JJV
 
 ## [pip install tryalgo](/code/)
@@ -34,11 +34,11 @@ Voici un pseudo-code à appliquer pour apprendre un max d'algorithmes :
 import tryalgo                 # import all you can eat
 
 try:
-  problem = read(statement)    # needs organisation
-  algo = solve(problem)        # needs skills
-  solution = implement(algo)   # needs experience
-  answer = submit(solution)
-  assert answer == "Accept"
-except Submission_error:
-  learn_more()
+    problem = read(statement)    # needs organisation
+    algo = solve(problem)        # needs skills
+    solution = implement(algo)   # needs experience
+    answer = submit(solution)
+    assert answer == "Accept"
+except SubmissionError:
+    learn_more()
 ```

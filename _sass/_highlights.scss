@@ -3,13 +3,14 @@
   border-radius: 10px;
   padding: 5px 10px;
   margin: 20px 0;
+  font-size: 0.75em;
 }
 
 .highlight pre {
-  /* overflow: scroll; Prefer no word wrap? Uncomment this line and comment out the 2 lines below. */
-  word-break: break-all;
+  overflow: scroll; /* Prefer word wrap? Comment this line and uncomment the 3 lines below. */
+  /* word-break: break-all;
   word-wrap: break-word;
-  white-space: pre-wrap;
+  white-space: pre-wrap; */
 }
 
 code {

@@ -1,6 +1,6 @@
 ---
 layout: fr
-title: Comment planifier une *todo-list* ?
+title: Comment planifier une <em>todo-list</em> ?
 author: Clémence Réda
 ---
 
@@ -27,10 +27,11 @@ La relation décrite par les arcs s'appelle une relation de *dépendance*. Le gr
 La détection d'ordres d'évaluation impossibles se fait, comme dans l'exemple ci-dessus, par la reconnaissance de *cycles de dépendances*, ici, le cycle "Début des cours" -> "Scolarité ouverte" -> "Certificat" -> "Chambre universitaire" -> "Début des cours". On voit donc que le graphe de dépendances est très pratique, car il permet de faire ressortir facilement les impasses dans l'exécution de tâches. "Facilement", dans le sens où l'on peut concevoir un algorithme qui puisse les identifier sans notre supervision. Si c'était relativement évident dans l'exemple précédent, il est beaucoup plus dur de détecter manuellement ces problèmes dans des graphes beaucoup plus larges, comme, par exemple, lorsque l'on veut effectuer une suite d'instructions : si le programme est { a = 4; c = a + b; retourner c }, où a, b, c sont trois variables entières, et que la valeur de b n'a pas été initialisée, on aura un problème pour retourner la valeur de c !
 
 ```python
-a = 3
-c = a + b
-# Python râle
-> NameError: name 'c' is not defined
+>>> a = 3
+>>> c = a + b  # Python râle
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'b' is not defined
 ```
 
 Pour ceux et celles plus expertes en programmation, c'est aussi grâce aux graphes de dépendances que vous allez passer deux heures à installer une bibliothèque parce que vous n'avez pas les bonnes versions de SuperPackageTM numéro i, où i est compris entre 1 et 100.

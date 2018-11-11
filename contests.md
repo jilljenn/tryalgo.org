@@ -7,20 +7,20 @@ Voici une liste des compétitions de programmation les plus célèbres.
 
 ## Pour les plus jeunes
 
-- Du CM1 à la terminale : [**Castor informatique**](http://castor-informatique.fr)
+- Du CM1 à la terminale : [**Castor informatique**](http://castor-informatique.fr) (en ce moment !)
 - Jusqu'à 20 ans : [**Prologin**](https://prologin.org/)
-    - Qualification : jusqu'au **04 janvier 2017**
-    - Épreuves régionales : janvier-mars 2017
-    - Finale : courant mai 2017
+    - Qualification : jusqu'en janvier
+    - Épreuves régionales : janvier-mars
+    - Finale : en mai
 - Olympiades avant le bac : [France-ioi](http://www.france-ioi.org/)
 
 ## Les compétitions annuelles
 
 - [**Google Code Jam**](https://code.google.com/codejam/)
-    - Qualifications le **7 avril 2017**
+    - Qualifications en **avril**
 - [**Google Hash Code**](https://hashcode.withgoogle.com/)
     - Problèmes réels à résoudre avec des techniques de recherche opérationnelle
-    - Qualifications le **23 février 2017**
+    - Qualifications en **février**
 - [**Facebook Hacker Cup**](https://www.facebook.com/hackercup/)
 - [**Microsoft Bubblecup**](http://www.bubblecup.org/)
     - Très peu connue depuis 2008, cette compétition similaire au concours ACM a pourtant des [booklets de solutions très clairement expliquées](http://www.bubblecup.org/Booklets)
