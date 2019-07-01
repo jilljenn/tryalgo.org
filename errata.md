@@ -31,6 +31,8 @@ Voici une liste de coquilles dans le livre.
 
 - page 126 : la ligne 9 *n=len(G)* du code est inutile par la présence de la même instruction en ligne 3.
 
+- page 129 : Il faut lire: Donc pour une preuve par contradiction de la validité de l'algorithme, supposons qu'à la fin, il existe un homme i marié à une femme j' et une femme **j** mariée à un homme i'... 
+
 - page 143 (légende 9.9): ... décomposition en chaînes *minimum* dans G ...
 
 - page 146 (fonction tree_adj_to_prec): la ligne n = len(graph) peut être omise.
