@@ -7,14 +7,13 @@ title: Résolution de problèmes algorithmiques
 
 <ul>
 {% for post in site.posts limit:5 %}
-    <li> {{ post.date | date: "%d/%m" }} <a href="{{ post.url }}">{{ post.title }}</a> by {{ post.author }}
+    <li> {{ post.date | date: "%d/%m" }} <a href="{{ post.url }}">{{ post.title }}</a> – {{ post.author }}
     </li>
 {% endfor %}
 </ul>
 
 ## Dernières conférences
 
-- **AlphaGo explained** par Étienne Simon & JJV
 - [**Arbres de Merkle : la structure de données à l'origine de git, BitTorrent, Bitcoin, Ethereum, The DAO et autres blockchains**](/fr/2016/12/10/arbres-de-merkle/) par JJV
 
 ## [pip install tryalgo](/code/)

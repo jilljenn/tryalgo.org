@@ -1,16 +1,13 @@
-# TryAlgo
+# TryAlgo.org
 
-Ressources en algorithmique, par Christoph Dürr et Jill-Jênn Vie.
+This is the code that powers the website [tryalgo.org](http://tryalgo.org).
 
-## Lancer les notebooks
+## Run locally
 
-Vous pouvez consulter les notebooks tels que [TryAlgo in Paris](https://github.com/jilljenn/tryalgo/blob/master/notebooks/TryAlgo%20in%20Paris.ipynb) directement en ligne, de façon statique.
+    bundle install
+    bundle exec jekyll serve
 
-Afin de les exécuter de façon interactive, voici une manière d'installer `ipython`.
+## How to contribute
 
-    python3 -m venv venv
-    . venv/bin/activate
-    pip install -r requirements.txt
-    ipython notebook
-
-Les notebooks se trouvent dans le dossier… `notebooks`.
+If you want to add a post, feel free to [create a pull request](https://github.com/jilljenn/tryalgo.org/pulls)!
+It should be in [fr/_posts](fr/_posts/) if French, in [en/_posts](en/_posts/) if English.
