@@ -37,5 +37,5 @@ static int minutes(String a) {
 
 ### links
 
-- solution from the tryalgo library [two_sat](http://pythonhosted.org/tryalgo/_modules/tryalgo/two_sat.html#two_sat) and [strongly connected components](http://pythonhosted.org/tryalgo/tryalgo/tryalgo.html?highlight=strongly#module-tryalgo.strongly_connected_components)
+- solution from the tryalgo library [two_sat](https://jilljenn.github.io/tryalgo/_modules/tryalgo/two_sat.html#two_sat) and [strongly connected components](https://jilljenn.github.io/tryalgo/_modules/tryalgo/strongly_connected_components.html)
 

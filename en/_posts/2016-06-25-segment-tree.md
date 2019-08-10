@@ -74,4 +74,4 @@ Similarly it is possible to adapt segment trees to answer min or max queries.  F
 
 * [An animated visualization](http://visualgo.net/segmenttree)
 * [A wiki page](http://wcipeg.com/wiki/Segment_tree)
-* [Sample code](http://pythonhosted.org/tryalgo/_modules/tryalgo/range_minimum_query.html#RangeMinQuery)
+* [Sample code](https://jilljenn.github.io/tryalgo/_modules/tryalgo/range_minimum_query.html#RangeMinQuery)

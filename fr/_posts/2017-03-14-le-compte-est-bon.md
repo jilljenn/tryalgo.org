@@ -36,4 +36,4 @@ Parce que nous, si. Faites **pip install tryalgo**, puis en Python :
 
 C'est d'ailleurs amusant de savoir que c'était la seule solution.
 
-[Voir l'algorithme permettant de résoudre Le Compte est bon](http://pythonhosted.org/tryalgo/_modules/tryalgo/arithm_expr_target.html#arithm_expr_target)
+[Voir l'algorithme permettant de résoudre Le Compte est bon](https://jilljenn.github.io/tryalgo/_modules/tryalgo/arithm_expr_target.html#arithm_expr_target)

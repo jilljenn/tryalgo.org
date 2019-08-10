@@ -62,7 +62,7 @@ def solve(n, R, O, Y, G, B, V):
 
 # Pony Express
 
-Ce problème peut être résolu par deux applications à [Floyd-Warshal](http://pythonhosted.org/tryalgo/tryalgo/tryalgo.html?highlight=warshal#tryalgo.floyd_warshall.floyd_warshall).
+Ce problème peut être résolu par deux applications à [Floyd-Warshal](https://jilljenn.github.io/tryalgo/tryalgo/tryalgo.html?highlight=warshal#tryalgo.floyd_warshall.floyd_warshall).
 D'abord on calcule avec cet algorithme les distances d entre toutes les villes. Dij est la longueur du plus court chemin de la ville i à la ville j.
 
 Puis on peut calculer une matrice de temps de déplacement A, tel que Aij est le temps qu'il faut pour aller de la ville i à la ville j, en utilisant le cheval stationné en i et sans changer de cheval en cours de route.

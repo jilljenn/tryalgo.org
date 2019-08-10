@@ -15,5 +15,5 @@ Notez qu'on peut l'adapter pour répondre à des requêtes de minimum d'une plag
 
 - Voir l'article Wikipédia sur les [arbres de Fenwick](https://en.wikipedia.org/wiki/Fenwick_tree)  
 (on les appelle aussi *binary indexed trees*)
-- [Voir le code](http://pythonhosted.org/tryalgo/_modules/tryalgo/fenwick.html) sur TryAlgo Docs
+- [Voir le code](https://jilljenn.github.io/tryalgo/_modules/tryalgo/fenwick.html) sur TryAlgo Docs
 - [Voir le code](https://github.com/jilljenn/tryalgo/blob/master/tryalgo/fenwick.py) sur GitHub

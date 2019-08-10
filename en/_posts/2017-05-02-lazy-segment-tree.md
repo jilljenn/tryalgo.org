@@ -34,4 +34,4 @@ The update methods `set` and `add` as well as the query methods `max,min` or `su
 
 ## Links
 
-* [Sample code](http://pythonhosted.org/tryalgo/_modules/tryalgo/range_minimum_query.html#LazySegmentTree)
+* [Sample code](https://jilljenn.github.io/tryalgo/_modules/tryalgo/range_minimum_query.html#LazySegmentTree)

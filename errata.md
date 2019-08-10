@@ -37,7 +37,7 @@ Voici une liste de coquilles dans le livre.
 
 - page 146 (fonction tree_adj_to_prec): la ligne n = len(graph) peut être omise.
 
-- page 147 (fonction extract): la concaténation à une chaîne ayant une complexité linéaire, la complexité de la fonction `extract` est en O(n^2). Pour arriver à une complexité linéaire il faudrait coder le préfixe par une liste chaînée. Cette liste est ensuite transformée en temps linéaire en un mot de code lors du traitement d'une feuille. Voir ce [code](https://pythonhosted.org/tryalgo/tryalgo/tryalgo.html?highlight=huffman#tryalgo.huffman.extract).
+- page 147 (fonction extract): la concaténation à une chaîne ayant une complexité linéaire, la complexité de la fonction `extract` est en O(n^2). Pour arriver à une complexité linéaire il faudrait coder le préfixe par une liste chaînée. Cette liste est ensuite transformée en temps linéaire en un mot de code lors du traitement d'une feuille. Voir ce [code](https://jilljenn.github.io/tryalgo/tryalgo/tryalgo.html?highlight=huffman#tryalgo.huffman.extract).
 
 - page 153 : Donc on peut choisir un sommet arbitraire r, déterminer un sommet v1 de distance maximale de *r*, puis à nouveau déterminer un sommet v2 de distance maximale de v1.
 

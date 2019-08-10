@@ -34,4 +34,4 @@ Once we swapped t[p] with t[s] we obtain a table that is lexicographically large
 
 ## Links
 
-* [code](http://pythonhosted.org/tryalgo/_modules/tryalgo/next_permutation.html#next_permutation)
+* [code](https://jilljenn.github.io/tryalgo/_modules/tryalgo/next_permutation.html#next_permutation)

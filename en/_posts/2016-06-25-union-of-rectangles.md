@@ -36,4 +36,4 @@ The sweep line algorithm consists of processing an event list. An event consists
 
 #### For more information
 
-* [Sample code](http://pythonhosted.org/tryalgo/_modules/tryalgo/union_rectangles.html#union_rectangles)
+* [Sample code](https://jilljenn.github.io/tryalgo/_modules/tryalgo/union_rectangles.html#union_rectangles)
