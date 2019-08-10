@@ -4,6 +4,12 @@ title:  "How to practice algorithms with tryalgo"
 author: Jill-Jênn Vie
 ---
 
+Hey, if you want to improve your skills in algorithmic problem solving, you don't even need an online judge!
+
+In the [tryalgo repository](https://github.com/jilljenn/tryalgo), we have provided [tests for 128 classic algorithms](https://github.com/jilljenn/tryalgo/blob/master/tests/test_tryalgo.py).
+
+## Howto
+
 First, clone the [tryalgo](https://github.com/jilljenn/tryalgo) repo.
 
     $ git clone https://github.com/jilljenn/tryalgo
@@ -18,7 +24,7 @@ Then check that the tests pass:
 
     OK
 
-If you want to practice [union of rectangles](https://jilljenn.github.io/tryalgo/content.html#geometry) for example, open [`tryalgo/union_rectangles.py`](https://github.com/jilljenn/tryalgo/blob/master/tryalgo/union_rectangles.py) and DELETE the content of the algorithm.
+If you want to practice [union of rectangles](https://jilljenn.github.io/tryalgo/content.html#geometry) for example, open [`tryalgo/union_rectangles.py`](https://github.com/jilljenn/tryalgo/blob/master/tryalgo/union_rectangles.py) and DELETE[^1] the content of the algorithm.
 
 ```python
 def union_rectangles(R):
@@ -53,10 +59,8 @@ Rewrite that algorithm the best you can, until the tests pass.
 
 Enjoy!
 
-You can also write your own tests in [tests/test_tryalgo.py](https://github.com/jilljenn/tryalgo/blob/master/tests/test_tryalgo.py)[^1], and potentially [create a PR](https://github.com/jilljenn/tryalgo/pulls) if you think they should be added to tryalgo's repository.
+You can also write your own tests in [tests/test_tryalgo.py](https://github.com/jilljenn/tryalgo/blob/master/tests/test_tryalgo.py), and potentially [create a PR](https://github.com/jilljenn/tryalgo/pulls) if you find a corner case that we did not think about!
 
- [^1]: Yes, this file is big (1600+ lines). We put all tests together.
+ [^1]: Don't be afraid to break everything, this is a git repository so everything is versioned; if you want to recover the initial file (and know the solution), you can do:
 
-P. S. – If you want to recover the initial file, you can do:
-
-    $ git checkout tryalgo/union_rectangles.py
+        $ git checkout tryalgo/union_rectangles.py

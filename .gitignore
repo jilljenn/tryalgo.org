@@ -6,14 +6,15 @@ _site
 # Numerous always-ignore extensions
 *.diff
 *.err
-*.orig
+*.lock
 *.log
+*.orig
+*.pyc
 *.rej
 *.swo
 *.swp
-*.zip
 *.vi
-*.pyc
+*.zip
 *~
 
 # OS or Editor folders

@@ -27,6 +27,6 @@ Here a few links to learn more algorithms.
 ## Judge <abbr title="Do it yourself">DIY</abbr>
 
 - Try the open source [Qingdao University Online Judge](https://qduoj.com) (Django & Vue.js[^1]) then fork them on [GitHub](https://github.com/QingdaoU/OnlineJudge).
-- If you want something minimal, and to understand what you are doing, try [prologin/camisole](https://github.com/prologin/camisole).
+- If you want something more lightweight, try [prologin/camisole](https://github.com/prologin/camisole).
 
  [^1]: C'est marrant, c'est comme [Mangaki](https://mangaki.fr).
