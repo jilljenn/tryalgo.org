@@ -31,7 +31,7 @@ Voici une liste de coquilles dans le livre.
 
 - page 126 : la ligne 9 *n=len(G)* du code est inutile par la présence de la même instruction en ligne 3.
 
-- page 129 : Il faut lire: Donc pour une preuve par contradiction de la validité de l'algorithme, supposons qu'à la fin, il existe un homme i marié à une femme j' et une femme **j** mariée à un homme i'... 
+- page 129 : Il faut lire: Donc pour une preuve par contradiction de la validité de l'algorithme, supposons qu'à la fin, il existe un homme i marié à une femme j' et une femme **j** mariée à un homme i'...
 
 - page 143 (légende 9.9): ... décomposition en chaînes *minimum* dans G ...
 
@@ -46,6 +46,8 @@ Voici une liste de coquilles dans le livre.
 - page 157 (rendu de monnaie): dans la récurrence pour A[i][m] il faut lire min au lieu de max
 
 - page 181 : dans le commentaire du code il faut comprendre que la décomposition binaire de b contient 2 puissance p et non pas (a puissance (2 puissance p)).
+
+- page 188 : On a alors s(i,i)=0. Il faut lire opt(i,i)=0.
 
 - page 191 (Tous les chemins pour un laser): peut en fait être réduit à un problème de couplage parfait.  Par contre le graphe n'est pas biparti, et l'algorithme de Edmond (Blossom algorithm) est long à implémenter.
 
