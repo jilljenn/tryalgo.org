@@ -23,7 +23,7 @@ Voici une liste de coquilles dans le livre.
 
 - page 58 : Dans la récursion pour $G[i]$ il faut lire la condition $P[i] \leq i$.
 
-- page 70: À tout moment donnée on maintient dans *open* le nombre d'intervalles ouverts. - Il fallait lire *nb_open*.  La phrase suivante doit être : .. un nouvel intervalle $[\textsl{last},x)$ ... et *last* la dernière position à laquelle *nb_open* est devenue positif.
+- page 70: À tout moment donnée on maintient dans *open* le nombre d'intervalles ouverts. - Il fallait lire *nb_open*.  La phrase suivante doit être : .. un nouvel intervalle $[last,x)$ ... et *last* la dernière position à laquelle *nb_open* est devenue positif.
 
 - page 83 Figure 6.7 : L'exemple n'est pas correct. Considérez plutôt le graphe suivant :
 
@@ -62,9 +62,9 @@ Voici une liste de coquilles dans le livre.
 
 - page 188 : On a alors s(i,i)=0. Il faut lire opt(i,i)=0.
 
-- page 191 (Tous les chemins pour un laser): peut en fait être réduit à un problème de couplage parfait.  Par contre le graphe n'est pas biparti, et l'algorithme de Edmond (Blossom algorithm) est long à implémenter.
+- page 191 (Tous les chemins pour un laser): peut en fait être réduit à un problème de couplage parfait.  Par contre le graphe n'est pas biparti, et l'algorithme de Edmond (Blossom algorithm) est long à implémenter.  Voir ce [billet]({% post_url en/2016-07-16-mirror-maze %}).
 
-- page 204 (Algorithme en \\(O(n^3)\\)): il faut lire \\(S \subseteq\\{0,\ldots,n-1\\}\\) au lieu de \\( S \subseteq\\{1,\ldots,n-1\\} \\).  Aussi l'operation `expr[S][vL - vR] = ...` ne doit se faire que si la différence `vL - vR` est  positive.  Et pour finir la complexité est pire que $O(n^3)$ car il faut tenir compte des deux boucles internes sur les clés dans `expr[L]` et `expr[R]`.  Voir ce [billet]({% post_url en/2017-06-29-le-compte-est-bon %})
+- page 204 (Algorithme en \\(O(n^3)\\)): il faut lire \\(S \subseteq\\{0,\ldots,n-1\\}\\) au lieu de \\( S \subseteq\\{1,\ldots,n-1\\} \\).  Aussi l'operation `expr[S][vL - vR] = ...` ne doit se faire que si la différence `vL - vR` est  positive.  Et pour finir la complexité est pire que $O(n^3)$ car il faut tenir compte des deux boucles internes sur les clés dans `expr[L]` et `expr[R]`.  Voir ce [billet]({% post_url en/2017-06-29-le-compte-est-bon %}).
 
 ## Clarifications
 
