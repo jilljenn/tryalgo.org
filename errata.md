@@ -21,7 +21,13 @@ Voici une liste de coquilles dans le livre.
 
 - page 54 : Observation clé ... alors forcément une des lettres $x_i,x_j$ n'est pas couplée. Il faudrait lire $x_i, y_j$.  Aussi ici A[i,j] est une plus longue sous-séquence maximale, alors que dans l'implémentation A[i][j] en est la longueur.
 
-- page 70: À tout moment donnée on maintient dans *open* le nombre d'intervalles ouverts. - Il fallait lire *nb_open*.
+- page 58 : Dans la récursion pour $G[i]$ il faut lire la condition $P[i] \leq i$.
+
+- page 70: À tout moment donnée on maintient dans *open* le nombre d'intervalles ouverts. - Il fallait lire *nb_open*.  La phrase suivante doit être : .. un nouvel intervalle $[\textsl{last},x)$ ... et *last* la dernière position à laquelle *nb_open* est devenue positif.
+
+- page 83 Figure 6.7 : L'exemple n'est pas correct. Considérez plutôt le graphe suivant :
+
+![]({{site.images}}bi-connexes-relation.png "Les sommets et les arêtes de déconnexion sont montrés en gras." ){:width="250"}
 
 - page 102 : la complexité de l'algorithme pour le voyageur de commerce est $O(&#124;V&#124;^2 2^{&#124;V&#124;})$
 
@@ -32,6 +38,13 @@ Voici une liste de coquilles dans le livre.
 - page 126 : la ligne 9 *n=len(G)* du code est inutile par la présence de la même instruction en ligne 3.
 
 - page 129 : Il faut lire: Donc pour une preuve par contradiction de la validité de l'algorithme, supposons qu'à la fin, il existe un homme i marié à une femme j' et une femme **j** mariée à un homme i'...
+
+- page 138 point 3. La preuve n'est pas correcte telle quelle. Il faudrait plutôt lire :  Maintenant si pour un flot $f$ donné, on a $f (S) < c (S)$ pour
+    toute coupe $S$, alors il existe un chemin augmentant. Pour cela tout
+    simplement posons $S =\{s\}$ et $A = \emptyset$. Puisque $f (S) < c (S)$
+    il existe une arête $(u, v)$ avec $u \in S, v \not\in S, f (u, v) < c (u,
+    v)$. Ajoutons $(u, v)$ à $A$ et $v$ à $S$, et recommençons tant que $t\not\in S$. L'invariant est que $A$ est un arbre couvrant $S$ composé seulement d'arcs non saturés, et donc si $t\in S$ alors $A$ contient chemin
+    augmentant.
 
 - page 143 (légende 9.9): ... décomposition en chaînes *minimum* dans G ...
 
