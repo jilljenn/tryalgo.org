@@ -147,7 +147,7 @@ positions, also expected to be much smaller than 27 ** 2.
 
 Experiments show that that we gain a factor of 5 at least in the running time.
 
-## Code 
+## Code en Python (WRONG ANSWER)
 
 ~~~ python
 import sys, string
@@ -204,9 +204,9 @@ def two_steps(u, v):
         return None
     i, j = p
     if u[i] < v[i]:
-        return u[:j] + v[j] + u[j + 1:]
+        return u[:j] + v[j:]
     else:
-        return v[:j] + u[j] + v[j + 1:]
+        return v[:j] + u[j:]
 
 
 left = distances(tout[0])
@@ -233,5 +233,106 @@ if best[0] != float('inf'):
 else:
     print(0)
     print(-1)
+~~~
 
+## Code en C++ (ACCEPTED)
+
+Ici on utilise une approche légèrement différente. La fonction `distances` calcule par BFS les distances à partir d'un mot source dans le graphe décrit par les mots donnés et la distance de Hamming 1.  Puis la fonction `boundary`  calcule pour un dictionaire `dist` donné, tous les mots qu'on peut obtenir à partir des clés `w`  de `dist`  en changeant une lettre, et on y associant la distance `dist[w] + 1`.
+
+La complexité de cette procédure est de l'ordre de 4 * 27 * 8 * 1000 avec une grande constante due au test d'appartenances à des dictionaires. Mais ça passe.
+
+~~~ C++
+#include <iostream>
+#include <map>
+#include <string>
+#include <queue>
+#include <set>
+#include <climits>
+
+using namespace std;
+
+
+
+string tout[1001];
+set<string> dico;
+
+
+map<string,int> distances(string start) {
+    map<string, int> dist;
+    dist[start] = 0;
+    queue<string> Q;
+    Q.push(start);
+    while (! Q.empty()) {
+        string u = Q.front();
+        Q.pop();
+        for (int i = 0; i < u.size(); ++i)
+            for (char x = 'A'; x <= 'Z'; ++x)  {
+                string v = u.substr(0, i) + x + u.substr(i + 1);
+                if (dico.count(v) && dist.count(v) == 0) {
+                    dist[v] = dist[u] + 1;
+                    Q.push(v);
+                }
+            }
+    }
+    return dist;
+}
+
+
+map<string,int> boundary(const map<string,int> & dist) {
+    map<string, int> border;
+    for(pair<string, int> p: dist) {
+        string u = p.first;
+        for (int i = 0; i < u.size(); ++i)  
+            for (char x = 'A'; x <= 'Z'; ++x)  {
+                string v = u.substr(0, i) + x + u.substr(i + 1);
+                int d = p.second + 1;
+                if (border.count(v) == 0 || d < border[v]) 
+                    border[v] = d;
+            }
+    }
+    return border;
+}
+
+
+int main() {
+    int n, k;
+
+    cin >> n;
+
+    for (int i = 0; i < n; ++i)
+        cin >> tout[i];
+
+    dico.insert(tout, tout + n);
+
+    string source = tout[0];
+    string target = tout[1];
+
+    k = source.size();
+
+    map<string,int> left = distances(source);
+    map<string,int> right = distances(target);
+
+    pair<int,string> best(INT_MAX,  "0");
+
+    if (left.count(tout[1])) 
+        best.first = left[tout[1]];
+
+    map<string,int> left_border = boundary(left);
+    map<string,int> right_border = boundary(right);
+
+    for (pair<string, int> p : left_border) {
+        string u = p.first;
+        if (right_border.count(u)) {
+            pair<int, string> alternative(p.second + right_border[u], u);
+            if (alternative < best)
+                best = alternative;
+        }
+    }
+    if (best.first == INT_MAX) 
+        cout << "0" << endl << -1 << endl;
+    else 
+        cout << best.second << endl << best.first << endl;
+
+    return 0;
+}
 ~~~
