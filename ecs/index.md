@@ -241,7 +241,7 @@ Ici on utilise une approche légèrement différente. La fonction `distances` ca
 
 La complexité de cette procédure est de l'ordre de 4 * 27 * 8 * 1000 avec une grande constante due au test d'appartenances à des dictionaires. Mais ça passe.
 
-~~~ C++
+~~~ cpp
 #include <iostream>
 #include <map>
 #include <string>
