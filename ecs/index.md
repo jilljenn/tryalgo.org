@@ -38,17 +38,17 @@ w. M[x,y] contains x * y.  Avery gets a value from this matrix, while Pat gets
 an anti-diagonal. We will erase entries corresponding to (w,h) pairs which are
 not compatible with the conversation. The surviving entries are the solution.
 
-|   "Avery: I don't know what w and h are." 
-|   means that we erase all entries which are unique, 
-|
-|   "Pat: I knew that." 
-|   means we erase all anti-diagonals where we erased individual entries.
-|
-|   "Avery: Now I know what they are." 
-|   means we erase all entries which are not unique among the remaining entries.
-|
-|   "Pat: I now know too." 
-|   means we erase all anti-diagonals which do not contain exactly one entry.
+>   "Avery: I don't know what w and h are." 
+>   means that we erase all entries which are unique, 
+>
+>   "Pat: I knew that." 
+>   means we erase all anti-diagonals where we erased individual entries.
+>
+>   "Avery: Now I know what they are." 
+>   means we erase all entries which are not unique among the remaining entries.
+>
+>   "Pat: I now know too." 
+>   means we erase all anti-diagonals which do not contain exactly one entry.
 
 ## Implementation
 
