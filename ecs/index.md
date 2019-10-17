@@ -114,7 +114,7 @@ Compute distances in a Hamming distance defined graph on given words.
 
 ## complexity 
 
-    n * k * 27 * 2  +  n * n * k
+n * k * 27 * 2  +  n * n * k
 
 for n the number of words and k their length.
 which is about 8 million. should be ok.
@@ -132,8 +132,8 @@ We keep the best candidate solution.
 A solution is a pair (distance, added_word), where it comes in handy that "0"
 is smaller as all given words.
 
-## (Improvements)[https://runestone.academy/runestone/books/published/pythonds/Graphs/BuildingtheWordLadderGraph.html
-]
+## [Improvements](https://runestone.academy/runestone/books/published/pythonds/Graphs/BuildingtheWordLadderGraph.html)
+
 
 For the BFS we could iterate over all 27 * 8 possible neighbors of a word and
 check if they belong to the dictionary. But we could also precompute a list of
