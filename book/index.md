@@ -9,7 +9,7 @@ title: Programmation efficace
 
 <a href="http://www.amazon.fr/gp/product/2340010055/ref=as_li_tl?ie=UTF8&amp;camp=1642&amp;creative=19458&amp;creativeASIN=2340010055&amp;linkCode=as2&amp;tag=mangaki-21"><img src="/static/cover.jpg" style="float: right" width="180" /></a>
 
-Les [**nombreux problèmes algorithmiques**]({% post_url fr/2016-03-15-problemes-algorithmiques %}) de ce livre constituent une préparation efficace aux [**concours de programmation**](/contests/) et entretiens d'embauche d'entreprises spécialisées en informatique (ex. Google ou Facebook).
+Les [**nombreux problèmes algorithmiques**]({% post_url fr/2016-03-15-problemes-algorithmiques %}) de ce livre constituent une préparation efficace aux [**concours de programmation**](/contests/) et entretiens d'embauche d'entreprises spécialisées en informatique.
 
 On y trouve les algorithmes classiques de géométrie ou de recherche de plus court chemin mais également des sujets plus atypiques tels que les [arbres de Fenwick]({% post_url fr/2016-03-09-arbre-de-fenwick %}) ou les liens dansants de Knuth.
 
@@ -29,11 +29,11 @@ On y trouve les algorithmes classiques de géométrie ou de recherche de plus co
 
 ## À propos des auteurs
 
-[**Christoph Dürr**](http://www-desir.lip6.fr/~durrc/) est directeur de recherche CNRS en informatique à l'université Pierre et Marie Curie Paris 6. Spécialisé en algorithmique, il a enseigné à l'École polytechnique de 2007 à 2014 et entraîne régulièrement des équipes pour le concours de programmation [ACM](/acm/).  
+[**Christoph Dürr**](http://www-desir.lip6.fr/~durrc/) est directeur de recherche CNRS en informatique à Sorbonne Université. Spécialisé en algorithmique, il a enseigné à l'École polytechnique de 2007 à 2014 et entraîne régulièrement des équipes pour le concours de programmation [ACM-ICPC](/acm/).  
 À part ça, il aime beaucoup les carrot-cakes.
 
-[**Jill-Jênn Vie**](http://jill-jenn.net) est agrégé de mathématiques option informatique, actuellement en thèse à l’université Paris-Saclay. Ancien élève de l’École normale supérieure de Paris-Saclay, il a participé à l’organisation du concours d’informatique Prologin de 2010 à 2014.  
-À part ça, il est féru de [métafiction](http://club-meta.fr).
+[**Jill-Jênn Vie**](http://jill-jenn.net) est chargé de recherches à Inria. Ancien élève de l’École normale supérieure de Paris-Saclay, il a participé à l’organisation du concours d’informatique Prologin de 2010 à 2014.  
+À part ça, il est féru de [métafiction](https://club-meta.fr).
 
 <!-- Place this tag right after the last button or just before your close body tag. -->
 <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>

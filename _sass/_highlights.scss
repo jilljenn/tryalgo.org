@@ -7,7 +7,7 @@
 }
 
 .highlight pre {
-  overflow: scroll; /* Prefer word wrap? Comment this line and uncomment the 3 lines below. */
+  overflow: auto; /* Prefer word wrap? Comment this line and uncomment the 3 lines below. */
   /* word-break: break-all;
   word-wrap: break-word;
   white-space: pre-wrap; */
