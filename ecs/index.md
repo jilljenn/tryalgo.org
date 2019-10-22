@@ -17,16 +17,24 @@ On a parlé des problèmes suivants:
 -   [Landscaping](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=4908) — se réduit vers un problème de coupe. Un sommet par case, ainsi qu'une source s et un puits t. Les poids sur les arêtes: si la case x est haute c(s,x)=0, c(x,t)=a, si la case est basse c(s,x)=b, c(x,t)=0. Entre deux cases adjacentes x,y il y a une arête de poids c(x,y)=b. Une coupe correspond à un solution, et la valeur de la coupe est la valeur de la solution.
 -   [Manhattan](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1260) — se réduit vers 2-SAT. Une variable booléenne par route indicant son orientation. Imaginons que pour une route on demande (x et y) ou (a et b). Ceci est équivalent à (x ou a) et (x ou b) et (y ou a) et (y ou b), qui sont des clauses 2-SAT. — résoudre une formule 2-SAT: chaque clause x ou y, génère deux implications non x => y et non y => x. Alors construire un graphe orienté avec ces arcs. Si pour une variable x il existe un chemin de x à non x et de non x à x, alors la formule n'est pas satisfiable, sinon elle l'est.
 
-# Lundi 21 oct, 12h avec son repas
+# Lundi 21 oct, 12h30 -- 13h30
 
 Café CROUS du bâtiment Eiffel. On parlera des problèmes:
 
 -    [Honest Rectangle](https://www.spoj.com/problems/RECTANGLE/) — en détail, avec code
--    [Dragon Maze](https://code.google.com/codejam/contest/2929486/dashboard#s=p3)
--    [Stock Charts](https://code.google.com/codejam/contest/204113/dashboard#s=p2)
+-    [Dragon Maze](https://code.google.com/codejam/contest/2929486/dashboard#s=p3) - Parcours BFS pour trouver les plus courts chemins, mettre à jour pour chaque arête le score découvert par case. Voir solution plus bas.
+-    [Stock Charts](https://code.google.com/codejam/contest/204113/dashboard#s=p2) — Définir un ordre partiel. Trouver le nombre minimum de chemins pour couvrir cet ordre. Se résoud par un couplage biparti de cardinalité maximale.
 -    [Poker Hands](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1256) — avec code
--    [Anagram checker](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=84)
--    [Weird Advertisement](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=25&page=show_problem&problem=3134)
+-    [Anagram checker](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=84) - probablement une solution par backtracking. On traduit des mots en un vecteur de dimension 26, avec le nombre d'occurences de chaque lettre. On trie les lettres du dictionnaire en ordre alphabetique.
+-    [Weird Advertisement](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=25&page=show_problem&problem=3134) - utiliser un arbre de segments
+
+# Lundi 28 oct, à partir de 12h
+
+-   [Poker Hands](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1256) — avec code
+-   [November Rain](http://poj.org/problem?id=1765)
+-   [Stammering Aliens](http://www.spoj.com/problems/STAMMER/)
+-   [City Parc](https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&category=657&page=show_problem&problem=4901)
+
 
 # Honest Rectangle
 
@@ -335,4 +343,53 @@ int main() {
 
     return 0;
 }
+~~~
+
+# Dragon Maze
+
+~~~ python
+""" Dragon Maze
+    http://code.google.com/codejam/contest/2929486/dashboard#s=p3
+
+    Explore grid using BFS in order to discover shortest paths. Update the
+    maximum power along the forward edges in the BFS level graph.
+
+    complexity: linear in grid size
+""" 
+
+from collections import deque
+
+def readint():    return int(raw_input())
+def readarray(f): return map(f, raw_input().split())
+
+
+for test in range(readint()):
+    N, M               = readarray(int)
+    enter_x, enter_y, exit_x, exit_y = readarray(int)
+    grid    = [readarray(int) for _ in range(N)]
+    power   = [[-1   for j in range(M)] for i in range(N)] 
+    level   = [[None for j in range(M)] for i in range(N)]  # mark vertices inserted in queue
+    Q       = deque()
+    power[enter_x][enter_y] = grid[enter_x][enter_y]
+    level[enter_x][enter_y] = 0 
+    Q.append( (enter_x, enter_y) )                    # start from the enter cell
+    while Q:
+        x, y = Q.popleft()                            # loop over all 4 neighbors
+        for x1, y1 in [(x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1)]:
+            if 0 <= x1 < N and 0<= y1 < M:            # if in bounds of grid
+                if grid[x1][y1] == -1:
+                    continue                          # ignore dangerous cells
+                if level[x1][y1] is None:             # level discovered for this cell
+                    level[x1][y1] = level[x][y] + 1
+                    Q.append( (x1,y1) )               
+                if level[x1][y1] == level[x][y] + 1:  # if arc in level graph
+                    alt = power[x][y] + grid[x1][y1]
+                    if power[x1][y1] < alt:
+                        power[x1][y1] = alt           # update reachable power value
+
+    sol = power[exit_x][exit_y]
+    if sol == -1:
+        print("Case #%i: Mission Impossible." % (test + 1))
+    else:
+        print("Case #%i: %i" % (test + 1, sol))
 ~~~
