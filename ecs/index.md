@@ -30,10 +30,24 @@ Café CROUS du bâtiment Eiffel. On parlera des problèmes:
 
 # Lundi 28 oct, à partir de 12h
 
+En salle ee.04
+
+Présents : Christoph, Adnane, Victor, Francisco, Quentin.
+
 -   [Poker Hands](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1256) — avec code
 -   [November Rain](http://poj.org/problem?id=1765)
 -   [Stammering Aliens](http://www.spoj.com/problems/STAMMER/)
 -   [City Parc](https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&category=657&page=show_problem&problem=4901)
+
+
+# Lundi 4 novembre
+
+Discussions par email.
+
+- [Dungeon of Death](https://www.spoj.com/problems/QUEST4/)
+- [Project File Dependencies](https://www.spoj.com/problems/PFDEP/)
+- [A concrete ad_hoc](https://www.spoj.com/problems/ACS/)
+- [ABCD](https://www.spoj.com/problems/ABCD/)
 
 
 # Honest Rectangle
