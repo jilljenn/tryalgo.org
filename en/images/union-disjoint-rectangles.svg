@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="227pt" height="119pt" viewBox="0 0 227 119" version="1.1">
+<g id="surface1">
+<path style="fill-rule:nonzero;fill:rgb(87.057495%,67.842102%,14.901733%);fill-opacity:1;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 234 261 L 306 261 L 306 414 L 234 414 Z M 234 261 " transform="matrix(0.5,0,0,0.5,-75.5,-102.5)"/>
+<path style="fill-rule:nonzero;fill:rgb(87.057495%,67.842102%,14.901733%);fill-opacity:1;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 153 207 L 234 207 L 234 261 L 153 261 Z M 153 207 " transform="matrix(0.5,0,0,0.5,-75.5,-102.5)"/>
+<path style="fill-rule:nonzero;fill:rgb(40.783691%,73.724365%,21.176147%);fill-opacity:1;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 414 207 L 495 207 L 495 261 L 414 261 Z M 414 207 " transform="matrix(0.5,0,0,0.5,-75.5,-102.5)"/>
+<path style="fill-rule:nonzero;fill:rgb(40.783691%,73.724365%,21.176147%);fill-opacity:1;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 360 261 L 441 261 L 441 360 L 360 360 Z M 360 261 " transform="matrix(0.5,0,0,0.5,-75.5,-102.5)"/>
+<path style="fill-rule:nonzero;fill:rgb(40.783691%,73.724365%,21.176147%);fill-opacity:1;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 441 342 L 468 342 L 468 441 L 441 441 Z M 441 342 " transform="matrix(0.5,0,0,0.5,-75.5,-102.5)"/>
+<path style="fill-rule:nonzero;fill:rgb(58.822632%,38.430786%,81.567383%);fill-opacity:1;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 495 297 L 603 297 L 603 324 L 495 324 Z M 495 297 " transform="matrix(0.5,0,0,0.5,-75.5,-102.5)"/>
+<path style="fill-rule:nonzero;fill:rgb(40.783691%,73.724365%,21.176147%);fill-opacity:1;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 360 360 L 396 360 L 396 414 L 360 414 Z M 360 360 " transform="matrix(0.5,0,0,0.5,-75.5,-102.5)"/>
+</g>
+</svg>
