@@ -4,8 +4,8 @@ category: geometry
 title: "November Rain"
 author: Christoph Dürr
 problems:
-    "poj:november rain": http://poj.org/problem?id=1765
-    "cepc2003:problem E" http://cepc.mimuw.edu.pl/
+    "poj:november rain":  http://poj.org/problem?id=1765
+    "cepc2003:problem E": http://cepc.mimuw.edu.pl/
 ---
 
 You are given $n$ non intersecting line segments in the 2 dimensional plane.
