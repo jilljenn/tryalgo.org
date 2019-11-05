@@ -46,9 +46,14 @@ Discussions par email.
 
 - [Dungeon of Death](https://www.spoj.com/problems/QUEST4/)
 - [Project File Dependencies](https://www.spoj.com/problems/PFDEP/)
-- [A concrete ad_hoc](https://www.spoj.com/problems/ACS/)
-- [ABCD](https://www.spoj.com/problems/ABCD/)
+- [A concrete ad_hoc](https://www.spoj.com/problems/ACS/) --- maintenir une permutation et son inverse
+- [ABCD](https://www.spoj.com/problems/ABCD/) --- glouton avec un passage. Se débrouiller d'avoir les 4 lettres distinctes toutes les 2 positiosn.
 
+# Lundi 11 novembre
+
+Discussions par email.
+
+- Essayez de résoudre les problèmes de [SWERC 2016](https://codeforces.com/gym/101174). Je me souviens des solutions de certains de ces problèmes.
 
 # Honest Rectangle
 
@@ -406,4 +411,70 @@ for test in range(readint()):
         print("Case #%i: Mission Impossible." % (test + 1))
     else:
         print("Case #%i: %i" % (test + 1, sol))
+~~~
+
+# [ABCD](https://www.spoj.com/problems/ABCD/)
+
+## glouton avec une seule lecture.
+
+Vous avez bien trouvé. L'idée est de grouper les deux chaînes en blocs de 2x2 caractères.
+Maintenant il y a plusieurs manières de procéder. Par exemple:
+
+
+Se débrouiller pour que dans les fenêtes de forme [2*i,2*i+1] on trouve toutes
+les 4 lettres. Donc les deux lettres du haut définissent ceux du bas, qui
+pourraient à priori être dans deux ordres possibles, mais la lettre
+précédente du bas détermine l'ordre. Ceci est stocké dans le dictionnaire T
+par un précalcul. 
+
+>   | x1 | x2 | 
+> b | ?  |  ? | 
+
+T[b, x1, x2] est le couple de lettres qu'il faut placer à la place des '?'.
+
+## complexité 
+
+O(N)
+
+
+## Mauvais Algorithme
+
+de gauche à droite, placer parmi les lettres possible celle qui a 
+le plus grand nombre d'occurence restants (et lexicographiquement la plus petite 
+en cas d'égalité)
+
+> CONTRE EXEMPLE
+> C A B D
+> A B C ?
+ 
+~~~ python
+from sys import *
+
+def readint(): return int(stdin.readline())
+def readstr(): return stdin.readline().strip()
+
+
+T = {}
+for b in "ABCD-":
+    for x1 in "ABCD":
+        for x2 in "ABCD":
+            if x1 != x2:
+                s = ""
+                for y in "ABCD":
+                    if y!=x1 and y!=x2:
+                        s += y
+                if b == s[0]:
+                    s = s[::-1]
+                T[b, x1, x2] = s
+
+                        
+N = readint()
+if N > 0:
+    top = readstr()
+    b   = '-'
+    for i in range(N):
+        bottom =  T[b, top[2 * i], top[2 * i + 1]]
+        print(bottom, end='')
+        b = bottom[-1]
+    print()
 ~~~
