@@ -427,8 +427,8 @@ pourraient à priori être dans deux ordres possibles, mais la lettre
 précédente du bas détermine l'ordre. Ceci est stocké dans le dictionnaire T
 par un précalcul. 
 
->   | x1 | x2 | 
-> b | ?  |  ? | 
+       | x1 | x2 | 
+     b | ?  |  ? | 
 
 T[b, x1, x2] est le couple de lettres qu'il faut placer à la place des '?'.
 
@@ -443,9 +443,9 @@ de gauche à droite, placer parmi les lettres possible celle qui a
 le plus grand nombre d'occurence restants (et lexicographiquement la plus petite 
 en cas d'égalité)
 
-> CONTRE EXEMPLE
-> C A B D
-> A B C ?
+    CONTRE EXEMPLE
+    C A B D
+    A B C ?
  
 ~~~ python
 from sys import *
