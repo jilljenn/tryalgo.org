@@ -60,7 +60,7 @@ Discussions par email.
 
 présents: Adnane, Victor
 
-Voici une table de matière possible pour votre livret de code que vous devez préparer pour la compétition:
+Voici des suggestions pour la table des matières de votre livret de code que vous devez préparer pour la compétition:
 
 - [liste de Stanford](https://cs.stanford.edu/group/acm/SLPC/notebook.pdf) -- très structures de données
 - [liste de Newfoundland](https://www.cs.mun.ca/~dchurchill/pc/pdf/algorithms_1.pdf) -- très maths
