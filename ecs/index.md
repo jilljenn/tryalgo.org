@@ -68,7 +68,7 @@ Voici des suggestions pour la table des matières de votre livret de code que vo
 - [2 pages sur Python de Laurent Pointal](https://perso.limsi.fr/pointal/_media/python:cours:mementopython3.pdf)  --- vous devriez savoir par cœur
 
 
-Et [voici](../liste_algo_fr) une liste d'algorithmes traités dans notre livre.
+Et [voici](../liste_algos_fr) une liste d'algorithmes traités dans notre livre.
 
 
 
