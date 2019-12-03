@@ -7,7 +7,7 @@ title: Résolution de problèmes algorithmiques
 
 <ul>
 {% for post in site.posts limit:5 %}
-    <li> {{ post.date | date: "%d/%m" }} <a href="{{ post.url }}">{{ post.title }}</a> – {{ post.author }}
+    <li> {{ post.date | date: "%d/%m/%y" }} <a href="{{ post.url }}">{{ post.title }}</a> – {{ post.author }}
     </li>
 {% endfor %}
 </ul>
