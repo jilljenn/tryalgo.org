@@ -17,22 +17,19 @@ closest_points\closest_points.tex:Closest Point Pair \href{https://www.spoj.com/
 closest_points\closest_points.tex:Closest Triplet \href{https://www.spoj.com/problems/CLOSEST/}{[spoj:CLOSEST]}
 connected_components\connected_components.tex:The Ant \href{http://www.spoj.com/problems/ANTTT/}{[spoj:ANTTT]}
 connected_components\connected_components.tex:Lego \href{https://www.spoj.com/problems/LEGO/}{[spoj:LEGO]}
-conseils\conseils.tex:See \href{https://icpcarchive.ecs.baylor.edu/index.php?option=onlinejudge&page=show_problem&problem=6176}{[icpcarchive:8154]}.
+conseils\conseils.tex:Frosting on the Cake \href{https://icpcarchive.ecs.baylor.edu/index.php?option=onlinejudge&page=show_problem&problem=6176}{[icpcarchive:8154]}.
 convex_hull\convex_hull.tex:Doors and Penguins \href{https://www.spoj.com/problems/DOORSPEN/}{[spoj:DOORSPEN]}
 convex_hull\convex_hull.tex:Build the Fence \href{https://www.spoj.com/problems/BSHEEP/}{[spoj:BSHEEP]}
-convex_hull\convex_hull.tex:See \href{https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&category=783&page=show_problem&problem=6177}{[icpcarchive:8155]}.
-convex_hull\convex_hull_fr.tex:%Herding Frosh \href{https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=13&page=show_problem&problem=1076}{[UVa:10135]},
-convex_hull\convex_hull_fr.tex:Build the Fence \href{https://www.spoj.com/problems/BSHEEP/}{[spoj:BSHEEP]}
-convex_hull\convex_hull_fr.tex:See \href{https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&category=783&page=show_problem&problem=6177}{[icpcarchive:8155]}.
+convex_hull\convex_hull.tex:Blowing Candles \href{https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&category=783&page=show_problem&problem=6177}{[icpcarchive:8155]}.
 dancing_links\dancing_links.tex:Sudoku \href{https://www.spoj.com/problems/SUDOKU/}{[spoj:SUDOKU]}
 dancing_links\dancing_links.tex:Making Jumps \href{https://www.spoj.com/problems/MKJUMPS/}{[spoj:MKJUMPS]}
 data_1d\data_1d.tex:Unique Encryption Keys \href{https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=3892}{[icpcarchive:5881]}
 dfs\dfs.tex:ABC Path \href{https://www.spoj.com/problems/ABCPATH/}{[spoj:ABCPATH]}
 dfs\dfs.tex:A Bug’s Life \href{https://www.spoj.com/problems/BUGLIFE/}{[spoj:BUGLIFE]}
 dijkstra\dijkstra.tex:Mice and Maze \href{https://www.spoj.com/problems/MICEMAZE/}{[spoj:MICEMAZE]}\\
-dijkstra\dijkstra.tex:Almost Shortest Path \href{https://www.spoj.com/problems/SAMER08A/}{[spoj:SAMER08A]} \\
+dijkstra\dijkstra.tex:%Almost Shortest Path \href{https://www.spoj.com/problems/SAMER08A/}{[spoj:SAMER08A]} \\
 dijkstra\dijkstra.tex:Dragon Maze \href{https://code.google.com/codejam/contest/2929486/dashboard#s=p3}{[gcj:China2014roundB]} \\
-dijkstra\dijkstra.tex:Potholers \href{https://www.spoj.com/problems/POTHOLE/}{[spoj:POTHOLE]}
+dijkstra\dijkstra.tex:%Potholers \href{https://www.spoj.com/problems/POTHOLE/}{[spoj:POTHOLE]}
 dilworth\dilworth.tex:Reservations of taxis \href{https://open.kattis.com/problems/taxicab}{[kattis:taxicab]}
 dilworth\dilworth.tex:Stock Charts  \href{https://code.google.com/codejam/contest/204113/dashboard#s=p2}{[gcj:2009round2C]}
 dilworth\dilworth.tex:Taxi  Cab Scheme \href{https://icpcarchive.ecs.baylor.edu/index.php?option=onlinejudge&page=show_problem&problem=1127}{[icpcarchive:3126]} 
@@ -78,7 +75,7 @@ levenshtein\levenshtein.tex:Philosophers Stone \href{https://www.spoj.com/proble
 levenshtein\levenshtein.tex:Edit distance \href{http://www.spoj.com/problems/EDIST/}{[spoj:EDIST]}
 levenshtein\levenshtein.tex:Advanced Edit Distance \href{http://www.spoj.com/problems/ADVEDIST/}{[spoj:ADVEDIST]}
 longest_common_subsequence\longest_common_subsequence.tex:Longest Common Substring \href{https://www.spoj.com/problems/LCS/}{[spoj:LCS]}\\
-longest_common_subsequence\longest_common_subsequence.tex:Longest Common Subsequence \href{http://www.spoj.com/problems/LCS0/}{[spoj:LCS0]}
+longest_common_subsequence\longest_common_subsequence.tex:%Longest Common Subsequence \href{http://www.spoj.com/problems/LCS0/}{[spoj:LCS0]}
 longest_increasing_subsequence\longest_increasing_subsequence.tex:Easy Longest Increasing Subsequence \href{http://www.spoj.com/problems/ELIS/}{[spoj:ELIS]}
 lowest_common_ancestor\lowest_common_ancestor.tex:Lowest Common Ancestor \href{https://www.spoj.com/problems/LCA/}{[spoj:LCA]}
 manacher\manacher.tex:Longest Palindromic Substring \href{https://www.spoj.com/problems/LPS/}{[spoj:LPS]}
@@ -101,10 +98,10 @@ longest_path_in_tree\plus-long-chemin-arbre.tex:Labyrinth \href{http://www.spoj.
 longest_path_in_tree\plus-long-chemin-arbre.tex:Longest path in a tree \href{http://www.spoj.com/problems/PT07Z/}{[spoj:PT07Z]}
 longest_path_in_tree\plus-long-chemin-arbre.tex:SpeedCameras \href{https://codility.com/programmers/custom_challenge/calcium2015}{[codility:calcium2015]}
 polygon\polygon.tex:Toil for Oil \href{https://www.spoj.com/problems/OIL/}{[spoj:OIL]}
-powerstring\powerstring.tex:Power strings \href{https://open.kattis.com/problems/powerstrings}{[kattis:powerstrings]}
-powerstring\powerstring.tex:Period \href{http://www.spoj.com/problems/PERIOD/}{[spoj:PERIOD]}
+powerstring\powerstring.tex:%Power strings \href{https://open.kattis.com/problems/powerstrings}{[kattis:powerstrings]}
+powerstring\powerstring.tex:%Period \href{http://www.spoj.com/problems/PERIOD/}{[spoj:PERIOD]}
 predictive_text\predictive_text.tex:T9 \href{http://poj.org/problem?id=1451}{[poj:1451]}
-prog-dyn\prog-dyn.tex:Fibonacci Sum \href{https://www.spoj.com/problems/FIBOSUM/}{[spoj:FIBOSUM]}
+dynamic_programming\prog-dyn.tex:Fibonacci Sum \href{https://www.spoj.com/problems/FIBOSUM/}{[spoj:FIBOSUM]}
 rabin_karp\rabin_karp.tex:Longest Common Substring \href{https://www.spoj.com/problems/LCS/}{[spoj:LCS]}
 range_minimum_query\range_minimum_query.tex:Negative Score \href{https://www.spoj.com/problems/RPLN/}{[spoj:RPLN]}
 rectangles_from_grid\rectangles_from_grid.tex:%Largest Rectangle in a Histogram \href{https://www.spoj.com/problems/HISTOGRA/}{[spoj:HISTOGRA]}
@@ -119,14 +116,14 @@ structures\structures.tex:A concrete simulation \href{http://www.spoj.com/proble
 structures\structures.tex:Havannah \href{https://code.google.com/codejam/contest/1835486/dashboard#s=p1}{[gcj:2013round3B]}
 subsetsum\subsetsum.tex:Boat Burglary \href{https://www.spoj.com/problems/BURGLARY/}{[spoj:BURGLARY]}
 sudoku\sudoku.tex:Easy sudoku \href{http://www.spoj.com/problems/EASUDOKU/}{[spoj:EASUDOKU]}
-sudoku\sudoku.tex:Sudoku  \href{http://www.spoj.com/problems/SUDOKU/}{[spoj:SUDOKU]}
+sudoku\sudoku.tex:%Sudoku  \href{http://www.spoj.com/problems/SUDOKU/}{[spoj:SUDOKU]}
 sweepline\sweepline.tex:Back to the future \href{https://prologin.org/train/2012/semifinal/retour_vers_le_futur}{[prologin:demi2012]}
 topological_order\topological_order.tex:Topological Sorting \href{https://www.spoj.com/problems/TOPOSORT/}{[spoj:TOPOSORT]}
 topological_order\topological_order.tex:Project File Dependencies \href{http://www.spoj.com/problems/PFDEP/}{[spoj:PFDEP]}
 topological_order\topological_order.tex:All Disks Considered \href{https://www.spoj.com/problems/ALL/}{[spoj:ALL]}}
 traveling_salesman\traveling_salesman.tex:Small TSP \href{https://www.spoj.com/problems/STSP/}{[spoj:STSP]}
 traveling_salesman\traveling_salesman.tex:Collecting Beepers \href{https://open.kattis.com/problems/beepers}{[kattis:beepers]}
-traveling_salesman\traveling_salesman.tex:See \href{https://www.spoj.com/problems/MENUTOUR/}{[spoj:MENUTOUR]}.
+traveling_salesman\traveling_salesman.tex:Menu tour \href{https://www.spoj.com/problems/MENUTOUR/}{[spoj:MENUTOUR]}.
 sorting\tri.tex:Spelling Lists \href{https://www.spoj.com/problems/MIB/}{[spoj:MIB]}\\
 sorting\tri.tex:Yodaness Level \href{https://www.spoj.com/problems/YODANESS/}{[spoj:YODANESS]}
 trie\trie.tex: Spell checker \href{https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1873}{[icpcarchive:3872]}

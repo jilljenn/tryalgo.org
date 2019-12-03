@@ -70,7 +70,7 @@ for line in stdin:
     tab = pattern.match(line)
     if tab is not None:
         # print(tab[1], tab[2], tab[3], tab[4])
-        chapter = tab[1]
+        chapter = tab[1].replace("_"," ")
         name = tab[2].strip()
         links = [(tab[3], tab[4])]
         if name[0] == "%":
