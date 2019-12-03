@@ -4,7 +4,7 @@ category: graphs
 title: "Encoding edges by weights"
 author: Christoph Dürr
 problems:
-    "battledev:nov2019,DevOps":  https://r.email1.hellowork.com/tr/cl/ltXrRbtTi9k-rr4pmNMgd-gwMfqWwikSutVdUS3j0H75avh-cv38HxRPVPsz2GNmmDF3m8J2A7oGQXx-GO5VapKBz66KeJXCJenx8ByhAYbMgHzufaipyjTDHit-p8Y1VPDgFAUBfQC1VGDLCrXBNnWCRBdWtgC_q4im7XXFNzsJfi24CN9e11cNs2_IfaTua5ItxhkYATp-EhLXeX6Rmw
+    "battledev:nov2019,DevOps":  https://www.isograd.com/FR/solutionconcours.php?contest_id=49&que_str_id=&reg_typ_id=2
 ---
 
 # Warning
