@@ -22,7 +22,7 @@ In addition y should be minimized.
 
 # Properties
 
-The key observation is that the inequality x[u] + x[v] > y is monotone in x[v]. Hence the neighborhoods N of two vertices v and v', must be included in each other. This statement is a bit subtle as v or v' could be missing from one of the neighborhoods, because the graph has no self-loops. So the precise statement is, using N[v]:={u:(u,v) ∈ E} and d(v)=|N[v]|,
+The key observation is that the inequality x[u] + x[v] > y is monotone in x[v]. Hence the neighborhoods N of two vertices v and v', must be included in each other. This statement is a bit subtle as v or v' could be missing from one of the neighborhoods, because the graph has no self-loops. So the precise statement is, using $N[v]:=\{u:(u,v) \in E\}$ and $d(v)=|N[v]|$,
 
 - for any two vertices v, v' with d(v)≤d(v') we have $N[v]\setminus\{v'\} \subseteq N[v']$.
 
