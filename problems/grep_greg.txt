@@ -1,0 +1,136 @@
+anagrams\anagrams.tex:Anagram verifier \href{https://www.spoj.com/problems/ANGRAM/}{[spoj:ANGRAM]}
+arithm_expr_eval\arithm_expr_eval.tex:Boolean Logic \href{https://www.spoj.com/problems/BOOLE/}{[spoj:BOOLE]}
+arithm_expr_eval\arithm_expr_eval.tex:Arithmetic Expressions \href{https://www.spoj.com/problems/AREX/}{[spoj:AREX]}
+arithm_expr_eval\arithm_expr_eval.tex:Cells \href{http://www.spoj.com/problems/IPCELLS/}{[spoj:IPCELLS]}
+bellman_ford\bellman_ford.tex:Negative Cycles \href{http://www.spoj.com/problems/NEGCYC/}{[spoj:NEGCYC]}
+bfs\bfs.tex:Hike on a Graph \href{http://www.spoj.com/problems/HIKE/}{[spoj:HIKE]}
+bfs\bfs.tex:Prime Path \href{http://www.spoj.com/problems/HIKE/}{[spoj:PPATH]}
+biconnected_components\biconnected_components.tex:Police Query \href{https://www.spoj.com/problems/POLQUERY/}{[spoj:POLQUERY]}
+binary_search\binary_search.tex:Fill the cisterns \href{http://www.spoj.com/problems/CISTFILL/}{[spoj:CISTFILL]}
+binary_search\binary_search.tex:Egg Drop \href{https://code.google.com/codejam/contest/32003/dashboard#s=p2}{[gcj:eggdrop]}
+bipartite_matching\bipartite_matching.tex:Crime Wave \href{https://icpcarchive.ecs.baylor.edu/index.php?option=onlinejudge&page=show_problem&problem=3585}{[icpcarchive:5584]}
+bipartite_matching\bipartite_matching.tex:Dungeon of Death \href{http://www.spoj.com/problems/QUEST4/}{[spoj:QUEST4]}
+bipartite_matching\bipartite_matching.tex:Muddy Fields \href{http://www.spoj.com/problems/MUDDY/}{[spoj:MUDDY]}
+bipartite_matching\bipartite_matching.tex:Mission Improbable \href{https://open.kattis.com/problems/improbable}{[kattis:improbable]}}
+brute_force\brute_force.tex:% Mirror Maze \href{http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=194}{[uva:258]}
+closest_points\closest_points.tex:Closest Point Pair \href{https://www.spoj.com/problems/CLOPPAIR/}{[spoj:CLOPPAIR]}
+closest_points\closest_points.tex:Closest Triplet \href{https://www.spoj.com/problems/CLOSEST/}{[spoj:CLOSEST]}
+connected_components\connected_components.tex:The Ant \href{http://www.spoj.com/problems/ANTTT/}{[spoj:ANTTT]}
+connected_components\connected_components.tex:Lego \href{https://www.spoj.com/problems/LEGO/}{[spoj:LEGO]}
+conseils\conseils.tex:See \href{https://icpcarchive.ecs.baylor.edu/index.php?option=onlinejudge&page=show_problem&problem=6176}{[icpcarchive:8154]}.
+convex_hull\convex_hull.tex:Doors and Penguins \href{https://www.spoj.com/problems/DOORSPEN/}{[spoj:DOORSPEN]}
+convex_hull\convex_hull.tex:Build the Fence \href{https://www.spoj.com/problems/BSHEEP/}{[spoj:BSHEEP]}
+convex_hull\convex_hull.tex:See \href{https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&category=783&page=show_problem&problem=6177}{[icpcarchive:8155]}.
+convex_hull\convex_hull_fr.tex:Herding Frosh \href{https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=13&page=show_problem&problem=1076}{[UVa:10135]},
+convex_hull\convex_hull_fr.tex:Build the Fence \href{https://www.spoj.com/problems/BSHEEP/}{[spoj:BSHEEP]}
+convex_hull\convex_hull_fr.tex:See \href{https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&category=783&page=show_problem&problem=6177}{[icpcarchive:8155]}.
+dancing_links\dancing_links.tex:Sudoku \href{https://www.spoj.com/problems/SUDOKU/}{[spoj:SUDOKU]}
+dancing_links\dancing_links.tex:Making Jumps \href{https://www.spoj.com/problems/MKJUMPS/}{[spoj:MKJUMPS]}
+data_1d\data_1d.tex:Unique Encryption Keys \href{https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=3892}{[icpcarchive:5881]}
+dfs\dfs.tex:ABC Path \href{https://www.spoj.com/problems/ABCPATH/}{[spoj:ABCPATH]}
+dfs\dfs.tex:A Bug’s Life \href{https://www.spoj.com/problems/BUGLIFE/}{[spoj:BUGLIFE]}
+dijkstra\dijkstra.tex:Mice and Maze \href{https://www.spoj.com/problems/MICEMAZE/}{[spoj:MICEMAZE]}\\
+dijkstra\dijkstra.tex:Almost Shortest Path \href{https://www.spoj.com/problems/SAMER08A/}{[spoj:SAMER08A]} \\
+dijkstra\dijkstra.tex:Dragon Maze \href{https://code.google.com/codejam/contest/2929486/dashboard#s=p3}{[gcj:China2014roundB]} \\
+dijkstra\dijkstra.tex:Potholers \href{https://www.spoj.com/problems/POTHOLE/}{[spoj:POTHOLE]}
+dilworth\dilworth.tex:Reservations of taxis \href{https://open.kattis.com/problems/taxicab}{[kattis:taxicab]}
+dilworth\dilworth.tex:Stock Charts  \href{https://code.google.com/codejam/contest/204113/dashboard#s=p2}{[gcj:2009round2C]}
+dilworth\dilworth.tex:Taxi  Cab Scheme \href{https://icpcarchive.ecs.baylor.edu/index.php?option=onlinejudge&page=show_problem&problem=1127}{[icpcarchive:3126]} 
+dinic\dinic.tex:% Maximum Flow \href{http://www.spoj.com/A12/problems/FLOW/}{[spoj:FLOW]},
+dinic\dinic.tex:Fast Maximum Flow \href{http://www.spoj.com/problems/FASTFLOW/}{[spoj:FASTFLOW]}
+dist_grid\dist_grid.tex:% Finding Nemo \href{http://acm.tju.edu.cn/toj/showp1091.html}{[tju:1091]},
+dist_grid\dist_grid.tex:A Famous Grid \href{http://www.spoj.com/problems/SPIRALGR/}{[spoj:SPIRALGR]}
+input_output\entree-sortie.tex:Enormous Input Test \href{http://www.spoj.com/problems/INTEST/}{[spoj:INTEST]}
+eratosthene\eratosthene.tex:The Spiral of Primes \href{https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&category=79&page=show_problem&problem=121}{[icpcarchive:2120]}
+eratosthene\eratosthene.tex:Prime or Not \href{https://www.spoj.com/problems/PON/}{[spoj:PON]}
+eratosthene\eratosthene.tex:Bazinga! \href{https://www.spoj.com/problems/DCEPC505/}{[spoj:DCEPC505]}
+eulerian_tour\eulerian_tour.tex:Goldbach graphs \href{http://www.spoj.com/problems/GOLDG/}{[spoj:GOLDG]}
+eulerian_tour\eulerian_tour.tex:Free Tour \href{http://www.spoj.com/problems/FTOUR/}{[spoj:FTOUR]}
+fast_exponentiation\fast_exponentiation.tex:The last digit \href{https://www.spoj.com/problems/LASTDIG/}{[spoj:LASTDIG]}
+fast_exponentiation\fast_exponentiation.tex:Tiling a Grid With Dominoes \href{http://www.spoj.com/problems/GNY07H/}{[spoj:GNY07H]}
+floyd_warshall\floyd_warshall.tex:Roads in Berland \href{http://www.spoj.com/problems/CT25C/}{[spoj:CT25C]}} 
+ford_fulkerson\ford_fulkerson.tex:Potholers \href{https://www.spoj.com/problems/POTHOLE/}{[spoj:POTHOLE]}
+ford_fulkerson\ford_fulkerson.tex:Maximum Flow \href{https://www.spoj.com/A12/problems/FLOW/}{[spoj:FLOW]}
+gale_shapley\gale_shapley.tex:Stable Marriage Problem \href{http://www.spoj.com/problems/STABLEMP/}{[spoj:STABLEMP]}
+gauss_jordan\gauss_jordan.tex:Ars Longa  \href{https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&category=18&page=show_problem&problem=1564}{[icpcarchive:3563]}
+gauss_jordan\gauss_jordan.tex:Linear Equation Solver \href{https://www.spoj.com/problems/LINQSOLV/}{[spoj:LINQSOLV]}
+greedy\glouton.tex:Minimum Scalar Product \href{https://code.google.com/codejam/contest/32016/dashboard}{[gcj:2008round1A]}
+greedy\glouton.tex:Minimal Coverage \href{https://acm.timus.ru/problem.aspx?space=1&num=1303}{[timus:1303]}
+graph01\graph01.tex:KATHTHI \href{https://www.spoj.com/problems/KATHTHI/}{[spoj:KATHTHI]}
+huffman\huffman.tex:Huffman Trees \href{http://poj.org/problem?id=1261}{[poj:1261]}
+huffman\huffman.tex:Variable Radix Huffman Encoding \href{http://www.spoj.com/problems/VHUFFM/}{[spoj:VHUFFM]}
+intervals_cover\intervals_cover.tex:Radar Installation \href{https://onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=3634}{[onlinejudge:1193]}
+intro\intro-conclusion.tex:It can be arranged \href{https://open.kattis.com/problems/itcanbearranged}{[kattis:itcanbearranged]}
+intro\intro-graphes.tex:Ricochet Robots \href{https://open.kattis.com/problems/ricochetrobots}{[kattis:ricochetrobots]}
+k-sum\k-sum.tex:4 Values whose Sum is 0 \href{http://poj.org/problem?id=2785}{[poj:2785]}
+kadane\kadane.tex:Maximum Sum Sequences \href{https://www.spoj.com/problems/MAXSUMSQ/}{[spoj:MAXSUMSQ]}
+kadane\kadane.tex:Largest Rectangle \href{https://www.codechef.com/problems/LARGEST}{[codechef:LARGEST]}
+knapsack\knapsack.tex:The Knapsack Problem \href{https://www.spoj.com/problems/KNAPSACK/}{[spoj:KNAPSACK]}
+knapsack\knapsack.tex:Knapsack \href{https://www.spoj.com/problems/KNPSACK/}{[spoj:KNPSACK]}
+knuth_morris_pratt\knuth_morris_pratt.tex:Find the maximal product of string prefixes \href{https://codility.com/programmers/challenges/carbo2013}{[codility:carbo2013]}
+knuth_morris_pratt\knuth_morris_pratt.tex:A Needle in the Haystack \href{http://www.spoj.com/problems/NHAY/}{[spoj:NHAY]}
+knuth_morris_pratt\knuth_morris_pratt.tex:Power strings \href{https://open.kattis.com/problems/powerstrings}{[kattis:powerstrings]}
+knuth_morris_pratt\knuth_morris_pratt.tex:Period \href{https://www.spoj.com/problems/PERIOD/}{[spoj:PERIOD]}
+kruskal\kruskal.tex:Cobbled streets \href{https://www.spoj.com/problems/CSTREET/}{[spoj:CSTREET]}
+kruskal\kruskal.tex:Minimum Spanning Tree \href{https://www.spoj.com/problems/MST/}{[spoj:MST]}
+kuhn_munkres\kuhn_munkres.tex:Selfish Cities \href{http://www.spoj.com/problems/SCITIES/}{[spoj:SCITIES]}
+levenshtein\levenshtein.tex:Philosophers Stone \href{https://www.spoj.com/problems/MIXTURES/}{[spoj:BYTESM2]}
+levenshtein\levenshtein.tex:Edit distance \href{http://www.spoj.com/problems/EDIST/}{[spoj:EDIST]}
+levenshtein\levenshtein.tex:Advanced Edit Distance \href{http://www.spoj.com/problems/ADVEDIST/}{[spoj:ADVEDIST]}
+longest_common_subsequence\longest_common_subsequence.tex:Longest Common Substring \href{https://www.spoj.com/problems/LCS/}{[spoj:LCS]}\\
+longest_common_subsequence\longest_common_subsequence.tex:Longest Common Subsequence \href{http://www.spoj.com/problems/LCS0/}{[spoj:LCS0]}
+longest_increasing_subsequence\longest_increasing_subsequence.tex:Easy Longest Increasing Subsequence \href{http://www.spoj.com/problems/ELIS/}{[spoj:ELIS]}
+lowest_common_ancestor\lowest_common_ancestor.tex:Lowest Common Ancestor \href{https://www.spoj.com/problems/LCA/}{[spoj:LCA]}
+manacher\manacher.tex:Longest Palindromic Substring \href{https://www.spoj.com/problems/LPS/}{[spoj:LPS]}
+manacher\manacher.tex:Casting Spells \href{https://open.kattis.com/problems/castingspells}{[kattis:castingspells]} 
+matrix_chain_mult\matrix_chain_mult.tex:Mixtures \href{http://www.spoj.com/problems/MIXTURES/}{[spoj:Mixtures]}
+matrix_chain_mult\matrix_chain_mult.tex:The Safe Secret \href{https://open.kattis.com/problems/safesecret}{[kattis:safesecret]}
+matrix_chain_mult\matrix_chain_mult.tex:Sweet and Sour Rock \href{http://www.spoj.com/problems/ROCK/}{[spoj:ROCK]}
+merge_ordered_lists\merge_ordered_lists.tex:Mergesort \href{https://www.spoj.com/problems/MERGSORT/}{[spoj:MERGSORT]}
+min_cut\min_cut.tex:Landscaping \href{https://open.kattis.com/problems/landscaping}{[kattis:landscaping]}
+min_cut\min_cut.tex:Coconuts \href{https://www.spoj.com/problems/COCONUTS/}{[spoj:COCONUTS]}}
+min_mean_cycle\min_mean_cycle.tex:Word Rings \href{http://www.spoj.com/problems/WORDRING/}{[spoj:WORDRING]}
+next_permutation\next_permutation.tex:% GREAT+SWERC=PORTO \href{http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=4742}{[uva:12877]},
+next_permutation\next_permutation.tex:% Anagram \href{http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=131}{[uva:195]}
+next_permutation\next_permutation.tex:The Next Permutation \href{https://www.spoj.com/PUJ2013/problems/NEXT/}{[spoj:NEXT]}
+next_permutation\next_permutation.tex:Great Swerc \href{https://www.spoj.com/problems/SWERC14A/}{[spoj:SWERC14A]}
+shortest_paths_variants\plus-courts-chemins-variantes.tex:% Heavy Cargo \href{http://acm.tju.edu.cn/toj/showp1172.html}{[tju:1172]}
+shortest_paths_variants\plus-courts-chemins-variantes.tex:Almost Shortest Path \href{https://www.spoj.com/problems/SAMER08A/}{[spoj:SAMER08A]}
+shortest_paths_variants\plus-courts-chemins-variantes.tex:Flowery Trails \href{https://open.kattis.com/problems/flowerytrails}{[kattis:flowerytrails]}
+longest_path_in_tree\plus-long-chemin-arbre.tex:Labyrinth \href{http://www.spoj.com/problems/LABYR1/}{[spoj:LABYR1]}
+longest_path_in_tree\plus-long-chemin-arbre.tex:Longest path in a tree \href{http://www.spoj.com/problems/PT07Z/}{[spoj:PT07Z]}
+longest_path_in_tree\plus-long-chemin-arbre.tex:SpeedCameras \href{https://codility.com/programmers/custom_challenge/calcium2015}{[codility:calcium2015]}
+polygon\polygon.tex:Toil for Oil \href{https://www.spoj.com/problems/OIL/}{[spoj:OIL]}
+powerstring\powerstring.tex:Power strings \href{https://open.kattis.com/problems/powerstrings}{[kattis:powerstrings]}
+powerstring\powerstring.tex:Period \href{http://www.spoj.com/problems/PERIOD/}{[spoj:PERIOD]}
+predictive_text\predictive_text.tex:T9 \href{http://poj.org/problem?id=1451}{[poj:1451]}
+prog-dyn\prog-dyn.tex:Fibonacci Sum \href{https://www.spoj.com/problems/FIBOSUM/}{[spoj:FIBOSUM]}
+rabin_karp\rabin_karp.tex:Longest Common Substring \href{https://www.spoj.com/problems/LCS/}{[spoj:LCS]}
+range_minimum_query\range_minimum_query.tex:Negative Score \href{https://www.spoj.com/problems/RPLN/}{[spoj:RPLN]}
+rectangles_from_grid\rectangles_from_grid.tex:%Largest Rectangle in a Histogram \href{https://www.spoj.com/problems/HISTOGRA/}{[spoj:HISTOGRA]}
+rectangles_from_histogram\rectangles_from_histogram.tex:Largest Rectangle in a Histogram \href{https://www.spoj.com/problems/HISTOGRA/}{[spoj:HISTOGRA]}
+rectangles_from_histogram\rectangles_from_histogram.tex:Galerie d'art \href{https://prologin.org/train/2012/semifinal/galerie}{[prologin:2012:galerie]}
+rectangles_from_points\rectangles_from_points.tex:Rectangle \href{https://www.spoj.com/problems/HMSRECT/}{[spoj:HMSRECT]}
+squares_from_grid\squares_from_grid.tex:Making Chess Boards \href{https://www.spoj.com/problems/CT101CC/}{[spoj:CT101CC]}
+strongly_connected_components\strongly_connected_components.tex:Capital City \href{http://www.spoj.com/problems/CAPCITY/}{[spoj:CAPCITY]}
+structures\structures.tex:Encryption \href{https://www.spoj.com/problems/CENCRY/}{[spoj:CENCRY]}
+structures\structures.tex:Phone List \href{http://www.spoj.com/problems/PHONELST/}{[spoj:PHONELST]}
+structures\structures.tex:A concrete simulation \href{http://www.spoj.com/problems/ACS/}{[spoj:ACS]}
+structures\structures.tex:Havannah \href{https://code.google.com/codejam/contest/1835486/dashboard#s=p1}{[gcj:2013round3B]}
+subsetsum\subsetsum.tex:Boat Burglary \href{https://www.spoj.com/problems/BURGLARY/}{[spoj:BURGLARY]}
+sudoku\sudoku.tex:Easy sudoku \href{http://www.spoj.com/problems/EASUDOKU/}{[spoj:EASUDOKU]}
+sudoku\sudoku.tex:Sudoku  \href{http://www.spoj.com/problems/SUDOKU/}{[spoj:SUDOKU]}
+sweepline\sweepline.tex:Back to the future \href{https://prologin.org/train/2012/semifinal/retour_vers_le_futur}{[prologin:demi2012]}
+topological_order\topological_order.tex:Topological Sorting \href{https://www.spoj.com/problems/TOPOSORT/}{[spoj:TOPOSORT]}
+topological_order\topological_order.tex:Project File Dependencies \href{http://www.spoj.com/problems/PFDEP/}{[spoj:PFDEP]}
+topological_order\topological_order.tex:All Disks Considered \href{https://www.spoj.com/problems/ALL/}{[spoj:ALL]}}
+traveling_salesman\traveling_salesman.tex:Small TSP \href{https://www.spoj.com/problems/STSP/}{[spoj:STSP]}
+traveling_salesman\traveling_salesman.tex:Collecting Beepers \href{https://open.kattis.com/problems/beepers}{[kattis:beepers]}
+traveling_salesman\traveling_salesman.tex:See \href{https://www.spoj.com/problems/MENUTOUR/}{[spoj:MENUTOUR]}.
+sorting\tri.tex:Spelling Lists \href{https://www.spoj.com/problems/MIB/}{[spoj:MIB]}\\
+sorting\tri.tex:Yodaness Level \href{https://www.spoj.com/problems/YODANESS/}{[spoj:YODANESS]}
+trie\trie.tex: Spell checker \href{https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1873}{[icpcarchive:3872]}
+two_sat\two_sat.tex:Manhattan \href{https://open.kattis.com/problems/manhattan}{[kattis:manhattan]}
+two_sat\two_sat.tex:Soldiers on Parade \href{http://www.spoj.com/problems/SOPARADE/}{[spoj:SOPARADE]}
+union_disjoint_rectangles\union_disjoint_rectangles.tex:City Park  \href{https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&category=657&page=show_problem&problem=4901}{[icpcarchive:6889]}
+windows_k_distinct\windows_k_distinct.tex:Épiphanie \href{https://prologin.org/train/2011/semifinal/epiphanie}{[prologin:2011:epiphanie]}
