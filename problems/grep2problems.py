@@ -58,11 +58,9 @@ def print_problem(chapter, name, order, links):
         print()
     elif mode == "show":
         # print('<tr><td>{}</td><td>{}</td><td>{}</td><td>{}</td></tr>'.format(chapter, diff, name, judge))
-        print("<table>")
         print('<tr><td>{}</td><td>{}</td><td>{}</td></tr>'.format(chapter, name, judge))
     else:   
         # print('<tr><td>{}</td><td>{}</td><td>{}</td></tr>'.format(diff, name, judge))
-        print("<table>")
         print('<tr><td>{}</td><td>{}</td></tr>'.format(name, judge))
 
 
