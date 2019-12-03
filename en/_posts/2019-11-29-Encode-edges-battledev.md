@@ -9,7 +9,7 @@ problems:
 
 # Warning
 
-This post describes a solution to the problem stated in the above link. However it will not be accepted by the judge, because the intended problem was a different one.  In the stated problem the condition is that `x[u]+x[v]>y` if and only if (u,v) is an edge. In the intended problem, the condition should be that `sum x[u] over all u in S > y` if and only if `S` is a clique in the graph. The solution to the intended problem is described [here](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.228.76&rep=rep1&type=pdf).
+This post describes a solution to the problem stated in the above link. However it will not be accepted by the judge, because the intended problem was a different one.  In the stated problem the condition is that `x[u]+x[v]>y` if and only if (u,v) is an edge. In the intended problem, the condition should be that $\sum_{u\in S} x[u] > y` if and only if $S\subseteq V$ is a clique in the graph. The solution to the intended problem is described [here](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.228.76&rep=rep1&type=pdf).
 
 # Problem statememt
 
@@ -22,11 +22,11 @@ In addition y should be minimized.
 
 # Properties
 
-The key observation is that the inequality x[u] + x[v] > y is monotone in x[v]. Hence the neighborhoods N of two vertices v and v', must be included in each other. This statement is a bit subtle as v or v' could be missing from one of the neighborhoods, because the graph has no self-loops. So the precise statement is, using $N[v]:=\{u:(u,v) \in E\}$ and $d(v)=|N[v]|$,
+The key observation is that the inequality x[u] + x[v] > y is monotone in x[v]. Hence the neighborhoods N of two vertices v and v', must be included in each other. This statement is a bit subtle as v or v' could be missing from one of the neighborhoods, because the graph has no self-loops. So the precise statement is, using $N[v]:=\{u:(u,v) \in E\}$ and $d(v)=\|N[v]\|$,
 
 - for any two vertices v, v' with d(v)≤d(v') we have $N[v]\setminus\{v'\} \subseteq N[v']$.
 
-So we have a necessary condition which we can check in time $O(|V|^2)$, by ordering first the vertices in increasing degree, and checking inclusion of every two successive vertices in this order. The complexity is ok, given the bound $|V|\leq 1000$ from the problem statement.
+So we have a necessary condition which we can check in time $O(\|V\|^2)$, by ordering first the vertices in increasing degree, and checking inclusion of every two successive vertices in this order. The complexity is ok, given the bound $\|V\|\leq 1000$ from the problem statement.
 
 I claim that the condition is also sufficient. Consider the adjacency matrix of the given graph, using the degree ordering of the vertices. 
 
