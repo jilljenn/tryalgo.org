@@ -71,12 +71,12 @@ for line in stdin:
     if tab is not None:
         # print(tab[1], tab[2], tab[3], tab[4])
         chapter = tab[1]
-        name = tab[2]
+        name = tab[2].strip()
         links = [(tab[3], tab[4])]
-        print_problem(chapter, name, None, links)
-        if tab[2][0] == "%":
+        if name[0] == "%":
             # ignore commented out problems
             continue
+        print_problem(chapter, name, None, links)
         if test_urls:
             for url, code in links:
                 dt = time.time()
