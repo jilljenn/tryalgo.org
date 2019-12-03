@@ -21,7 +21,7 @@ conseils\conseils.tex:See \href{https://icpcarchive.ecs.baylor.edu/index.php?opt
 convex_hull\convex_hull.tex:Doors and Penguins \href{https://www.spoj.com/problems/DOORSPEN/}{[spoj:DOORSPEN]}
 convex_hull\convex_hull.tex:Build the Fence \href{https://www.spoj.com/problems/BSHEEP/}{[spoj:BSHEEP]}
 convex_hull\convex_hull.tex:See \href{https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&category=783&page=show_problem&problem=6177}{[icpcarchive:8155]}.
-convex_hull\convex_hull_fr.tex:Herding Frosh \href{https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=13&page=show_problem&problem=1076}{[UVa:10135]},
+convex_hull\convex_hull_fr.tex:%Herding Frosh \href{https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=13&page=show_problem&problem=1076}{[UVa:10135]},
 convex_hull\convex_hull_fr.tex:Build the Fence \href{https://www.spoj.com/problems/BSHEEP/}{[spoj:BSHEEP]}
 convex_hull\convex_hull_fr.tex:See \href{https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&category=783&page=show_problem&problem=6177}{[icpcarchive:8155]}.
 dancing_links\dancing_links.tex:Sudoku \href{https://www.spoj.com/problems/SUDOKU/}{[spoj:SUDOKU]}
