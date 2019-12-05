@@ -89,8 +89,28 @@ Voici une liste de codes à lire: (j'ai regardé beacoup de collections de codes
 
 # Jeudi 5 décembre
 
+12:45 - 14:15
+
+- [BattleDev - dernier problème](https://tryalgo.org/en/graphs/2019/11/29/Encode-edges-battledev/)
 - [test de compatibilité entre groupes sangins](https://projectlovelace.net/problems/blood-types/)
+- [Power strings](https://open.kattis.com/problems/powerstrings) ou [Period](https://open.kattis.com/problems/powerstrings)
+- [compter les inversions dans une permutation](https://tryalgo.org/en/permutations/2016/11/11/counting-inversions/)
+
+
+Exercices à discuter lors d'une prochaine rencontre:
+
+- [spoj:NEXTPERM](http://www.spoj.com/SHORTEN/problems/NEXTPERM/) — c'est une [fonction](https://en.cppreference.com/w/cpp/algorithm/next_permutation) toute faite déjà dans la STL de C++
+- [poj:Traffic Jam](http://poj.org/problem?id=1817)
+- [uva:Corner the Queen](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=2835)
+- [Pipelines](https://www.spoj.com/HSPL10/problems/HS10PPL/)
+
+
+# un jour : 
+
 - [couplage biparti à profit maximal](https://fr.wikipedia.org/wiki/Algorithme_hongrois)
+- [KMP](https://fr.wikipedia.org/wiki/Algorithme_de_Knuth-Morris-Pratt)
+
+
 
 
 
