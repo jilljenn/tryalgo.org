@@ -96,7 +96,7 @@ Voici une liste de codes à lire: (j'ai regardé beacoup de collections de codes
 - [Power strings](https://open.kattis.com/problems/powerstrings) ou [Period](https://open.kattis.com/problems/powerstrings)
 - [compter les inversions dans une permutation](https://tryalgo.org/en/permutations/2016/11/11/counting-inversions/)
 - énigme du transport de carottes. On a 3000 carottes en un point A et on veut les transporter au point B. Ces points sont à distance de 1000 mètres. Le transport peut se faire avec un âne, qui peut porter au plus 1000 carottes, mais consomme une carotte par mètre parcouru. On a la possibilité de déposer des carottes le long du chemin pour les récupérer plus tard. La solution semble vouloir optimiser la quantité transportée sur la quantité consommée.
-On a une [solution](ecs/transport_carottes.png), mais pas encore la preuve d'optimalité.
+On a une [solution](transport_carottes.png), mais pas encore la preuve d'optimalité.
 
 Exercices à discuter lors d'une prochaine rencontre:
 
@@ -110,6 +110,12 @@ Exercices à discuter lors d'une prochaine rencontre:
 
 - [Palindrome in a Tree](https://www.spoj.com/problems/PLNDTREE/) -- par les arbres de Fenwick
 
+Ingrédients:
+
+1. Associer à chaque noeud avec la lettre c, l'entier 1<<(ord(c)-ord('a')), codant sur 26 bits le vecteur caractéristique de la lettre c. Pour un sous-arbre donnée, faire le ou exclusif de ces nombres. Si le résultat est 0 ou une puissance de 2, alors effecivement chaque lettre dans le sous-arbre apparait un nombre paire de fois, sauf peut-être une seule lettre qui apparaît un nombre impair de fois. C'est exactement ce qu'il faut pour former un palindrome.
+2. Calculer cette somme est trop couteux, alors l'idée est d'attribuer des identifiants aux noeuds de l'arbre en plus des numéros données, en prenant l'ordre de visite par un parcours en profondeur. Ainsi les noeuds d'un sous-arbre forment un intervalle parmi les indices. Désormais on peut utiliser un arbre de Fenwick, en utilisant l'opérateur de ou exclusif ^ plutôt que l'addition habituelle.
+
+3. La complexité sera en O(n + m log n).
 
 # un jour : 
 
