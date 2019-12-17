@@ -95,7 +95,8 @@ Voici une liste de codes à lire: (j'ai regardé beacoup de collections de codes
 - [test de compatibilité entre groupes sangins](https://projectlovelace.net/problems/blood-types/)
 - [Power strings](https://open.kattis.com/problems/powerstrings) ou [Period](https://open.kattis.com/problems/powerstrings)
 - [compter les inversions dans une permutation](https://tryalgo.org/en/permutations/2016/11/11/counting-inversions/)
-
+- énigme du transport de carottes. On a 3000 carottes en un point A et on veut les transporter au point B. Ces points sont à distance de 1000 mètres. Le transport peut se faire avec un âne, qui peut porter au plus 1000 carottes, mais consomme une carotte par mètre parcouru. On a la possibilité de déposer des carottes le long du chemin pour les récupérer plus tard. La solution semble vouloir optimiser la quantité transportée sur la quantité consommée.
+On a une [solution](ecs/transport_carottes.png), mais pas encore la preuve d'optimalité.
 
 Exercices à discuter lors d'une prochaine rencontre:
 
@@ -105,13 +106,15 @@ Exercices à discuter lors d'une prochaine rencontre:
 - [Pipelines](https://www.spoj.com/HSPL10/problems/HS10PPL/)
 
 
+# Mardi 17 décembre
+
+- [Palindrome in a Tree](https://www.spoj.com/problems/PLNDTREE/) -- par les arbres de Fenwick
+
+
 # un jour : 
 
 - [couplage biparti à profit maximal](https://fr.wikipedia.org/wiki/Algorithme_hongrois)
 - [KMP](https://fr.wikipedia.org/wiki/Algorithme_de_Knuth-Morris-Pratt)
-
-
-
 
 
 
