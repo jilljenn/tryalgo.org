@@ -117,10 +117,27 @@ Ingrédients:
 
 3. La complexité sera en O(n + m log n).
 
-# un jour : 
+# Lundi 6 janvier 14 - 15 
 
 - [couplage biparti à profit maximal](https://fr.wikipedia.org/wiki/Algorithme_hongrois)
 - [KMP](https://fr.wikipedia.org/wiki/Algorithme_de_Knuth-Morris-Pratt)
+
+# Samedi 11 janvier 14 - 17 Starbucks les Halles
+
+- [SWERC 2009](http://pc.fdi.ucm.es/swerc/swerc09/problems.php)
+
+# Mardi 14 janvier 12h30 - 13h30
+
+- [le test de Freivalds](https://fr.wikipedia.org/wiki/Algorithme_de_Freivalds) ---
+Propriété clé. Si on choisit un nombre uniformément au hasard dans $Z_p$,
+alors il sera égal à une valeur fixée avec probabilité $1/p$. Considérons la
+matrice $M = AB-C$, et une ligne $i$ non nulle dans $M$. Soit $j$ la dernière
+colonne avec $M_{ij}$ non nul. Alors pour $x_1,\ldots,x_{j-1}$ fixé, avec
+probabilité $1/p$ la valeur de $x_j$ sera choisi tel que $M x$ est nul dans
+l'entrée à l'indice $i$. Donc il semble que la probabilité d'un faux positif soit $1/p^\ell$ où $\ell$ est le nombre de lignes non nulles dans $M$.
+- [Algorithme de Rabin-Karp](https://www.geeksforgeeks.org/rabin-karp-algorithm-for-pattern-searching/) -- ideal pour trouver en temps linéaire espéré si une grande chaîne x contient une des chaînes $y_1,\ldots,y_k$ (qui doivent avoir la même longueur).
+
+# Samedi 18 janvier 10 - 17 LIP6 à Jussieu
 
 
 
