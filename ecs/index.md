@@ -139,7 +139,9 @@ l'entrée à l'indice $i$. Donc il semble que la probabilité d'un faux positif 
 
 # Samedi 18 janvier 10 - 17 LIP6 à Jussieu
 
-
+- [Le théorème de Sprague-Grundy](https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_Sprague-Grundy)
+- Résoudre un système d'équation linéaire par triangulation de Gauss-Jordan. [Ars Longa](https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&category=18&page=show_problem&problem=1564)
+- [Construire un arbre syntaxique](https://jilljenn.github.io/tryalgo/tryalgo/tryalgo.html#module-tryalgo.arithm_expr_eval)
 
 -----------------------------
 
