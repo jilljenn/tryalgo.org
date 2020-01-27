@@ -3,6 +3,8 @@ layout: page
 title: Ecole Centrale Supélec s'entraîne
 ---
 
+Entrainement pendant l'année scolaire 2019-2020 à l'école centrale supélec.
+
 # Lundi 14 oct 2019, 13-15:30
 
 Présents : Christoph, Adnane, Victor, Francisco.
@@ -142,6 +144,12 @@ l'entrée à l'indice $i$. Donc il semble que la probabilité d'un faux positif 
 - [Le théorème de Sprague-Grundy](https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_Sprague-Grundy)
 - Résoudre un système d'équation linéaire par triangulation de Gauss-Jordan. [Ars Longa](https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&category=18&page=show_problem&problem=1564)
 - [Construire un arbre syntaxique](https://jilljenn.github.io/tryalgo/tryalgo/tryalgo.html#module-tryalgo.arithm_expr_eval)
+
+# Weekend du 25 janvier
+
+Pas de médaille cette année, mais on a fait une bonne performance pendant la séance d'entrainement, et aussi pendants d'autres compétitions qui ont eu lieu pendant l'année (par exemple, on a atteint le rang 7 sur 5334 pendant la compétition *battledev*.)
+
+![SWERC 2019 classement échauffement](swerc_2019_rehearsal.jpg)
 
 -----------------------------
 

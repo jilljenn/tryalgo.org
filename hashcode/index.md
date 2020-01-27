@@ -86,3 +86,4 @@ Je chercherait à déterminer dans H une solution partielle connexe.  Si S est l
 
 Puis pour terminer je ferais de la recherche locale.  Choisir 2,3 cases et voir si une permutation améliore le score.
 
+--- Christoph Dürr

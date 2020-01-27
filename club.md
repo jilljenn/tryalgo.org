@@ -29,3 +29,8 @@ vendredi 9 décembre 2016 à 19 h
 - [Tous nos articles](/fr/)
 - [Workshop d'optimisation du 6 février 2016]({% post_url fr/2016-02-06-workshop-algo %})
 - [Ateliers Python à l'ENS Cachan](/atelier-python/)
+- [Préparation spécifique à ICPC](/acm/)
+
+# Entrainement à l'Ecole Centrale Supélec
+
+- C'est [ici](/ecs/).

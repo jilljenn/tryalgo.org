@@ -1,13 +1,13 @@
 ---
 layout: page
-title: Concours ACM
+title: Concours ICPC
 ---
 
-[Tout savoir sur le concours ACM-ICPC](https://fr.wikipedia.org/wiki/ACM_International_Collegiate_Programming_Contest) (sur Wikipédia).
+[Tout savoir sur le concours ACM-ICPC](https://fr.wikipedia.org/wiki/ACM_International_Collegiate_Programming_Contest) (sur Wikipédia), qui depuis 2018 n'est plus soutenu par l'ACM.
 
 [Boîte à outils](/toolbox/)
 
-## Calendrier
+## Calendrier 2015
 
 - 10/09 Recherche de motifs
 - 17/09 Programmation dynamique
@@ -19,7 +19,7 @@ title: Concours ACM
 - 05/11 4 problèmes à résoudre
 - 12/11 Liste des problèmes
 
-### À venir
+### 2015
 
 - 20/11 Let's go to Porto!
 
