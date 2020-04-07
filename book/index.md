@@ -7,6 +7,10 @@ title: Programmation efficace
 
 ## Acheter sur [Amazon](http://www.amazon.fr/gp/product/2340010055/ref=as_li_tl?ie=UTF8&camp=1642&creative=19458&creativeASIN=2340010055&linkCode=as2&tag=mangaki-21)
 
+- Pre-order the English version on [Cambridge University Press](https://www.cambridge.org/fr/academic/subjects/computer-science/algorithmics-complexity-computer-algebra-and-computational-g/competitive-programming-python-128-algorithms-develop-your-coding-skills?format=PB&isbn=9781108716826) (October 2020)
+- Buy the Taiwanese version on [DrMaster](http://www.drmaster.com.tw/Bookinfo.asp?BookID=MP11906)
+- Buy the Chinese version on [Douban](https://book.douban.com/subject/30210075/)
+
 <a href="http://www.amazon.fr/gp/product/2340010055/ref=as_li_tl?ie=UTF8&amp;camp=1642&amp;creative=19458&amp;creativeASIN=2340010055&amp;linkCode=as2&amp;tag=mangaki-21"><img src="/static/cover.jpg" style="float: right" width="180" /></a>
 
 Les [**nombreux problèmes algorithmiques**]({% post_url fr/2016-03-15-problemes-algorithmiques %}) de ce livre constituent une préparation efficace aux [**concours de programmation**](/contests/) et entretiens d'embauche d'entreprises spécialisées en informatique.
