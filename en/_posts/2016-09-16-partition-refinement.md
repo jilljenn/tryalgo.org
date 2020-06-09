@@ -177,6 +177,10 @@ class PartitionRefinement:
         return [x.val for theclass in self.classes for x in theclass.items]
 {% endhighlight %}
 
+## Application
+
+This datastructure finds is application in the [twin problem]({%post%} 2016-09-17-finding-twins), in the lexBFS traversal of a graph, and on the consecutive ones problem, to name a few.
+
 ## Links
 
 - An [implementation](https://www.ics.uci.edu/~eppstein/PADS/PartitionRefinement.py) by David Eppstein. It is much more readable, uses dictionaries and does not preserve an ordering on elements and classes.
