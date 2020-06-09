@@ -179,7 +179,7 @@ class PartitionRefinement:
 
 ## Application
 
-This datastructure finds is application in the [twin problem]({%post%} 2016-09-17-finding-twins), in the lexBFS traversal of a graph, and on the consecutive ones problem, to name a few.
+This datastructure finds is application in the [twin problem]({% post_url 2016-09-17-finding-twins %}), in the lexBFS traversal of a graph, and on the consecutive ones problem, to name a few.
 
 ## Links
 
