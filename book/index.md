@@ -19,8 +19,12 @@ On y trouve les algorithmes classiques de géométrie ou de recherche de plus co
 
 **Niveau :** à partir de la L3, ou dès le lycée pour les participants à [Prologin](http://prologin.org) :)
 
-- Consulter l'[errata](/errata/)
 - Parcourir nos [slides à NUMA]({% post_url fr/2016-03-29-128-algorithmes %})
+
+## Errata
+
+- [errata de la version française](/errata/)
+- [errata of the english translation](/errata-en/)
 
 ## Tous les codes sont open source : le package Python [tryalgo](https://github.com/jilljenn/tryalgo)
 
