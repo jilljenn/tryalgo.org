@@ -32,7 +32,7 @@ Sinon pour tout le monde voici quatres problèmes sur lesquels vous pourriez ré
 -   Parler des 4 problème ci-dessus
 -   Former des équipes pour SWERC, écrire un livret de code.
 -   Comment lire l’entrée standard et écrire vers la sortie standard en C++ et Python.
--   Comment chercher en temps (O(|x|+|y|) si une chaîne x est une sous-chaîne de y par Knuth Morris Pratt.
+-   Comment chercher en temps $O(|x|+|y|)$ si une chaîne x est une sous-chaîne de y par Knuth Morris Pratt.
 
 ... encore un chose que je voulais vous dire. Essayez de lire du code des autres, vous gagnerez du temps à l’implémentation.
 
