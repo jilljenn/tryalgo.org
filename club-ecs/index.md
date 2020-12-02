@@ -7,7 +7,7 @@ Entrainement pendant l'année scolaire 2019-2020 à l'école centrale supélec.
 
 # Lundi 14 oct 2019, 13-15:30
 
-Présents : Christoph, Adnane, Victor, Francisco.
+Présents : 3
 
 On a parlé des problèmes suivants:
 
@@ -34,7 +34,7 @@ Café CROUS du bâtiment Eiffel. On parlera des problèmes:
 
 En salle ee.04
 
-Présents : Christoph, Adnane, Victor, Francisco, Quentin.
+Présents : 4
 
 -   [Poker Hands](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1256) — avec code
 -   [November Rain](http://poj.org/problem?id=1765)
@@ -60,7 +60,7 @@ Discussions par email.
 
 # Lundi 18 novembre
 
-présents: Adnane, Victor
+présents: 2
 
 Voici des suggestions pour la table des matières de votre livret de code que vous devez préparer pour la compétition:
 
