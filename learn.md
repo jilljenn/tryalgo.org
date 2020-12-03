@@ -15,6 +15,7 @@ Here a few links to learn more algorithms.
 
 - [216 problems](/problems/) curated by Christoph Dürr, author of [Efficient Programming](/book/)
 - [algo.is](https://algo.is), nice problems from Bjarki Ágúst Guðmundsson (NWERC course in Reykjavik University, Iceland)
+- [cses](https://cses.fi/problemset/), problem set mainly from [Antti Laaksonen](https://www.cs.helsinki.fi/u/ahslaaks/) (Finland)
 - [trains/paris](http://neerc.ifmo.ru/trains/paris/), nice problems from Vitaly Aksenov (SWERC course in Télécom Paris)
 
 ## GitHub repos of codes
