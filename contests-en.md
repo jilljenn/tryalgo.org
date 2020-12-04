@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Programming contests
+lang: en
 ---
 
 Here is a selection of the most well known programming contests.
