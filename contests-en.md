@@ -1,38 +1,32 @@
 ---
 layout: page
-title: Compétitions de programmation
+title: Programming contests
 ---
 
-Voici une liste des compétitions de programmation les plus célèbres.
+Here is a selection of the most well known programming contests.
 
-## Pour les plus jeunes
+## For the young
 
-- Du CM1 à la terminale : [**Castor informatique**](http://castor-informatique.fr) (en ce moment !)
-- Jusqu'à 20 ans : [**Prologin**](https://prologin.org/)
-    - Qualification : jusqu'en janvier
-    - Épreuves régionales : janvier-mars
-    - Finale : en mai
-- Olympiades avant le bac : [France-ioi](http://www.france-ioi.org/)
+- International Olympiad in Informatics [ioi](https://ioinformatics.org/)
 
-## Les compétitions annuelles
+## Yearly competitions
 
 - [**Google Code Jam**](https://code.google.com/codejam/)
-    - Qualifications généralement en **avril**
+    - Qualifications usually in **April**
 - [**Google Hash Code**](https://hashcode.withgoogle.com/)
-    - Problèmes réels à résoudre avec des techniques de recherche opérationnelle
-    - Qualifications généralement en **février**
+    - Competition in Operational Research
+    - Qualifications usually in **Februar**
 - [**Facebook Hacker Cup**](https://www.facebook.com/hackercup/)
 - [**Microsoft Bubblecup**](http://www.bubblecup.org/)
-    - Très peu connue depuis 2008, cette compétition similaire au concours ACM a pourtant des [booklets de solutions très clairement expliquées](http://www.bubblecup.org/Booklets)
+    - A bit less known that the previous ones, but has good [booklets explaining solutions to previous competitions](http://www.bubblecup.org/Booklets)
 - [**ICPC, SWERC**](http://swerc.eu/)
-    - Le concours *International Collegiate Programming Contest*, pour notre région du Sud-Ouest de l'Europe
-    - Qualifications régionales SWERC généralement en novembre ([compte rendu de SWERC 2016]({% post_url fr/2016-11-19-swerc-2016 %}))
-    - Généralement en novembre
+    - The International Collegiate Programming Contest, in the South-West European region. Look for your region.
+    - Usually in **November**
 - [**ACM-ICFP**](http://icfpconference.org/)
-    - Concours de programmation fonctionnelle
-    - Généralement en août
+    - Functional programming contest
+    - Usually in **August**
 
-## Compétitions régulières pour s'entraîner
+## Competitions for regular training
 
 - [Kattis](https://open.kattis.com)
 - [Codeforces](http://codeforces.com/)
@@ -46,24 +40,24 @@ Voici une liste des compétitions de programmation les plus célèbres.
 - [SPOJ](http://www.spoj.com/)
 - [France-ioi](http://www.france-ioi.org/)
 
-## Ressources supplémentaires
+# Additional resources
 
-Voici quelques liens pour apprendre plus.
+Here a few links to learn more algorithms.
 
-## Des wikis utiles
+## Useful wikis
 
 - [CP-Algorithms](https://cp-algorithms.com), responsive translations from Russian website [e-maxx.ru/algo](http://e-maxx.ru/algo)
 - [PEGWiki](https://wcipeg.com/wiki/Special:AllPages), the great wiki of the Programming Enrichment Group (Woburn Collegiate Institute, Toronto, Canada)
 - [tryalgo](https://jilljenn.github.io/tryalgo/), the doc of all 128 algorithms of tryalgo, with complexities (yours truly)
 
-## Problèmes par catégorie
+## Problems by categories
 
 - [216 problems](/problems/) curated by Christoph Dürr, author of [Efficient Programming](/book/)
 - [algo.is](https://algo.is), nice problems from Bjarki Ágúst Guðmundsson (NWERC course in Reykjavik University, Iceland)
 - [cses](https://cses.fi/problemset/), problem set mainly from [Antti Laaksonen](https://www.cs.helsinki.fi/u/ahslaaks/) (Finland)
 - [trains/paris](http://neerc.ifmo.ru/trains/paris/), nice problems from Vitaly Aksenov (SWERC course in Télécom Paris)
 
-## des répos GitHub de code
+## GitHub repos of codes
 
 - [jilljenn/tryalgo](https://github.com/jilljenn/tryalgo/) in Python
 - [matthewsamuel95/ACM-ICPC-Algorithms](https://github.com/matthewsamuel95/ACM-ICPC-Algorithms) (by algorithm then language)
@@ -72,7 +66,7 @@ Voici quelques liens pour apprendre plus.
 
 ## Judge <abbr title="Do it yourself">DIY</abbr>
 
-- Try the open source [Qingdao University Online Judge](https://qduoj.com) (Django & Vue.js[^1]) then fork them on [GitHub](https://github.com/QingdaoU/OnlineJudge).
+- Try the open source [Qingdao University Online Judge](https://qduoj.com) (Django & Vue.js) then fork them on [GitHub](https://github.com/QingdaoU/OnlineJudge).
 - If you want something more lightweight, try [prologin/camisole](https://github.com/prologin/camisole).
 
- [^1]: C'est marrant, c'est comme [Mangaki](https://mangaki.fr).
+ 
