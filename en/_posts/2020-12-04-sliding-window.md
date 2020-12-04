@@ -25,13 +25,13 @@ Bookkeeping is fairly straightforward. When increasing i, decrease *occurrences[
 
 This algorithm is fairly efficient, since i+j increases in each iteration and ranges from 0 to 2n at most, where n is the size of A. So the overall complexity is O(n).
 
-![]({{site.images}}sliding-window){:width="400"}
+![]({{site.images}}sliding-window.png){:width="400"}
 
 # Technical details
 
 Using the C++ post increment and pre increment syntax, one can produce a rather compact code. I like it, but of course the usage of compact instructions is a matter of taste and habit.
 
-~~~C++
+~~~c++
 /* stores in B[i] the smallest index j such that A[i:j] 
 contains exactly k distinct values.
 We denote B[i]=-1 if such an index does not exist.
