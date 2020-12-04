@@ -3,6 +3,7 @@ layout: en
 category: strings
 title: "sliding window"
 author: Christoph Dürr
+custom_css: largecode
 ---
 
 Given a string A (or array), and an integer k, find for every index i, the smallest index j (if it exists) such that  \{A\[i\],..,A\[j-1\]\} consists of exact k distinct values.
