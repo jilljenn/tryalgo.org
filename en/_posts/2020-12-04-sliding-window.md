@@ -32,7 +32,7 @@ This algorithm is fairly efficient, since i+j increases in each iteration and ra
 
 Using the C++ post increment and pre increment syntax, one can produce a rather compact code. I like it, but of course the usage of compact instructions is a matter of taste and habit.
 
-~~~c++
+{% highlight c++ %}
 /* stores in B[i] the smallest index j such that A[i:j] 
 contains exactly k distinct values.
 We denote B[i]=-1 if such an index does not exist.
@@ -58,7 +58,8 @@ void intervals_k_distinct_values(char A[], int B[], int n, int k) {
     while (i < n)                          // pad with -1
         B[i++] = -1;
 }
-~~~
+{% endhighlight %}
+
 
 
 
