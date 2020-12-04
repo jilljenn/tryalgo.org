@@ -7,7 +7,7 @@ problems:
    "spoj:RMID": https://www.spoj.com/problems/RMID/
 ---
 
-Propose a data structure which permits to maintain a set of integers S, allowing to add elements and to remove the median. Both operations should work in logarithmic time
+Propose a data structure which permits to maintain a set of integers S, allowing to add elements and to remove the median. Both operations should work in logarithmic time.
 
 # Two priority queues
 
@@ -20,7 +20,7 @@ So whenever the queue sizes change, after an insertion or retrieval of the media
 
 # Implementation issue
 
-Since we need a max-priority queue and a min-priority queue, we could either use specialized queues with a customed comparator given at the construction. Or -- and I prefer the simplicity of this solution -- to store in the lower queue all the values multplied by -1. We need to take care of the sign change when inserting or removing though.
+Since we need a max-priority queue and a min-priority queue, we could either use specialized queues with a customized comparator given at the construction. Or -- and I prefer the simplicity of this solution -- store in the lower queue all the values multplied by -1. We need to take care of the sign change when inserting or removing though.
 
 This code is not accepted by the judge, the limit is too harsh for Python.
 
@@ -44,5 +44,4 @@ And this is how you balance the queues.
         heappush(higher, -heappop(lower))
     elif len(lower) == len(higher) - 1:
         heappush(lower, -heappop(higher))
-    n = readint()
 {% endhighlight %}
