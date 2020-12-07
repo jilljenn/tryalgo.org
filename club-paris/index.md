@@ -40,3 +40,6 @@ Sinon pour tout le monde voici quatres problèmes sur lesquels vous pourriez ré
 -   Dans `Google Drive\SWERC entrainement 2020-2021\Livres\fuch.pdf` admirez la simplicité du code pour le couplage à cardinalité maximum dans un graphe biparti. 
 -   Pour Python, pourquoi ne pas lire notre bibliothèque [tryalgo](https://jilljenn.github.io/tryalgo/). Je crois que ne peux plus vous recommander notre livre, je trouve qu’il contient trop de coquilles. Mi-décembre la traduction en anglais va sortir, et elle bien améliorée. L’explication qu’on y donne de Knuth-Morris-Pratt est très soignée, mais vous l’allez l’avoir en live lors de la prochaine séance.
 
+# Lundi 7 décembre 2020, 18h
+
+- Une [liste](https://tryalgo.org/liste_algos_fr/) d'algorithmes traités dans notre livre. Mais bon, il n'existe pas une liste définitive d'algorithmes cruciaux pour la compétition.
