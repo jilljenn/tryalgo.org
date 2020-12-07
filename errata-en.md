@@ -1,4 +1,5 @@
 ---
+lang: en
 layout: page
 title: Errata of the english translation
 ---
