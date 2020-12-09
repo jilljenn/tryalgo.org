@@ -13,7 +13,7 @@ Vous connaissez à peu près tous (si vous n'êtes pas trop jeunes ?) ce jeu où
 
 *Quel traumatisme, en y repensant. Certaines personnes (i.e. [Wikipédia](https://fr.wikipedia.org/wiki/Probl%C3%A8me_du_dessin_de_l%27enveloppe)) appellent aussi ce dessin une enveloppe ouverte*
 
-Bon, en général, soit vous deviniez l'astuce, soit on vous la montrait une fois, et vous la reteniez suffisamment longtemps pour pouvoir proposer l'énigme à vos petits camarades à votre tour. Vous posez votre crayon au niveau du point numéroté 7, puis vous suivez les flèches rouges dans l'ordre croissant des indices de point :
+Bon, en général, soit vous deviniez l'astuce, soit on vous la montrait une fois, et vous la reteniez suffisamment longtemps pour pouvoir proposer l'énigme à vos petits camarades à votre tour. Vous posez votre crayon au niveau du point en bas à gauche, puis vous suivez les flèches rouges dans l'ordre croissant des indices :
 
 <img src="/fr/images/eulerien/resolu.png" style="float: center"/>
 
