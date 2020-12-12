@@ -18,11 +18,15 @@ Vertices which are not adjacent to an edge of the matching are said to be *free*
 
 Let's build such a matching greedily on the following graph, adding arbitrary edges as long as it is possible.
 
-![]({{site.images}}vertex-cover-greedy.png){:width="300"}
+![]({{site.images}}vertex-cover-greedy.png){:width="400"}
 
 We are stuck with the right most matching which consists of 2 edges, while there is a perfect matching consisting of 3 edges. There is no way to add additional edges to the matching without removing some of them.
 
-Let's look at the symmetric difference between two matchings, the sub-optimal yellow one and  the optimal blue one.  In general the result is a collection of cycles and paths, each alternating with edges from the yellow and edge from the blue matching.  In this example there is a single path, namely u2-v2-u1-v1.  We observe that the two endpoints of the path are free for the yellow matching. Such a path is called an alternating augmenting path. Why *augmenting*? Because if we take the symmetric difference between the yellow matching and this path, then we obtain the blue matching. THe cardinality increased by exactly one during the process, namely the endpoints of the path are now matching, all inner vertex of the path remain matched, just to different vertices.
+Let's look at the symmetric difference between two matchings, the sub-optimal yellow one and  the optimal blue one.  
+
+![]({{site.images}}vertex-cover-difference.png){:width="400"}
+
+In general the result is a collection of cycles and paths, each alternating with edges from the yellow and edge from the blue matching.  In this example there is a single path, namely u2-v2-u1-v1.  We observe that the two endpoints of the path are free for the yellow matching. Such a path is called an alternating augmenting path. Why *augmenting*? Because if we take the symmetric difference between the yellow matching and this path, then we obtain the blue matching. THe cardinality increased by exactly one during the process, namely the endpoints of the path are now matching, all inner vertex of the path remain matched, just to different vertices.
 
 This shows that one can find a maximum cardinality matching iteratively by finding augmenting alternating paths and using them to increase the current matching. This is a sort of greedy algorithm, just that we don't add edges greedily by augmenting paths.
 
@@ -54,7 +58,7 @@ In the following picture vertices in Z are shown in gray. Solid edges constitute
 
 ![]({{site.images}}vertex-cover-matching.png){:width="500"}
 
-Now let S be the set of vertex from U not in Z plus the vertex in Z and in V.  We have $\|S\|=\|M\}$, which is the smallest cardinality a vertex cover can have (because it must cover already the edges of M).  
+Now let S be the set of vertex from U not in Z plus the vertex in Z and in V.  We have $\|S\|=\|M\}$, which is the smallest cardinality a vertex cover can have (because it must cover already the edges of M).  In the picture above, the vertices of S are indicated with a shadow.
 
 But is it really a vertex cover?  Yes, because there is no edge between  $U \cap Z$ to $V\setminus Z$ as we observed earlier.
 
