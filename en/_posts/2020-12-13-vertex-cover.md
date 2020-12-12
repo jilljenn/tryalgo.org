@@ -1,6 +1,6 @@
 ---
 layout: en
-category: data structures
+category: matching
 title: "bipartite vertex cover"
 author: Christoph Dürr
 problems:
@@ -53,6 +53,7 @@ Z partitions the vertices into four parts, namely
 - $V\cap Z$.
 
 If we were (unsuccessfully) trying to augment the matching M, then the alternating trees we build for this purpose cover exactly Z.  By maximality of M there is no edge from $U \cap Z$ to $V\setminus Z$.
+Also by maximality of Z all matching edges have either both endpoints in Z or none.
 
 In the following picture vertices in Z are shown in gray. Solid edges constitute the  matching.  
 
