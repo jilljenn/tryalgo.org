@@ -26,9 +26,9 @@ Let's look at the symmetric difference between two matchings, the sub-optimal ye
 
 ![]({{site.images}}vertex-cover-difference.png){:width="400"}
 
-In general the result is a collection of cycles and paths, each alternating with edges from the yellow and edge from the blue matching.  In this example there is a single path, namely u2-v2-u1-v1.  We observe that the two endpoints of the path are free for the yellow matching. Such a path is called an alternating augmenting path. Why *augmenting*? Because if we take the symmetric difference between the yellow matching and this path, then we obtain the blue matching. THe cardinality increased by exactly one during the process, namely the endpoints of the path are now matching, all inner vertex of the path remain matched, just to different vertices.
+In general the result is a collection of cycles and paths, each alternating with edges from the yellow and edge from the blue matching.  In this example there is a single path, namely u2-v2-u1-v1.  We observe that the two endpoints of the path are free for the yellow matching. Such a path is called an alternating augmenting path. Why *augmenting*? Because if we take the symmetric difference between the yellow matching and this path, then we obtain the blue matching. The cardinality increased by exactly one during the process, namely the endpoints of the path are now matched, all inner vertex of the path remain matched, just to different vertices.
 
-This shows that one can find a maximum cardinality matching iteratively by finding augmenting alternating paths and using them to increase the current matching. This is a sort of greedy algorithm, just that we don't add edges greedily by augmenting paths.
+This shows that one can find a maximum cardinality matching iteratively by finding augmenting alternating paths and using them to increase the current matching. This is a sort of greedy algorithm, just that we don't add edges greedily but augmenting paths.
 
 The main difficulty is then to find augmenting paths, but for bipartite graphs this can be done by a simple graph exploration. Start with a free vertex on the left say, let it be the root, and build an alternating exploration tree.  By *alternating* we mean that every path from the root to some leaf alternates between edges not in the current matching and edges in the current matching.
 
@@ -58,10 +58,11 @@ In the following picture vertices in Z are shown in gray. Solid edges constitute
 
 ![]({{site.images}}vertex-cover-matching.png){:width="500"}
 
-Now let S be the set of vertex from U not in Z plus the vertex in Z and in V.  We have $\|S\|=\|M\}$, which is the smallest cardinality a vertex cover can have (because it must cover already the edges of M).  In the picture above, the vertices of S are indicated with a shadow.
+Now let S be $(U\setminus Z) \cup (V\cap Z)$.  All edges of $M$ have either both endpoints in Z or none. Therefore we have $\|S\|=\|M\|$, which is the smallest cardinality a vertex cover can have (because it must cover already the edges of M).  In the picture above, the vertices of S are indicated with a shadow.
 
 But is it really a vertex cover?  Yes, because there is no edge between  $U \cap Z$ to $V\setminus Z$ as we observed earlier.
 
+[Here](https://jilljenn.github.io/tryalgo/tryalgo/tryalgo.html?highlight=vertex%20cover#tryalgo.bipartite_vertex_cover.bipartite_vertex_cover) is an implementation of this algorithm.
 
 # Generalization for general graphs
 
