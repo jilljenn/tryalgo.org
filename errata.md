@@ -30,6 +30,7 @@ Voici une liste de coquilles dans le livre.
 ![]({{site.images}}bi-connexes-relation.png "Les sommets et les arêtes de déconnexion sont montrés en gras." ){:width="250"}
 
 - page 100 : la formule devrait se lire comme
+
 $$    \frac{d'[n][v] - d'[k][v]}{n-k}  = \frac{d[n][v] - n\Delta - (d[k][v] - k\Delta)}{n-k}\\
      = \frac{d[n][v] - d[k][v] }{n-k} - \frac{n\Delta - k\Delta}{n-k}\\
      = \frac{d[n][v] - d[k][v] }{n-k} - \Delta$$
