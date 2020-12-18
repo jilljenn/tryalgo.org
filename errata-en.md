@@ -12,4 +12,10 @@ Some typos we spotted in the book.
 
 - page 55: In the code of *powerstring_by_find*,  the variables *u* and *x* should be the same.
 
+- page 115: the formula should be
+
+$$    \frac{d'[n][v] - d'[k][v]}{n-k}  = \frac{d[n][v] - n\Delta - (d[k][v] - k\Delta)}{n-k}\\
+     = \frac{d[n][v] - d[k][v] }{n-k} - \frac{n\Delta - k\Delta}{n-k}\\
+     = \frac{d[n][v] - d[k][v] }{n-k} - \Delta$$
+
 - page 240, last line: suffix of t begn inning -> beginning
