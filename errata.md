@@ -32,11 +32,13 @@ Voici une liste de coquilles dans le livre.
 - page 100 : la formule devrait se lire comme
 $$
     \frac{d'[n][v] - d'[k][v]}{n-k} & = \frac{d[n][v] - n\Delta - (d[k][v] - k\Delta)}{n-k}
-    \\
+$$
+$$
      = \frac{d[n][v] - d[k][v] }{n-k} - \frac{n\Delta - k\Delta}{n-k}
-    \\
+$$
      = \frac{d[n][v] - d[k][v] }{n-k} - \Delta
 $$
+
 - page 102 : la complexité de l'algorithme pour le voyageur de commerce est $O(&#124;V&#124;^2 2^{&#124;V&#124;})$
 
 - page 110 : la boucle extérieur doit se faire au plus n fois, pas n+2.
