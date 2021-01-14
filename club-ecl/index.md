@@ -9,6 +9,8 @@ To contact JJ Vie, click the mail at the bottom of the page.
 
 [BigBlueButton](https://mathconf.univ-lille.fr/b/jil-xj9-493)
 
+[Discord](https://discord.gg/Kj7RZfUnfq)
+
 ## Lesson 1: Tue 12 Jan 13:30
 
 See slides (soon)
