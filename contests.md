@@ -3,14 +3,15 @@ layout: page
 title: Compétitions de programmation
 ---
 
-Voici une collection de liens que nous considérons utils.
+Voici une collection de liens que nous considérons utiles.
 
-## Nos entrainements
+## Nos entraînements
 
-- Ecole polytechnique [2012-2015](https://docs.google.com/document/d/1VMPfszJ6VEBdPp6vygnGjGDHnIviqEHvkgQVwaI9zvk/edit?usp=sharing)
+- École polytechnique [2012-2015](https://docs.google.com/document/d/1VMPfszJ6VEBdPp6vygnGjGDHnIviqEHvkgQVwaI9zvk/edit?usp=sharing)
 - ENS Paris-Saclay [2015-2018](/club-cachan)
 - Ecole Centrale Supélec [2019-2020](/club-ecs)
-- Université Paris-Saclay et à Sorbonne Université [2020-2021](/club-paris)
+- Université Paris-Saclay et Sorbonne Université [2020-2021](/club-paris)
+- Centrale Lille [2020--2021](/club-ecl)
 
 
 ## Pour les plus jeunes
