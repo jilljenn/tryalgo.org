@@ -26,3 +26,5 @@ See [slides](https://jill-jenn.net/slides/bellman2021.pdf)
 ## Lesson 4: Dynamic Programming & Reinforcement Learning
 
 - Please validate [KNAPSACK](https://www.spoj.com/problems/KNAPSACK/)
+- [Introduction to Reinforcement Learning](https://github.com/jilljenn/tryalgo.org/blob/master/_notebooks/RL-intro.ipynb)
+- If there is still time, solve the jumping problem ($k$ students, $n$ floors)
