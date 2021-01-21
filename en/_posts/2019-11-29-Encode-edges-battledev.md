@@ -7,6 +7,8 @@ problems:
     "battledev:nov2019,DevOps":  https://www.isograd.com/FR/solutionconcours.php?contest_id=49&que_str_id=&reg_typ_id=2
 ---
 
+Given a graph, find weights for the vertices if possible, such that there is an edge between two vertices if and only if their total weight exceeds some threshold.
+
 # Warning
 
 This post describes a solution to the problem stated in the above link, which was the last problem of the competition *Battle Dev Hello Work November 2019*. However it will not be accepted by the judge, because the intended problem was a different one.  In the stated problem the condition is that `x[u]+x[v]>y` if and only if (u,v) is an edge. In the intended problem, the condition should be that $\sum_{u\in S} x[u] > y$ if and only if $S\subseteq V$ is a clique in the graph. The solution to the intended problem is described [here](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.228.76&rep=rep1&type=pdf).
