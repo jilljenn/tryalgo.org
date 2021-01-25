@@ -19,12 +19,12 @@ See slides (soon)
 
 See [problem statement](tp2/)
 
-## Lesson 3: Dynamic Programming
+## Lessons 3 & 4: Dynamic Programming
 
-See [slides](https://jill-jenn.net/slides/bellman2021.pdf)
-
-## Lesson 4: Dynamic Programming & Reinforcement Learning
-
+- See [slides](https://jill-jenn.net/slides/bellman2021.pdf)
 - Please validate [KNAPSACK](https://www.spoj.com/problems/KNAPSACK/)
+
+## Lesson 5: Dynamic Programming & Reinforcement Learning
+
 - [Introduction to Reinforcement Learning](https://github.com/jilljenn/tryalgo.org/blob/master/_notebooks/RL-intro.ipynb)
 - If there is still time, solve the jumping problem ($k$ students, $n$ floors)
