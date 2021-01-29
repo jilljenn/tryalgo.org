@@ -25,7 +25,7 @@ The following example describes all palindromes on the letter a, b.
 
 For example the palindrome *abba* can be generated from the start symbol *S*, using the following replacements *S -> a S a -> a b S b a -> a b b a* (see figure below). The last step, uses the last rule, were *S* can be replaced by the empty string, denoted by $\epsilon$ in the figure.
 
-![]({{site.images}}context-free-language.png){:width="500"}
+![]({{site.images}}context-free-language.png){:width="80"}
 
 We observe that context free languages form a larger class than regular languages.  If you want to recognize palindromes with a finite state automaton, you would need to memorize the prefix seen so far, to compare it with the suffix, and with only a finite number of states, there is not enough memory for this task.
 
@@ -33,7 +33,7 @@ We observe that context free languages form a larger class than regular language
 
 We will encode a grammar using a Python class. The start symbol is called *start*. Rules are stored in a list called *rules*, consisting of pairs composed of the left and the right hand side. The right hand side is simply a list.  For convenience we maintain a set of all the non terminals, and call it *nonterm*.  It is assumed that all non terminals appear at the left hand side of some rule.
 
-{% highlight python %}
+```python
 class ContextFreeGrammar:
     def __init__(self, start):
         self.start = start
@@ -44,7 +44,7 @@ class ContextFreeGrammar:
         # need to transform string into list, for normalization will manipulate them
         self.rules.append((left, list(right)))
         self.nonterm.add(left)
-{% endhighlight %}
+```
 
 # Chomsky normal form
 
@@ -62,7 +62,7 @@ First we want to have a start symbol which does not appear in the right hand sid
 
 Note that we need a method generating new start symbols. Which we implemented quite roughly, assuming that no non-terminal is of the form *Ni* for some number *i*.  A safer choice could be to use *_* instead of *N*. 
 
-{% highlight python %}
+```python
     def new_symbol(self):
         """returns a new unused non terminal.
         Risky unchecked assumption: existing non terminals are not of the form N1234.
@@ -73,7 +73,7 @@ Note that we need a method generating new start symbols. Which we implemented qu
         S0 = self.new_symbol()
         self.add_rule(S0, [self.start])
         self.start = S0
-{% endhighlight %}
+```
 
 ## Introduce a dedicated non terminal for every terminal
 
@@ -81,7 +81,7 @@ For every rule with more than one symbol on the right hand side, we want it to c
 
 Note that in this code we modify the right hand side of some rules, this motivates the use of lists, instead of strings or tuples, which are not mutable.
 
-{% highlight python %}
+```python
     def norm_term(self):
         term = {}
         for left, right in self.rules:
@@ -92,7 +92,7 @@ Note that in this code we modify the right hand side of some rules, this motivat
                             term[x] = self.new_symbol()
                             self.add_rule(term[x], [x])
                         right[i] = term[x]          # replace by corresponding non terminal
-{% endhighlight %}
+```
 
 ## Restrict right hand sides to pairs
 
@@ -111,7 +111,7 @@ will be replaced by
 The rewriting is done by iterative pairing, the first pair consists of the first two elements of the right hand side, while the subsequent pairs consist of the symbol representing the last pair, followed by the next symbol of the right hand side.
 Note how we deal with the special case of the first pair, by using a variable called *last*.
 
-{% highlight python %}
+```python
     def norm_bin(self):
         for i, left_right in enumerate(self.rules):
             left, right = left_right
@@ -122,7 +122,7 @@ Note how we deal with the special case of the first pair, by using a variable ca
                     self.add_rule(pair, [last, right[j]])
                     last = pair
                 self.rules[i] = (left, [last, right[-1]])
-{% endhighlight %}
+```
 
 ## Removing rules producing the empty string
 
@@ -140,7 +140,7 @@ Then for each rule of the form *A -> B C*, if *B* is nullable, we introduce
 the rule *A -> C*. We proceed similar in case *C* is nullable.  In addition we
 remove all rules generating the empty string, except for the start symbol.
 
-{% highlight python %}
+```python
     def norm_del(self):
         # detect nullable non terminals in brute force manner
         nullable = set()
@@ -160,7 +160,7 @@ remove all rules generating the empty string, except for the start symbol.
         self.rules = [(left, right) for left, right in self.rules if len(right) > 0]
         if self.start in nullable:
             self.add_rule(self.start, [])           # except for start symbol
-{% endhighlight %}
+```
 
 ## Remove rules with a unique non terminal on the right hand side
 
@@ -173,7 +173,7 @@ For this we explore the graph in topological order, where we need the crucial as
 Finally every rule of the form *B -> RHS* generates a rule *A -> RHS* for every symbol *A* in *gen_in[B]*, i.e. which can be rewritten as *B*.
 
 
-{% highlight python %}
+```python
     def is_unit(self, right):  return len(right) == 1 and right[0] in self.nonterm
 
     def norm_unit(self):
@@ -202,7 +202,7 @@ Finally every rule of the form *B -> RHS* generates a rule *A -> RHS* for every 
         for left, right in self.rules:
             for v in gen_in[left]:
                 self.add_rule(v, right)
-{% endhighlight %}
+```
 
 ## In action on the palindrome example
 
@@ -292,7 +292,7 @@ The induction case, concerns all larger substrings. In order to compute P[i,j], 
 
 The complexity is O(n^3 k), where n is the size of the given string n and k the size of the grammar (the number of rules), which its self can be quadratic in the size of the original grammar (not yet in Chomsky normal form), and here the size is the number of plus plus the total length over all right hand sides.
 
-{% highlight python %}
+```python
     def cocke_younger_kasami(self, s):
         """" returns a list of all pairs (i,j) such that 
         s[i:j] is generated by the grammar
@@ -320,4 +320,4 @@ The complexity is O(n^3 k), where n is the size of the given string n and k the 
                 if self.start in P[i][j]:
                     answer.append((i, j + 1))       # +1, because j + 1 is excluded
         return answer
-{% endhighlight %}
+```
