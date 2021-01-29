@@ -25,7 +25,7 @@ The following example describes all palindromes on the letter a, b.
 
 For example the palindrome *abba* can be generated from the start symbol *S*, using the following replacements *S -> a S a -> a b S b a -> a b b a* (see figure below). The last step, uses the last rule, were *S* can be replaced by the empty string, denoted by $\epsilon$ in the figure.
 
-![]({{site.images}}context-free-language.png){:width="80"}
+![]({{site.images}}context-free-language.png){:width="120"}
 
 We observe that context free languages form a larger class than regular languages.  If you want to recognize palindromes with a finite state automaton, you would need to memorize the prefix seen so far, to compare it with the suffix, and with only a finite number of states, there is not enough memory for this task.
 
@@ -105,7 +105,7 @@ will be replaced by
     N1 -> B C
     N2 -> N1 D
     N3 -> N2 E
-    A  -> N3 E
+    A  -> N3 F
 
 
 The rewriting is done by iterative pairing, the first pair consists of the first two elements of the right hand side, while the subsequent pairs consist of the symbol representing the last pair, followed by the next symbol of the right hand side.
