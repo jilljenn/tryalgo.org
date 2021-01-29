@@ -18,4 +18,6 @@ $$    \frac{d'[n][v] - d'[k][v]}{n-k}  = \frac{d[n][v] - n\Delta - (d[k][v] - k\
      = \frac{d[n][v] - d[k][v] }{n-k} - \frac{n\Delta - k\Delta}{n-k}\\
      = \frac{d[n][v] - d[k][v] }{n-k} - \Delta$$
 
+- page 143: the expression $\sum_{E_\ell}\ell$ should be instead $\sum \ell$, which stands for $\sum_{u\in U} \ell(u) + \sum_{v\in V} \ell(v)$.
+
 - page 240, last line: suffix of t begn inning -> beginning

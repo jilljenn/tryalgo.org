@@ -41,6 +41,8 @@ $$    \frac{d'[n][v] - d'[k][v]}{n-k}  = \frac{d[n][v] - n\Delta - (d[k][v] - k\
 
 - page 112 : dans le code de dist_grid, le *break* devrait être *continue*.
 
+- page 122 : au lieu de $\sum_{E_\ell}\ell$ il faut lire $\sum \ell$, qui représente $\sum_{u\in U} \ell(u) + \sum_{v\in V} \ell(v)$.
+
 - page 126 : la ligne 9 *n=len(G)* du code est inutile par la présence de la même instruction en ligne 3.
 
 - page 129 : Il faut lire: Donc pour une preuve par contradiction de la validité de l'algorithme, supposons qu'à la fin, il existe un homme i marié à une femme j' et une femme **j** mariée à un homme i'...
