@@ -1,6 +1,7 @@
 ---
 layout: en
 title:  "How to practice algorithms with tryalgo"
+category: miscellaneous
 author: Jill-Jênn Vie
 ---
 
