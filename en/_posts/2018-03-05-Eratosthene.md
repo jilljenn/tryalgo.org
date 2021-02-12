@@ -1,6 +1,6 @@
 ---
 layout: en
-category: geometry
+category: Arithmetics
 title: "Sieve of Eratosthenes"
 author: Christoph Dürr
 problems:
@@ -107,3 +107,7 @@ The procedure above makes at most $N/n$ comparisons for every $n$, which sum up 
 The Python implementation of the first versions takes 13 seconds, using the pypy interpreter, while the second one takes only 0.4 seconds.
 
 This measures have to be considered with care as they are sensible to the machine environment.
+
+## See also
+
+- the [sieve of Misra-Gries](({% post_url fr/2021-02-04-crible-de-misra-gries %}))
