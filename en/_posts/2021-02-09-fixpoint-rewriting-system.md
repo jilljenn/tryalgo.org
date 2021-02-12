@@ -16,16 +16,16 @@ In the first step, letter $a$ is replaced by the string $f(a)$.  In the second s
 
 Consider these examples:
 
-![]({{site.images}}morph-1.png){:width="120"}
+![]({{site.images}}morph-1.png){:width="350"}
 
 
-$f:\: a \mapsto bb,\: b \mapsto b$
+$f:\\: a \mapsto bb,\\: b \mapsto b$
 :   a, bb, bb, bb, ...
 
-$f:\: a \mapsto ab,\: b \mapsto a$
+$f:\\: a \mapsto ab,\\: b \mapsto a$
 :   a, ab, aba, abaab, abaab, abaababa, abaababaabaab, ...
 
-$f:\: a \mapsto ba,\: b \mapsto c,\: c \mapsto b$
+$f:\\: a \mapsto ba,\\: b \mapsto c,\\: c \mapsto b$
 :   a, ba, cba, bcba, cbcba, bcbcba, ...
 
 We can observe quite different behaviors. The first example reaches quickly a fixpoint, the second example seems to converge to a fixpoint (in form of an infinite string), but which is not reached within a finite number of steps. And the last example observes some cyclic behavior.
@@ -41,7 +41,7 @@ This motivates us to distinguish 3 types of letters, depending on properties of 
 
 # Notation
 
-We denote the i-th string in this sequence by $f^i(a)$.  If the sequence has a limit, then denote it by $f^*(a)$.  In particular if $f^*(a)$ is a finite string, then it is reached in a finite number of iterations, and $a$ is of type 2. If $f^*(a)$ is an infinite string, then clearly it is not reached within a finite number of steps, and $a$ is of type 2.  (This is less obvious, but I believe it to hold.)
+We denote the i-th string in this sequence by $f^i(a)$.  If the sequence has a limit, then denote it by $f^\star(a)$.  In particular if $f^\star(a)$ is a finite string, then it is reached in a finite number of iterations, and $a$ is of type 2. If $f^\star(a)$ is an infinite string, then clearly it is not reached within a finite number of steps, and $a$ is of type 2.  (This is less obvious, but I believe it to hold.)
 
 
 # Simplification
@@ -59,17 +59,17 @@ From now on, let's assume that $f$ does not map to an empty string for all lette
 
 - If $f(x)=y$ for some letter $y\neq x$, then clearly $x$ has the same type as $y$. But if these implications are circular, then $x$ has type 0 (and so have y and all the other letters along the cycle).
 
-![]({{site.images}}morph-2.png){:width="120"}
+![]({{site.images}}morph-2.png){:width="350"}
 
 ## More complex rules:
 
 If $f(x) = y_1 y_2 \ldots y_k$ with  $y_1 \neq x$ and $k > 1$, then things become more interesting.
 
-If all letters $y_1 y_2 \ldots y_k$ are of type 1, then so is $x$. Simply because the limit of f on x is $f^*(y_1\ldots y_k)$ which is  $f^*(y_1)\ldots f^*(y_k)$. 
+If all letters $y_1 y_2 \ldots y_k$ are of type 1, then so is $x$. Simply because the limit of f on x is $f^\star(y_1\ldots y_k)$ which is  $f^\star(y_1)\ldots f^\star(y_k)$. 
 
-If $y_i$ is the first letter not of type 1, then the type of x is determined by the type of $y_i$.  Again if this leads to a circular dependecy -- for example when $y_i=x$ -- then $x$ has type 2. Indeed in the limit f will generate on x the string $w^*$, where $w$ is the fixpoint reached by $y_1,\ldots,y_{i-1}$.
+If $y_i$ is the first letter not of type 1, then the type of x is determined by the type of $y_i$.  Again if this leads to a circular dependecy -- for example when $y_i=x$ -- then $x$ has type 2. Indeed in the limit f will generate on x the string $w^\star$, where $w$ is the fixpoint reached by $y_1,\ldots,y_{i-1}$.
 
-![]({{site.images}}morph-3.png){:width="120"}
+![]({{site.images}}morph-3.png){:width="350"}
 
 # How to determine efficiently the types?
 
