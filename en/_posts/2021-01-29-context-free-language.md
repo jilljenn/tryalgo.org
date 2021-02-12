@@ -60,7 +60,7 @@ The normalization is done by a sequence of steps, called START, TERM, BIN, DEL a
 
 First we want to have a start symbol which does not appear in the right hand side of any rule. Well we simply introduce a new symbol *S0*, which will be the new start symbol, together with a single rule *S0->S* where *S* is the original start symbol.
 
-Note that we need a method generating new start symbols. Which we implemented quite roughly, assuming that no non-terminal is of the form *Ni* for some number *i*.  A safer choice could be to use *_* instead of *N*. 
+Note that we need a method generating new start symbols. Which we implemented quite roughly, assuming that no non-terminal is of the form *Ni* for some number *i*.  A safer choice could be to use *_* instead of *N*.
 
 ```python
     def new_symbol(self):
@@ -77,7 +77,7 @@ Note that we need a method generating new start symbols. Which we implemented qu
 
 ## Introduce a dedicated non terminal for every terminal
 
-For every rule with more than one symbol on the right hand side, we want it to consist only of non terminals.  For this purpose a dedicated non terminal for every terminal.  The dictionary *term* keeps track of these new symbols.
+For every rule with more than one symbol on the right hand side, we want it to consist only of non terminals.  For this purpose, we introduce a dedicated non terminal for every terminal.  The dictionary *term* keeps track of these new symbols.
 
 Note that in this code we modify the right hand side of some rules, this motivates the use of lists, instead of strings or tuples, which are not mutable.
 
@@ -151,7 +151,7 @@ remove all rules generating the empty string, except for the start symbol.
                 if all(x in nullable for x in right):
                     nullable.add(left)
         for left, right in self.rules:
-            if len(right) == 2:                 # assume method is called after norm_bin
+            if len(right) == 2:                     # assume method is called after norm_bin
                 if right[0] in nullable:
                     self.add_rule(left, [right[1]])
                 if right[1] in nullable:
@@ -168,7 +168,7 @@ The last step, which seems to be hardest, is to remove all rules of the form *A 
 For this we consider the directed graph where each rule of the form *A -> B* generates a corresponding arc.  We store this graph in mappings *arc_in* and *arc_out* which associate to a non terminal B the set of all non terminals with arcs pointing inwards to B or outwards from *B*.
 
 The set *gen_in* will eventually become the transitive closure of the incoming arcs, i.e. *gen_in[D]* contains all symbols *A* that lead to *D* through a sequence of arcs *A->B->C->D* for example.
-For this we explore the graph in topological order, where we need the crucial assumption that there are no circular unit rules in the grammar. The exploration starts with a vertex of zero indegree, and removes himself from the graph. Every vertex that has now zero indegree joins the quueue *Q* of vertices, which are ready to be processed.
+For this we explore the graph in topological order, where we need the crucial assumption that there are no circular unit rules in the grammar. The exploration starts with a vertex of zero indegree, and removes himself from the graph. Every vertex that has now zero indegree joins the queue *Q* of vertices, which are ready to be processed.
 
 Finally every rule of the form *B -> RHS* generates a rule *A -> RHS* for every symbol *A* in *gen_in[B]*, i.e. which can be rewritten as *B*.
 
@@ -177,7 +177,7 @@ Finally every rule of the form *B -> RHS* generates a rule *A -> RHS* for every 
     def is_unit(self, right):  return len(right) == 1 and right[0] in self.nonterm
 
     def norm_unit(self):
-        # we assume that there are no circular unit rules such as A -> B, B -> A 
+        # we assume that there are no circular unit rules such as A -> B, B -> A
         arc_out = defaultdict(set)      # arc_out[A] is set of all B with A->B
         arc_in  = defaultdict(set)      # arc_in[B]  is set of all A with A->B
         gen_in  = defaultdict(set)      # gen_in[D] is set of all A with A->B->...->D
@@ -282,9 +282,9 @@ After the UNIT step we obtain:
     N4 -> a
     N5 -> b
 
-# The Cocke–Younger–Kasami algorithm
+# The Cocke-Younger-Kasami algorithm
 
-The [Cocke–Younger–Kasami](https://en.wikipedia.org/wiki/CYK_algorithm) Algorithm solves the string recognition problem using dynamic programming. It assumes that the given grammar is in Chomsky norm form. If s is the string of length n, then P[i,j] is a table storing the set of non terminals generating the substring s[i:j+1].  So the string is recognized by the grammar if and only if the start symbol belongs to P[0, n-1].  
+The [Cocke-Younger-Kasami](https://en.wikipedia.org/wiki/CYK_algorithm) Algorithm solves the string recognition problem using dynamic programming. It assumes that the given grammar is in Chomsky norm form. If s is the string of length n, then P[i,j] is a table storing the set of non terminals generating the substring s[i:j+1].  So the string is recognized by the grammar if and only if the start symbol belongs to P[0, n-1].
 
 The base case concerns all individual characters in s. Namely P[i,i] is the set of all nonterminals generating the i-th character of s.
 
@@ -294,7 +294,7 @@ The complexity is O(n^3 k), where n is the size of the given string n and k the 
 
 ```python
     def cocke_younger_kasami(self, s):
-        """" returns a list of all pairs (i,j) such that 
+        """" returns a list of all pairs (i,j) such that
         s[i:j] is generated by the grammar
         """
         self.normalize()
@@ -316,7 +316,7 @@ The complexity is O(n^3 k), where n is the size of the given string n and k the 
                             P[i][j].add(left)
         answer = []
         for j in N:
-            for i in range(j + 1):               
+            for i in range(j + 1):
                 if self.start in P[i][j]:
                     answer.append((i, j + 1))       # +1, because j + 1 is excluded
         return answer
