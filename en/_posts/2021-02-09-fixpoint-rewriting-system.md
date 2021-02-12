@@ -7,11 +7,11 @@ problems:
    "SPOJ:MORPH": https://www.spoj.com/problems/MORPH/
 ---
 
-Given the a rewriting system of the form $f:[a-z]\rightarrow [a-z]^*$, determine the limit of $f^i(a)$.
+Given the a rewriting system of the form $f:\Sigma\rightarrow \Sigma^\star$, determine the limit of $f^i(a)$ for some given seed letter $a\in \Sigma$.
 
 # Rewriting system
 
-More generally, we are given an alphabet $\Sigma$ and a rewriting system $f:\Sigma \rightarrow \Sigma^*$. Consider the infinite sequence $a,f(a),f(f(a)),\ldots$. 
+Consider the infinite sequence $a,f(a),f(f(a)),\ldots$. 
 In the first step, letter $a$ is replaced by the string $f(a)$.  In the second step every letter in $f(a)$ is replaced by its image by $f$ and the results are concatenated, and so on. 
 
 Consider these examples:
@@ -59,7 +59,7 @@ From now on, let's assume that $f$ does not map to an empty string for all lette
 
 - If $f(x)=y$ for some letter $y\neq x$, then clearly $x$ has the same type as $y$. But if these implications are circular, then $x$ has type 0 (and so have y and all the other letters along the cycle).
 
-![]({{site.images}}morph-2.png){:width="350"}
+![]({{site.images}}morph-2.png){:width="550"}
 
 ## More complex rules:
 
@@ -78,7 +78,7 @@ We will maintain a table `type` indexed by the alphabet. Initially all letters h
 First we apply the basic rules, by setting the type of all letters $x$ with 
 $f(x)=x$ or  $f(x)=xw$.
 
-Then for the remaining letters we inspect a function $g$, mapping $x$ to the first letter of $f(x)$.  If iterated mapping of $g$ on a letter, ends on a letter with a defined type, then we don't do anything for the moment.  But if it ends on a cycle composed of letters with undefined type, then we know that all vertices covered by the string need to be set to type 0.
+Then for the remaining letters we inspect a function $g$, mapping $x$ to the first letter of $f(x)$.  If iterated mapping of $g$ on a letter, ends on a letter with a defined type, then we don't do anything for the moment.  But if it ends on a cycle composed of letters with undefined type, then we know that all letters covered by the cycle need to be set to type 0.
 
 Next, for all letters $x$ of undefined type, we maintain a pointer `pos[x]` on the string $f(x)$, such that we already know that all letters before this position have type 1.  If the letter pointed by `pos[x]` has type 1, then clearly we can increment `pos[x]`.  But if it has type is 0 or 2, then the type of $x$ must become the same type (0 or 2).  If all letters of $f(x)$ have type 1 (`pos[x]` exceeds the length of $f(x)$), then the type of $x$ is set to $1$.
 
@@ -86,9 +86,9 @@ And finally we can safely set to 2 the type of all yet undefined letters.
 
 # Time complexity
 
-It is $O(kn)$, where $k=|\Sigma|$ and $m$ is the total length of the images of $f$, hence roughly the size of the input.
+It is $O(kn)$, where $k$ is the size of the alphabet and $m$ is the total length of the images of $f$, hence roughly the size of the input.
 
-~~~C++
+~~~c++
 #include <iostream>
 #include <map>
 #include <vector>
