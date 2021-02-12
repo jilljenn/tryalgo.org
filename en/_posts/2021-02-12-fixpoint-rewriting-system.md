@@ -88,7 +88,10 @@ And finally we can safely set to 2 the type of all yet undefined letters.
 
 It is $O(kn)$, where $k$ is the size of the alphabet and $m$ is the total length of the images of $f$, hence roughly the size of the input.
 
-~~~c++
+# Implementation in C++
+
+
+{% highlight c++ %}
 #include <iostream>
 #include <map>
 #include <vector>
@@ -181,4 +184,4 @@ int main(int argc, char const *argv[])
             cout << "NO" << endl;
     }
 }
-~~~
+{% endhighlight %}
