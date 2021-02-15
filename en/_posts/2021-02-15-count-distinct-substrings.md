@@ -25,9 +25,9 @@ Given a string $s$, determine the number of distinct substrings that it contains
 
 # Brute force solution
 
-A straight forward solution would be to compute all substrings, store them in a set, and return the size of the set.  A hash based set would be more efficient than a binary search based set. In Python this can be written in a single line.
+A straightforward solution would be to compute all substrings, store them in a set, and return the size of the set.  A hash based set would be more efficient than a binary search based set. In Python this can be written in a single line.
 
-~~~Python
+~~~python
 len(set(s[i:j] for j in range(len(s) for i in range(j))))
 ~~~
 
@@ -48,7 +48,7 @@ Let's see an example. For the ease of presentation, we map A to 0, B to 1, etc, 
 The hash value can be defined recursively as
 
 - hash(empty string) = 0
-- hash(wx) for some string w and character x is $(Q \cdot \textrm{hash}(w) + x) mod P$, where we abused notation and used $x$ both for the character and its ASCII code.
+- hash(wx) for some string w and character x is $(Q \cdot \textrm{hash}(w) + x) \bmod P$, where we abused notation and used $x$ both for the character and its ASCII code.
 
 This recursion allows us to compute in linear time the hashes of all prefixes of the given string $s$.  Once we have this table, we can compute in constant time the hash value of a substring, by simple arithmetic operations. Let's see this on an example.
 
@@ -90,10 +90,10 @@ Consider all the suffixes of the given string s.
     
 Now store all these substrings in a [trie](https://en.wikipedia.org/wiki/Trie), i.e. a prefix tree.
 
-![]({{site.images}}suf-array-tree.png){:width="350"}
+![]({{site.images}}suf-array-tree.png){:width="200"}
 
 Edges are labeled with letters.
-For every non root vertex, the letters along the path from the root to that vertex constitute a string. In particular paths from root to leafs are suffixes of s.  If we had appended s by a special character $, as it is often done, then there would be a one-to-one correspondence between leafs and suffixes.  Without that special character, this is not the case, therefore we marked in blue the vertices corresponding to suffixes.
+For every non root vertex, the letters along the path from the root to that vertex constitute a string. In particular paths from root to leafs are suffixes of s.  If we had appended s by a special character $, as it is often done, then there would be a one-to-one correspondence between leafs and suffixes.  Without that special character, this is not the case. Therefore we marked in blue the vertices corresponding to suffixes.
 
 The important point is that every substring is a prefix of a suffix, and therefore the number of distinct (non empty) substrings is the number of vertices (excluding the root) in this tree.
 
@@ -114,7 +114,7 @@ The principle is that we would like to order all suffixes lexicographically.  On
     BCAB
     CAB
 
-The key to good performance is to sort them by prefixes of increasing sizes 1, 2, 4, 8, and so on.  By ordering, we mean that we associate to every suffix a rank in that order.  Below we show the rank, when comparing the prefixes according to the $2^k$ first characters.
+The key to good performance is to sort them by prefixes of increasing sizes 1, 2, 4, 8, and so on.  By *sorting*, we mean that we associate to every suffix a rank in that order.  Below we show the rank, when comparing the prefixes according to the $2^k$ first characters.
 
            k= 0 1 2 3
     AB        0 0 0 0  
@@ -128,7 +128,7 @@ For practical reasons, instead of working with the rank, we work with *pseudo-ra
 
 In particular, for k=0, we could just use the ASCII value of the first character, as the pseudo-rank of the suffixes.
 
-Suppose we want to compute the pseudo rank of the suffix BBCAB of index i according to the first 4 characters.  The idea is to create a pair (u,v) such that u is the pseudo rank of the first 2 characters (BB) and v is the pseudo rank of the next 2 characters (CA).  And here we can use what we have computed previously.  This would constitute a list L of triplets (u,v,i), which we can sort lexicographically. For any consecutive triplets (u,v,i), (u',v',j) in L, if (u,v)=(u',v') we know that the j-th suffix needs to receive the same pseudo-rank as the i-th, otherwise it needs to receive a larger pseudo-rank. (Its position in L for example).
+Suppose we want to compute the pseudo rank of the suffix BBCAB of index i according to the first 4 characters.  The idea is to create a pair (u,v) such that u is the pseudo rank of the first 2 characters (BB) and v is the pseudo rank of the next 2 characters (CA).  And here we can use what we have computed previously.  This would constitute a list L of triplets (u,v,i), which we can sort lexicographically. For any consecutive triplets (u,v,i), (u',v',j) in L, if (u,v)=(u',v') then we know that the j-th suffix needs to receive the same pseudo-rank as the i-th, otherwise it needs to receive a larger pseudo-rank. (Its position in L for example).
 
 In the code below we compute a matrix P such that $P[k][i]$ is the pseudo rank of the i-th suffix according to the $2^k$ first characters. This matrix has dimension $\lceil \log_2 n\rceil \times n$.
 For all rows, except the first one, we have the property that pseudo-ranks are between 0 and n-1. Since all pseudo-ranks in the last row are distinct, the last row stores the rank of the suffixes.  This describes a permutation. For convenience we inverse this permutation and store in `suf_sorted[r]` the index i of the r-th smallest suffix.
@@ -229,7 +229,7 @@ Given two suffixes identified by integers i and j, we want to compute the length
 
 # Number of distinct substrings
 
-Every substring is a prefix of some suffix. A suffix of length q has q prefixes. But if we would simply sum up the length of every suffix, then we might count some substring several times.  The key idea is that we assign each substring to the lexicographical smallest suffix for which it is a prefix. 
+Every substring is a prefix of some suffix. A suffix of length q has q prefixes. But if we would simply sum up the length of every suffix, then we might count some substrings several times.  The key idea is that we assign each substring to the lexicographical smallest suffix for which it is a prefix. 
 
 Consider the lexicographical order of the suffixes. Let i, j be the indices of two successive suffixes in this order.  Let q be the length of their longest common prefix. Then the strings s[j:j+r] for all r between j+q and n-j are the prefixes of the j-th suffix which are assigned to it. So instead of counting the total length of the suffixes, we amputate the length with the length of the longest common prefix with the previous suffix.  This leads to the following method of complexity $O(n \log n)$. Note that we start with the length of the lexicographical first suffix.
 
