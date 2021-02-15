@@ -244,7 +244,7 @@ Consider the lexicographical order of the suffixes. Let i, j be the indices of t
 
 # Counting distinct substrings in $O(n^2 \log n)$
 
-Let's return to our problem mentionned in the beginning of the document. Given the instance size n=1000, an algorithm with complexity $O(n^2 \log n)$, could be acceptable.  Hence, avoiding completely suffix arrays, we can solve the problem as follows.  First create a list L with all suffix. In order to simplify the algorithm, assume the the string ends with a special symbol, not appearing in the rest of the string. Now sort L. For every sucessive pairs of suffixes in this list, compute in linear time the length of the longest commun prefix. Here the special final character comes at hand.  From these lengths one can compute the answer easily.
+Let's return to our problem mentionned at the beginning of the document. Given the instance size n=1000, an algorithm with complexity $O(n^2 \log n)$ would be acceptable.  Hence, avoiding completely suffix arrays, we can solve the problem as follows.  First create a list L with all suffixes of the given string s. Now sort L. For every sucessive pairs of suffixes in this list, compute in linear time the length of the longest commun prefix. Here the assuming a special final character in s, which does not appear elsewhere comes at hand to simplify some tests.  From these lengths one can compute the answer easily.
 
 ~~~python
 import sys
