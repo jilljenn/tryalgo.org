@@ -128,6 +128,8 @@ For practical reasons, instead of working with the rank, we work with *pseudo-ra
 
 In particular, for k=0, we could just use the ASCII value of the first character, as the pseudo-rank of the suffixes.
 
+![]({{site.images}}suf-array-sort.png){:width="350"}
+
 Suppose we want to compute the pseudo rank of the suffix BBCAB of index i according to the first 4 characters.  The idea is to create a pair (u,v) such that u is the pseudo rank of the first 2 characters (BB) and v is the pseudo rank of the next 2 characters (CA).  And here we can use what we have computed previously.  This would constitute a list L of triplets (u,v,i), which we can sort lexicographically. For any consecutive triplets (u,v,i), (u',v',j) in L, if (u,v)=(u',v') then we know that the j-th suffix needs to receive the same pseudo-rank as the i-th, otherwise it needs to receive a larger pseudo-rank. (Its position in L for example).
 
 In the code below we compute a matrix P such that $P[k][i]$ is the pseudo rank of the i-th suffix according to the $2^k$ first characters. This matrix has dimension $\lceil \log_2 n\rceil \times n$.
