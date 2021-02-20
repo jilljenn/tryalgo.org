@@ -174,7 +174,7 @@ class SuffixArray:
                 else:
                     self.P[k][ L[i][2] ] = i
             k += 1
-            length <<= 2
+            length <<= 1                                        # or *=2 as you prefer
         self.suf_sorted = [0] * self.n                          # generate the inverse:
         for i, si in enumerate(self.P[-1]):                     # lexic. sorted suffixes
             self.suf_sorted[si] = i
