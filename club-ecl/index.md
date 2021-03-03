@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Centrale Lille - Algorithms & Their Complexity II
+title: Université de Lille - Algorithms II
 ---
 
 To contact JJ Vie, click the mail at the bottom of the page.
@@ -20,7 +20,7 @@ See [problem statement](tp2/)
 ## Lessons 3 & 4: Dynamic Programming
 
 - See [slides](https://jill-jenn.net/slides/bellman2021.pdf)
-- Please validate [KNAPSACK](https://www.spoj.com/problems/KNAPSACK/)
+- Please validate [Knapsack](https://www.spoj.com/problems/KNAPSACK/)
 
 ## Lesson 5: Dynamic Programming & Reinforcement Learning
 
@@ -29,9 +29,9 @@ See [problem statement](tp2/)
 
 ## Lesson 6 & 7: Matchings
 
-- Matching
-- Book Club (SWERC 2014)
-- Dungeon of Death
+- [Matching](https://www.spoj.com/problems/MATCHING/)
+- [Book Club](https://www.spoj.com/problems/SWERC14D/) (SWERC 2014)
+- [Dungeon of Death](https://www.spoj.com/problems/QUEST4/)
 
 ## Lesson 8 & 9: Matchings & Flows
 
@@ -41,15 +41,19 @@ Please read these problems for next time. You can attempt a submission for the f
 - [Potholers](https://www.spoj.com/problems/POTHOLE/)
 - [Maximum Flow](https://www.spoj.com/problems/FASTFLOW/)
 - [Coconuts](https://www.spoj.com/problems/COCONUTS/)
+- Hard: [It Can Be Arranged](https://open.kattis.com/problems/itcanbearranged)
 
-## Lesson 10
+## Lesson 10: Pathfinding and dynamic programming
 
-Pathfinding and dynamic programming
+Identify what is the dynamic programming objective in Bellman-Ford and Floyd-Warshall shortest path algorithms.
+
+- [Roads in Berland](https://www.spoj.com/problems/CT25C/)
+- Negative Cycles
 
 ## Lesson $N - 1 = 11$: Exam I
 
-- 1 by 1
+- By groups of 2 or 3
 
 ## Lesson $N = 12$: Exam II
 
-- By pairs
+- Individual

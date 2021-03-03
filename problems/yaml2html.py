@@ -18,7 +18,7 @@ def code(url):
             return w
     return "?"
 
-for item in yaml.load(open("problems.yaml").read()):
+for item in yaml.safe_load(open("problems.yaml").read()):
     if 'broken' in item:
         continue
     if 'order' in item:
