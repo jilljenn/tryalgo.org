@@ -1,5 +1,5 @@
 ---
-Anagram Groups \href{http://poj.org/problem?id=2408}{[poj:2408]} \href{http://acm.tju.edu.cn/toj/showp1340.html}{[tju:1340]},
+# Anagram Groups \href{http://poj.org/problem?id=2408}{[poj:2408]} \href{http://acm.tju.edu.cn/toj/showp1340.html}{[tju:1340]}
 
 - chapter: anagrams
   name:  Anagram Groups
@@ -9,7 +9,7 @@ Anagram Groups \href{http://poj.org/problem?id=2408}{[poj:2408]} \href{http://ac
     - url: http://acm.tju.edu.cn/toj/showp1340.html
       code: [tju:1340]
 
-Anagram checker \href{http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=84}{[uva:148]}
+# Anagram checker \href{http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=84}{[uva:148]}
 
 - chapter: anagrams
   name:  Anagram checker
@@ -386,14 +386,6 @@ Bazinga! \href{https://www.spoj.com/problems/DCEPC505/}{[spoj:DCEPC505]}
     - url: http://www.spoj.com/problems/GOLDG/
       code: [spoj:GOLDG]
 
-% Free Tour \href{http://www.spoj.com/problems/FTOUR/}{[spoj:FTOUR]}
-
-- chapter: eulerian_tour
-  name:  % Free Tour
-  links:
-    - url: http://www.spoj.com/problems/FTOUR/
-      code: [spoj:FTOUR]
-
 Modex \href{https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=3671}{[uva:1230]},
 
 - chapter: fast_exponentiation
@@ -433,6 +425,14 @@ Maximum Flow \href{https://www.spoj.com/A12/problems/FLOW/}{[spoj:FLOW]}
   links:
     - url: https://www.spoj.com/A12/problems/FLOW/
       code: [spoj:FLOW]
+
+Greedy Island \href{https://www.spoj.com/problems/GREED/}
+
+- chapter: min_cost_max_flow
+  name: Greedy Island
+  links:
+    - url: https://www.spoj.com/problems/GREED/
+      code: [spoj:GREED]
 
 Stable Marriage Problem \href{http://www.spoj.com/problems/STABLEMP/}{[spoj:STABLEMP]}
 
