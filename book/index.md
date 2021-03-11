@@ -7,7 +7,7 @@ title: Programmation efficace
 
 ## Acheter sur [Amazon](http://www.amazon.fr/gp/product/2340010055/ref=as_li_tl?ie=UTF8&camp=1642&creative=19458&creativeASIN=2340010055&linkCode=as2&tag=mangaki-21)
 
-- Pre-order the English version on [Cambridge University Press](https://www.cambridge.org/fr/academic/subjects/computer-science/algorithmics-complexity-computer-algebra-and-computational-g/competitive-programming-python-128-algorithms-develop-your-coding-skills?format=PB&isbn=9781108716826) (October 2020)
+- Buy the English version on [Cambridge University Press](https://www.cambridge.org/fr/academic/subjects/computer-science/algorithmics-complexity-computer-algebra-and-computational-g/competitive-programming-python-128-algorithms-develop-your-coding-skills?format=PB&isbn=9781108716826)
 - Buy the Taiwanese version on [DrMaster](http://www.drmaster.com.tw/Bookinfo.asp?BookID=MP11906)
 - Buy the Chinese version on [Douban](https://book.douban.com/subject/30210075/)
 
