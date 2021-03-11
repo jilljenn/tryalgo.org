@@ -1,6 +1,6 @@
 ---
 layout: en
-category: Arithmetics
+category: arithmetics
 title: "Sieve of Eratosthenes"
 author: Christoph Dürr
 problems:
