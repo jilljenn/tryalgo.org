@@ -3,7 +3,7 @@ permalink: /mentions-legales/
 layout: default
 ---
 
-# Mentions légales sur le site {{ site.title }}
+# Mentions légales sur Tryalgo
 
 Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance en l’économie numérique, il est précisé aux utilisateurs du blog [{{ site.title }}]({{ site.url }}) l’identité des différents intervenants dans le cadre de sa réalisation et de son suivi.
 
