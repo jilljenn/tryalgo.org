@@ -15,6 +15,11 @@ The idea is to use 2 heaps. We will use a min-heap 'large', where the top
 element is its smallest item.  As well as a max-heap 'small', where the top
 element is its largest item.
 
+    large:            small:
+    [800, 400, 350]   [200, 100]
+               ^top    ^top
+    <-----k------->
+
 The invariant is that if the set contains less than k items, then it is
 entirely stored in 'large', while 'small' is empty. Otherwise 'large' stores
 the k largest items of the set, and 'small' all the others.
