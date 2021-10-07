@@ -110,4 +110,4 @@ This measures have to be considered with care as they are sensible to the machin
 
 ## See also
 
-- the [sieve of Misra-Gries](({% post_url fr/2021-02-04-crible-de-misra-gries %}))
+- the [sieve of Misra-Gries](https://tryalgo.org/fr/2021/02/04/crible-de-misra-gries/)
