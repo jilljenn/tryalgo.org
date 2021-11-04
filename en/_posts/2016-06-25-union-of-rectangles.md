@@ -4,6 +4,7 @@ title:  "Union of rectangles"
 category: geometry
 problems:
    "tju:Rectangles": http://acm.tju.edu.cn/toj/showp1049.html
+   "spoj:NKMARS": https://www.spoj.com/problems/NKMARS/
 ---
 
 You are given n rectilinear rectangles and want to find out the total area covered by their union.
