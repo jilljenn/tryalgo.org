@@ -12,7 +12,7 @@ Voici une collection de liens que nous considérons utiles.
 - Ecole Centrale Supélec [2019--2020](/club-ecs)
 - Université Paris-Saclay et Sorbonne Université [2020--2021](/club-paris)
 - Université de Lille [2020--2021](/club-ecl)
-
+- SU November Camp [2021](https://nuage.lip6.fr/s/Z5qY9pAdYQ5CxS7)
 
 ## Pour les plus jeunes
 
