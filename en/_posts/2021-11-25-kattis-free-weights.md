@@ -1,6 +1,6 @@
 ---
 layout: en
-category: Sequences 
+category: sequences 
 title: "Making pairs adjacent at minimal cost"
 author: Evripidis Bampis, Christoph Dürr and Lê Thanh Huong
 problems:
