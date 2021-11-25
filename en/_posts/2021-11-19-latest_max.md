@@ -8,7 +8,7 @@ problems:
 ---
 
 
-Given an array $x$ and an integer $k$, determine for every index $j$ the maximum $x[i]$ among all indices $j-k+1 \leq i \leq j$.
+Given an array $x$ and an integer $k$, determine for every index $1 \leq j\leq n$ the maximum $x[i]$ among all indices $\max\\{1,j-k+1 \\} \leq i \leq j$.
 
 # Use a double ended queue
 
@@ -24,7 +24,7 @@ Each building has the same width, which we call a block. Building $i$ (numbered 
 Instead of maintaining the actual window, we
 maintain in a queue $S$ all non-dominated indices in the window. The queue contains indices in increasing order, and their corresponding $x$-values decrease in this order. Hence $S[0]$ is the index of the largest value  in the window, and $S[-1]$ is the index of the last value which entered the window.
 
-When sliding the window, $x[j]$ enters the window, while $x[i]$ leaves the windows.  If $x[i]$ was the maximum in the window, i.e. $S[0]=i$, then $i$ has to be removed from $S$. And before $j$ enters $S$, we need to remove all indices dominated by $j$.  
+When sliding the window $[i,j]$, $x[j]$ enters the window, while $x[i]$ leaves the windows.  If $x[i]$ was the maximum in the window, i.e. $S[0]=i$, then $i$ has to be removed from $S$. And before $j$ enters $S$, we need to remove all indices dominated by $j$.  
 
 We use a double ended queue, because we need to remove dominated elements from the right, insert new elements to the right, and remove the maximum element from the left.
 
