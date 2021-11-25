@@ -11,7 +11,7 @@ You are given an array $X$ with the promise that each of its values appears exac
 
 # Simplification
 
-The original problem description at Kattis involves two arrays, allowing to move values not only within an array but also between the arrays. We can reduce this variant to a single array problem, by concatenating the arrays into a single one. We just need to add two copies of a big enough value $M$ as a separator between the arrays. $M$ can be taken as the upper bound on the values, plus one.  The example below is taken from the sample input from the original problem description using $M=10$ as a separator.
+The original problem description at Kattis involves two arrays, allowing to move values not only within an array but also between the arrays. We can reduce this variant to a single array problem, by concatenating the arrays into a single one. We just need to add two copies of a big enough value $M$ as a separator between the arrays. $M$ can be taken as the upper bound on the values, plus one.  The example below is the sample input from the original problem description using $M=10$ as a separator.
 
 # Example
 
