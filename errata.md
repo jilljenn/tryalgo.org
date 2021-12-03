@@ -74,6 +74,7 @@ $$    \frac{d'[n][v] - d'[k][v]}{n-k}  = \frac{d[n][v] - n\Delta - (d[k][v] - k\
 
 - page 204 (Algorithme en \\(O(n^3)\\)): il faut lire \\(S \subseteq\\{0,\ldots,n-1\\}\\) au lieu de \\( S \subseteq\\{1,\ldots,n-1\\} \\).  Aussi l'operation `expr[S][vL - vR] = ...` ne doit se faire que si la différence `vL - vR` est  positive.  Et pour finir la complexité est pire que $O(n^3)$ car il faut tenir compte des deux boucles internes sur les clés dans `expr[L]` et `expr[R]`.  Voir ce [billet]({% post_url en/2017-06-29-le-compte-est-bon %}).
 
+- page 207: La boucle intérieure devrait débuter à i * i au lieu de 2 * i pour atteindre la complexité annoncée.
 ## Clarifications
 
 - page 35, 36 : la fonction présentée prend une liste de mots (*w*) en argument et renvoie une liste de liste de mots (*réponse*).

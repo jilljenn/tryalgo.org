@@ -22,4 +22,6 @@ $$    \frac{d'[n][v] - d'[k][v]}{n-k}  = \frac{d[n][v] - n\Delta - (d[k][v] - k\
 
 - page 213: Indeed, an integer y can be written -> any composite integer y
 
+- page 213: The inner loop should start at i * i instead of 2 * i for the announced complexity.
+
 - page 240, last line: suffix of t begn inning -> beginning
