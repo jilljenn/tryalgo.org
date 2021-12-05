@@ -34,7 +34,7 @@ and
 
 $$ L = p_1^{l_1}\cdots p_a^{l_a}. $$
 
-![]({{ site.images }}klw.png "graphical representation of K, L, and W based on their factorization."){:width="600"}
+![]({{ site.images }}klw.png "graphical representation of K, L, and W based on their factorization."){:width="400"}
 
 Since lcm(W,L)=K, we have $\\max\\{w_i,l_i\\}=k_i$ for every $i=1,\ldots,a$.
 Since L < K, we know that for at least one index $i$, we have $l_i < k_i$, which implies $w_i = k_i$. Since the difference L - W must be largest possible, we can assume $l_i = k_i$.  Now we claim that for an optimal pair (L,W) we have $W = p_i^{k_i}$ and $L=K/p_i$.  Indeed if for some index $j\neq i$, $l_j < k_j$, then exchanging $l_j$ with $w_j$, increases the difference L - W, by the assumption W < L.  Also  if for some index $j\neq i$, 
