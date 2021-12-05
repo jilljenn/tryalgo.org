@@ -20,7 +20,7 @@ For every valid L, W pair we must have that L and W divide K.  This is a theorem
 
 Such a graph consists in a collection of paths and cycles. So if you start a walk from the lower left corner (with coordinates (0,0)), and make sure that you don't walk over the same edge twice, then you must end in another corner of the grid. Such a corner has coordinates (0,K), (K,K) or (K,0).  The coordinates of the intermediate points along the path all have coordinates which are multiplies of L. This proves that L divides K.  
 
-![]({{ site.images }}tiling-divides-side-length.svg "A walk on the multi-graph defined by the tiling."){:width="400"}
+![]({{ site.images }}tiling-divides-side-length.png "A walk on the multi-graph defined by the tiling."){:width="400"}
 
 The same argument can be used to show that W divides K as well.  The problem statement required that no smaller square can be tiled, which means that K is the least common multiple (lcm for short) of W and L.
 
