@@ -20,7 +20,7 @@ For every valid L, W pair we must have that L and W divide K.  This is a theorem
 
 Such a graph consists in a collection of paths and cycles. So if you start a walk from the lower left corner (with coordinates (0,0)), and make sure that you don't walk over the same edge twice, then you must end in another corner of the grid. Such a corner has coordinates (0,K), (K,K) or (K,0).  The coordinates of the intermediate points along the path all have coordinates which are multiplies of L. This proves that L divides K.  
 
-![]({{ site.images }}tiling-divides-side-length.png "A walk on the multi-graph defined by the tiling."){:width="400"}
+![]({{ site.images }}tiling-divides-side-length.png "A walk on the multi-graph defined by the tiling."){:width="600"}
 
 The same argument can be used to show that W divides K as well.  The problem statement required that no smaller square can be tiled, which means that K is the least common multiple (lcm for short) of W and L.
 
@@ -34,7 +34,7 @@ and
 
 $$ L = p_1^{l_1}\cdots p_a^{l_a}. $$
 
-![]({{ site.images }}klw.png "graphical representation of K, L, and W based on their factorization."){:width="400"}
+![]({{ site.images }}klw.png "graphical representation of K, L, and W based on their factorization."){:width="600"}
 
 Since lcm(W,L)=K, we have $\\max\\{w_i,l_i\\}=k_i$ for every $i=1,\ldots,a$.
 Since L < K, we know that for at least one index $i$, we have $l_i < k_i$, which implies $w_i = k_i$. Since the difference L - W must be largest possible, we can assume $l_i = k_i$.  Now we claim that for an optimal pair (L,W) we have $W = p_i^{k_i}$ and $L=K/p_i$.  Indeed if for some index $j\neq i$, $l_j < k_j$, then exchanging $l_j$ with $w_j$, increases the difference L - W, by the assumption W < L.  Also  if for some index $j\neq i$, 
