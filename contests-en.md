@@ -26,6 +26,8 @@ Here is a collection of links that we consider useful.
 - [**ACM-ICFP**](http://icfpconference.org/)
     - Functional programming contest
     - Usually in **August**
+- [**Advent of Code**](https://adventofcode.com/)
+    - Usually in **December**
 
 ## Competitions for regular training
 
