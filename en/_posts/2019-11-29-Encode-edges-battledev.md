@@ -24,11 +24,13 @@ In addition y should be minimized.
 
 # Properties
 
-The key observation is that the inequality x[u] + x[v] > y is monotone in x[v]. Hence the neighborhoods N of two vertices v and v', must be included in each other. This statement is a bit subtle as v or v' could be missing from one of the neighborhoods, because the graph has no self-loops. So the precise statement is, using $N[v]:=\\{u:(u,v) \in E\\}$ and $d(v)=\|N[v]\|$,
+The key observation is that the inequality x[u] + x[v] > y is monotone in x[v]. Hence for any two vertices v and v' with x[v] < x[v], the neighborhood of v must be included in the neighborhood of v'. This statement is a bit subtle as v or v' could be missing from one of the neighborhoods, because the graph has no self-loops. We use the notation $N[v]:=\\{u:(u,v) \in E\\}$ and $d(v):=\|N[v]\|$. The precise statement is that for any two vertices v, v' with x[v]≤x[v'] 
 
-- for any two vertices v, v' with d(v)≤d(v') we have $N[v]\setminus\{v'\} \subseteq N[v']$.
+- if there is an edge between v and v', then we have $N[v]\setminus\\{v'\\} \subseteq N[v'] \setminus\\{v\\}$,
+- and if there is no edge between v and v', then we have $N[v]\subseteq N[v']$.
 
-So we have a necessary condition which we can check in time $O(\|V\|^2)$, by ordering first the vertices in increasing degree, and checking inclusion of every two successive vertices in this order. The complexity is ok, given the bound $\|V\|\leq 1000$ from the problem statement.
+But this also means ordering the vertices by their degree, should give a nested family of neighborhood sets, using this variant of inclusion of sets.
+So we have a necessary condition which we can check in time $O(\|V\|^2)$, by ordering first the vertices in increasing degree, and checking inclusion of the neighborhoods of every two successive vertices in this order. The complexity is ok, given the bound $\|V\|\leq 1000$ from the problem statement.
 
 I claim that the condition is also sufficient. Consider the adjacency matrix of the given graph, using the degree ordering of the vertices. 
 
@@ -36,7 +38,7 @@ Consider the example 5 of the input samples:
 
 ![Example graph]({{site.images}}battledev2019_devops.svg){:width="400"}
 
-We obtain the following adjacency matrix M, where we showed in gray the edges and in white the non-edges. 
+We obtain the following adjacency matrix M, where we showed in gray the edges and in white the non-edges. (Small mistake, there is no edge between vertices 6 and 8. So the corresponding cells of M should be white.)
 
 ![Adjacency matrix]({{site.images}}battledev2019_devops_matrix.svg){:width="400"}
 
