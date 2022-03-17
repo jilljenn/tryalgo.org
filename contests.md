@@ -41,6 +41,8 @@ Voici une collection de liens que nous considérons utiles.
 - [**ACM-ICFP**](http://icfpconference.org/)
     - Concours de programmation fonctionnelle
     - Généralement en août
+- [**Advent of Code**](https://adventofcode.com/)
+    - Généralement en décembre
 
 ## Compétitions régulières pour s'entraîner & juges en ligne
 

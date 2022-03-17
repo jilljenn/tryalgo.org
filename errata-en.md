@@ -18,6 +18,8 @@ $$    \frac{d'[n][v] - d'[k][v]}{n-k}  = \frac{d[n][v] - n\Delta - (d[k][v] - k\
      = \frac{d[n][v] - d[k][v] }{n-k} - \frac{n\Delta - k\Delta}{n-k}\\
      = \frac{d[n][v] - d[k][v] }{n-k} - \Delta$$
 
+- page 116: Meigu Guan was a lecturer (then president) of Shandong Normal University. He worked on the route inspection problem during the Great Leap Forward of 1958-1960 (before the Chinese Cultural Revolution). Jack Edmonds got interested in his work and called the problem "Chinese postman problem" in honor of Guan. Thanks Wikipedia and Ning Yan Zhu for noticing our mistake.
+
 - page 143: the expression $\sum_{E_\ell}\ell$ should be instead $\sum \ell$, which stands for $\sum_{u\in U} \ell(u) + \sum_{v\in V} \ell(v)$.
 
 - page 213: Indeed, an integer y can be written -> any composite integer y
