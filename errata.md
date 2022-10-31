@@ -66,6 +66,8 @@ $$    \frac{d'[n][v] - d'[k][v]}{n-k}  = \frac{d[n][v] - n\Delta - (d[k][v] - k\
 
 - page 157 (rendu de monnaie): dans la récurrence pour A[i][m] il faut lire min au lieu de max
 
+- page 170 (arbres de Huffman): le code était erroné dans le cas d'une liste de fréquences {'a':1, 'b':1, 'c':2}, car en cas d'égalité des fréquences le tas essayé de comparer les arbres, qui peuvent être une chaîne de caractère (pour arbres à un noeud), ou une liste (pour les arbres plus grands) et donc être incomparables. La solution est de travailler avec un tas de couples (fréquence, indice_d_arbre) et stocker les arbres à part. Voir le [code source](https://jilljenn.github.io/tryalgo/_modules/tryalgo/huffman.html#huffman).
+
 - page 181 : dans le commentaire du code il faut comprendre que la décomposition binaire de b contient 2 puissance p et non pas (a puissance (2 puissance p)).
 
 - page 188 : On a alors s(i,i)=0. Il faut lire opt(i,i)=0.
