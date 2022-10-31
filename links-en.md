@@ -1,12 +1,12 @@
 ---
 layout: page
-title: Links
+title: Additional material
 lang: en
 ---
 
 ## The library tryalgo
 
-The source codes documented in the book mentionned below are collected in a Python library together with some additional source codes.
+We collected implementations of various algorithms and data structures in a Python library.
 
 It is [available on PyPI](https://pypi.python.org/pypi/tryalgo/) :
 
@@ -22,19 +22,19 @@ Several options:
 
 ## Our book
 
-We published a book on competitive programming in Python, which appeared in several languages.
+<a href="http://www.amazon.fr/gp/product/2340010055/ref=as_li_tl?ie=UTF8&amp;camp=1642&amp;creative=19458&amp;creativeASIN=2340010055&amp;linkCode=as2&amp;tag=mangaki-21"><img src="/static/cover.jpg" style="float: right" width="180" /></a>
+
+We published a book on competitive programming in Python, documenting most of the content of the library `tryalgo`. It appeared in several languages.
 
 - [french](https://www.editions-ellipses.fr/accueil/3853-programmation-efficace-128-algorithmes-quil-faut-avoir-compris-et-codes-en-python-au-cours-de-sa-vie-9782340010055.html)
 - [chinese](https://book.douban.com/subject/30210075/)
 - [taiwanese](http://www.drmaster.com.tw/Bookinfo.asp?BookID=MP11906)
 - [english](http://www.cambridge.org/9781108716826) --- this latest translation contains some improved presentations over the french version
 
-<a href="http://www.amazon.fr/gp/product/2340010055/ref=as_li_tl?ie=UTF8&amp;camp=1642&amp;creative=19458&amp;creativeASIN=2340010055&amp;linkCode=as2&amp;tag=mangaki-21"><img src="/static/cover.jpg" style="float: right" width="180" /></a>
-
 
 ## Other books
 
-There are tons of books on algorithms. Most of the time they don't cover all the topics a well trained competitive programmer should learn, and many do not talk about implementation at all. Here is a personal selection among freely available books.
+There are tons of books on algorithms. Most of them don't cover all the topics a well trained competitive programmer should learn, and many do not talk about implementation at all. Here is a personal selection among freely available books.
 
 - [Algorithms, by Jeff Erickson](https://jeffe.cs.illinois.edu/teaching/algorithms/book/Algorithms-JeffE.pdf) 
 - [Guide to competitive programming, by Antti Laaksonen](https://link.springer.com/book/10.1007/978-3-319-72547-5)
