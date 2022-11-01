@@ -19,9 +19,8 @@ lang: en
 
 This website gathers the following resources:
 
-- [128 classic algorithms](/code/) in Python on [GitHub](https://github.com/jilljenn/tryalgo/tree/master/tryalgo) ;
+- the Python library [tryalgo](/useful-resources-en/) on [GitHub](https://github.com/jilljenn/tryalgo/tree/master/tryalgo) ; documented in the book *Competitive Programming in Python, 128 Algorithms to Develop your Coding Skills*.
 - various [problems](/problems/) and their [solutions](/en/) ;
-- [a handbook](/book/), in French, but that will be soon released in English by Cambridge University Press (2020).
 
 Here is a pseudocode in order to optimize your learning:
 

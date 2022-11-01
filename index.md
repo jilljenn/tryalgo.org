@@ -22,8 +22,7 @@ title: Résolution de problèmes algorithmiques
 
 Ce site regroupe les ressources suivantes :
 
-- le livre [*Programmation efficace : Les 128 algorithmes qu'il faut avoir compris et codés dans sa vie*](/book/) ;
-- [128 algorithmes classiques](/code/) en Python sur [GitHub](https://github.com/jilljenn/tryalgo/tree/master/tryalgo) ;
+- la bibliothèque [tryalgo](/useful-resources/) en Python sur [GitHub](https://github.com/jilljenn/tryalgo/tree/master/tryalgo) ; documenté dans le livre *Programmation efficace : Les 128 algorithmes qu'il faut avoir compris et codés dans sa vie*.
 - différents [problèmes](/problems/) et leurs [solutions](/en/) ;
 - le [blog](/fr/) du CAPS, le [club algo](/club/) de l'ENS Paris-Saclay.
 
