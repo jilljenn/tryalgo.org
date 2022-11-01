@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Resources utiles
-lang: en
+lang: fr
 ---
 
 ## La bibliothèque tryalgo
