@@ -88,16 +88,17 @@ $$
 $$
 
 The dynamic program above, in essence depends on the matrix $W$. And it is the structure of $W$, which permits the above mentioned improvement. Two properties of $W$ are essential.
-1. $W$ satisfies the quadrangle inequality (denoted QI for short) if for every $a\leq b\leq c\leq d$ we have
+
+- $W$ satisfies the quadrangle inequality (denoted QI for short) if for every $a\leq b\leq c\leq d$ we have
 
 $$
-    {\color{red}W[a,c] + W[b,d]} \leq {\color{green}W[b,c] + W[a,d]}  
+    {\color{red}{W[a,c] + W[b,d]}} \leq {\color{green}{W[b,c] + W[a,d]}}  
 $$
 
-2. $W$ is monotone on the lattice of intervals if  for every $a\leq b\leq c\leq d$ we have
+- $W$ is monotone on the lattice of intervals if  for every $a\leq b\leq c\leq d$ we have
 
 $$
-    {\color{red} W[b,c]} \leq {\color{green} W[a,d]}.
+    {\color{red}{W[b,c]}} \leq {\color{green}{W[a,d]}}.
 $$
 
 ![Crucial properties of weight matrix W]({{site.images}}quadrangle.png){:width="600"}
