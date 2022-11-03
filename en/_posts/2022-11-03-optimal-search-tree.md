@@ -66,7 +66,7 @@ This leads to a time complexity of $O(n^3)$, because we have $O(n^2)$ variables,
 Donald Knuth made this clever observation 50 years ago, that the root does not have to be searched within the full range. The following range is enough:
 
 $$
-        R[i,j - 1] \leq R[i,j] \leq R[i + 1,j],         \tag{(1)}
+        R[i,j - 1] \leq R[i,j] \leq R[i + 1,j],         \tag{1}
 $$ 
 
 and therefore
@@ -121,7 +121,8 @@ $$
 $$
 
 is by induction on the difference $d-a$. When $a=b$ or $c=d$, both sides of the inequality are identical. This establishes the base case $d-a\leq 1$. The induction step considers two cases.
-1. **Case $a<b=c<d$** In this case the inequality to show becomes the inverse triangular inequality
+
+1. **Case $a<b=c<d$ ** In this case the inequality to show becomes the inverse triangular inequality
 
 $$
     C[a,b]+C[b,d] \leq C[a,d] \mbox{ for all } a<b<d.
@@ -130,14 +131,15 @@ $$
 Let $k$ be the minimizer for the expression of $C[a,d]$, i.e. $C[a,d]=C_k[a,d]$, using the notation $C_k[a,d] :=  W[a,b] + C[a,k-1]+C[k,b]$. If $k\leq b$ we have
 
 $$
-    C[a,b]+C[b,d] \leq C_z[a,b] + C[b,d] \tag{(\mbox{by opt. of }C[a,b])} \\
+    C[a,b]+C[b,d] \leq C_z[a,b] + C[b,d] \tag{by opt. of C[a,b]} \\
     = W[a,d] + C[a,k-1]+C[k,b] + C[b,d] \\
-    \leq W[a,d] + C[a,k-1] + C[k,d] \tag{(\mbox{by ind. hyp., using }a<k)}\\
-    = C[a,d]. \tag{(\mbox{by choice of }k)}
+    \leq W[a,d] + C[a,k-1] + C[k,d] \tag{by ind. hyp., using a<k}\\
+    = C[a,d]. \tag{by choice of k}
 $$
 
 The case $k > b$ is similar.
-2. **Case $a<b<c<d$** Let $k,\ell$ be such that 
+
+2. **Case $a<b<c<d$ ** Let $k,\ell$ be such that 
 
 $$
     C[b,c] = C_k[b,c] \mbox{ and } C[a,d] = C_\ell[a,d].
