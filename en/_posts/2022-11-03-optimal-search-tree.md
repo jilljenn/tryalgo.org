@@ -39,7 +39,7 @@ The cost of a tree is called the *weighted path length* and is defined as the su
 
 An optimal search tree can be computed using dynamic programming. For every $0\leq i\leq j\leq n$ consider the problem of building the optimal search tree for queries restricted to be strictly between the $i$-th key and the $j+1$-th key. We call it the *problem restricted to* $(i,j)$, or *subproblem*. We consider the following values.
 - $C[i,j]$ is the cost of the optimal search tree
-- $W[i,j]$ is the total frequency of the restricted problem. It is $\alpha_i + \beta_i + \alpha_{i+1}+\beta_{i+1}+\ldots+\beta_{j}+\alpha_j$.
+- $W[i,j]$ is the total frequency of the restricted problem. It is $\alpha_i +\beta_{i+1}+  \alpha_{i+1} + \ldots+\beta_{j}+\alpha_j$.
 - $R[i,j]$ is the root of the optimal search tree. It is defined only for $i < j$ and satisfies $i+1 \leq R[i,j] \leq j$.
 
 These values lead to the following dynamic program. For the base case $i=j$ we have
@@ -130,10 +130,10 @@ $$
 Let $k$ be the minimizer for the expression of $C[a,d]$, i.e. $C[a,d]=C_k[a,d]$, using the notation $C_k[a,d] :=  W[a,b] + C[a,k-1]+C[k,b]$. If $k\leq b$ we have
 
 $$
-    C[a,b]+C[b,d] \leq C_z[a,b] + C[b,d] \tag{(by opt. of $C[a,b]$)} \\
+    C[a,b]+C[b,d] \leq C_z[a,b] + C[b,d] \tag{(\mbox{by opt. of }C[a,b])} \\
     = W[a,d] + C[a,k-1]+C[k,b] + C[b,d] \\
-    \leq W[a,d] + C[a,k-1] + C[k,d] \tag{(by ind. hyp., using $a<k$)}\\
-    = C[a,d]. \tag{(by choice of $k$)}
+    \leq W[a,d] + C[a,k-1] + C[k,d] \tag{(\mbox{by ind. hyp., using }a<k)}\\
+    = C[a,d]. \tag{(\mbox{by choice of }k)}
 $$
 
 The case $k > b$ is similar.
@@ -146,10 +146,10 @@ $$
 If $\ell\leq k$ we have
 
 $$
-    C[a,c] + C[b,d] \leq C_\ell[a,c] + C_k[b,d] \tag{(by opt. of $C[a,c]$ and $C[b,d]$)} \\
+    C[a,c] + C[b,d] \leq C_\ell[a,c] + C_k[b,d] \tag{(\mbox{by opt. of }C[a,c]\mbox{ and }C[b,d])} \\
     = W[a,c] + W[b,d] +C[a,\ell-1] + C[k,c] + C[b,k-1]+C[k,d] \\
-    \leq W[b,c] + W[a,d] +C[a,\ell-1] + C[k,c] + C[b,k-1]+C[k,d] \tag{(by QI of $W$)} \\
-    \leq W[b,c] + W[a,d] +C[a,\ell-1] + C[b,k-1]+C[k,c] + C[\ell,d] \tag{(by ind. hyp.)} \\
+    \leq W[b,c] + W[a,d] +C[a,\ell-1] + C[k,c] + C[b,k-1]+C[k,d] \tag{(\mbox{by QI of }W)} \\
+    \leq W[b,c] + W[a,d] +C[a,\ell-1] + C[b,k-1]+C[k,c] + C[\ell,d] \tag{(\mbox{by ind. hyp.})} \\
     = C_k[b,c] + C_\ell[a,d] \\
     = C[b,c] + C[a,d].
 $$
@@ -187,12 +187,12 @@ $$
 $$
 
 which show the implication (2). The proof for the second inequality is similar.
-<details>
+</details>
 
 
 ## Implementation in Python
 
-~~~Python
+{% highlight python %}
 def optimal_search_tree(alpha, beta):
     """ Compute an optimal search tree
 
@@ -249,7 +249,7 @@ def extract_tree(R, i, j):
         left = extract_tree(R, i, root - 1)
         right = extract_tree(R, root, j)
         return [left, root, right]
-~~~
+{% endhighlight %}
 
 
 
