@@ -1,10 +1,11 @@
 ---
 layout: en
 category: graphs
-title: "Quadrangle Inequality based speedup for dynamic programs"
+title: "Quadrangle Inequality trick for dynamic programs"
 author: Christoph Dürr
 problems:
    "spoj:IITKESO207SPA3C": https://www.spoj.com/problems/IITKESO207SPA3C/
+   "aizu:ALDS1_10_D": https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_D
 ---
 
 Given an ordered list of keys with frequencies, build a binary search tree on those keys which minimizes the sum over all keys of its frequency multiplied by its level in the tree.
@@ -16,12 +17,14 @@ In the 1970's a technique was discovered by Knuth and generalized in the 1980's 
 We illustrate the technique on the following problem. Informally, we want to construct a binary search tree, over given keys, which minimizes the average query cost.
 
 Formally, we are given some keys numbered from $1$ to $n$, together with frequency vectors 
+
 $$
     \begin{array}{cccc}
         &\beta_1&   &\beta_2&   &\ldots&  &\beta_n \\
     \alpha_0&   &\alpha_1&  &\alpha_2 & &\alpha_{n-1}&   &\alpha_{n}
     \end{array}
 $$
+
 such that $\beta_i$ is the frequency of queries of the $i$-th key, $\alpha_i$ is the frequency of a query between the $i$-th and the $i+1$-th key, and $\alpha_0, \alpha_n$ have obvious interpretations.
  
 A binary search tree is a rooted tree where
@@ -40,14 +43,18 @@ An optimal search tree can be computed using dynamic programming. For every $0\l
 - $R[i,j]$ is the root of the optimal search tree. It is defined only for $i < j$ and satisfies $i+1 \leq R[i,j] \leq j$.
 
 These values lead to the following dynamic program. For the base case $i=j$ we have
+
 $$
     C[i,i] = W[i,i] = \alpha_i
 $$
+
 and for $i < j$ we have
+
 $$
     C[i,j] = W[i,j] + \min_{i+1\leq r\leq j} (C[i,r - 1] + C[r,j]) \\
     R[i][i] = \textrm{argmin of above expression}.
 $$
+
 The optimal search tree of the subproblem consists of some root $i+1\leq r\leq j$, which motivates the minimum expression above. The addition of $W[i,j]$ comes from the fact that by attaching the left and right subtrees under the root $r$, the level of all their nodes increases by $1$. Since root $r$ has level one, the weight $\beta_r$ has to enter the cost of the tree as well.
 
 ![Optimal search tree decomposition]({{site.images}}optimal_search_tree_ij.png){:width="400"}
@@ -57,10 +64,13 @@ This leads to a time complexity of $O(n^3)$, because we have $O(n^2)$ variables,
 ## Improvement to $O(n^2)$
 
 Donald Knuth made this clever observation 50 years ago, that the root does not have to be searched within the full range. The following range is enough:
+
 $$
-        R[i,j - 1] \leq R[i,j] \leq R[i + 1,j],         \:\:\:(*)
+        R[i,j - 1] \leq R[i,j] \leq R[i + 1,j],         \tag{(1)}
 $$ 
+
 and therefore
+
 $$
         C[i,j] = W[i,j] + \min_{R[i,j-1]\leq r\leq R[i+1,j]} (C[i,r - 1] + C[r,j]).
 $$
@@ -70,6 +80,7 @@ This would mean that the time needed to compute $R[i,j]$ is proportional to $R[i
 ## A general framework
 
 Such an improvement applies under some condition to any dynamic program of the form
+
 $$
     C[i,i] = 0 \\
     C[i,j] = W[i,j] + \min_{i<k\leq j} (C[i,k-1]+C[k,j]) \mbox{ for } i < j.
@@ -77,14 +88,18 @@ $$
 
 The dynamic program above, in essence depends on the matrix $W$. And it is the structure of $W$, which permits the above mentioned improvement. Two properties of $W$ are essential.
 1. $W$ satisfies the quadrangle inequality (denoted QI for short) if for every $a\leq b\leq c\leq d$ we have
+
 $$
     W[a,c] + W[b,d] \leq W[b,c] + W[a,d]  
 $$
+
 2. $W$ is monotone on the lattice of intervals if  for every $a\leq b\leq c\leq d$ we have
+
 $$
     W[b,c] \leq W[a,d].
 $$
-F. Frances Yao shows that whenever $W$ satisfies the two properties, then the inequality (*) holds, which allows to solve the dynamic program in quadratic time.
+
+F. Frances Yao shows that whenever $W$ satisfies the two properties, then the inequality (1) holds, which allows to solve the dynamic program in quadratic time.
 
 This holds for a variety problems, such as
 - Optimal binary search tree for given query frequencies
@@ -97,29 +112,39 @@ For the formal proof we refer to Yao's paper, referenced at the bottom of this d
 
 **Lemma 1** If $W$ satisfies QI and is monotone on the lattice of intervals, then $C$ also satisfies QI.
 
-::: spoiler proof
+<details>
+  <summary>Proof</summary>
 The proof of
+
 $$
     C[a,c] + C[b,d] \leq C[b,c] + C[a,d] \mbox{ for all } a\leq b\leq c\leq d  
 $$
+
 is by induction on the difference $d-a$. When $a=b$ or $c=d$, both sides of the inequality are identical. This establishes the base case $d-a\leq 1$. The induction step considers two cases.
 1. **Case $a<b=c<d$** In this case the inequality to show becomes the inverse triangular inequality
+
 $$
     C[a,b]+C[b,d] \leq C[a,d] \mbox{ for all } a<b<d.
 $$
+
 Let $k$ be the minimizer for the expression of $C[a,d]$, i.e. $C[a,d]=C_k[a,d]$, using the notation $C_k[a,d] :=  W[a,b] + C[a,k-1]+C[k,b]$. If $k\leq b$ we have
+
 $$
     C[a,b]+C[b,d] \leq C_z[a,b] + C[b,d] \tag{(by opt. of $C[a,b]$)} \\
     = W[a,d] + C[a,k-1]+C[k,b] + C[b,d] \\
     \leq W[a,d] + C[a,k-1] + C[k,d] \tag{(by ind. hyp., using $a<k$)}\\
     = C[a,d]. \tag{(by choice of $k$)}
 $$
+
 The case $k > b$ is similar.
 2. **Case $a<b<c<d$** Let $k,\ell$ be such that 
+
 $$
     C[b,c] = C_k[b,c] \mbox{ and } C[a,d] = C_\ell[a,d].
 $$
+
 If $\ell\leq k$ we have
+
 $$
     C[a,c] + C[b,d] \leq C_\ell[a,c] + C_k[b,d] \tag{(by opt. of $C[a,c]$ and $C[b,d]$)} \\
     = W[a,c] + W[b,d] +C[a,\ell-1] + C[k,c] + C[b,k-1]+C[k,d] \\
@@ -128,31 +153,41 @@ $$
     = C_k[b,c] + C_\ell[a,d] \\
     = C[b,c] + C[a,d].
 $$
+
 The case $\ell > k$ is similar. And this concludes the proof.
-:::
+</details>
 
 **Lemma 2** If $C$ satifies QI, then
+
 $$
     K[i,j] \leq K[i,j+1] \leq K[i+1,j+1] \mbox{ for } i\leq j,
 $$
+
 where $K[i,j]$ is the minimizer of the minimum expression in the definition of $C[i,j]$, and for convenience we denote $K[i,i]=i$.
 
-::: spoiler Proof
-It holds by definition of $C$ when $i=j$. To show the first inequality in case $i<j$, we will show for $a <b\leq c < d$
+<details>
+  <summary>Proof</summary>
+It holds by definition of $C$ when $i=j$. To show the first inequality in case $i<j$, we will show for $a < b\leq c < d$
+
 $$
     \left[ C_c[a,d] \leq C_b[a,d] \right] \Rightarrow 
     \left[ C_c[a,d+1] \leq C_b[a,d+1] \right].      \tag{(2)}
 $$
+
 By the quadrangle inequality we have 
+
 $$
     C[b,d]+C[c,d+1] \leq C[c,d] + C[b,d+1].
 $$
+
 And if we add $W[a,d]+W[a,d]+C[a,b-1]+C[a,d-1]$ to both sides we obtain
+
 $$
     C_b[a,d]+C_c[a,d+1] \leq C_c[a,d]+C_b[a,d+1]
 $$
+
 which show the implication (2). The proof for the second inequality is similar.
-:::
+<details>
 
 
 ## Implementation in Python
