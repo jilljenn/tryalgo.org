@@ -8,11 +8,11 @@ problems:
    "aizu:ALDS1_10_D": https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_D
 ---
 
-Given an ordered list of keys with frequencies, build a binary search tree on those keys which minimizes the sum over all keys of its frequency multiplied by its level in the tree.
+Given an ordered list of keys with frequencies, build a binary search tree on those keys which minimizes the average query cost.
 
-## Definition
+## Formal definition
 
-In the 1970's a technique was discovered by Knuth and generalized in the 1980's by Yao, which permits to speedup a dynamic program of a particular form and particular property.
+In the 1970's a technique was discovered by Knuth and generalized in the 1980's by Yao, which permits to speedup any dynamic program of a particular form and particular property.
 
 We illustrate the technique on the following problem. Informally, we want to construct a binary search tree, over given keys, which minimizes the average query cost.
 
@@ -25,19 +25,20 @@ $$
     \end{array}
 $$
 
-such that $\beta_i$ is the frequency of queries of the $i$-th key, $\alpha_i$ is the frequency of a query between the $i$-th and the $i+1$-th key, and $\alpha_0, \alpha_n$ have obvious interpretations.
+such that $\beta_i$ is the frequency of queries of the $i$-th key, $\alpha_i$ is the frequency of a query between the $i$-th and the $i+1$-th key. Here we consider fictitious keys indexed $0$ and $n+1$. 
  
 A binary search tree is a rooted tree where
 - every inner node is associated to a key index $i$ and has weight $\beta_i$,
 - inner nodes have a left and a right subtree,
 - every leaf has weight $\alpha_i$.
+
 Such a tree has to satisfy the usual left-to-right ordering according to the indices of the keys.
 
 ![Optimal search tree]({{site.images}}optimal_search_tree_1n.png){:width="600"}
 
 The cost of a tree is called the *weighted path length* and is defined as the sum over all nodes of the weight of the node multiplied with the level of the node in the tree.
 
-An optimal search tree can be computed using dynamic programming. For every $0\leq i\leq j\leq n$ consider the problem of building the optimal search tree for queries restricted to be strictly between the $i$-th key and the $j+1$-th key. We call it the *problem restricted to* $(i,j)$, or *subproblem*. We consider the following values.
+An optimal search tree can be computed using dynamic programming. For every $0\leq i\leq j\leq n$ consider the problem of building the optimal search tree for queries restricted to be strictly between the $i$-th key and the $j+1$-th key. We call it the *problem restricted to* $(i,j)$, or *subproblem* $(i,j)$. We consider the following values.
 - $C[i,j]$ is the cost of the optimal search tree
 - $W[i,j]$ is the total frequency of the restricted problem. It is $\alpha_i +\beta_{i+1}+  \alpha_{i+1} + \ldots+\beta_{j}+\alpha_j$.
 - $R[i,j]$ is the root of the optimal search tree. It is defined only for $i < j$ and satisfies $i+1 \leq R[i,j] \leq j$.
@@ -55,7 +56,7 @@ $$
     R[i][i] = \textrm{argmin of above expression}.
 $$
 
-The optimal search tree of the subproblem consists of some root $i+1\leq r\leq j$, which motivates the minimum expression above. The addition of $W[i,j]$ comes from the fact that by attaching the left and right subtrees under the root $r$, the level of all their nodes increases by $1$. Since root $r$ has level one, the weight $\beta_r$ has to enter the cost of the tree as well.
+The optimal search tree of the subproblem contains a root $i+1\leq r\leq j$, which motivates the minimum expression above. The addition of $W[i,j]$ comes from the fact that by attaching the left and right subtrees under the root $r$, the level of all their nodes increases by $1$. Since root $r$ has level one, the weight $\beta_r$ has to enter the cost of the tree as well.
 
 ![Optimal search tree decomposition]({{site.images}}optimal_search_tree_ij.png){:width="400"}
 
@@ -83,28 +84,31 @@ Such an improvement applies under some condition to any dynamic program of the f
 
 $$
     C[i,i] = 0 \\
-    C[i,j] = W[i,j] + \min_{i<k\leq j} (C[i,k-1]+C[k,j]) \mbox{ for } i < j.
+    C[i,j] = W[i,j] + \min_{i<k\leq j} (C[i,k-1]+C[k,j]) \textrm{ \:\:for } i < j.
 $$
 
 The dynamic program above, in essence depends on the matrix $W$. And it is the structure of $W$, which permits the above mentioned improvement. Two properties of $W$ are essential.
 1. $W$ satisfies the quadrangle inequality (denoted QI for short) if for every $a\leq b\leq c\leq d$ we have
 
 $$
-    W[a,c] + W[b,d] \leq W[b,c] + W[a,d]  
+    {\color{red}W[a,c] + W[b,d]} \leq {\color{green}W[b,c] + W[a,d]}  
 $$
 
 2. $W$ is monotone on the lattice of intervals if  for every $a\leq b\leq c\leq d$ we have
 
 $$
-    W[b,c] \leq W[a,d].
+    {\color{red} W[b,c]} \leq {\color{green} W[a,d]}.
 $$
 
+![Crucial properties of weight matrix W]({{site.images}}quadrangle.png){:width="600"}
+
 F. Frances Yao shows that whenever $W$ satisfies the two properties, then the inequality (1) holds, which allows to solve the dynamic program in quadratic time.
+
 
 This holds for a variety problems, such as
 - Optimal binary search tree for given query frequencies
 - Given sets of strings $S_1,\ldots,S_n$, compute the multi-set of strings obtained by concatenating a string from $S_1$ with a string from $S_2$ and so on and finally concatenating with a string from $S_n$. Every concatenation between two strings generates one unit of cost. The goal is to perform the task at minimum cost.
-- Compute the triangulation of a convex polygon, minimizing the total length of the added segments.
+- Given $n$ points in convex positions, and an integer $m < n$, compute a convex polygon using $m$ among the $n$ points which has longest perimeter.
 
 ## The proof idea
 
@@ -117,43 +121,50 @@ For the formal proof we refer to Yao's paper, referenced at the bottom of this d
 The proof of
 
 $$
-    C[a,c] + C[b,d] \leq C[b,c] + C[a,d] \mbox{ for all } a\leq b\leq c\leq d  
+    C[a,c] + C[b,d] \leq C[b,c] + C[a,d] \textrm{\:\: for all } a\leq b\leq c\leq d  
 $$
 
 is by induction on the difference $d-a$. When $a=b$ or $c=d$, both sides of the inequality are identical. This establishes the base case $d-a\leq 1$. The induction step considers two cases.
 
-1. **Case $a<b=c<d$ ** In this case the inequality to show becomes the inverse triangular inequality
+**Case** $a<b=c<d$: In this case the inequality to show becomes the inverse triangular inequality
 
 $$
-    C[a,b]+C[b,d] \leq C[a,d] \mbox{ for all } a<b<d.
+    C[a,b]+C[b,d] \leq C[a,d] \textrm{ \:\:for all } a<b<d.
 $$
 
 Let $k$ be the minimizer for the expression of $C[a,d]$, i.e. $C[a,d]=C_k[a,d]$, using the notation $C_k[a,d] :=  W[a,b] + C[a,k-1]+C[k,b]$. If $k\leq b$ we have
 
 $$
-    C[a,b]+C[b,d] \leq C_z[a,b] + C[b,d] \tag{by opt. of C[a,b]} \\
-    = W[a,d] + C[a,k-1]+C[k,b] + C[b,d] \\
-    \leq W[a,d] + C[a,k-1] + C[k,d] \tag{by ind. hyp., using a<k}\\
-    = C[a,d]. \tag{by choice of k}
+    \begin{array}{rll}
+        C[a,b]+C[b,d] &\leq C_z[a,b] + C[b,d] &\text{(by opt. of C[a,b])} \\
+        &= W[a,d] + C[a,k-1]+C[k,b] + C[b,d] \\
+        &\leq W[a,d] + C[a,k-1] + C[k,d] &\text{(by ind. hyp., using a<k)}\\
+        &= C[a,d]. &\text{(by choice of k)}
+    \end{array}
 $$
 
 The case $k > b$ is similar.
 
-2. **Case $a<b<c<d$ ** Let $k,\ell$ be such that 
+**Case** $a<b<c<d$: Let $k,\ell$ be such that 
 
 $$
-    C[b,c] = C_k[b,c] \mbox{ and } C[a,d] = C_\ell[a,d].
+    C[b,c] = C_k[b,c] \textrm{ and } C[a,d] = C_\ell[a,d].
 $$
 
 If $\ell\leq k$ we have
 
 $$
-    C[a,c] + C[b,d] \leq C_\ell[a,c] + C_k[b,d] \tag{\mbox{by opt. of }C[a,c]\mbox{ and }C[b,d]} \\
-    = W[a,c] + W[b,d] +C[a,\ell-1] + C[k,c] + C[b,k-1]+C[k,d] \\
-    \leq W[b,c] + W[a,d] +C[a,\ell-1] + C[k,c] + C[b,k-1]+C[k,d] \tag{by QI of W} \\
-    \leq W[b,c] + W[a,d] +C[a,\ell-1] + C[b,k-1]+C[k,c] + C[\ell,d] \tag{\mbox{by ind. hyp.}} \\
-    = C_k[b,c] + C_\ell[a,d] \\
-    = C[b,c] + C[a,d].
+\begin{array}{rll}
+    C[a,c] + C[b,d] &\leq C_\ell[a,c] + C_k[b,d] 
+                    &\text{(by opt.)} \\
+    &= W[a,c] + W[b,d] +C[a,\ell-1] + C[k,c] + C[b,k-1]+C[k,d] \\
+    &\leq W[b,c] + W[a,d] +C[a,\ell-1] + C[k,c] + C[b,k-1]+C[k,d] 
+                    &\text{(by QI of W)} \\
+    &\leq W[b,c] + W[a,d] +C[a,\ell-1] + C[b,k-1]+C[k,c] + C[\ell,d] 
+                    &\text{(by ind. hyp.)} \\
+    &= C_k[b,c] + C_\ell[a,d] \\
+    &= C[b,c] + C[a,d].
+\end{array}
 $$
 
 The case $\ell > k$ is similar. And this concludes the proof.
@@ -162,13 +173,14 @@ The case $\ell > k$ is similar. And this concludes the proof.
 **Lemma 2** If $C$ satifies QI, then
 
 $$
-    K[i,j] \leq K[i,j+1] \leq K[i+1,j+1] \mbox{ for } i\leq j,
+    K[i,j] \leq K[i,j+1] \leq K[i+1,j+1] \textrm{ \:\:for } i\leq j,
 $$
 
 where $K[i,j]$ is the minimizer of the minimum expression in the definition of $C[i,j]$, and for convenience we denote $K[i,i]=i$.
 
 <details>
   <summary>Proof</summary>
+
 It holds by definition of $C$ when $i=j$. To show the first inequality in case $i < j$, we will show for $a < b\leq c < d$
 
 $$
@@ -188,7 +200,7 @@ $$
     C_b[a,d]+C_c[a,d+1] \leq C_c[a,d]+C_b[a,d+1]
 $$
 
-which show the implication (2). The proof for the second inequality is similar.
+which shows the implication (2). The proof for the second inequality is similar.
 </details>
 
 
@@ -202,7 +214,8 @@ def dyn_prog_QI_trick(W):
     C[i,j] = W[i,j] + min over i < k <= j of (C[i,k-1] + C[k,j]) 
 
     :param W: matrix of dimension n times n
-    :assumes: W satisfies the quadrangle inequality and monotonicity in the lattice of intervals 
+    :assumes: W satisfies the quadrangle inequality 
+              and monotonicity in the lattice of intervals 
     :returns: C[0,n-1] and a matrix K with the minimizers
     :complexity: O(n^2)
     """
