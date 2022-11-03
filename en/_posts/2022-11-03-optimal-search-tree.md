@@ -146,10 +146,10 @@ $$
 If $\ell\leq k$ we have
 
 $$
-    C[a,c] + C[b,d] \leq C_\ell[a,c] + C_k[b,d] \tag{(\mbox{by opt. of }C[a,c]\mbox{ and }C[b,d])} \\
+    C[a,c] + C[b,d] \leq C_\ell[a,c] + C_k[b,d] \tag{\mbox{by opt. of }C[a,c]\mbox{ and }C[b,d]} \\
     = W[a,c] + W[b,d] +C[a,\ell-1] + C[k,c] + C[b,k-1]+C[k,d] \\
-    \leq W[b,c] + W[a,d] +C[a,\ell-1] + C[k,c] + C[b,k-1]+C[k,d] \tag{(\mbox{by QI of }W)} \\
-    \leq W[b,c] + W[a,d] +C[a,\ell-1] + C[b,k-1]+C[k,c] + C[\ell,d] \tag{(\mbox{by ind. hyp.})} \\
+    \leq W[b,c] + W[a,d] +C[a,\ell-1] + C[k,c] + C[b,k-1]+C[k,d] \tag{by QI of W} \\
+    \leq W[b,c] + W[a,d] +C[a,\ell-1] + C[b,k-1]+C[k,c] + C[\ell,d] \tag{\mbox{by ind. hyp.}} \\
     = C_k[b,c] + C_\ell[a,d] \\
     = C[b,c] + C[a,d].
 $$
@@ -167,11 +167,11 @@ where $K[i,j]$ is the minimizer of the minimum expression in the definition of $
 
 <details>
   <summary>Proof</summary>
-It holds by definition of $C$ when $i=j$. To show the first inequality in case $i<j$, we will show for $a < b\leq c < d$
+It holds by definition of $C$ when $i=j$. To show the first inequality in case $i < j$, we will show for $a < b\leq c < d$
 
 $$
     \left[ C_c[a,d] \leq C_b[a,d] \right] \Rightarrow 
-    \left[ C_c[a,d+1] \leq C_b[a,d+1] \right].      \tag{(2)}
+    \left[ C_c[a,d+1] \leq C_b[a,d+1] \right].      \tag{2}
 $$
 
 By the quadrangle inequality we have 
@@ -193,62 +193,36 @@ which show the implication (2). The proof for the second inequality is similar.
 ## Implementation in Python
 
 {% highlight python %}
-def optimal_search_tree(alpha, beta):
-    """ Compute an optimal search tree
+def dyn_prog_QI_trick(W):
+    """ Solves the dynamic program for 0 <= i < j < n
 
-    :param alpha, beta: lists of probability weights index from 0 to n (included)
-    :assumes: beta[0] = 0
-    :returns: weighted path length of optimal tree and the actual tree. 
-              A tree is either an empty list or a list of the form [left, root, right].
+    C[i,i] = 0
+    C[i,j] = W[i,j] + min over i < k <= j of (C[i,k-1] + C[k,j]) 
+
+    :param W: matrix of dimension n times n
+    :assumes: W satisfies the quadrangle inequality and monotonicity in the lattice of intervals 
+    :returns: C[0,n-1] and a matrix K with the minimizers
     :complexity: O(n^2)
     """
-    n = len(alpha) - 1
-    P = [[0 for j in range(n+1)] for i in range(n+1)] # cost of subproblem (i,j)
-    W = [[0 for j in range(n+1)] for i in range(n+1)] # total weight of subproblem (i,j)
-    R = [[0 for j in range(n+1)] for i in range(n+1)] # root of optimal tree for subproblem (i,j)
-
-    for i in range(n + 1):
-        # empty trees
-        C[i][i] = W[i][i] = alpha[i]
-        # weight of index range
-        for j in range(i + 1, n + 1):
-            W[i][j] = W[i][j - 1] + beta[j] + alpha[j]
-
-    # single node trees
-    for i in range(n):
-        j = i + 1
-        R[i][j] = j
-        C[i][j] = C[i][i] + C[j][j] + W[i][j]  
+    n = len(W) 
+    C = [[0 for j in range(n)] for i in range(n)] #
+    K = [[i for j in range(n)] for i in range(n)] # initially K[i,i]=i
     
     # recursion
-    for j_i in range(2, n + 1): # difference between j and i
-        for i in range(n - j_i + 1):
+    for j_i in range(1, n): # difference between j and i
+        for i in range(n - j_i):
             j = i + j_i
             argmin = None
             valmin = float('+inf')
-            for r in range(R[i][j - 1], R[i + 1][j] + 1):
-                alt = C[i][r - 1] + C[r][j]
+            for k in range(K[i][j - 1], K[i + 1][j] + 1):
+                alt = C[i][k - 1] + C[k][j]
                 if alt < valmin:
                     valmin = alt
-                    argmin = r 
+                    argmin = k
             C[i][j] = W[i][j] + valmin
-            R[i][j] = argmin 
+            K[i][j] = argmin 
      
-    # extract solution
-    tree = extract_tree(R, 0, n)
-    return C[0][n], tree 
-
-
-def extract_tree(R, i, j):
-    """ returns the tree for the subproblem (i,j)
-    """
-    if i >= j:
-        return []
-    else:
-        root = R[i][j]
-        left = extract_tree(R, i, root - 1)
-        right = extract_tree(R, root, j)
-        return [left, root, right]
+    return C[0][n - 1], K
 {% endhighlight %}
 
 
