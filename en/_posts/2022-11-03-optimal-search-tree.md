@@ -122,7 +122,7 @@ For the formal proof we refer to Yao's paper, referenced at the bottom of this d
 The proof of
 
 $$
-    C[a,c] + C[b,d] \leq C[b,c] + C[a,d] \textrm{\:\: for all } a\leq b\leq c\leq d  
+    C[a,c] + C[b,d] \leq C[b,c] + C[a,d] \:\:\textrm{ for all } a\leq b\leq c\leq d  
 $$
 
 is by induction on the difference $d-a$. When $a=b$ or $c=d$, both sides of the inequality are identical. This establishes the base case $d-a\leq 1$. The induction step considers two cases.
@@ -130,7 +130,7 @@ is by induction on the difference $d-a$. When $a=b$ or $c=d$, both sides of the 
 **Case** $a<b=c<d$: In this case the inequality to show becomes the inverse triangular inequality
 
 $$
-    C[a,b]+C[b,d] \leq C[a,d] \textrm{ \:\:for all } a<b<d.
+    C[a,b]+C[b,d] \leq C[a,d] \:\:\textrm{ for all } a<b<d.
 $$
 
 Let $k$ be the minimizer for the expression of $C[a,d]$, i.e. $C[a,d]=C_k[a,d]$, using the notation $C_k[a,d] :=  W[a,b] + C[a,k-1]+C[k,b]$. If $k\leq b$ we have
