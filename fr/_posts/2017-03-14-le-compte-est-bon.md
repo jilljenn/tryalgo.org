@@ -34,6 +34,6 @@ Parce que nous, si. Faites **pip install tryalgo**, puis en Python :
 </div>
 </div>
 
-C'est d'ailleurs amusant de savoir que c'était la seule solution.
+Ce n'est pas la seule solution, mais toutes les solutions impliquent de diviser par 50 ou 25, et donc de passer par des grands nombres. Merci Pascal Lafourcade pour avoir remarqué cela.
 
 [Voir l'algorithme permettant de résoudre Le Compte est bon](https://jilljenn.github.io/tryalgo/_modules/tryalgo/arithm_expr_target.html#arithm_expr_target)
