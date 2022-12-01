@@ -31,6 +31,11 @@ Nous avons écrit un livre sur la programmation compétitive en Python, qui docu
 - [taiwanais](http://www.drmaster.com.tw/Bookinfo.asp?BookID=MP11906)
 - [anglais](http://www.cambridge.org/9781108716826) --- cette traduction est la plus récente et améliore la présentation de certains algorithmes par rapport à la version française
 
+### Errata
+
+- [version française](errata)
+- [version anglaise](errata-en)
+
 
 ## D'autres livres
 
