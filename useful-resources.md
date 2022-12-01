@@ -33,8 +33,8 @@ Nous avons écrit un livre sur la programmation compétitive en Python, qui docu
 
 ### Errata
 
-- [version française](errata)
-- [version anglaise](errata-en)
+- [version française](/errata)
+- [version anglaise](/errata-en)
 
 
 ## D'autres livres

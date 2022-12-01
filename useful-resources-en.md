@@ -33,8 +33,8 @@ We published a book on competitive programming in Python, documenting most of th
 
 ### Errata
 
-- [french version](errata)
-- [english version](errata-en)
+- [french version](/errata)
+- [english version](/errata-en)
 
 
 
