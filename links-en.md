@@ -31,6 +31,11 @@ We published a book on competitive programming in Python, documenting most of th
 - [taiwanese](http://www.drmaster.com.tw/Bookinfo.asp?BookID=MP11906)
 - [english](http://www.cambridge.org/9781108716826) --- this latest translation contains some improved presentations over the french version
 
+### Errata
+
+- [french version](errata)
+- [english version](errata-en)
+
 
 ## Other books
 
