@@ -37,7 +37,7 @@ role="doc-bibliography">
 <div id="ref-grotschel2012euler" class="csl-entry"
 role="doc-biblioentry">
 Grötschel, Martin, and Ya-xiang Yuan. 2012. <span>“Euler, Mei-Ko Kwan,
-k<span>ö</span>nigsberg, and a Chinese Postman.”</span> <em>Optimization
+K<span>ö</span>nigsberg, and a Chinese Postman.”</span> <em>Optimization
 Stories</em> 43. <a
 href="https://www.math.uni-bielefeld.de/documenta/vol-ismp/16_groetschel-martin-yuan-ya-xiang.pdf">https://www.math.uni-bielefeld.de/documenta/vol-ismp/16_groetschel-martin-yuan-ya-xiang.pdf</a>.
 </div>

@@ -29,6 +29,9 @@ Voici une liste de coquilles dans le livre.
 
 ![]({{site.images}}bi-connexes-relation.png "Les sommets et les arêtes de déconnexion sont montrés en gras." ){:width="250"}
 
+- page 98 : Meigu Guan était enseignant-chercheur (puis doyen) de la *Shandong Normal University*. Il a travaillé sur le problème de l'inspection des routes pendant le grand bond en avant de 1958-1960 (avant la révolution culturelle chinoise). Jack Edmonds s'est intéressé à son travail et a appelé le problème le "problème du postier chinois" en honneur de Guan. Merci à Wikipedia et à Ning Yan Zhu pour avoir remarqué notre erreur. Voir également [<span class="citation" data-cites="grotschel2012euler">(Grötschel and Yuan, 2012)</span>](#ref-grotschel2012euler)
+
+
 - page 100 : la formule devrait se lire comme
 
 $$    \frac{d'[n][v] - d'[k][v]}{n-k}  = \frac{d[n][v] - n\Delta - (d[k][v] - k\Delta)}{n-k}\\
@@ -81,3 +84,16 @@ $$    \frac{d'[n][v] - d'[k][v]}{n-k}  = \frac{d[n][v] - n\Delta - (d[k][v] - k\
 ## Clarifications
 
 - page 35, 36 : la fonction présentée prend une liste de mots (*w*) en argument et renvoie une liste de liste de mots (*réponse*).
+
+## References
+
+<div id="refs" class="references csl-bib-body hanging-indent"
+role="doc-bibliography">
+<div id="ref-grotschel2012euler" class="csl-entry"
+role="doc-biblioentry">
+Grötschel, Martin, and Ya-xiang Yuan. 2012. <span>“Euler, Mei-Ko Kwan,
+K<span>ö</span>nigsberg, and a Chinese Postman.”</span> <em>Optimization
+Stories</em> 43. <a
+href="https://www.math.uni-bielefeld.de/documenta/vol-ismp/16_groetschel-martin-yuan-ya-xiang.pdf">https://www.math.uni-bielefeld.de/documenta/vol-ismp/16_groetschel-martin-yuan-ya-xiang.pdf</a>.
+</div>
+</div>
