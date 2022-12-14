@@ -195,7 +195,7 @@ $$
     C[b,d]+C[c,d+1] \leq C[c,d] + C[b,d+1].
 $$
 
-And if we add $W[a,d]+W[a,d]+C[a,b-1]+C[a,d-1]$ to both sides we obtain
+And if we add $W[a,d]+W[a,d+1]+C[a,b-1]+C[a,c-1]$ to both sides we obtain
 
 $$
     C_b[a,d]+C_c[a,d+1] \leq C_c[a,d]+C_b[a,d+1]
