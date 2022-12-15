@@ -8,7 +8,7 @@ problems:
    "aizu:ALDS1_10_D": https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_D
 ---
 
-Given an ordered list of keys with frequencies, build a binary search tree on those keys which minimizes the average query cost.
+Application: Given an ordered list of keys with frequencies, build a binary search tree on those keys which minimizes the average query cost.
 
 ## Formal definition
 
@@ -53,7 +53,7 @@ and for $i < j$ we have
 
 $$
     C[i,j] = W[i,j] + \min_{i+1\leq r\leq j} (C[i,r - 1] + C[r,j]) \\
-    R[i][i] = \textrm{argmin of above expression}.
+    R[i,j] = \textrm{argmin of above expression}.
 $$
 
 The optimal search tree of the subproblem contains a root $i+1\leq r\leq j$, which motivates the minimum expression above. The addition of $W[i,j]$ comes from the fact that by attaching the left and right subtrees under the root $r$, the level of all their nodes increases by $1$. Since root $r$ has level one, the weight $\beta_r$ has to enter the cost of the tree as well.
@@ -84,8 +84,10 @@ Such an improvement applies under some condition to any dynamic program of the f
 
 $$
     C[i,i] = 0 \\
-    C[i,j] = W[i,j] + \min_{i<k\leq j} (C[i,k-1]+C[k,j]) \textrm{ \:\:for } i < j.
+    C[i,j] = W[i,j] + \min_{i<k\leq j} (C[i,k-1]+C[k,j]) \:\:\textrm{ for } i < j.
 $$
+
+This dynamic program generalizes the previous one, but for the special case $\alpha=0$. This simplifies the presentation.
 
 The dynamic program above, in essence depends on the matrix $W$. And it is the structure of $W$, which permits the above mentioned improvement. Two properties of $W$ are essential.
 
@@ -102,6 +104,8 @@ $$
 $$
 
 ![Crucial properties of weight matrix W]({{site.images}}quadrangle.png){:width="600"}
+
+Note: the quadrangle inequality is also called the **Monge** property. And it is enough that it is satisfied for $b=a+1,d=c+1$, because then it is satisfied as well for larger $b,d$.
 
 F. Frances Yao shows that whenever $W$ satisfies the two properties, then the inequality (1) holds, which allows to solve the dynamic program in quadratic time.
 
