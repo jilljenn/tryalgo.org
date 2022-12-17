@@ -6,15 +6,11 @@ title: Résolution de problèmes algorithmiques
 ## Derniers posts
 
 <ul>
-{% for post in site.posts limit:5 %}
+{% for post in site.posts limit:10 %}
     <li> {{ post.date | date: "%d/%m/%y" }} <a href="{{ post.url }}">{{ post.title }}</a> – {{ post.author }}
     </li>
 {% endfor %}
 </ul>
-
-## Dernières conférences
-
-- [**Arbres de Merkle : la structure de données à l'origine de git, BitTorrent, Bitcoin, Ethereum, The DAO et autres blockchains**](/fr/2016/12/10/arbres-de-merkle/) par JJV
 
 ## [pip install tryalgo](/code/)
 
@@ -24,7 +20,7 @@ Ce site regroupe les ressources suivantes :
 
 - la bibliothèque [tryalgo](/useful-resources/) en Python sur [GitHub](https://github.com/jilljenn/tryalgo/tree/master/tryalgo) ; documenté dans le livre *Programmation efficace : Les 128 algorithmes qu'il faut avoir compris et codés dans sa vie*.
 - différents [problèmes](/problems/) et leurs [solutions](/en/) ;
-- le [blog](/fr/) du CAPS, le [club algo](/club/) de l'ENS Paris-Saclay.
+- un [blog](/fr/) en français.
 
 Voici un pseudo-code à appliquer pour apprendre un max d'algorithmes :
 
