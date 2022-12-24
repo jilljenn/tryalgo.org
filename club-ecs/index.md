@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Ecole Centrale Supélec s'entraîne
+title: CentraleSupélec 2019-2020
+parent: Training
 ---
 
 Entrainement pendant l'année scolaire 2019-2020 à l'école centrale supélec.

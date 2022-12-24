@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Conseils Google Hash Code
+parent: Competitions
 ---
 
 Cette page donne des conseils pour le Google Hash Code et le site d’entraînement [primers.xyz](http://primers.xyz).

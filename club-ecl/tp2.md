@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Centrale Lille - Algo II - TP2
+parent: Problems
 ---
 
 Today we're visualizing graph algorithms on Paris.  

@@ -1,0 +1,49 @@
+---
+layout: page
+title: Blog
+paginate: true
+nav_exclude: true
+---
+
+<h1>All posts by date</h1>
+
+<!-- This loops through the paginated posts -->
+{% for post in paginator.posts %}
+  <h2><a class="post-link" href="{{ post.url }}">{{ post.title }}</a></h2>
+  <p class="post-meta"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time>
+    {% if post.category %}
+      • <span itemprop="category">{{ post.category }}</span>
+    {% endif %}
+    {% if post.author %}
+      • <span itemprop="author">{{ post.author }}</span>
+    {% endif %}
+    {% if post.problems %}
+    <br>Related problem:
+      {% for pb in post.problems %}
+        <a href="{{ pb[1] }}">[{{ pb[0] }}]</a>
+      {% endfor %}
+    {% endif %}
+  </p>
+  <div class="content">
+    {{ post.excerpt }}
+  </div>
+{% endfor %}
+
+<!-- Pagination links -->
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a class="pagination-item older" href="{{ paginator.previous_page_path }}" class="previous">
+      Previous
+    </a>
+  {% else %}
+    <span class="pagination-item previous">Previous</span>
+  {% endif %}
+  <span class="pagination-item page_number">
+    Page: {{ paginator.page }} of {{ paginator.total_pages }}
+  </span>
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="pagination-item next">Next</a>
+  {% else %}
+    <span class="pagination-item next">Next</span>
+  {% endif %}
+</div>

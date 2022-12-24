@@ -1,10 +1,14 @@
 ---
 layout: page
-title: "Selected problems"
+title: Problems
 lang: en
+has_children: true
+nav_order: 2
 ---
 
-We selected a few problems, which we think are good training material for programming contests.  
+{% include problems_extra.md %}
+
+We also selected a few problems, which we think are good training material for programming contests.  
 
 [Show](/problems/show) chapter hint.
 

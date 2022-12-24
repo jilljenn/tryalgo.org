@@ -1,6 +1,8 @@
 ---
+title: Mentions légales
 permalink: /mentions-legales/
 layout: default
+nav_order: 6
 ---
 
 # Mentions légales sur Tryalgo

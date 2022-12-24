@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Programme ta culture !
+parent: Training
 ---
 
 Voici des éléments pour aider à l'organisation d'un événement d'**initiation à l'informatique et à la création numérique** à Mozilla Paris.

@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Concours ICPC
+parent: Competitions
 ---
 
 [Tout savoir sur le concours ACM-ICPC](https://fr.wikipedia.org/wiki/ACM_International_Collegiate_Programming_Contest) (sur Wikipédia), qui depuis 2018 n'est plus soutenu par l'ACM.

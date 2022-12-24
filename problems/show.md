@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Selected problems"
+nav_exclude: true
 ---
 
 We selected a few problems, which we think are good training material for programming contests. 

@@ -1,7 +1,10 @@
 ---
 layout: page
-title: Tryalgo posts classified by categories
+title: All posts by category
+parent: Latest posts
 ---
+
+# All posts by category
 
 See also our list [ordered by date](..).
 
@@ -9,8 +12,8 @@ See also our list [ordered by date](..).
 {% assign sorted_cats = site.categories | sort %}
 {% for category in sorted_cats %}
 	{% if category[0] != "en" and category[0] != "fr" %}
-		{% assign sorted_posts = category[1] | sort: 'title' %}
-		<li>{{category[0] | capitalize}}
+		{% assign sorted_posts = category[1] | sort:'title' %}
+		<li>{{ category[0] | capitalize }}
 		<ul>
 		  {% for post in sorted_posts %}
 		    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
@@ -20,4 +23,3 @@ See also our list [ordered by date](..).
 	{% endif %}
 {% endfor %}
 </ul>
-

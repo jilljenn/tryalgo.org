@@ -5,7 +5,7 @@ This is the code that powers the website [tryalgo.org](http://tryalgo.org).
 ## Run locally
 
     bundle install
-    bundle exec jekyll serve
+    bundle exec jekyll serve --incremental  # Faster
 
 ## How to contribute
 

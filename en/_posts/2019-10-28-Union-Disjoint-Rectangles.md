@@ -13,7 +13,7 @@ In the illustration below, each connected component is depicted with a different
 
 ![Union of non overlapping rectangles]({{site.images}}union-disjoint-rectangles.svg){:width="600"}
 
-This is a particular case of the problem of computing the union of given [rectilinear rectangles]({% post_url 2016-06-25-union-of-rectangles %}) . But using a segment tree for this problem is an overkill, as the non-overlapping property of the input allows a much simpler approach.
+This is a particular case of the problem of computing the union of given [rectilinear rectangles]({% post_url en/2016-06-25-union-of-rectangles %}) . But using a segment tree for this problem is an overkill, as the non-overlapping property of the input allows a much simpler approach.
 
 ## Key ingredient
 

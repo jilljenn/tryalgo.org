@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Liste des algorithmes traités dans notre livre
+title: Liste des 128 algorithmes
+parent: Algorithms
 ---
 
 ## 128 algorithmes

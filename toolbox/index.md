@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Boîte à outils
+parent: Algorithms
 ---
 
 ## Compilation

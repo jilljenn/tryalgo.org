@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "TP 6 : Exploration exhaustive"
+parent: Problems
 ---
 
 ## Exercices

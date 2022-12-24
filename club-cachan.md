@@ -1,7 +1,8 @@
 ---
 layout: page
-title: Club Algo de l'ENS Paris-Saclay
+title: Club Algo de l'ENS Paris-Saclay 2015-2018
 front: true
+parent: Training
 ---
 
 ENS Paris-Saclay  
@@ -13,9 +14,9 @@ RER B **Bagneux** (3 stations après Cité U) puis descendre la pente vers l'ENS
 
 ## Conférences
 
-- [**AlphaGo explained**](/club/) par Étienne Simon & Jill-Jênn Vie  
+- **AlphaGo explained** par Étienne Simon & Jill-Jênn Vie  
 jeudi 1<sup>er</sup> décembre 2016 à 19 h
-- [**Arbres de Merkle : la structure de données à l'origine de git, BitTorrent, Bitcoin et autres blockchains**](/club/) par Jill-Jênn Vie  
+- **Arbres de Merkle : la structure de données à l'origine de git, BitTorrent, Bitcoin et autres blockchains** par Jill-Jênn Vie  
 vendredi 9 décembre 2016 à 19 h
 
 ## Préparation aux concours
@@ -28,6 +29,4 @@ vendredi 9 décembre 2016 à 19 h
 
 - [Tous nos articles](/fr/)
 - [Workshop d'optimisation du 6 février 2016]({% post_url fr/2016-02-06-workshop-algo %})
-- [Ateliers Python à l'ENS Cachan](/atelier-python/)
 - [Préparation spécifique à ICPC](/acm/)
-

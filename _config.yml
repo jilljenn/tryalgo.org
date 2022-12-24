@@ -3,6 +3,7 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 plugins: ["jekyll-paginate"]
+latex: mathjax
 
 # Permalinks
 permalink:        pretty
@@ -17,14 +18,16 @@ metadescription:  "Programmation efficace - Les 128 algorithmes qu'il faut avoir
 url:              https://tryalgo.org
 baseurl:          "/"
 images: 		      "/en/images/"
+theme: just-the-docs
+color_scheme: tryalgo
 
 author:
   name:           'Jill-Jênn Vie'
   url:            https://twitter.com/jjvie
   twitter:        jjvie
 
-paginate:         5
-paginate_path:    '/posts/page:num/'
+paginate:         20
+paginate_path:    '/blog/page:num/'
 
 # Custom vars
 version:          3

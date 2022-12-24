@@ -1,6 +1,8 @@
 ---
 layout: page
 title: Small Errata
+parent: Algorithms
+nav_exclude: true
 ---
 
 Voici une liste de choses à changer dans le livre.

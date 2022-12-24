@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Atelier Python à l'ENS Cachan
+parent: Training
 ---
 
 Nous allons organiser des ateliers d'initiation à Python, le samedi à l'ENS Cachan.  

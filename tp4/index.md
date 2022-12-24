@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "TP 4 : Labyrinthe"
+parent: Problems
 ---
 
 ## Débutants

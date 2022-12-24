@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Ecole Centrale Supélec s'entraîne
+title: Paris-Saclay & Sorbonne Université 2020-2021
+parent: Training
 ---
 
 Les universités Paris-Saclay et Sorbonne Université s'entraînent pour SWERC 2020.

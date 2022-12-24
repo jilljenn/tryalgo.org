@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Université de Lille - Algorithms II
+title: Université de Lille 2020-2021
+parent: Training
 ---
 
 To contact JJ Vie, click the mail at the bottom of the page.

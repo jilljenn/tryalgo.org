@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "TP 5 : Couplage et flots"
+parent: Problems
 ---
 
 [Slides](/static/couplages-flots.pdf)

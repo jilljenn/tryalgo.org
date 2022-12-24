@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "TP 7 : Géométrie"
+parent: Problems
 ---
 
 ## Exercices

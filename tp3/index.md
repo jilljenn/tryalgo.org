@@ -1,6 +1,7 @@
 ---
 layout: page
 title: TP 3
+parent: Problems
 ---
 
 ## Débutants

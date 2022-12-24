@@ -1,16 +1,16 @@
 ---
 layout: page
+title: Latest posts
 lang: en
-nav_exclude: true
+has_children: true
+nav_order: 5
 ---
 
-# Latest posts in English
+# Latest posts
 
 See also all posts [ordered by category](/blog/categories) or [date](/blog).
 
-{% assign posts = site.posts | where:'layout', 'en' %}
-
-{% for post in posts limit:10 %}
+{% for post in site.posts limit:10 %}
 <div class="post">
   <h2>
     <a class="post-link" href="{{ post.url }}">{{ post.title }}</a>
