@@ -40,6 +40,8 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v2
+      - name: Install LAPACKE and OpenBLAS for speeding up the computation of related posts
+        run: sudo apt install -y liblapacke-dev libopenblas-dev
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}" --lsi
