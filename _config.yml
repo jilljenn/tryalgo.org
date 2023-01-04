@@ -8,8 +8,8 @@ plugins: ["jekyll-paginate"]
 permalink:        pretty
 
 # Setup
-title:            TryAlgo
-avatar:           /public/apple-touch-icon-144-precomposed.png
+#title:            TryAlgo
+logo:             "/public/logo_B.png"
 tagline:          'Un livre de programmation'
 description:      'Résolution de problèmes algorithmiques'
 description_en:   'Algorithmic Problem Solving'
