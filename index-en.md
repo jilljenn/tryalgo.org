@@ -4,6 +4,7 @@ title: Algorithmic Problem Solving
 lang: en
 parent: Algorithms
 ---
+# Algorithmic Problem Solving
 
 This page [in French](/)
 
