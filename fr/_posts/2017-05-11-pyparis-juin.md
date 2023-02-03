@@ -4,9 +4,9 @@ title: "PyParis : 12–13 juin à La Défense"
 author: Jill-Jênn Vie
 ---
 
-[<img src="/fr/images/pyparis.png" style="float: right" alt="Le logo de PyParis" />](http://www.pyparis.org)
+[<img src="/fr/images/pyparis.png" style="float: right" alt="Le logo de PyParis" />](https://www.pyparis.org)
 
-La conférence [PyParis.org](http://www.pyparis.org) aura lieu les 12–13 juin 2017 à La Défense, Paris. Au programme, des conf' sur [Jupyter](https://try.jupyter.org) notebook, [scikit-learn](http://scikit-learn.org), applications Web, le noyau Python, etc. mais aussi :
+La conférence [PyParis.org](https://www.pyparis.org) aura lieu les 12–13 juin 2017 à La Défense, Paris. Au programme, des conf' sur [Jupyter](https://try.jupyter.org) notebook, [scikit-learn](http://scikit-learn.org), applications Web, le noyau Python, etc. mais aussi :
 
 ## Une session spéciale *Python dans l'éducation* mardi 13 juin
 

@@ -93,6 +93,6 @@ Il y a Jupyter qui travaille sur une [intégration à Google Drive](https://gith
 
 (Pour une raison random, on s'est posé cette question.)
 
-- [Isso](https://posativ.org/isso/) : chiant à installer mais très pratique.
+- [Isso](https://github.com/posativ/isso) : chiant à installer mais très pratique.
 - [HashOver](http://tildehash.com/?page=hashover), bweeeh PHP.
 - [commentserve](https://github.com/drewp/commentserve), wut RDF.
