@@ -66,6 +66,8 @@ $$    \frac{d'[n][v] - d'[k][v]}{n-k}  = \frac{d[n][v] - n\Delta - (d[k][v] - k\
 
 - page 153 : Donc on peut choisir un sommet arbitraire r, déterminer un sommet v1 de distance maximale de *r*, puis à nouveau déterminer un sommet v2 de distance maximale de v1.
 
+- page 154 : dans l'implémentation de Gale-Shapley, la ligne `celib.put(spouse[j])` devrait être `celib.append(spouse[j])`. La file `celib` pourrait être remplacée par une pile, pour simplification. 
+
 - page 155 : dans la récurrence pour Opt il faut lire $c\geq p_i$ au lieu de $c\geq c_i$
 
 - page 157 (rendu de monnaie): dans la récurrence pour A[i][m] il faut lire min au lieu de max
@@ -105,6 +107,8 @@ $$    \frac{d'[n][v] - d'[k][v]}{n-k}  = \frac{d[n][v] - n\Delta - (d[k][v] - k\
 - page 116: Meigu Guan was a lecturer (then president) of Shandong Normal University. He worked on the route inspection problem during the Great Leap Forward of 1958-1960 (before the Chinese Cultural Revolution). Jack Edmonds got interested in his work and called the problem "Chinese postman problem" in honor of Guan. Thanks Wikipedia and Ning Yan Zhu for noticing our mistake. See also [<span class="citation" data-cites="grotschel2012euler">(Grötschel and Yuan, 2012)</span>](#ref-grotschel2012euler)
 
 - page 143: the expression $\sum_{E_\ell}\ell$ should be instead $\sum \ell$, which stands for $\sum_{u\in U} \ell(u) + \sum_{v\in V} \ell(v)$.
+
+- page 151: in the implementation of Gale-Shapley, the line `singles.put(spouse[j])` should be `singles.append(spouse[j])`. Equivalently the FIFO queue `singles` could be replaced by a stack, simplifying the code.
 
 - page 170 (Huffman trees): the code would generate an error for example on given frequencies {'a':1, 'b':1, 'c':2}, because in case of identical frequencies, the heap would compare trees, which can be either strings (in case of a single node) or lists (in case of larger trees) and hence be incomparable. The solution is to work with a heap over (frequency, tree_index) pairs and store the trees separately. See the [source code](https://jilljenn.github.io/tryalgo/_modules/tryalgo/huffman.html#huffman).
 
