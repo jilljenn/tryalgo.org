@@ -76,7 +76,7 @@ For every update request with parameters $i,j,c$ we need to do the following ste
 - Each block $\ell$ corresponds to an index range $[\ell B, (\ell+1)B-1]$, except the last block $[\ell B, n - 1]$.
 - If $i\leq \ell B$ and $(\ell + 1)B -1 \leq j$, then this is an included block.
     - If $c=0$, we add $\textrm{nb\_arg\_max}$ to $\textrm{score}$. Then we increment $b[0][\ell]$ and add $\textrm{nb\_diff}[\ell][d]$ to  $\textrm{nb\_arg\_max}$  with $d=b[1][\ell] - b[0][\ell]$.
-    - If $c=1$, we add $B-\textrm{nb\_arg\_max}+\textrm{nb\_diff}[\ell][d]$ to $\textrm{score}$ with $d=b[1][\ell] - b[0][\ell]$. Next we decrement $\textrm{nb\_arg\_max}$ by $\textrm{nb\_diff}[\ell][d]$ and then only increase $b[1][\ell]$.
+    - If $c=1$, we add $B-\textrm{nb\_arg\_max}+\textrm{nb\_diff}[\ell][d]$ to $\textrm{score}$ with $d=b[1][\ell] - b[0][\ell]$ (except for the last block which may contain less than $B$ values). Next we decrement $\textrm{nb\_arg\_max}$ by $\textrm{nb\_diff}[\ell][d]$ and then only increase $b[1][\ell]$.
     - Comment: we could have made these previous steps symmetric, by storing redundantly the number of entries $k$ for which $t_0[k]\geq t_1[k]$ and the also the number of $k$ for which $t_1[k]\geq t_0[k]$. Not sure that this would not complexify some other part of the program.
 - Otherwise this is a partially intersecting block. In this case we loop over $k$ in the intersection of the block and the query interval $[i,j]$, that is in between $\max\{\ell B, i}$ to $\min\{(j/B + 1)B -1, j\}$.
     - We decrement $\textrm{nb\_diff}[\ell][d]$ for $d=s[0][k]-s[1][k]$.
