@@ -8,6 +8,17 @@ parent: Algorithms
 
 This page [in French](/)
 
+<a href="{% post_url en/2016-11-19-swerc-2016 %}"><img src="/fr/images/swerc2016/swerc2016-thumb.jpg" style="float: right" /></a>
+
+## Latest posts
+
+<ul>
+{% for post in site.posts limit:8 %}
+    <li> {{ post.date | date: "%b %-d, %Y" }} <a href="{{ post.url }}">{{ post.title }}</a> – {{ post.author }}
+    </li>
+{% endfor %}
+</ul>
+
 ## Code: the tryalgo library of 128+ algorithms
 
 We collected implementations of various algorithms and data structures in a [PyPI Python library](https://pypi.python.org/pypi/tryalgo/).
@@ -38,19 +49,6 @@ We published a book on competitive programming in Python, documenting most of th
 See our [Jupyter notebook](http://nbviewer.jupyter.org/github/jilljenn/tryalgo/blob/master/examples/TryAlgo%20Maps%20in%20Paris.ipynb) (in French): [**TryAlgo Maps in Paris**](http://nbviewer.jupyter.org/github/jilljenn/tryalgo/blob/master/examples/TryAlgo%20Maps%20in%20Paris.ipynb)
 
 <a href="http://nbviewer.jupyter.org/github/jilljenn/tryalgo/blob/master/examples/TryAlgo%20Maps%20in%20Paris.ipynb" target="_blank"><img src="/static/paris.png" /></a>
-
-## Blog: Solutions
-
-<a href="{% post_url en/2016-11-19-swerc-2016 %}"><img src="/fr/images/swerc2016/swerc2016-thumb.jpg" style="float: right" /></a>
-
-### Latest posts
-
-<ul>
-{% for post in site.posts limit:10 %}
-    <li> {{ post.date | date: "%b %-d, %Y" }} <a href="{{ post.url }}">{{ post.title }}</a> – {{ post.author }}
-    </li>
-{% endfor %}
-</ul>
 
 Here is a pseudocode in order to optimize your learning:
 

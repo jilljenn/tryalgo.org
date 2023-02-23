@@ -9,6 +9,17 @@ nav_order: 1
 
 This page [in English](/index-en)
 
+<a href="{% post_url fr/2016-11-19-swerc-2016 %}"><img src="/fr/images/swerc2016/swerc2016-thumb.jpg" style="float: right" /></a>
+
+## Derniers posts
+
+<ul>
+{% for post in site.posts limit:8 %}
+    <li> {{ post.date | date: "%b %-d, %Y" }} <a href="{{ post.url }}">{{ post.title }}</a> – {{ post.author }}
+    </li>
+{% endfor %}
+</ul>
+
 ## Code : la bibliothèque tryalgo de 128+ algorithmes
 
 Nous avons implémenté plusieurs algorithmes et structures de données en une [bibliothèque Python](https://pypi.python.org/pypi/tryalgo/).
@@ -46,20 +57,7 @@ Cf. notre [notebook Jupyter](http://nbviewer.jupyter.org/github/jilljenn/tryalgo
 
 <a href="http://nbviewer.jupyter.org/github/jilljenn/tryalgo/blob/master/examples/TryAlgo%20Maps%20in%20Paris.ipynb" target="_blank"><img src="/static/paris.png" /></a>
 
-## Blog : Solutions
-
-<a href="{% post_url fr/2016-11-19-swerc-2016 %}"><img src="/fr/images/swerc2016/swerc2016-thumb.jpg" style="float: right" /></a>
-
-### Derniers posts
-
-<ul>
-{% for post in site.posts limit:10 %}
-    <li> {{ post.date | date: "%b %-d, %Y" }} <a href="{{ post.url }}">{{ post.title }}</a> – {{ post.author }}
-    </li>
-{% endfor %}
-</ul>
-
-### À propos des auteurs
+## À propos des auteurs
 
 [**Christoph Dürr**](http://www-desir.lip6.fr/~durrc/) est directeur de recherche CNRS en informatique à Sorbonne Université. Spécialisé en algorithmique, il a enseigné à l'École polytechnique de 2007 à 2014 et entraîne régulièrement des équipes pour le concours de programmation [ICPC](/acm/).  
 À part ça, il aime beaucoup les carrot-cakes.
