@@ -1,7 +1,7 @@
 ---
 layout: en
 category: matching
-title: "bipartite vertex cover"
+title: "Bipartite minimum vertex cover (alternative explanation)"
 author: Christoph Dürr
 problems:
    "spoj:MUDDY": https://www.spoj.com/problems/MUDDY/
