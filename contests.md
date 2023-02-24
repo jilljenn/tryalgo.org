@@ -16,11 +16,10 @@ nav_order: 3
 
 ## Yearly competitions
 
-- [**Google Code Jam**](https://code.google.com/codejam/)
-    - Qualifications usually in **April**
-- [**Google Hash Code**](https://hashcode.withgoogle.com/)
-    - Operational Research
-    - Qualifications usually in **February**
+- [~~Google Code Jam~~](https://codingcompetitions.withgoogle.com/codejam)
+    - This competition not longer exist since 2023
+- [~~Google Hash Code~~](https://codingcompetitions.withgoogle.com/hashcode)
+    - This competition not longer exist since 2023
 - [**Facebook Hacker Cup**](https://www.facebook.com/hackercup/)
 - [**Microsoft Bubblecup**](http://www.bubblecup.org/)
     - A bit less known that the previous ones, but has good [booklets explaining solutions to previous competitions](http://www.bubblecup.org/Booklets)
@@ -32,7 +31,7 @@ nav_order: 3
     - Functional programming contest
     - Usually in **August**
 - [**Advent of Code**](https://adventofcode.com/)
-    - In **December**
+    - In **December**. Not very interesting from algorithmic point of view, it is more about programming quickly.
 
 ## Competitions for regular training & online judges
 
