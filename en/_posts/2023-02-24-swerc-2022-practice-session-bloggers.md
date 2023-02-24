@@ -76,6 +76,7 @@ The initial values are as follows.
 - $\textrm{score}$, $s$ and $b$ are initialized with zeroes.
 - $\textrm{nb\_diff}[\ell][0]=B$ and $\textrm{nb\_diff}[\ell][d]=0$ for all $d\neq 0$. Here we would like to use a dictionary with default value $0$ (a `Counter`) to represent this variable.
 - $\textrm{nb\_arg\_max}[\ell]=B$ for all blocks $\ell$.
+- One exception however: for the last block both variables $\textrm{nb\_diff}[\ell][0]$ and $\textrm{nb\_arg\_max}[\ell]$, have to be initialized to the size of the last block. 
 
 For every update request with parameters $i,j,c$ we need to do the following actions. The actions are done for every block $\ell$ in the range $i/B$ to $j/B$ (included). This restriction avoids testing if the block range is disjoint from the update range $[i,j]$.
 
@@ -125,6 +126,7 @@ score = 0
 
 
 def update(c, i, j):
+    global score
     for ell in range(i//B, j//B + 1):
         u =  ell * B
         v = min((ell + 1) * B, n) - 1
