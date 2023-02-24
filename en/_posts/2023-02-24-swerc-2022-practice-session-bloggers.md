@@ -84,7 +84,7 @@ For every update request with parameters $i,j,c$ we need to do the following act
     - If $c=0$, we add $\textrm{nb\_arg\_max}$ to $\textrm{score}$. Then we increment $b[0][\ell]$ and add $\textrm{nb\_diff}[\ell][d]$ to  $\textrm{nb\_arg\_max}$  with $d=b[1][\ell] - b[0][\ell]$.
     - If $c=1$, we add $v - u + 1-\textrm{nb\_arg\_max}+\textrm{nb\_diff}[\ell][d]$ to $\textrm{score}$ with $d=b[1][\ell] - b[0][\ell]$. Next we decrement $\textrm{nb\_arg\_max}$ by $\textrm{nb\_diff}[\ell][d]$ and then only increase $b[1][\ell]$. 
     - Comment: we could have made these previous steps symmetric, by storing redundantly the number of entries $k$ for which $t_0[k]\geq t_1[k]$ and the also the number of $k$ for which $t_1[k]\geq t_0[k]$. Not sure that this would not complexify some other part of the program.
-- Otherwise this is a partially intersecting block. In this case we loop over $k$ in the intersection of the block and the query interval $[i,j]$, that is in between $\max\{\ell B, i\}$ to $\min\{(j/B + 1)B -1, j\}$.
+- Otherwise this is a partially intersecting block. In this case we loop over $k$ in the intersection of the block and the query interval $[i,j]$, that is in between $\max\\{u, i\\}$ to $\min\\{v, j\\}$.
     - We decrement $\textrm{nb\_diff}[\ell][d]$ for $d=s[0][k]-s[1][k]$.
     - Then we increment $s[c][k]$.
     - In case $s[c][k] > s[1-c][k]$, we increment $\textrm{score}$.
