@@ -79,7 +79,7 @@ The initial values are as follows.
 
 For every update request with parameters $i,j,c$ we need to do the following actions. The actions are done for every block $\ell$ in the range $i/B$ to $j/B$ (included). This restriction avoids testing if the block range is disjoint from the update range $[i,j]$.
 
-- Each block $\ell$, corresponds to an index range $[u,v]$ with $u=\ell B$ and $v=\min\{n, (\ell+1)B\} - 1$.
+- Each block $\ell$, corresponds to an index range $[u,v]$ with $u=\ell B$ and $v=\min\\{n, (\ell+1)B\\} - 1$.
 - If $i\leq u$ and $v \leq j$, then this is an included block.
     - If $c=0$, we add $\textrm{nb\_arg\_max}$ to $\textrm{score}$. Then we increment $b[0][\ell]$ and add $\textrm{nb\_diff}[\ell][d]$ to  $\textrm{nb\_arg\_max}$  with $d=b[1][\ell] - b[0][\ell]$.
     - If $c=1$, we add $v - u + 1-\textrm{nb\_arg\_max}+\textrm{nb\_diff}[\ell][d]$ to $\textrm{score}$ with $d=b[1][\ell] - b[0][\ell]$. Next we decrement $\textrm{nb\_arg\_max}$ by $\textrm{nb\_diff}[\ell][d]$ and then only increase $b[1][\ell]$. 
@@ -127,7 +127,7 @@ score = 0
 def update(c, i, j):
     for ell in range(i//B, j//B + 1):
         u =  ell * B
-        v = min((l + 1) * B, n) - 1
+        v = min((ell + 1) * B, n) - 1
         d = b[1][ell] - b[0][ell]
         if i <= u and v <= j:
             if c == 0:
