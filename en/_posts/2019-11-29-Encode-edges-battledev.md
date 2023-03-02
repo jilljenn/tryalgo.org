@@ -24,7 +24,7 @@ In addition y should be minimized.
 
 # Properties
 
-The key observation is that the inequality x[u] + x[v] > y is monotone in x[v]. Hence for any two vertices v and v' with x[v] < x[v], the neighborhood of v must be included in the neighborhood of v'. This statement is a bit subtle as v or v' could be missing from one of the neighborhoods, because the graph has no self-loops. We use the notation $N[v]:=\\{u:(u,v) \in E\\}$ and $d(v):=\|N[v]\|$. The precise statement is that for any two vertices v, v' with x[v]≤x[v'] 
+The key observation is that the inequality x[u] + x[v] > y is monotone in x[v]. Hence for any two vertices v and v' with x[v] < x[v'], the neighborhood of v must be included in the neighborhood of v'. This statement is a bit subtle as v or v' could be missing from one of the neighborhoods, because the graph has no self-loops. We use the notation $N[v]:=\\{u:(u,v) \in E\\}$ and $d(v):=\|N[v]\|$. The precise statement is that for any two vertices v, v' with x[v]≤x[v'] 
 
 - if there is an edge between v and v', then we have $N[v]\setminus\\{v'\\} \subseteq N[v'] \setminus\\{v\\}$,
 - and if there is no edge between v and v', then we have $N[v]\subseteq N[v']$.
@@ -38,7 +38,7 @@ Consider the example 5 of the input samples:
 
 ![Example graph]({{site.images}}battledev2019_devops.svg){:width="400"}
 
-We obtain the following adjacency matrix M, where we showed in gray the edges and in white the non-edges. (Small mistake, there is no edge between vertices 6 and 8. So the corresponding cells of M should be white.)
+We obtain the following adjacency matrix M, where we showed in gray the edges and in white the non-edges. 
 
 ![Adjacency matrix]({{site.images}}battledev2019_devops_matrix.svg){:width="400"}
 
