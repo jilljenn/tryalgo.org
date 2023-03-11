@@ -59,7 +59,7 @@ else:
 
 D'abord on détermine *manuellement* les couples de chiffres qui s'obtiennent par exactement un changement sur l'affichage. Puis on essaye les trois possibilités de corriger le premier, deuxième ou troisième chiffre.
 
-~~~Python
+{% highlight python %}
 import sys
 
 def readints(): return list(map(int, readstr().split()))
@@ -94,7 +94,7 @@ if abc:
     print(*abc)
 else:
     print("Impossible")
-~~~
+{% endhighlight %}
 
 # MDF round 5 Poubelles - Le dédale du local
 
@@ -114,7 +114,7 @@ Notre solution a une complexité de $O((n + k )2^k)$, où $k=13$ est le nombre m
 
 Pour comprendre ce code, il faut connaître la technique de codage des ensembles dans les entiers. Le singleton {i} est représenté par 2 puissance i, qui s'écrit `1 << i`. L'intersection se calcule avec le ET binaire, qui s'écrit `&`. La différence symétrique, s'écrit `^`, l'union `|` et pour un ensemble non-vide $S$ dont le minimum est $i$, l'ensemble singleton {i} s'écrit `S & -S`.
 
-~~~Python
+{% highlight python %}
 import sys
 
 def readint(): return int(sys.stdin.readline())
@@ -169,4 +169,4 @@ for S in range(1, 1 << m):
         if c < best:
             best = c 
 print(best) 
-~~~
+{% endhighlight %}
