@@ -4,7 +4,7 @@ title: Meilleur developpeur de France 2023
 author: Christoph Dürr
 ---
 
-Le 9 mars 2023 avait lieu la compétition *Meilleur Développeur de France 2023*. Les algorithmes nécessaires sont résoudre les problèmes sont assez simples, mais il faut coder rapidement. Après coup, et à tête reposé, voici comment on aurait pu résoudre certains des problèmes.
+Le 9 mars 2023 avait lieu la compétition *Meilleur Développeur de France 2023*. Les algorithmes nécessaires sont résoudre les problèmes sont assez simples, mais il faut coder rapidement. Après coup, et à tête reposée, voici comment on aurait pu résoudre certains des problèmes.
 
 Cette page évoluera au fur et à mesure que Isograd publie les problèmes.
 
