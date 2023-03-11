@@ -4,7 +4,7 @@ title: Meilleur developpeur de France 2023
 author: Christoph Dürr
 ---
 
-Le 9 mars 2023 avait lieu la compétition *Meilleur Développeur de France 2023*. Les algorithmes nécessaires sont résoudre les problèmes sont assez simple, mais il faut coder rapidement. Après coup, et à tête reposé, voici comment on aurait pu résoudre certains des problèmes.
+Le 9 mars 2023 avait lieu la compétition *Meilleur Développeur de France 2023*. Les algorithmes nécessaires sont résoudre les problèmes sont assez simples, mais il faut coder rapidement. Après coup, et à tête reposé, voici comment on aurait pu résoudre certains des problèmes.
 
 Cette page évoluera au fur et à mesure que Isograd publie les problèmes.
 
@@ -24,7 +24,7 @@ Difficulté. Les extrémités des intervalles sont entiers. Et on doit distingue
 
 Technique: on va balayer les intervalles de gauche à droite. Soit $T$ l'ensemble de toutes les extrémités d'intervalles plus les valeurs $e,n$. Pour chaque $\textrm{etage}\in T$ en ordre croissant, on maintient une valeur `couvert`, qui dit combien d’ascenseurs peuvent aller de cet étage à l'étage suivant. Un compteur `C[etage]` indique de combien cette valeur change, d'un étage au suivant dans $T$.
 
-~~~Python
+{% highlight python %}
 import sys
 from collections import Counter
 
@@ -53,8 +53,7 @@ if solve(A, e, n):
     print("YES")
 else:
     print("NO")
-~~~
-
+{% endhighlight %}
 
 # MDF round 3 Basket - Égalité au tableau d'affichage
 
@@ -115,7 +114,7 @@ Notre solution a une complexité de $O((n + k )2^k)$, où $k=13$ est le nombre m
 
 Pour comprendre ce code, il faut connaître la technique de codage des ensembles dans les entiers. Le singleton {i} est représenté par 2 puissance i, qui s'écrit `1 << i`. L'intersection se calcule avec le ET binaire, qui s'écrit `&`. La différence symétrique, s'écrit `^`, l'union `|` et pour un ensemble non-vide $S$ dont le minimum est $i$, l'ensemble singleton {i} s'écrit `S & -S`.
 
-~~~~Python
+~~~Python
 import sys
 
 def readint(): return int(sys.stdin.readline())
