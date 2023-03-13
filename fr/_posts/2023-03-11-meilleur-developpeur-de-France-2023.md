@@ -6,8 +6,6 @@ author: Christoph Dürr
 
 Le 9 mars 2023 avait lieu la compétition *Meilleur Développeur de France 2023*. Les algorithmes nécessaires sont résoudre les problèmes sont assez simples, mais il faut coder rapidement. Après coup, et à tête reposée, voici comment on aurait pu résoudre certains des problèmes.
 
-Cette page évoluera au fur et à mesure que Isograd publie les problèmes.
-
 - Retrouvez les problèmes [ici](https://www.isograd-testingservices.com//FR/solutions-challenges-de-code).
 
 # MDF round 1 Pizza - Découpage des pizzas
@@ -169,4 +167,75 @@ for S in range(1, 1 << m):
         if c < best:
             best = c 
 print(best) 
+{% endhighlight %}
+
+# MDF finale Classement à la main
+
+On vous donne une liste de paires $(t, s)$, où $t$ est un nombre et $s$ une chaîne de caractères. On stocke dans un dictionnaire $C[s]$ le nombre de paires avec la chaîne $s$. Puis on crée une liste $L$ avec toutes les valeurs $t$, des paires $(t,s)$ pour lesquelles $C[s]=1$. Il faut afficher cette liste dans l'ordre triée.
+
+# MDF finale Tricheurs
+
+On vous donne un graphe avec $n=10.000$ sommets et $m=20.000$ arêtes. Et on vous donne également un ensemble de sommets $T$, et un sommet particulier $v_0\not\in T$. Et on veut le nombre de sommets, qui sont strictement plus proche de $v$ que de tout sommet dans $T$.
+
+On ne peut pas utiliser l'algorithme standard Floyd-Warshal pour calculer les distances entre tous les couples source-destination, car $O(n^3)$ est trop grand. Il faut utiliser le fait que le graphe est éparse (a peu d'arêtes).
+
+D'ailleurs on n'a pas besoin de connaître les distance de tout sommet dans $T$ vers les autres sommets, car on ne s'intéresse qu'à la distance la plus petite. Alors on maintient un tableau de distances, tel que `dist[v]` est la plus petite distance vers les $k$ premiers sommets de $T$ (dans un ordre arbitraire fixé). Intialement $dist[v]=\infty$ pour tout sommet. Et pour chaque sommet $v_k\in T$ on initie un nouveau parcours en largeur du graphe. Concrètement on pose $dist[v_k]=0$, et on met $v_k$ dans une file $Q$. Tant que $Q$ n'est pas vide, on enlève un sommet $v$ de $Q$. Et on tente de mettre à jour les distances pour les voisins $u$ de $v$. Seulement si $dist[v] +  1 < dist[u]$, alors on met à jour $dist[u]$ et le sommet $u$ rejoint la file $u$. 
+
+Cette manière de procéder prend beaucoup moins de temps que des parcours en largeurs indépendants.
+
+
+# MDF finale Meilleure startup de France
+
+On vous donne une matrice $T$ avec 2 lignes et $n$ colonnes. Les entrées sont des textes. Puis on demande de calculer le nombre de vecteurs binaires $b$ de de longueur $b$, tel que pour tout $i$, $T[b[i]][i]$ soit different de $T[b[i-1]][i-1]$, où il faut comprendre le $i-1$ modulo $n$. Appelons un tel vecteur *valide*. Une exception est le cas $n=1$, où il faut juste répondre $2$.
+
+Nous modélisons le problème comme suit. Si on restreint au $k$ premières colonnes de $T$, on a problème plus petit.
+Nous calculons une matrice $A^k$ de dimension $2\times 2$, tel que $A^k[u][v]$ est le nombre de vecteurs $b$ valides pour ce problème restreint avec $b_1 = u$ et $b_k=v$. 
+
+Pour le cas de base, $A^0$ est la matrice d'identité.
+
+Pour le cas $n>1$, $A^n$ se calcule par le produit $A^{n-1}$ avec une matrice $B$, qui code la compatibilité des choix pour $b_{n-1}$ et $b_n$. Concrètement $B[u][v]$ est 1 si $T[u][n-1]\neq T[v][n]$ et 0 sinon. 
+
+La réponse au problème est la somme $A^n[0][0] + A^n[1][1]$. Ceci prend compte du fait que la dernière colonne de $T$ est également la colonne qui est le prédécesseur de la première colonne de $T$ dans l'ordre circulaire.
+
+{% highlight python %}
+#!/usr/bin/env pypy3
+
+""" c.durr - 2023 - mdf
+
+"""
+
+
+import sys
+
+def readint(): return int(sys.stdin.readline())
+def readstr(): return sys.stdin.readline().strip()
+def readints(): return list(map(int, readstr().split()))
+
+def matrix(before, after):      # compatibilité
+    B = [[0,0], [0,0]]
+    for i in (0,1):
+        for j in (0,1):
+            B[i][j] = int(before[i] != after[j])
+    return B
+
+def mult(A, B):                 # multiplication de matrices
+    C = [[0,0], [0,0]]
+    for i in (0,1):
+        for j in (0,1):
+            for k in (0,1):
+                C[i][j] += A[i][k] * B[k][j]
+    return C 
+    
+def solve(L):
+    if len(L) == 1:
+        return 2
+    A = [[1,0],[0,1]]           # identité
+    for i in range(n):
+        B = matrix(L[i - 1], L[i])      
+        A = mult(A, B)
+    return A[0][0] + A[1][1]
+
+n = readint()
+L = [readstr().split() for _ in range(n)]
+print(solve(L))
 {% endhighlight %}
