@@ -175,7 +175,7 @@ On vous donne une liste de paires $(t, s)$, où $t$ est un nombre et $s$ une cha
 
 # MDF finale Tricheurs
 
-On vous donne un graphe avec $n=10.000$ sommets et $m=20.000$ arêtes. Et on vous donne également un ensemble de sommets $T$, et un sommet particulier $v_0\not\in T$. Et on veut le nombre de sommets, qui sont strictement plus proche de $v$ que de tout sommet dans $T$.
+On vous donne un graphe avec $n=10.000$ sommets et $m=20.000$ arêtes. Et on vous donne également un ensemble de sommets $T$, et un sommet particulier $v_0\not\in T$. Et on veut le nombre de sommets, qui soient strictement plus proche de $v_0$ que de tout sommet dans $T$.
 
 L'idée clé est de contracter $T$ en un seul sommet $v_1$. Puis il suffit de faire deux parcours en largeur pour calculer les distances depuis $v_1$ et depuis $v_0$ pour au final comparer les distances sommet par sommet.
 
