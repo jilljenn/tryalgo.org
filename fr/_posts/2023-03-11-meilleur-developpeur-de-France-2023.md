@@ -177,11 +177,7 @@ On vous donne une liste de paires $(t, s)$, où $t$ est un nombre et $s$ une cha
 
 On vous donne un graphe avec $n=10.000$ sommets et $m=20.000$ arêtes. Et on vous donne également un ensemble de sommets $T$, et un sommet particulier $v_0\not\in T$. Et on veut le nombre de sommets, qui sont strictement plus proche de $v$ que de tout sommet dans $T$.
 
-On ne peut pas utiliser l'algorithme standard Floyd-Warshal pour calculer les distances entre tous les couples source-destination, car $O(n^3)$ est trop grand. Il faut utiliser le fait que le graphe est éparse (a peu d'arêtes).
-
-D'ailleurs on n'a pas besoin de connaître les distance de tout sommet dans $T$ vers les autres sommets, car on ne s'intéresse qu'à la distance la plus petite. Alors on maintient un tableau de distances, tel que `dist[v]` est la plus petite distance vers les $k$ premiers sommets de $T$ (dans un ordre arbitraire fixé). Intialement $dist[v]=\infty$ pour tout sommet. Et pour chaque sommet $v_k\in T$ on initie un nouveau parcours en largeur du graphe. Concrètement on pose $dist[v_k]=0$, et on met $v_k$ dans une file $Q$. Tant que $Q$ n'est pas vide, on enlève un sommet $v$ de $Q$. Et on tente de mettre à jour les distances pour les voisins $u$ de $v$. Seulement si $dist[v] +  1 < dist[u]$, alors on met à jour $dist[u]$ et le sommet $u$ rejoint la file $u$. 
-
-Cette manière de procéder prend beaucoup moins de temps que des parcours en largeurs indépendants.
+L'idée clé est de contracter $T$ en un seul sommet $v_1$. Puis il suffit de faire deux parcours en largeur pour calculer les distances depuis $v_1$ et depuis $v_0$ pour au final comparer les distances sommet par sommet.
 
 
 # MDF finale Meilleure startup de France
