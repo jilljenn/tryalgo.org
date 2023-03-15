@@ -182,9 +182,9 @@ L'idée clé est de contracter $T$ en un seul sommet $v_1$. Puis il suffit de fa
 
 # MDF finale Meilleure startup de France
 
-On vous donne une matrice $T$ avec 2 lignes et $n$ colonnes. Les entrées sont des textes. Puis on demande de calculer le nombre de vecteurs binaires $b$ de de longueur $b$, tel que pour tout $i$, $T[b[i]][i]$ soit different de $T[b[i-1]][i-1]$, où il faut comprendre le $i-1$ modulo $n$. Appelons un tel vecteur *valide*. Une exception est le cas $n=1$, où il faut juste répondre $2$.
+On vous donne une matrice $T$ avec 2 lignes et $n$ colonnes. Les entrées sont des textes. Puis on demande de calculer le nombre de vecteurs binaires $b$ de longueur $b$, tel que pour tout $i$, $T[b[i]][i]$ soit different de $T[b[i-1]][i-1]$, où il faut comprendre le $i-1$ modulo $n$. Appelons un tel vecteur *valide*. Une exception est le cas $n=1$, où il faut juste répondre $2$.
 
-Nous modélisons le problème comme suit. Si on restreint au $k$ premières colonnes de $T$, on a problème plus petit.
+Nous modélisons le problème comme suit. Si on restreint au $k$ premières colonnes de $T$, on a un problème plus petit.
 Nous calculons une matrice $A^k$ de dimension $2\times 2$, tel que $A^k[u][v]$ est le nombre de vecteurs $b$ valides pour ce problème restreint avec $b_1 = u$ et $b_k=v$. 
 
 Pour le cas de base, $A^0$ est la matrice d'identité.
