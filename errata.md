@@ -26,6 +26,8 @@ Voici une liste de coquilles dans le livre.
 
 - page 70: À tout moment donnée on maintient dans *open* le nombre d'intervalles ouverts. - Il fallait lire *nb_open*.  La phrase suivante doit être : .. un nouvel intervalle $[last,x)$ ... et *last* la dernière position à laquelle *nb_open* est devenue positif.
 
+- page 77: L'implémentation itérative du parcours en profondeur n'est pas correcte. D'abord il faudrait empiler les voisins dans l'ordre inverse pour avoir un comportement identique avec la version récursive. Mais surtout il faut permettre à un sommet à être empilé plusieurs fois. Donc il faut marquer le sommet après son traitement, et non au moment de l'empilement. Lire notre [implémentation](https://jilljenn.github.io/tryalgo/_modules/tryalgo/dfs.html#dfs_iterative) corrigée et ce [billet](https://11011110.github.io/blog/2013/12/17/stack-based-graph-traversal.html) de David Eppstein pour plus de détails. Merci à Nathaniel Carré pour avoir remarqué notre erreur.
+
 - page 83 Figure 6.7 : L'exemple n'est pas correct. Considérez plutôt le graphe suivant :
 
 ![]({{site.images}}bi-connexes-relation.png "Les sommets et les arêtes de déconnexion sont montrés en gras." ){:width="250"}
@@ -97,6 +99,8 @@ Some typos we spotted in the book.
 - page 47, head of section 2.5: the second abra should be aligned with the suffix of the string abracadabra above.
 
 - page 55: In the code of *powerstring_by_find*,  the variables *u* and *x* should be the same. Moreover in CPython and in Pypy the complexity of `haystack.find(needle)` with $m=\textrm{len(haystack)},\: n=\textrm{len(needle)}$ is $O((n-m) * n)$ instead of $O(n + m)$. Hence the function *powerstring_by_find* has quadratic time complexity, which makes it not very useful.
+
+- page 92: Our iterative implementation of depth-first search is erronous. First we would need to push neighbors in reverse order on the stack to ensure they are served in the same order as for the recursive implementation. But most importantly, it should be allowed to place vertices multiple times on the stack. Hence we would mark the vertex after serving, and not when pushing on the stack. See our corrected [implementation](https://jilljenn.github.io/tryalgo/_modules/tryalgo/dfs.html#dfs_iterative) and this  [post](https://11011110.github.io/blog/2013/12/17/stack-based-graph-traversal.html) by David Eppstein for more information. Thank you  Nathaniel Carré for pointing this out.
 
 - page 115: the formula should be
 
