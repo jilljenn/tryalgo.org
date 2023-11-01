@@ -28,7 +28,7 @@ parent: Algorithms
 1. Composants dans union de rectangles disjoints
 1. Correcteur orthographique
 1. Coupe minimum dans arbre pour minimiser plus long chemin
-1. Couplage biparti maximal en $O(|U|\cdot|E|)$
+1. Couplage biparti maximal en $O(\|U\|\cdot\|E\|)$
 1. Couplage biparti parfait minimisant arête poids maximal
 1. Couplage planaire en $O(n\log n)$
 1. Couplage planaire par en $O(n^3)$
