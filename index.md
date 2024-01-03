@@ -14,7 +14,7 @@ This page [in English](/index-en)
 ## Derniers posts
 
 <ul>
-{% for post in site.posts limit:8 %}
+{% for post in site.posts limit:5 %}
     <li> {{ post.date | date: "%b %-d, %Y" }} <a href="{{ post.url }}">{{ post.title }}</a> – {{ post.author }}
     </li>
 {% endfor %}
@@ -59,10 +59,10 @@ Cf. notre [notebook Jupyter](http://nbviewer.jupyter.org/github/jilljenn/tryalgo
 
 ## À propos des auteurs
 
-[**Christoph Dürr**](http://www-desir.lip6.fr/~durrc/) est directeur de recherche CNRS en informatique à Sorbonne Université. Spécialisé en algorithmique, il a enseigné à l'École polytechnique de 2007 à 2014 et entraîne régulièrement des équipes pour le concours de programmation [ICPC](/acm/).  
+[**Christoph Dürr**](http://www-desir.lip6.fr/~durrc/) est directeur de recherche CNRS en informatique à Sorbonne Université. Spécialisé en algorithmique, il a enseigné à l'École polytechnique de 2007 à 2014 et entraîne régulièrement des équipes pour le concours de programmation [ICPC](/acm/). Il est président du SWERC 2024.  
 À part ça, il aime beaucoup les carrot-cakes.
 
-[**Jill-Jênn Vie**](http://jill-jenn.net) est chargé de recherches à Inria. Ancien élève de l’École normale supérieure de Paris-Saclay, il a participé à l’organisation du concours d’informatique Prologin de 2010 à 2014.  
+[**Jill-Jênn Vie**](http://jill-jenn.net) est chargé de recherche à Inria et enseignant à l'École polytechnique depuis 2022. Ancien élève de l'École normale supérieure de Paris-Saclay, il a participé à l’organisation du concours d’informatique Prologin de 2010 à 2014.  
 À part ça, il est féru de [métafiction](https://club-meta.fr).
 
 

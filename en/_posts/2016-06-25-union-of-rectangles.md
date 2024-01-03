@@ -5,9 +5,10 @@ category: geometry
 problems:
    "tju:Rectangles": http://acm.tju.edu.cn/toj/showp1049.html
    "spoj:NKMARS": https://www.spoj.com/problems/NKMARS/
+   "kattis:unrealestate": https://open.kattis.com/problems/unrealestate
 ---
 
-You are given n rectilinear rectangles and want to find out the total area covered by their union.
+You are given $n$ rectilinear rectangles and want to find out the total area covered by their union.
 
 ## Sweep line algorithm with a segment tree
 
@@ -23,8 +24,8 @@ Now to keep track of the area of the union of rectangles over the part seen so f
 So we need a data structure that maintains an array of counters, each has an associated constant length.
 The data structure must implement the following operations.
 
-* increment all entries between given indices i and j
-* decrement all entries between given indices i and j
+* increment all entries between given indices $i$ and $j$
+* decrement all entries between given indices $i$ and $j$
 * query the total length of all intervals whose counter is positive.
 
 The segment tree is the right choice for this data structure. It has complexity \\( O(\log n) \\) for the update operations and \\( O(1) \\) for the query.  We need to augment the segment tree with a *score* per node, with the following properties.
