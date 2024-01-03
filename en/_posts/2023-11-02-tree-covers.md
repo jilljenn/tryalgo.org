@@ -24,7 +24,7 @@ So usually we impose some additional conditions.
 
 > The original definition is slightly different, but this one is easier to implement, and has the same desired property.
 
-Here we want to choose for every inner vertex $v$, a descendent $u$ which maximizes $|T_u|$. Ties can be broken arbitrarily. These edges are called *heavy*. All other edges are called *light*. Now we have the property, that for every pair of vertices $u,v$ with lowest common ancestor $a$, both paths $u-a$ and $a-v$ traverse at most $\log n$ heavy paths. This is because every light edge $(u,v)$ --- with $u$ descendant of $v$ --- has the property that $T_u$ is at most half as big as $T_v$. Hence each of the two paths can contain at most a logarithmic number of light edges.
+Here we want to choose for every inner vertex $v$, a descendent $u$ which maximizes $\|T_u\|$. Ties can be broken arbitrarily. These edges are called *heavy*. All other edges are called *light*. Now we have the property, that for every pair of vertices $u,v$ with lowest common ancestor $a$, both paths $u-a$ and $a-v$ traverse at most $\log n$ heavy paths. This is because every light edge $(u,v)$ --- with $u$ descendant of $v$ --- has the property that $T_u$ is at most half as big as $T_v$. Hence each of the two paths can contain at most a logarithmic number of light edges.
 
 This is interesting when we have to maintain a datastructure on the tree, such vertices are labeled with numbers, and we want to add a value $k$ to every vertex along the path between two given vertices $u,v$, or return the sum of these labels along the path. If the tree were a line graph, we could use a segment tree for this purpose. Here we use a segment tree for each heavy path. In fact we can use one big segment tree, with portions of it corresponding to heavy paths.
 
@@ -38,7 +38,7 @@ When removing an edge, it could be between to vertex of positive deletion number
 
           (a) (b) (c)
     *---1---1---1---1---*
-        |   |   |   |
+        \|   \|   \|   \|
         *   *   *   *
 
 If we remove the middle edge (b), then we need to remove 2 addition edges. However the optimum here is to remove edges (a) and (c).
@@ -82,7 +82,7 @@ The optimal covering with caterpillars can be computed with dynamic programming.
   c-node : has degree=1
 
   c--b--a--a--a--b--c
-    / \    |    /|\
+    / \    \|    /\|\
    c   c   c   c c c
 
   DFS fixes an orientation of the trees.  
