@@ -63,7 +63,7 @@ A caterpillar is a tree, which consists of a single path, with leafs attached to
 
 The optimal covering with caterpillars can be computed with dynamic programming. But we could only find a tedious solution. Which we sketch here.
 
-~~~C++
+{% highlight C++ %}
 /*
   Airbus vs. Boeing
   http://uva.onlinejudge.org/contests/258-febc44a2/11862.html
@@ -240,6 +240,4 @@ int main() {
   }
   return 0;
 }
-
-~~~
-
+{% endhighlight python %}
