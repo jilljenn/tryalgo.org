@@ -38,7 +38,7 @@ When removing an edge, it could be between to vertex of positive deletion number
 
           (a) (b) (c)
     *---1---1---1---1---*
-        \|   \|   \|   \|
+        |   |   |   |
         *   *   *   *
 
 If we remove the middle edge (b), then we need to remove 2 addition edges. However the optimum here is to remove edges (a) and (c).
@@ -82,7 +82,7 @@ The optimal covering with caterpillars can be computed with dynamic programming.
   c-node : has degree=1
 
   c--b--a--a--a--b--c
-    / \    \|    /\|\
+    / \    |    /|\
    c   c   c   c c c
 
   DFS fixes an orientation of the trees.  
