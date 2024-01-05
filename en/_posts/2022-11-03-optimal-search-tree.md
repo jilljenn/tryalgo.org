@@ -10,6 +10,9 @@ problems:
 
 Application: Given an ordered list of keys with frequencies, build a binary search tree on those keys which minimizes the average query cost.
 
+.. note::
+   This note has been updated in January 2024. We corrected one error in our implementation. See the paragraph right before the implementation for more detail.
+
 ## Formal definition
 
 In the 1970's a technique was discovered by Knuth and generalized in the 1980's by Yao, which permits to speedup any dynamic program of a particular form and particular property.
@@ -211,22 +214,24 @@ which shows the implication (2). The proof for the second inequality is similar.
 
 ## Implementation in Python
 
+We said earlier that the minimizer for the recursive expression for $C[i,j]$ ranges between $i+1$ and $j$, but can be restricted to the range between $K[i,j - 1]$ and $K[i + 1, j]$. This means that the actual range has to be in the intersection of these ranges, hence the use of max in the range expression for variable $k$ in the code below.
+
 {% highlight python %}
-def dyn_prog_QI_trick(W):
-    """ Solves the dynamic program for 0 <= i < j < n
+def dyn_prog_Monge(W):
+    """ Solves the following dynamic program for 0 <= i < j < n
 
     C[i,i] = 0
     C[i,j] = W[i,j] + min over i < k <= j of (C[i,k-1] + C[k,j]) 
+    K[i,j] = minimizer of above
 
     :param W: matrix of dimension n times n
-    :assumes: W satisfies the quadrangle inequality 
-              and monotonicity in the lattice of intervals 
-    :returns: C[0,n-1] and a matrix K with the minimizers
+    :assumes: W satisfies the Monge property (a.k.a. quadrangle inequality) and monotonicity in the lattice of intervals 
+    :returns: C[0,n-1] and the matrix K with the minimizers
     :complexity: O(n^2)
     """
     n = len(W) 
-    C = [[0 for j in range(n)] for i in range(n)] #
-    K = [[i for j in range(n)] for i in range(n)] # initially K[i,i]=i
+    C = [[W[i][i] for j in range(n)] for i in range(n)] # initially C[i,i]=W[i][i]
+    K = [[j for j in range(n)] for i in range(n)] # initially K[i,i]=i
     
     # recursion
     for j_i in range(1, n): # difference between j and i
@@ -234,15 +239,14 @@ def dyn_prog_QI_trick(W):
             j = i + j_i
             argmin = None
             valmin = float('+inf')
-            for k in range(K[i][j - 1], K[i + 1][j] + 1):
+            for k in range(max(i + 1, K[i][j - 1]),  K[i + 1][j] + 1):
                 alt = C[i][k - 1] + C[k][j]
                 if alt < valmin:
                     valmin = alt
                     argmin = k
             C[i][j] = W[i][j] + valmin
             K[i][j] = argmin 
-     
-    return C[0][n - 1], K
+    return C[0][n-1], K
 {% endhighlight %}
 
 
@@ -255,4 +259,5 @@ The first reference is the original paper introducing the quadratic time algorit
 - Knuth, D. E., [Optimum binary search trees](https://doi.org/10.1007/BF00264289), Acta Informatica, 1(1), pages 14–25, 1971.
 - Yao, F. Frances. [Efficient dynamic programming using quadrangle inequalities.](https://dl.acm.org/doi/pdf/10.1145/800141.804691) Proceedings of the twelfth annual ACM symposium on Theory of computing. 1980.
 - Nagaraj, S. V.  [Optimal binary search trees](https://doi.org/10.1016/S0304-3975(96)00320-9), Theoretical Computer Science, 188(1–2), pages 1-44, 1997.
+- [Our implementation of the actual code to build the optimal binary search tree](https://jilljenn.github.io/tryalgo/tryalgo/tryalgo.html#module-tryalgo.dyn_prog_tricks)
 
