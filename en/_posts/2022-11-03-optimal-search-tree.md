@@ -1,6 +1,6 @@
 ---
 layout: en
-category: graphs
+category: trees
 title: "Quadrangle Inequality trick for dynamic programs"
 author: Christoph Dürr
 problems:
@@ -10,8 +10,8 @@ problems:
 
 Application: Given an ordered list of keys with frequencies, build a binary search tree on those keys which minimizes the average query cost.
 
-.. note::
-   This note has been updated in January 2024. We corrected one error in our implementation. See the paragraph right before the implementation for more detail.
+
+>  This note has been updated in January 2024. We corrected one error in our implementation. See the paragraph right before the implementation for more detail.
 
 ## Formal definition
 
