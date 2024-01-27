@@ -1,7 +1,7 @@
 ---
 layout: page
 title: All posts by category
-parent: Latest posts
+parent: Blog posts
 ---
 
 # All posts by category

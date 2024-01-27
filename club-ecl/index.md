@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Université de Lille 2020-2021
-parent: Training
+title: Université de Lille
+parent: ICPC Training
+grand_parent: Competitions
+has_children: true
 ---
-
-To contact JJ Vie, click the mail at the bottom of the page.
 
 [Algo II cheatsheet](https://docs.google.com/document/d/1U22FCZv8rFn-iP1cXCbg2VrALLULCl8eOo9klBgZoxE/edit#heading=h.3j90luv4za2g)
 

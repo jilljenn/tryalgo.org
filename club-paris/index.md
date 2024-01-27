@@ -1,26 +1,20 @@
 ---
 layout: page
-title: Paris-Saclay & Sorbonne Université 2020-2021
-parent: Training
+title: Paris-Saclay & Sorbonne Université
+parent: ICPC Training
+grand_parent: Competitions
 ---
 
 Les universités Paris-Saclay et Sorbonne Université s'entraînent pour SWERC 2020.
 
-# Vendredi 9 octobre 2020, 9h
+- Vendredi 9 octobre 2020, 9h
+- Lundi 19 octobre 2020, 18h
+- Lundi 2 novembre 2020, 18h
+- Lundi 9 novembre 2020, 18h
+- Lundi 23 novembre 2020, 18h
+- Lundi 30 novembre 2020, 18h
 
-# Lundi 19 octobre 2020, 18h
-
-# Lundi 2 novembre 2020, 18h
-
-# Lundi 9 novembre 2020, 18h
-
-# Lundi 23 novembre 2020, 18h
-
-# Lundi 30 novembre 2020, 18h
-
-- Le [google doc](https://docs.google.com/document/d/1Sb8yhL5mjJjUowqXb3xPy-in22NvUzoNgXRlh4y5LcY/edit#heading=h.vyrq4y9q9pau) avec un problème individuel pour chacun de vous
-
-Sinon pour tout le monde voici quatres problèmes sur lesquels vous pourriez réfléchir :
+Sinon pour tout le monde voici quatre problèmes sur lesquels vous pourriez réfléchir :
 
 -   [November rain](http://poj.org/problem?id=1765) 
 -   [Lowest-cost search](https://projecteuler.net/problem=328)
@@ -41,6 +35,6 @@ Sinon pour tout le monde voici quatres problèmes sur lesquels vous pourriez ré
 -   Dans `Google Drive\SWERC entrainement 2020-2021\Livres\fuch.pdf` admirez la simplicité du code pour le couplage à cardinalité maximum dans un graphe biparti. 
 -   Pour Python, pourquoi ne pas lire notre bibliothèque [tryalgo](https://jilljenn.github.io/tryalgo/). Je crois que ne peux plus vous recommander notre livre, je trouve qu’il contient trop de coquilles. Mi-décembre la traduction en anglais va sortir, et elle bien améliorée. L’explication qu’on y donne de Knuth-Morris-Pratt est très soignée, mais vous l’allez l’avoir en live lors de la prochaine séance.
 
-# Lundi 7 décembre 2020, 18h
+## Lundi 7 décembre 2020, 18h
 
 - Une [liste](https://tryalgo.org/liste_algos_fr/) d'algorithmes traités dans notre livre. Mais bon, il n'existe pas une liste définitive d'algorithmes cruciaux pour la compétition.

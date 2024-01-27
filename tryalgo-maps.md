@@ -1,0 +1,194 @@
+---
+layout: page
+title: "Demo: shortest paths in Paris"
+parent: The tryalgo Python library
+---
+
+Here is a demo of the *tryalgo* package over Paris' graph.  
+We are going to display a shortest path from Gare de Lyon to Place d'Italie.
+
+Let's first store the graph in an adjacency list.
+
+
+```python
+with open('paris.txt') as f:
+    lines = f.read().splitlines()
+    N, M, T, C, S = map(int, lines[0].split())
+    paris_coords = []
+    for i in range(1, N + 1):
+        paris_coords.append(list(map(float, lines[i].split())))  # Read coords
+    paris = {node: {} for node in range(N)}
+    for i in range(N + 1, N + M + 1):
+        start, end, nb_directions, duration, length = map(int, lines[i].split())
+        paris[start][end] = length
+        if nb_directions == 2:
+            paris[end][start] = length
+```
+
+How many nodes?
+
+
+```python
+len(paris)
+```
+
+
+
+
+    11348
+
+
+
+
+```python
+paris[0]
+```
+
+
+
+
+    {4942: 277, 1079: 113, 2912: 178}
+
+
+
+Which means the node 0 leads to the node 1079 with cost 113 and so on.
+
+
+```python
+%matplotlib inline
+from matplotlib import pyplot as plt
+
+x = [point[0] for point in paris_coords]
+y = [point[1] for point in paris_coords]
+plt.scatter(x, y, marker='.', s=1)
+```
+
+
+
+
+    <matplotlib.collections.PathCollection at 0x7fd2ee8a6f10>
+
+
+
+
+    
+![png](TryAlgo%20Maps%20in%20Paris_files/TryAlgo%20Maps%20in%20Paris_8_1.png)
+    
+
+
+## Geolocation using geopy
+
+
+```python
+from geopy.geocoders import Nominatim
+
+geocoder = Nominatim(user_agent='tryalgo')
+start = geocoder.geocode("Gare de Lyon, Paris")
+end = geocoder.geocode("Porte d'Italie, Paris")
+start.longitude, start.latitude
+```
+
+
+
+
+    (2.3734794, 48.8448057)
+
+
+
+We need a function that provides the index of the closest node in the graph of Paris. The distance between two pairs of latitude and longitude is given by the following `haversine` function:
+
+
+```python
+from math import radians, cos, sin, asin, sqrt
+
+def haversine(lon1, lat1, lon2, lat2):
+    """
+    Calculate the great circle distance between two points 
+    on the earth (specified in decimal degrees)
+    """
+    # convert decimal degrees to radians 
+    lon1, lat1, lon2, lat2 = map(radians, [lon1, lat1, lon2, lat2])
+
+    # haversine formula 
+    dlon = lon2 - lon1 
+    dlat = lat2 - lat1 
+    a = sin(dlat/2)**2 + cos(lat1) * cos(lat2) * sin(dlon/2)**2
+    c = 2 * asin(sqrt(a)) 
+    r = 6371 # Radius of earth in kilometers. Use 3956 for miles
+    return c * r
+
+def closest_node(coords, location):
+    dmin = float('inf')
+    closest = None
+    for i in range(len(coords)):
+        d = haversine(coords[i][1], coords[i][0], location.longitude, location.latitude)
+        if d < dmin:
+            closest = i
+            dmin = d
+    return closest
+```
+
+## Visualization using Folium
+
+
+```python
+import folium
+paris_viz = folium.Map(location=(48.8330293, 2.3618845), tiles='Stamen Watercolor', zoom_start=13)
+paris_viz
+```
+
+
+
+
+<div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><iframe src="data:text/html;charset=utf-8;base64,PCFET0NUWVBFIGh0bWw+CjxoZWFkPiAgICAKICAgIDxtZXRhIGh0dHAtZXF1aXY9ImNvbnRlbnQtdHlwZSIgY29udGVudD0idGV4dC9odG1sOyBjaGFyc2V0PVVURi04IiAvPgogICAgCiAgICAgICAgPHNjcmlwdD4KICAgICAgICAgICAgTF9OT19UT1VDSCA9IGZhbHNlOwogICAgICAgICAgICBMX0RJU0FCTEVfM0QgPSBmYWxzZTsKICAgICAgICA8L3NjcmlwdD4KICAgIAogICAgPHNjcmlwdCBzcmM9Imh0dHBzOi8vY2RuLmpzZGVsaXZyLm5ldC9ucG0vbGVhZmxldEAxLjUuMS9kaXN0L2xlYWZsZXQuanMiPjwvc2NyaXB0PgogICAgPHNjcmlwdCBzcmM9Imh0dHBzOi8vY29kZS5qcXVlcnkuY29tL2pxdWVyeS0xLjEyLjQubWluLmpzIj48L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJodHRwczovL21heGNkbi5ib290c3RyYXBjZG4uY29tL2Jvb3RzdHJhcC8zLjIuMC9qcy9ib290c3RyYXAubWluLmpzIj48L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2NkbmpzLmNsb3VkZmxhcmUuY29tL2FqYXgvbGlicy9MZWFmbGV0LmF3ZXNvbWUtbWFya2Vycy8yLjAuMi9sZWFmbGV0LmF3ZXNvbWUtbWFya2Vycy5qcyI+PC9zY3JpcHQ+CiAgICA8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Imh0dHBzOi8vY2RuLmpzZGVsaXZyLm5ldC9ucG0vbGVhZmxldEAxLjUuMS9kaXN0L2xlYWZsZXQuY3NzIi8+CiAgICA8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Imh0dHBzOi8vbWF4Y2RuLmJvb3RzdHJhcGNkbi5jb20vYm9vdHN0cmFwLzMuMi4wL2Nzcy9ib290c3RyYXAubWluLmNzcyIvPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL21heGNkbi5ib290c3RyYXBjZG4uY29tL2Jvb3RzdHJhcC8zLjIuMC9jc3MvYm9vdHN0cmFwLXRoZW1lLm1pbi5jc3MiLz4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS9mb250LWF3ZXNvbWUvNC42LjMvY3NzL2ZvbnQtYXdlc29tZS5taW4uY3NzIi8+CiAgICA8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Imh0dHBzOi8vY2RuanMuY2xvdWRmbGFyZS5jb20vYWpheC9saWJzL0xlYWZsZXQuYXdlc29tZS1tYXJrZXJzLzIuMC4yL2xlYWZsZXQuYXdlc29tZS1tYXJrZXJzLmNzcyIvPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL3Jhd2Nkbi5naXRoYWNrLmNvbS9weXRob24tdmlzdWFsaXphdGlvbi9mb2xpdW0vbWFzdGVyL2ZvbGl1bS90ZW1wbGF0ZXMvbGVhZmxldC5hd2Vzb21lLnJvdGF0ZS5jc3MiLz4KICAgIDxzdHlsZT5odG1sLCBib2R5IHt3aWR0aDogMTAwJTtoZWlnaHQ6IDEwMCU7bWFyZ2luOiAwO3BhZGRpbmc6IDA7fTwvc3R5bGU+CiAgICA8c3R5bGU+I21hcCB7cG9zaXRpb246YWJzb2x1dGU7dG9wOjA7Ym90dG9tOjA7cmlnaHQ6MDtsZWZ0OjA7fTwvc3R5bGU+CiAgICAKICAgICAgICAgICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwKICAgICAgICAgICAgICAgIGluaXRpYWwtc2NhbGU9MS4wLCBtYXhpbXVtLXNjYWxlPTEuMCwgdXNlci1zY2FsYWJsZT1ubyIgLz4KICAgICAgICAgICAgPHN0eWxlPgogICAgICAgICAgICAgICAgI21hcF8wN2UxNTExYjgzNjQ0ZjhmOTNlZjc3NDRkNjZkZWRjYSB7CiAgICAgICAgICAgICAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlOwogICAgICAgICAgICAgICAgICAgIHdpZHRoOiAxMDAuMCU7CiAgICAgICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAuMCU7CiAgICAgICAgICAgICAgICAgICAgbGVmdDogMC4wJTsKICAgICAgICAgICAgICAgICAgICB0b3A6IDAuMCU7CiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIDwvc3R5bGU+CiAgICAgICAgCjwvaGVhZD4KPGJvZHk+ICAgIAogICAgCiAgICAgICAgICAgIDxkaXYgY2xhc3M9ImZvbGl1bS1tYXAiIGlkPSJtYXBfMDdlMTUxMWI4MzY0NGY4ZjkzZWY3NzQ0ZDY2ZGVkY2EiID48L2Rpdj4KICAgICAgICAKPC9ib2R5Pgo8c2NyaXB0PiAgICAKICAgIAogICAgICAgICAgICB2YXIgbWFwXzA3ZTE1MTFiODM2NDRmOGY5M2VmNzc0NGQ2NmRlZGNhID0gTC5tYXAoCiAgICAgICAgICAgICAgICAibWFwXzA3ZTE1MTFiODM2NDRmOGY5M2VmNzc0NGQ2NmRlZGNhIiwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICBjZW50ZXI6IFs0OC44MzMwMjkzLCAyLjM2MTg4NDVdLAogICAgICAgICAgICAgICAgICAgIGNyczogTC5DUlMuRVBTRzM4NTcsCiAgICAgICAgICAgICAgICAgICAgem9vbTogMTMsCiAgICAgICAgICAgICAgICAgICAgem9vbUNvbnRyb2w6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgcHJlZmVyQ2FudmFzOiBmYWxzZSwKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgKTsKCiAgICAgICAgICAgIAoKICAgICAgICAKICAgIAogICAgICAgICAgICB2YXIgdGlsZV9sYXllcl9kMGFhZDU0ZjkzODA0OTNhYTg5OTMwMTFiYWQwODgxNyA9IEwudGlsZUxheWVyKAogICAgICAgICAgICAgICAgImh0dHBzOi8vc3RhbWVuLXRpbGVzLXtzfS5hLnNzbC5mYXN0bHkubmV0L3dhdGVyY29sb3Ive3p9L3t4fS97eX0uanBnIiwKICAgICAgICAgICAgICAgIHsiYXR0cmlidXRpb24iOiAiTWFwIHRpbGVzIGJ5IFx1MDAzY2EgaHJlZj1cImh0dHA6Ly9zdGFtZW4uY29tXCJcdTAwM2VTdGFtZW4gRGVzaWduXHUwMDNjL2FcdTAwM2UsIHVuZGVyIFx1MDAzY2EgaHJlZj1cImh0dHA6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LzMuMFwiXHUwMDNlQ0MgQlkgMy4wXHUwMDNjL2FcdTAwM2UuIERhdGEgYnkgXHUwMDI2Y29weTsgXHUwMDNjYSBocmVmPVwiaHR0cDovL29wZW5zdHJlZXRtYXAub3JnXCJcdTAwM2VPcGVuU3RyZWV0TWFwXHUwMDNjL2FcdTAwM2UsIHVuZGVyIFx1MDAzY2EgaHJlZj1cImh0dHA6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LXNhLzMuMFwiXHUwMDNlQ0MgQlkgU0FcdTAwM2MvYVx1MDAzZS4iLCAiZGV0ZWN0UmV0aW5hIjogZmFsc2UsICJtYXhOYXRpdmVab29tIjogMTgsICJtYXhab29tIjogMTgsICJtaW5ab29tIjogMCwgIm5vV3JhcCI6IGZhbHNlLCAib3BhY2l0eSI6IDEsICJzdWJkb21haW5zIjogImFiYyIsICJ0bXMiOiBmYWxzZX0KICAgICAgICAgICAgKS5hZGRUbyhtYXBfMDdlMTUxMWI4MzY0NGY4ZjkzZWY3NzQ0ZDY2ZGVkY2EpOwogICAgICAgIAo8L3NjcmlwdD4=" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div></div>
+
+
+
+## Pathfinding using tryalgo
+
+
+```python
+from tryalgo.dijkstra import dijkstra
+
+source = closest_node(paris_coords, start)
+target = closest_node(paris_coords, end)
+dist, prec = dijkstra(paris, paris, source, target)
+
+# Let's build the path
+path = [target]
+node = target
+while prec[node] is not None:
+    node = prec[node]
+    path.append(node)
+print('Path found with', len(path), 'nodes:', path[::-1])
+```
+
+    Path found with 61 nodes: [2223, 8790, 4442, 3365, 2029, 4937, 10195, 913, 5207, 1477, 2909, 250, 32, 806, 4494, 3959, 8878, 1732, 5055, 2605, 9019, 3432, 5217, 74, 9125, 6839, 5905, 274, 9382, 10585, 5847, 5287, 10853, 9136, 1, 9572, 9776, 2709, 10826, 1427, 794, 1143, 3830, 6562, 11181, 729, 10703, 3493, 10217, 2069, 9762, 3921, 10139, 10815, 3867, 9627, 4897, 6027, 7527, 4554, 3325]
+
+
+To finish, let's display the path.
+
+
+```python
+from folium.features import PolyLine
+paris_viz.add_child(PolyLine(map(lambda node: paris_coords[node], path)))
+paris_viz
+```
+
+
+
+
+<div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><iframe src="data:text/html;charset=utf-8;base64,PCFET0NUWVBFIGh0bWw+CjxoZWFkPiAgICAKICAgIDxtZXRhIGh0dHAtZXF1aXY9ImNvbnRlbnQtdHlwZSIgY29udGVudD0idGV4dC9odG1sOyBjaGFyc2V0PVVURi04IiAvPgogICAgCiAgICAgICAgPHNjcmlwdD4KICAgICAgICAgICAgTF9OT19UT1VDSCA9IGZhbHNlOwogICAgICAgICAgICBMX0RJU0FCTEVfM0QgPSBmYWxzZTsKICAgICAgICA8L3NjcmlwdD4KICAgIAogICAgPHNjcmlwdCBzcmM9Imh0dHBzOi8vY2RuLmpzZGVsaXZyLm5ldC9ucG0vbGVhZmxldEAxLjUuMS9kaXN0L2xlYWZsZXQuanMiPjwvc2NyaXB0PgogICAgPHNjcmlwdCBzcmM9Imh0dHBzOi8vY29kZS5qcXVlcnkuY29tL2pxdWVyeS0xLjEyLjQubWluLmpzIj48L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJodHRwczovL21heGNkbi5ib290c3RyYXBjZG4uY29tL2Jvb3RzdHJhcC8zLjIuMC9qcy9ib290c3RyYXAubWluLmpzIj48L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2NkbmpzLmNsb3VkZmxhcmUuY29tL2FqYXgvbGlicy9MZWFmbGV0LmF3ZXNvbWUtbWFya2Vycy8yLjAuMi9sZWFmbGV0LmF3ZXNvbWUtbWFya2Vycy5qcyI+PC9zY3JpcHQ+CiAgICA8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Imh0dHBzOi8vY2RuLmpzZGVsaXZyLm5ldC9ucG0vbGVhZmxldEAxLjUuMS9kaXN0L2xlYWZsZXQuY3NzIi8+CiAgICA8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Imh0dHBzOi8vbWF4Y2RuLmJvb3RzdHJhcGNkbi5jb20vYm9vdHN0cmFwLzMuMi4wL2Nzcy9ib290c3RyYXAubWluLmNzcyIvPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL21heGNkbi5ib290c3RyYXBjZG4uY29tL2Jvb3RzdHJhcC8zLjIuMC9jc3MvYm9vdHN0cmFwLXRoZW1lLm1pbi5jc3MiLz4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS9mb250LWF3ZXNvbWUvNC42LjMvY3NzL2ZvbnQtYXdlc29tZS5taW4uY3NzIi8+CiAgICA8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Imh0dHBzOi8vY2RuanMuY2xvdWRmbGFyZS5jb20vYWpheC9saWJzL0xlYWZsZXQuYXdlc29tZS1tYXJrZXJzLzIuMC4yL2xlYWZsZXQuYXdlc29tZS1tYXJrZXJzLmNzcyIvPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL3Jhd2Nkbi5naXRoYWNrLmNvbS9weXRob24tdmlzdWFsaXphdGlvbi9mb2xpdW0vbWFzdGVyL2ZvbGl1bS90ZW1wbGF0ZXMvbGVhZmxldC5hd2Vzb21lLnJvdGF0ZS5jc3MiLz4KICAgIDxzdHlsZT5odG1sLCBib2R5IHt3aWR0aDogMTAwJTtoZWlnaHQ6IDEwMCU7bWFyZ2luOiAwO3BhZGRpbmc6IDA7fTwvc3R5bGU+CiAgICA8c3R5bGU+I21hcCB7cG9zaXRpb246YWJzb2x1dGU7dG9wOjA7Ym90dG9tOjA7cmlnaHQ6MDtsZWZ0OjA7fTwvc3R5bGU+CiAgICAKICAgICAgICAgICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwKICAgICAgICAgICAgICAgIGluaXRpYWwtc2NhbGU9MS4wLCBtYXhpbXVtLXNjYWxlPTEuMCwgdXNlci1zY2FsYWJsZT1ubyIgLz4KICAgICAgICAgICAgPHN0eWxlPgogICAgICAgICAgICAgICAgI21hcF8wN2UxNTExYjgzNjQ0ZjhmOTNlZjc3NDRkNjZkZWRjYSB7CiAgICAgICAgICAgICAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlOwogICAgICAgICAgICAgICAgICAgIHdpZHRoOiAxMDAuMCU7CiAgICAgICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAuMCU7CiAgICAgICAgICAgICAgICAgICAgbGVmdDogMC4wJTsKICAgICAgICAgICAgICAgICAgICB0b3A6IDAuMCU7CiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIDwvc3R5bGU+CiAgICAgICAgCjwvaGVhZD4KPGJvZHk+ICAgIAogICAgCiAgICAgICAgICAgIDxkaXYgY2xhc3M9ImZvbGl1bS1tYXAiIGlkPSJtYXBfMDdlMTUxMWI4MzY0NGY4ZjkzZWY3NzQ0ZDY2ZGVkY2EiID48L2Rpdj4KICAgICAgICAKPC9ib2R5Pgo8c2NyaXB0PiAgICAKICAgIAogICAgICAgICAgICB2YXIgbWFwXzA3ZTE1MTFiODM2NDRmOGY5M2VmNzc0NGQ2NmRlZGNhID0gTC5tYXAoCiAgICAgICAgICAgICAgICAibWFwXzA3ZTE1MTFiODM2NDRmOGY5M2VmNzc0NGQ2NmRlZGNhIiwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICBjZW50ZXI6IFs0OC44MzMwMjkzLCAyLjM2MTg4NDVdLAogICAgICAgICAgICAgICAgICAgIGNyczogTC5DUlMuRVBTRzM4NTcsCiAgICAgICAgICAgICAgICAgICAgem9vbTogMTMsCiAgICAgICAgICAgICAgICAgICAgem9vbUNvbnRyb2w6IHRydWUsCiAgICAgICAgICAgICAgICAgICAgcHJlZmVyQ2FudmFzOiBmYWxzZSwKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgKTsKCiAgICAgICAgICAgIAoKICAgICAgICAKICAgIAogICAgICAgICAgICB2YXIgdGlsZV9sYXllcl9kMGFhZDU0ZjkzODA0OTNhYTg5OTMwMTFiYWQwODgxNyA9IEwudGlsZUxheWVyKAogICAgICAgICAgICAgICAgImh0dHBzOi8vc3RhbWVuLXRpbGVzLXtzfS5hLnNzbC5mYXN0bHkubmV0L3dhdGVyY29sb3Ive3p9L3t4fS97eX0uanBnIiwKICAgICAgICAgICAgICAgIHsiYXR0cmlidXRpb24iOiAiTWFwIHRpbGVzIGJ5IFx1MDAzY2EgaHJlZj1cImh0dHA6Ly9zdGFtZW4uY29tXCJcdTAwM2VTdGFtZW4gRGVzaWduXHUwMDNjL2FcdTAwM2UsIHVuZGVyIFx1MDAzY2EgaHJlZj1cImh0dHA6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LzMuMFwiXHUwMDNlQ0MgQlkgMy4wXHUwMDNjL2FcdTAwM2UuIERhdGEgYnkgXHUwMDI2Y29weTsgXHUwMDNjYSBocmVmPVwiaHR0cDovL29wZW5zdHJlZXRtYXAub3JnXCJcdTAwM2VPcGVuU3RyZWV0TWFwXHUwMDNjL2FcdTAwM2UsIHVuZGVyIFx1MDAzY2EgaHJlZj1cImh0dHA6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LXNhLzMuMFwiXHUwMDNlQ0MgQlkgU0FcdTAwM2MvYVx1MDAzZS4iLCAiZGV0ZWN0UmV0aW5hIjogZmFsc2UsICJtYXhOYXRpdmVab29tIjogMTgsICJtYXhab29tIjogMTgsICJtaW5ab29tIjogMCwgIm5vV3JhcCI6IGZhbHNlLCAib3BhY2l0eSI6IDEsICJzdWJkb21haW5zIjogImFiYyIsICJ0bXMiOiBmYWxzZX0KICAgICAgICAgICAgKS5hZGRUbyhtYXBfMDdlMTUxMWI4MzY0NGY4ZjkzZWY3NzQ0ZDY2ZGVkY2EpOwogICAgICAgIAogICAgCiAgICAgICAgICAgIHZhciBwb2x5X2xpbmVfM2RiZjRkMjA5NjRjNDgwMzljODk5M2Q5OGIxN2JhMWQgPSBMLnBvbHlsaW5lKAogICAgICAgICAgICAgICAgW1s0OC44MjA0MTc3LCAyLjM1OTA2MTEwMDAwMDAwMDRdLCBbNDguODIwNzUyOSwgMi4zNTg5NTkyXSwgWzQ4LjgyMTE1OTEsIDIuMzU4ODM1NV0sIFs0OC44MjEzNjc1LCAyLjM1ODc3Ml0sIFs0OC44MjE0ODE3LCAyLjM1ODczNjMwMDAwMDAwMDNdLCBbNDguODIxNjIxLCAyLjM1ODY5MTldLCBbNDguODIxNzgwNCwgMi4zNTg2NDFdLCBbNDguODIyMjA4ODAwMDAwMDA2LCAyLjM1ODUwNTJdLCBbNDguODIyNzg0NywgMi4zNTgzMjYyXSwgWzQ4LjgyMzAwOTgsIDIuMzU4MjU2Ml0sIFs0OC44MjQ0NTA0LCAyLjM1NzgwNzgwMDAwMDAwMDJdLCBbNDguODI1MTE4NCwgMi4zNTc1ODg0XSwgWzQ4LjgyNTc5NTMsIDIuMzU3MzkyNjAwMDAwMDAwM10sIFs0OC44MjYxOTA2MDAwMDAwMDQsIDIuMzU3MjY0N10sIFs0OC44MjY3NjAzMDAwMDAwMDQsIDIuMzU3MDg4OF0sIFs0OC44Mjc0MzE1LCAyLjM1Njg3NThdLCBbNDguODI3NzkyODAwMDAwMDA1LCAyLjM1Njc2XSwgWzQ4LjgyODMyNSwgMi4zNTY1ODk0MDAwMDAwMDAzXSwgWzQ4LjgzMDY2NzksIDIuMzU1ODkyODAwMDAwMDAwM10sIFs0OC44MzA5NDkzLCAyLjM1NTU0MTIwMDAwMDAwMDJdLCBbNDguODMwOTUwODAwMDAwMDA0LCAyLjM1NTY0MjEwMDAwMDAwMDNdLCBbNDguODMxMTU1MjAwMDAwMDA1LCAyLjM1NjE2NzZdLCBbNDguODMxMjY0MiwgMi4zNTYyNDg1XSwgWzQ4LjgzMTM1ODkwMDAwMDAwNSwgMi4zNTY4ODI1XSwgWzQ4LjgzMTcwMjIsIDIuMzU3OTM4MV0sIFs0OC44MzE4MjEzLCAyLjM1ODI5MzFdLCBbNDguODMyMDM0MSwgMi4zNTg5Mzg3XSwgWzQ4LjgzMjk4MDQwMDAwMDAwNCwgMi4zNjE3NTQzMDAwMDAwMDAzXSwgWzQ4LjgzMzAyOTMsIDIuMzYxODg0NV0sIFs0OC44MzM1MzI1MDAwMDAwMDQsIDIuMzYzNDEyNF0sIFs0OC44MzM5NzgzMDAwMDAwMDUsIDIuMzY0Nzc2OF0sIFs0OC44MzQ3MjAxMDAwMDAwMDYsIDIuMzY2OTg2NTAwMDAwMDAwM10sIFs0OC44MzQ3NTMxLCAyLjM2NzA5MTZdLCBbNDguODM1MzQ5LCAyLjM2ODg4MzJdLCBbNDguODM1NDc3NjAwMDAwMDA0LCAyLjM2OTI2MzFdLCBbNDguODM1NjIyOCwgMi4zNjk2OTk4MDAwMDAwMDAyXSwgWzQ4LjgzNTY2ODQsIDIuMzY5ODM2ODAwMDAwMDAwM10sIFs0OC44MzU5NTE2LCAyLjM3MDQ3MjAwMDAwMDAwMDRdLCBbNDguODM2MzY3NCwgMi4zNzEzNTIyXSwgWzQ4LjgzNjY3ODMsIDIuMzcxODg1MDAwMDAwMDAwMl0sIFs0OC44MzcyMjA5MDAwMDAwMDUsIDIuMzcyODgyNl0sIFs0OC44Mzc1Njk1LCAyLjM3MzY1NDRdLCBbNDguODM4NjU5NDAwMDAwMDA0LCAyLjM3NTczMzYwMDAwMDAwMDJdLCBbNDguODM4OTA3MDAwMDAwMDA2LCAyLjM3NjEyNzAwMDAwMDAwMDNdLCBbNDguODQwMzYzMywgMi4zNzg4Mzk5XSwgWzQ4Ljg0MDU1MywgMi4zNzg4MTc4XSwgWzQ4Ljg0MDkyNTIsIDIuMzc4MzUxN10sIFs0OC44NDIwOTAyLCAyLjM3NjM5OF0sIFs0OC44NDQzMzE2MDAwMDAwMDQsIDIuMzcyNDQ3NF0sIFs0OC44NDQ0ODk4MDAwMDAwMDUsIDIuMzcyMjE1Nl0sIFs0OC44NDUxMDMsIDIuMzcxNTU0Nl0sIFs0OC44NDU0ODE1MDAwMDAwMDUsIDIuMzcwOTc1NV0sIFs0OC44NDU1NTUzLCAyLjM3MDk0NDFdLCBbNDguODQ1NTgyMiwgMi4zNzEyMDEzXSwgWzQ4Ljg0NTY3NywgMi4zNzIwMzA0MDAwMDAwMDAzXSwgWzQ4Ljg0NTU5NDQsIDIuMzcyMDQ5NDAwMDAwMDAwM10sIFs0OC44NDUzNDE1LCAyLjM3MjIwMThdLCBbNDguODQ1Mzg1LCAyLjM3MjI2Ml0sIFs0OC44NDQ4ODg4LCAyLjM3MjkxODMwMDAwMDAwMDNdXSwKICAgICAgICAgICAgICAgIHsiYnViYmxpbmdNb3VzZUV2ZW50cyI6IHRydWUsICJjb2xvciI6ICIjMzM4OGZmIiwgImRhc2hBcnJheSI6IG51bGwsICJkYXNoT2Zmc2V0IjogbnVsbCwgImZpbGwiOiBmYWxzZSwgImZpbGxDb2xvciI6ICIjMzM4OGZmIiwgImZpbGxPcGFjaXR5IjogMC4yLCAiZmlsbFJ1bGUiOiAiZXZlbm9kZCIsICJsaW5lQ2FwIjogInJvdW5kIiwgImxpbmVKb2luIjogInJvdW5kIiwgIm5vQ2xpcCI6IGZhbHNlLCAib3BhY2l0eSI6IDEuMCwgInNtb290aEZhY3RvciI6IDEuMCwgInN0cm9rZSI6IHRydWUsICJ3ZWlnaHQiOiAzfQogICAgICAgICAgICApLmFkZFRvKG1hcF8wN2UxNTExYjgzNjQ0ZjhmOTNlZjc3NDRkNjZkZWRjYSk7CiAgICAgICAgCjwvc2NyaXB0Pg==" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div></div>
+
+
+
+
+```python
+# We can also save it to a file
+# paris_viz.save('pathfinding_in_paris.html')
+# from IPython.display import IFrame
+# IFrame('pathfinding_in_paris.html', width='100%', height=510)
+```
+
+Did you like this demo? If so, please let us know on the GitHub project!
+https://github.com/jilljenn/tryalgo

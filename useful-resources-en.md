@@ -1,8 +1,8 @@
 ---
 layout: page
-title: External resources
+title: Other books & blogs
 lang: en
-parent: Algorithms
+parent: The Book
 ---
 
 ## Other books & blogs

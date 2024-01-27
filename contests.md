@@ -2,7 +2,7 @@
 layout: page
 title: Competitions
 has_children: true
-nav_order: 3
+nav_order: 4
 ---
 
 ## Pour commencer
@@ -16,10 +16,6 @@ nav_order: 3
 
 ## Yearly competitions
 
-- [~~Google Code Jam~~](https://codingcompetitions.withgoogle.com/codejam)
-    - This competition not longer exist since 2023
-- [~~Google Hash Code~~](https://codingcompetitions.withgoogle.com/hashcode)
-    - This competition not longer exist since 2023
 - [**Facebook Hacker Cup**](https://www.facebook.com/hackercup/)
 - [**Microsoft Bubblecup**](http://www.bubblecup.org/)
     - A bit less known that the previous ones, but has good [booklets explaining solutions to previous competitions](http://www.bubblecup.org/Booklets)

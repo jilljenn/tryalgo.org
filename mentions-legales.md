@@ -1,8 +1,8 @@
 ---
-title: Mentions légales
+title: Terms of Service
 permalink: /mentions-legales/
 layout: default
-nav_order: 6
+nav_order: 7
 ---
 
 # Mentions légales sur ({{ site.title }})

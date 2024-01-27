@@ -1,6 +1,6 @@
 ---
 layout: page
-title: TP 3
+title: Data structures
 parent: Problems
 ---
 

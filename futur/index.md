@@ -2,6 +2,7 @@
 layout: page
 title: Futur du club ACM 
 parent: Training
+nav_exclude: true
 ---
 
 Quelques pistes pour le futur du club ACM.

@@ -1,8 +1,13 @@
 ---
 layout: page
 title: Erratum from the book
-parent: Algorithms
+parent: The Book
 ---
+
+1. TOC
+{:toc}
+
+## Version française
 
 Voici une liste de coquilles dans le livre.
 
@@ -134,4 +139,3 @@ Stories</em> 43. <a
 href="https://www.math.uni-bielefeld.de/documenta/vol-ismp/16_groetschel-martin-yuan-ya-xiang.pdf">https://www.math.uni-bielefeld.de/documenta/vol-ismp/16_groetschel-martin-yuan-ya-xiang.pdf</a>.
 </div>
 </div>
-

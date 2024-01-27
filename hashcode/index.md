@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Conseils Google Hash Code
+title: Conseils recherche opérationnelle
 parent: Competitions
 ---
 
