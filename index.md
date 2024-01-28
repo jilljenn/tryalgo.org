@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Algorithic Problem Solving
+title: Algorithmic Problem Solving
 nav_exclude: true
 ---
 
