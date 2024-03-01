@@ -5,7 +5,7 @@ category: strings
 author: Christoph Dürr
 ---
 
-Given a string s, sort all cyclic shifts of s. Formally produce a table p such that p[j]=i if s[i:]+s[:i] has rank j among all cyclic shift.
+Given a string s, sort all cyclic shifts of s. Formally produce a table p such that p[j]=i if s[i:]+s[:i] has rank j among all cyclic shifts.
 
 ## Example
 
@@ -29,12 +29,13 @@ And the same list, but lexicographically sorted. Together with the rank in the n
     5 obocelb 1
     6 ocelbob 3
 
+Hence on this example we should output `p=[0, 2, 4, 5, 6, 1, 3]`.
 
 ## Complexity
 
-The naïve algorithm for this problem stores all cyclic shifts in a list and sorts it. This takes time $O(n^2 \log n)$, because the list has size $n$, but comparing two strings of length $n$ also takes time $O(n)$.
+The naïve algorithm for this problem stores all cyclic shifts in a list and sorts it. This takes time $O(n^2 \log n)$, because the list has size $n$, and comparing two strings of length $n$ takes time $O(n)$.
 
-The problem can be solved in time $O(n)$. But we present a $O(n \log^2 n)$ implementation, which is good enough for most programming contests.
+The problem can be solved in time $O(n)$, under some conditions on the alphabet. But we present an $O(n \log^2 n)$ implementation, which is good enough for most programming contests.
 
 ## The key operation
 
