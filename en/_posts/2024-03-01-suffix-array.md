@@ -98,7 +98,7 @@ In total we have a logarithmic number of outer iterations, each costs `O(n log n
 
 ## Implementation
 
-~~~Python
+{% highlight python %}
 def sort_class(s):
     """ sorts s and returns additional information
 
@@ -140,7 +140,7 @@ def suffix_array(s):
     assert special < min(s) 
     L = sort_cyclic_shifts(s + special)
     return L[1:]
-~~~ 
+{% endhighlight %}
 
 ## References
 
