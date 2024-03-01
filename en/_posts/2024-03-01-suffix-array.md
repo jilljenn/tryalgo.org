@@ -1,6 +1,6 @@
 ---
 layout: en
-title: PC Trees 
+title: Suffix Array
 category: strings
 author: Christoph Dürr
 ---
