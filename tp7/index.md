@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "TP 7 : Géométrie"
+title: Geometry
 parent: Problems
 ---
 

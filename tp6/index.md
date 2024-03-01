@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "TP 6 : Exploration exhaustive"
+title: Brute-force search
 parent: Problems
 ---
 

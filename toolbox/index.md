@@ -1,8 +1,11 @@
 ---
 layout: page
-title: Boîte à outils
-parent: Algorithms
+title: Configuration tips
+parent: Competitions
 ---
+
+1. TOC
+{:toc}
 
 ## Compilation
 
@@ -10,9 +13,36 @@ Pour un fichier A.cpp
 
     make A
 
-La commande officielle est :
+La commande [officielle](https://swerc.eu/2023/environment/) est :
 
-    g++ -w -O2 -pipe -std=gnu++0x A.cpp -o A
+    g++ -x c++ -Wall -Wextra -O2 -std=gnu++20 -static -pipe A.cpp -o A
+
+### C++ compilation flags
+
+If we take a obviously bad code:
+
+```c++
+#include <bits/stdc++.h>
+#include <iostream>
+using namespace std;
+
+int main(void) {
+    int t[5];
+    cout << t[6] << endl;
+    return 0;
+}
+```
+
+If your compiler flags contain (i.e. the "args" of your tasks.json config file in VSCode/Codium):
+
+                "-fsanitize=address",
+                "-fsanitize=undefined",
+                "-std=c++20",
+
+Then you should have some nice error message:
+
+    bad.cpp:7:16: runtime error: index 6 out of bounds for type 'int [5]'
+    bad.cpp:7:16: runtime error: load of address 0x7fffffffd5d8 with insufficient space for an object of type 'int'
 
 ## Tests
 
@@ -23,7 +53,7 @@ Pour exécuter un fichier de tests :
 Pour exécuter un [tas de fichiers de tests](https://bitbucket.org/jilljenn/acm/src) :
 
     for x in *in; do ./A < $x; done
-    cat *out # Pour comparer
+    cat *out  # Pour comparer
 
 ## Graphviz
 

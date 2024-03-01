@@ -1,16 +1,24 @@
 ---
 layout: page
-title: Club Algo de l'ENS Paris-Saclay 2015-2018
+title: ENS Paris-Saclay
 front: true
-parent: Training
+parent: ICPC Training
+grand_parent: Competitions
+has_children: true
 ---
 
-ENS Paris-Saclay  
-**Bâtiment Cournot - Salle C411**  
-61 avenue du Président Wilson  
-94230 Cachan
+## Calendrier 2015
 
-RER B **Bagneux** (3 stations après Cité U) puis descendre la pente vers l'ENS
+- 10/09 Recherche de motifs
+- 17/09 Programmation dynamique
+- 23/09 [Structures de données](/tp3/)
+- 02/10 [Plus courts chemins](/tp4/)
+- 08/10 [Couplages et flots](/tp5/)
+- 15/10 [Exploration exhaustive](/tp6/)
+- 22/10 [Géométrie](/tp7/)
+- 05/11 4 problèmes à résoudre
+- 12/11 Liste des problèmes
+- 20/11 Let's go to Porto!
 
 ## Conférences
 

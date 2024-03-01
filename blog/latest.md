@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Latest posts
+title: Blog posts
 lang: en
 has_children: true
 nav_order: 5

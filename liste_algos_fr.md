@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Liste des 128 algorithmes
-parent: Algorithms
+title: 128 algorithms list
+parent: The Book
 ---
 
 ## 128 algorithmes

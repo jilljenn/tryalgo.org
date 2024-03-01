@@ -1,10 +1,11 @@
 ---
 layout: page
-title: "TP 5 : Couplage et flots"
+title: Matching and flows
 parent: Problems
 ---
 
-[Slides](/static/couplages-flots.pdf)
+- [Recent slides in English](https://jiji.cat/slides/matching-flows.pdf)
+- [Vieilles slides en français](/static/couplages-flots.pdf)
 
 ## Exercices
 

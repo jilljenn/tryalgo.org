@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Seulement en français
-parent: Latest posts
+parent: Blog posts
 ---
 
 # Billets en français

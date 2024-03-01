@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Centrale Lille - Algo II - TP2
+title: Shortest paths in Paris
 parent: Problems
 ---
 

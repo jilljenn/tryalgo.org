@@ -1,7 +1,8 @@
 ---
 layout: page
-title: CentraleSupélec 2019-2020
-parent: Training
+title: CentraleSupélec
+parent: ICPC Training
+grand_parent: Competitions
 ---
 
 Entrainement pendant l'année scolaire 2019-2020 à l'école centrale supélec.

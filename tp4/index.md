@@ -1,8 +1,10 @@
 ---
 layout: page
-title: "TP 4 : Labyrinthe"
+title: Pathfinding
 parent: Problems
 ---
+
+[Slides](https://jjv.ie/slides/parcours.pdf) en français (Sorbonne Université Camp 2021)
 
 ## Débutants
 
