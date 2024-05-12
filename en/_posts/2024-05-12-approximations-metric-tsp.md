@@ -18,6 +18,8 @@ I was told it was [Christofides algorithm](https://en.wikipedia.org/wiki/Christo
 
 It was hard to find who discovered it but Rozenkrantz et al. say that it is a "widely known but unpublished method" (1977). Christofides and Serdyukov found in 1976 (published in 1978) that by solving a matching problem between nodes of odd order (at the cost of $O(n^3)$), they could improve the approximation ratio to 3/2. This reminds me of the [trick used by ENS Ulm team in Google Hash Code 2014](https://a3nm.net/blog/google_hashcode_2014.html).
 
+To know more, you can check this [other post](https://bochang.me/blog/posts/tsp/).
+
 ## References
 
 Rosenkrantz, Daniel J., Richard E. Stearns, and Philip M. Lewis, II. "An analysis of several heuristics for the traveling salesman problem." SIAM journal on computing 6.3 (1977): 563-581.
