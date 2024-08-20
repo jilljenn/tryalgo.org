@@ -20,6 +20,8 @@ It was hard to find who discovered it but Rozenkrantz et al. say that it is a "w
 
 To know more, you can check this [other post](https://bochang.me/blog/posts/tsp/).
 
+**Update.** Karlin, Klein and Gharan [found a new algorithm](https://www.quantamagazine.org/computer-scientists-break-traveling-salesperson-record-20201008/) with approximation ratio $3/2 - 10^{-36}$, and got the best paper at STOC 2021.
+
 ## References
 
 Rosenkrantz, Daniel J., Richard E. Stearns, and Philip M. Lewis, II. "An analysis of several heuristics for the traveling salesman problem." SIAM journal on computing 6.3 (1977): 563-581.
@@ -29,3 +31,5 @@ Symp. on New Directions and Recent Results in Algorithms and Complexity (April 1
 Carnegie-Mellon University, Pittsburgh
 
 Serdyukov, Anatoliy (1978), "О некоторых экстремальных обходах в графах" [On some extremal walks in graphs], Upravlyaemye Sistemy (Управляемые системы) (in Russian), 17: 76–79
+
+Karlin, Anna R., Nathan Klein, and Shayan Oveis Gharan. "A (slightly) improved approximation algorithm for metric TSP." Proceedings of the 53rd Annual ACM SIGACT Symposium on Theory of Computing. 2021. <https://arxiv.org/abs/2007.01409>
