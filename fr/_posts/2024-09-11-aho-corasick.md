@@ -61,7 +61,7 @@ Les arcs sortant sont implémenté par un tableau `next`. À la place des lettre
 
 L'ancêtre de la racine est la racine elle même. C'est par ce test qu'on identifie la racine.
 
-~~~Python
+{% highlight python %}
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """\
@@ -134,7 +134,7 @@ class Aho_Corasick:
             v = v.go(ord(ch) - Vertex.LOW)
             if v.output != -1:
                 yield (i, v.output)
-~~~
+{% endhighlight %}
 
 ## Problèmes
 
