@@ -23,7 +23,7 @@ Le premier ingrédient est de construire un arbre préfixe (aussi appelé une *t
 
 Dans l'illustration ci-dessous, les nœuds correspondants à des mots dans L sont montrés avec un contour double.
 
-<img src="/fr/images/dijkstra/aho-corasick1.svg" style="float: center"/> 
+<img src="/fr/images/aho-corasick1.svg" style="float: center"/> 
 
 Les nœuds v de l'arbre auront également un pointeur sur l'ancêtre u dans l'arbre, et la lettre qui a mené de u à v. Ces variables sont appelées `ancestor` et `anc_i` dans notre implémentation.
 
@@ -49,7 +49,7 @@ Notez que les liens suffixes sont calculés au fur et à mesure des besoins, et 
 
 Dans l'illustration ci-dessous, les sommets correspondant à des mots de L ont un double bord. Les arcs sortant du trie sont en noir. Les liens suffixes sont en blue, et les arcs de transition en vert. L'arbre a été calculé pour les mots "A", "AB", "BC", "BCA", "C" et "CAA". Les liens de suffixe et de transition sont apparus après avoir fait dérouler l'automate sur le mot "ABCACAABBA".
 
-<img src="/fr/images/dijkstra/aho-corasick3.svg" style="float: center"/> 
+<img src="/fr/images/aho-corasick3.svg" style="float: center"/> 
 
 ## Complexité 
 
