@@ -64,16 +64,6 @@ Les arcs sortant sont implémentés par un tableau `next`. À la place des lettr
 L'ancêtre de la racine est la racine elle même. C'est par ce test qu'on identifie la racine.
 
 {% highlight python %}
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""\
-Aho-Corasick
-
-christoph dürr - 2024
-"""
-
-__all__ = ["Aho_Corasick"]
-
 class Vertex:
     """Vertex of the Aho-Corasick trie
     """
