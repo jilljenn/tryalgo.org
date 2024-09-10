@@ -55,6 +55,8 @@ Pour exécuter un [tas de fichiers de tests](https://bitbucket.org/jilljenn/acm/
     for x in *in; do ./A < $x; done
     cat *out  # Pour comparer
 
+You may want to check cph [competitive programming helper](https://codeforces.com/blog/entry/116939). There are browser extensions to import the testcases in VSCode or other IDEs.
+
 ## Graphviz
 
 Pour visualiser un graphe, la syntaxe est la suivante :
