@@ -15,13 +15,15 @@ Dans ce billet nous allons utiliser de manière interchangeable les termes *cha�
 
 ## Idée clé
 
-L'algorithme de Knuth-Morris-Pratt construit en quelque sorte un automate à partir d'un mot W donnée, et permet en temps linéaire d'identifier toutes les occurrences de W comme sous-chaîne d'une chaîne S donnée. Plutôt que de construire un automate indépendant pour chaque mot dans L, on va construire un seul automate pour tout l'ensemble des mots dans L.
+L'algorithme de Knuth-Morris-Pratt construit en quelque sorte un automate à partir d'un mot W donné, et permet en temps linéaire d'identifier toutes les occurrences de W comme sous-chaîne d'une chaîne S donnée. Plutôt que de construire un automate indépendant pour chaque mot dans L, on va construire un seul automate pour tout l'ensemble des mots dans L.
 
 ## Arbre préfixe
 
-Le premier ingrédient est de construire un arbre préfixe (aussi appelé une *trie*), pour tous les mots dans L. L'arbre est enraciné avec des arcs qui pointent partant de la racine. Les arcs sortant d'un nœud sont étiquetés par des lettres distinctes. Ainsi on associe à un nœud un mot qui est la concaténation des lettres le long du chemin de la racine vers ce nœud. Si le mot est dans L, alors cette propriété est stocké dans un attribue `output` du nœud. Dans notre implémentation, `output` sera l'indice du mot dans L.
+Le premier ingrédient est de construire un arbre préfixe (aussi appelé une *trie*), pour tous les mots dans L. L'arbre est enraciné avec des arcs qui pointent partant de la racine. Les arcs sortant d'un nœud sont étiquetés par des lettres distinctes. Ainsi on associe à un nœud un mot qui est la concaténation des lettres le long du chemin de la racine vers ce nœud. Si le mot est dans L, alors cette propriété est stockée dans un attribut `output` du nœud. Dans notre implémentation, `output` sera l'indice du mot dans L.
 
-Dans l'illustration ci-dessous, les arcs sont montrés en noir. Les nœuds correspondants à des mots dans L sont montrés avec un contour double.
+Dans l'illustration ci-dessous, les nœuds correspondants à des mots dans L sont montrés avec un contour double.
+
+<img src="/fr/images/dijkstra/aho-corasick1.svg" style="float: center"/> 
 
 Les nœuds v de l'arbre auront également un pointeur sur l'ancêtre u dans l'arbre, et la lettre qui a mené de u à v. Ces variables sont appelées `ancestor` et `anc_i` dans notre implémentation.
 
@@ -35,7 +37,7 @@ L'idée est que nous cherchons à maintenir l'invariant suivant. À chaque somme
 
 Alors comme il n'y pas d'arc avec c qui sort de v, on doit se rabattre sur un suffixe plus court. Soit w le mot associé au nœud v. On cherche alors le sommet u qui correspond au plus long suffixe strict de w. *Strict* veut dire qu'il n'est pas w lui-même, mais plus court. 
 
-L'arbre est augmenté avec un *lien suffixe* partant de tout sommet, qui dans cet exemple va de v à u. Et on va suivre ces liens, jusqu'à ce qu'on tombe sur un sommet qui aurait un arc sortant étiqueté par la lettre c, au pire de cas on remonte le lien vers la racine. Puis on fait la transition habituelle par la lettre c à partir de ce sommet.
+L'arbre est augmenté avec un *lien suffixe* partant de tout sommet, qui dans cet exemple va de v à u. Et on va suivre ces liens, jusqu'à ce qu'on tombe sur un sommet qui aurait un arc sortant étiqueté par la lettre c, au pire de cas on remonte vers la racine. Puis on fait la transition habituelle par la lettre c à partir de ce sommet.
 
 Pour ne pas à avoir retrouver à chaque fois cette recherche, on stocke dans chaque nœud v dans une table `tr` (pour *transition*), la destination de cette dernière transition. Concrètement `v.tr[c]` serait ce nœud atteint par la transition.
 
@@ -57,7 +59,7 @@ La recherche des occurrences des mots de L dans un mot S se fait en temps linéa
 
 ## Détails d'implémentation 
 
-Les arcs sortant sont implémenté par un tableau `next`. À la place des lettre on travaille en interne avec leur rank, avec un décalage tel que la plus petite lettre a le rang 0. La constante `LOW` donne le code Ascii de la plus petite lettre et `LEN` donne la taille de l'alphabet. Les codes Ascii des lettres dans l'alphabet doivent se suivre sans interruption.
+Les arcs sortant sont implémentés par un tableau `next`. À la place des lettres on travaille en interne avec leur rang, avec un décalage tel que la plus petite lettre a le rang 0. La constante `LOW` donne le code Ascii de la plus petite lettre et `LEN` donne la taille de l'alphabet. Les codes Ascii des lettres dans l'alphabet doivent se suivrent sans interruption.
 
 L'ancêtre de la racine est la racine elle même. C'est par ce test qu'on identifie la racine.
 
