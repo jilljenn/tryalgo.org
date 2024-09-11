@@ -42,7 +42,7 @@ The problem can be solved in time $O(n)$, under some conditions on the alphabet.
 The algorithm relies on a simple sorting function `sort_class`, which not only sorts a given string or list `s`, but also returns additional informations. It returns two tables `p` and `c` such that
 
 - p[j]=i if s[i] has rank j in `sorted(s)`.
-- c[j]=i if s[i] has rank j in `sorted(set(s))`.
+- c[i]=j if s[i] has rank j in `sorted(set(s))`.
 
 Note that the second table groups identical elements in s, and gives a rank only to the equivalence classes. For example
 
@@ -142,7 +142,32 @@ def suffix_array(s):
     return L[1:]
 {% endhighlight %}
 
+## Update September 2024
+
+Programming is often a question of compromise. The implementation of `sort_class` is quite short. But its usage of a dictionary makes it a bit slow. The construction of array `c` can be improved by processing all items in order, as given by p, and keeping track of the distinct values seen so far. This gives an improvement of about 30% in a test we made. In many implementations the sorting of `S_index` is done by two stages of bucket sort. Since the keys are couples of ranks, we can sort first by the second rank, and then do a stable sort on the first rank. This will generate quite some lines of code in Python, and we don't feel ready yet for so much compromise.
+
+{% highlight python %}
+def sort_class(s):
+    """ sorts s and returns additional information
+
+    :param s: string or list
+    :returns p, c: p[j]=i if s[i] has rank j in sorted(s) and c[i] is rank of s[i] in sorted(set(s))
+    :complexity: O(n log n) or better if sort makes use of specific values in s
+    """
+    S_index = [(x, i) for i, x in enumerate(s)]
+    p = [i for x, i in sorted(S_index)]
+    c = [0] * len(s)
+    curr_class = 0
+    c[p[0]] = curr_class
+    for i in range(1, len(s)):
+        if s[p[i]] != s[p[i-1]]:
+            curr_class += 1
+        c[p[i]] = curr_class
+    return p, c
+{% endhighlight %}
+
 ## References
 
 - [an O(nlogn) implementation in CP-algorithms](https://cp-algorithms.com/string/suffix-array.html) -- describes applications
 - [Visualization in action](https://visualgo.net/en/suffixarray?slide=1)
+- [Quest for the quickest implementation in Python](https://louisabraham.github.io/articles/suffix-arrays)
