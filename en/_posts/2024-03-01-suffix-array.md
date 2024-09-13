@@ -89,8 +89,8 @@ The strings of the example above correspond to the following pairs, where the ta
      (4, 0)
       (0, 4)
        (4, 1)
-        (1, e)
-         (e, 3)
+        (1, 2)
+         (2, 3)
           (3, 0)
 
 
