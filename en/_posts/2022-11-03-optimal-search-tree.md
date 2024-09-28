@@ -260,4 +260,3 @@ The first reference is the original paper introducing the quadratic time algorit
 - Yao, F. Frances. [Efficient dynamic programming using quadrangle inequalities.](https://dl.acm.org/doi/pdf/10.1145/800141.804691) Proceedings of the twelfth annual ACM symposium on Theory of computing. 1980.
 - Nagaraj, S. V.  [Optimal binary search trees](https://doi.org/10.1016/S0304-3975(96)00320-9), Theoretical Computer Science, 188(1–2), pages 1-44, 1997.
 - [Our implementation of the actual code to build the optimal binary search tree](https://jilljenn.github.io/tryalgo/tryalgo/tryalgo.html#module-tryalgo.dyn_prog_tricks)
-

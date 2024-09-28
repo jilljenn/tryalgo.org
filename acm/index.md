@@ -5,20 +5,25 @@ parent: Competitions
 has_children: true
 ---
 
-## Christoph
+## Christoph Dürr
 
 - École polytechnique 2007--2014
 - SU November Camp [2021](https://nuage.lip6.fr/s/Z5qY9pAdYQ5CxS7)
 - [CentraleSupélec](/club-ecs) 2020
 - [Université Paris-Saclay & Sorbonne Université](/club-paris) 2021
 
-## Jill-Jênn
+## Jill-Jênn Vie
 
 - [ENS Paris-Saclay](/club-cachan) 2015--2016
 - [Université de Lille](/club-ecl) 2021
-- École polytechnique 2022--2023 ([intro](https://jjv.ie/slides/swerc-intro.pdf))
+- [École polytechnique](/icpc/polytechnique/) 2022-- ([intro](https://jjv.ie/slides/swerc-intro2024.pdf))
 
 [Tout savoir sur le concours ICPC](https://fr.wikipedia.org/wiki/International_Collegiate_Programming_Contest) (sur Wikipédia).
+
+## Others
+
+- [a3nm](https://a3nm.net/work/teaching/#y2022-inf280) training at Télécom Paris
+- [Guillaume Ryder](https://gryder.org/acm-icpc/) talking about winning ICPC SWERC 2004 and going to finals in Shanghai
 
 ## SWERC 2014
 
