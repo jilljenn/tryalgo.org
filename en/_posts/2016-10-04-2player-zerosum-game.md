@@ -6,6 +6,7 @@ author: Christoph Dürr
 excerpt_separator: <!--more-->
 problems:
    "spoj:Problem 4": http://www.spoj.com/problems/CODEM4/
+   "cses:Removal game": https://cses.fi/problemset/task/1097
 ---
 
 Consider a 2 player game that plays on a row of coins.  Players in turn remove either the leftmost or the rightmost coin until the row is empty. What is the maximum amount that the first player can collect if both players play optimally?
@@ -83,6 +84,35 @@ int main() {
   }
   return 0;
 }
+{% endhighlight %}
+
+## Update October 2024
+
+Here is a simpler solution. For indices i,j, let $A[i,j]$ be the maximum score the first player can obtain, when playing on a row of coins from index i to index j (excluded). Also let $S[i,j]$ be the total sum of those coins. Then, since it is a zero sum game, the maximum score is $S[i,j]$ minus the maximum score of the second player in the next round. And the later is $A[i+1,j]$ or $A[i,j-1]$ depending on the choice of the first player. Hence we have the recursion
+
+$$
+  A[i,j] = S[i,j] - \min\{A[i+1,j], A[i,j-1]\},
+$$
+leading to the following dynamic program.
+
+{% highlight c++ %}
+import sys
+
+def readint(): return int(sys.stdin.readline())
+def readints(): return list(map(int, sys.stdin.readline().strip().split()))
+
+n = readint()
+x = readints()
+
+A = [ [0 for j in range(n+1)] for i in range(n + 1)]
+S = [ [0 for j in range(n+1)] for i in range(n + 1)]
+
+for j_i in range(1, n+1):           # difference 1 <= j - i <= n
+    for i in range(n - j_i + 1):    # 0 <= i <= n-1
+        j = i + j_i                 # j <= n
+        S[i][j] = S[i][j-1] + x[j-1]
+        A[i][j] = S[i][j] - min(A[i+1][j], A[i][j-1])
+print( A[0][n] )
 {% endhighlight %}
 
 
