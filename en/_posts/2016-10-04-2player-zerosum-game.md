@@ -95,6 +95,7 @@ For indices i,j, let $A[i,j]$ be the maximum score the first player can obtain, 
 $$
   A[i,j] = S[i,j] - \min\{A[i+1,j], A[i,j-1]\},
 $$
+
 leading to the following dynamic program.
 
 {% highlight Python %}
