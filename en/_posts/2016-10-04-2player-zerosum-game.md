@@ -88,14 +88,16 @@ int main() {
 
 ## Update October 2024
 
-Here is a simpler solution. For indices i,j, let $A[i,j]$ be the maximum score the first player can obtain, when playing on a row of coins from index i to index j (excluded). Also let $S[i,j]$ be the total sum of those coins. Then, since it is a zero sum game, the maximum score is $S[i,j]$ minus the maximum score of the second player in the next round. And the later is $A[i+1,j]$ or $A[i,j-1]$ depending on the choice of the first player. Hence we have the recursion
+Here is a simpler solution. Each interval [i:j] represents a configuration of the game. We only need to compute the maximum score obtained by the player that starts on this configuration, without distinction if its the first or the second player in the initial configuration.
+
+For indices i,j, let $A[i,j]$ be the maximum score the first player can obtain, when playing on a row of coins from index i to index j (excluded). Also let $S[i,j]$ be the total sum of those coins. Then, since it is a zero sum game, the maximum score is $S[i,j]$ minus the maximum score of the second player in the next round. And the later is $A[i+1,j]$ or $A[i,j-1]$ depending on the choice of the first player. Hence we have the recursion
 
 $$
   A[i,j] = S[i,j] - \min\{A[i+1,j], A[i,j-1]\},
 $$
 leading to the following dynamic program.
 
-{% highlight c++ %}
+{% highlight Python %}
 import sys
 
 def readint(): return int(sys.stdin.readline())
