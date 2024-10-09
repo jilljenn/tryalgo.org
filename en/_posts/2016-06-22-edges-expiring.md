@@ -11,6 +11,8 @@ Given a graph with expiring dates for every edge, when will the graph be disconn
 
 ![]({{ site.images }}edges-expiring.svg){:width="400"}
 
+**Update Sep 28, 2024.** This can also be solved as a binary search for the answer.
+
 <!--more-->
 
 ### Key observation

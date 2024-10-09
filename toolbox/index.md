@@ -57,6 +57,10 @@ Pour exécuter un [tas de fichiers de tests](https://bitbucket.org/jilljenn/acm/
 
 You may want to check cph [competitive programming helper](https://codeforces.com/blog/entry/116939). There are browser extensions to import the testcases in VSCode or other IDEs.
 
+I am impressed by [the notebook of KTH](https://github.com/kth-competitive-programming/kactl) which is tested, like any notebook should be.
+
+If you want to troll, you should learn about [policy-based data structures](https://codeforces.com/blog/entry/11080).
+
 ## Graphviz
 
 Pour visualiser un graphe, la syntaxe est la suivante :
