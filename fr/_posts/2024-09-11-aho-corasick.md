@@ -9,6 +9,8 @@ author: Christoph Dürr
 
 ## Note
 
+:date: (dernière mise à jour de ce billet: 5 novembre 2024)
+
 Ce billet est inspiré d'une page similaire du site web excellent [CP-Algorithms](https://cp-algorithms.com/string/aho_corasick.html), qui a son tour est une traduction d'un site web russe très complet.
 
 Dans ce billet nous allons utiliser de manière interchangeable les termes *chaîne*, *chaîne de caractères* et *mot*.
