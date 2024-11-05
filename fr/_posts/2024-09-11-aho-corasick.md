@@ -27,7 +27,7 @@ Dans l'illustration ci-dessous, les nœuds correspondants à des mots dans L={i,
 
 <img src="/fr/images/aho-corasick1.svg" style="float: center"/> 
 
-## Liens suffixes
+## Liens suffix
 
 Un tel arbre va être utilisé comme un automate. En partant de la racine, on va suivre les liens sortants tel qu'indiqués par les lettres successives dans S. 
 
@@ -45,7 +45,7 @@ Mais comment calculer ces liens suffixes? Considérons un arc $u\rightarrow v$ d
 
 Dans l'illustration ci-haut, les arcs suffixes sont montrés en rouge.
 
-## liens output
+## Liens output
 
 Voici une première procédure de recherche.
 
@@ -82,11 +82,12 @@ La recherche des occurrences des mots de L dans un mot S se fait en temps linéa
 
 Les arcs sortant sont implémentés par un tableau `next`. À la place des lettres on travaille en interne avec leur rang, avec un décalage tel que la plus petite lettre a le rang 0. La constante `LOW` donne le code Ascii de la plus petite lettre et `LEN` donne la taille de l'alphabet. Les codes Ascii des lettres dans l'alphabet doivent se suivre sans interruption.
 
-Pour construire les liens suffixe on fait un parcours en largeur de la trie. Ainsi on aura traité les niveaux précédant un nœud au moment de le traiter. Ceci se fait avec une file `Q`, contenant des sommets à traiter.
-
-Ce code contient également une méthode `dump` qui génère l'illustration de ce billet.
+Pour construire les liens suffixe on fait un parcours en largeur de la trie. Ainsi on aura traité les niveaux précédant un nœud au moment de le traiter. Ceci se fait avec une file `Q`, contenant des sommets à traiter. 
+Détail important: en même temps que de construire les liens *suffix* et *output*, nous complétons également les liens `next[i]` qui seraient encore `None`. Ainsi nous construisons un automate complet. Autrement au moment de chercher les motifs dans une chaîne donnée on peut juste suivre les liens données par `next`  pour chaque lettre de la chaîne.
 
 {% highlight python %}
+from collections import deque 
+
 class Vertex:
     """Vertex of the Aho-Corasick trie
     """
@@ -126,28 +127,28 @@ class Aho_Corasick:
                 v = v.next[i]           # descend in the trie
             v.pattern = pattern_index   # mark that this is a pattern
         # 2. augment with suffix and output links
-        Q = []                          # queue of vertices to be processed
-        for v in self.root.next:        # special case for direct root descendants
-            if v is not None:
+        # and turn it into a full automaton
+        Q = deque()               # queue of vertices to be processed
+        # start with the root
+        for i, v in enumerate(self.root.next):     
+            if v is None:
+                self.root.next[i] = self.root
+            else:
                 v.suffix = self.root 
-                Q.append(v)             # initially Q contains the first level vertices
+                Q.appendleft(v)             # initially Q contains the first level vertices
         while Q:
             u = Q.pop()                     # process u
             for i, v in enumerate(u.next):  # all arcs u -> v labeled i
-                if v is not None:
-                    a = u.suffix            # go up using suffix links
-                    while a is not None and a.next[i] is None:
-                        a = a.suffix 
-                    if a is not None and a.next[i] is not None:
-                        v.suffix = a.next[i]
-                        if v.suffix.pattern != -1:
-                            v.output = v.suffix
-                        else:
-                            v.output = v.suffix.output 
-                    else:
-                        v.suffix = self.root
-                    Q.append(v)
-        
+                if v is None:
+                    u.next[i] = u.suffix.next[i]
+                else:
+                    Q.appendleft(v)
+                    v.suffix = u.suffix.next[i]
+            if u.suffix.pattern != -1:
+                u.output = u.suffix
+            else:
+                u.output = u.suffix.output 
+                
     def match(self, s):
         """ find all substrings of s which are among the stored strings.
             Iterates over positions in s and the matched string ending at this position.
@@ -155,55 +156,16 @@ class Aho_Corasick:
         v = self.root               # current vertex
         for j, ch in enumerate(s):
             i = Vertex.index(ch)    # descend one step
-            while v is not self.root and v.next[i] is None:
-                v = v.suffix        # return until transition is possible
-            if v.next[i] is not None:
-                v = v.next[i] 
-            a = v               # now output all found patterns
+            v = v.next[i] 
+            a = v                   # now output all found patterns
             while a is not None:
-                if a.pattern != -1:
+                if a.pattern != -1: # this test can fail only for v itself
                     yield(j, a.pattern)
-                a = a.output
-        
-    def dump(self):
-        """ Produces a dot format representation of the trie
-        """ 
-        print("digraph G {")
-        seen = set()
-        Q = [(self.root, 0, "")]
-        level = [[self.root]]
-        while Q:
-            v, r, s = Q.pop()       # vertex, rank, string
-            if id(v) not in seen:
-                seen.add(id(v))
-                if r == len(level):
-                    level.append([v])
-                else:
-                    level[r].append(v)
-                if v.pattern != -1:
-                    double = "double"
-                else:
-                    double = ""
-                print(f'{id(v)} [shape="{double}circle", label="{s}"]')
-                for i in range(Vertex.LEN):
-                    ch = chr(i + Vertex.LOW)
-                    if v.next[i] is not None:
-                        print(f'{id(v)} -> {id(v.next[i])} [label="{ch}"]')
-                        Q.append((v.next[i], r+1, s + ch))
-                if v.suffix is not None:
-                    print(f'{id(v)} -> {id(v.suffix)} [color="red"]')
-                if v.output is not None:
-                    print(f'{id(v)} -> {id(v.output)} [color="blue"]')
-        for same in level:
-            print("{rank=same;", end="")
-            print(*map(id,same), sep=";", end="}\n")
-        print("}")        
-
+                a = a.output        # follow the output links
 
 if __name__ == "__main__":
     patterns = ["i", "in", "tin", "sting"]
     AC = Aho_Corasick(patterns)
-    AC.dump()
     s = "istingin"
     print(s)
     for e, p in AC.match("istingin"):
