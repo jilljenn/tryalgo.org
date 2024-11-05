@@ -9,7 +9,7 @@ author: Christoph Dürr
 
 ## Note
 
-:date: (dernière mise à jour de ce billet: 5 novembre 2024)
+(dernière mise à jour de ce billet: 5 novembre 2024)
 
 Ce billet est inspiré d'une page similaire du site web excellent [CP-Algorithms](https://cp-algorithms.com/string/aho_corasick.html), qui a son tour est une traduction d'un site web russe très complet.
 
@@ -84,19 +84,9 @@ Les arcs sortant sont implémentés par un tableau `next`. À la place des lettr
 
 Pour construire les liens suffixe on fait un parcours en largeur de la trie. Ainsi on aura traité les niveaux précédant un nœud au moment de le traiter. Ceci se fait avec une file `Q`, contenant des sommets à traiter.
 
-Ce code contient également une méthode `dump` qui génère l'illustration donnée dans ce billet.
+Ce code contient également une méthode `dump` qui génère l'illustration de ce billet.
 
 {% highlight python %}
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""\
-Aho-Corasick
-
-christoph dürr - 2024
-"""
-
-__all__ = ["Aho_Corasick"]
-
 class Vertex:
     """Vertex of the Aho-Corasick trie
     """
