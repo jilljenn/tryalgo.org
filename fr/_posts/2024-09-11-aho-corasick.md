@@ -73,10 +73,9 @@ Par exemple dans la trie ci-haut, il y a un lien `output` de `sti` directement v
 
 ## Complexité 
 
-La construction de la trie se fait en temps O(mk) où m est la longueur totale des mots dans L, et k est la taille de l'alphabet. **Attention** il faut vérifier pour ce billet que la construction des liens suffix se fait également en temps linéaire.
+La construction de la trie se fait en temps O(mk) où m est la longueur totale des mots dans L, et k est la taille de l'alphabet. 
 
-
-La recherche des occurrences des mots de L dans un mot S se fait en temps linéaire en la longueur de S.
+La recherche des occurrences des mots de L dans un mot S se fait en temps linéaire en la longueur de S et dans le nombre d'occurrences détectées.
 
 ## Détails d'implémentation 
 
