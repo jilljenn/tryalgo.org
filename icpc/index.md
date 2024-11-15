@@ -20,9 +20,10 @@ has_children: true
 
 [Tout savoir sur le concours ICPC](https://fr.wikipedia.org/wiki/International_Collegiate_Programming_Contest) (sur Wikipédia).
 
-## Others
+## Other trainings
 
-- [a3nm](https://a3nm.net/work/teaching/#y2022-inf280) training at Télécom Paris
+- [T-414-ÁFLV: A Competitive Programming Course](https://algo.is/t-414-aflv-competitive-programming-course-2016) by Bjarki Ágúst Guðmundsson, Kattis developer (impressive slides!)
+- In French: [a3nm](https://a3nm.net/work/teaching/#y2022-inf280) training at Télécom Paris
 - [Guillaume Ryder](https://gryder.org/acm-icpc/) talking about winning ICPC SWERC 2004 and going to finals in Shanghai
 
 ## SWERC 2014

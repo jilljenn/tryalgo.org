@@ -9,7 +9,7 @@ grand_parent: Competitions
 
 ## INF471S now CSC_41M02_EP
 
-cnXtv and eXotic got 2 Silver medals at SWERC 2023!
+cnXtv and eXotic got [2 Silver medals at SWERC 2023](https://swerc.eu/2023/results/)! cnXtv advance to EUC and ICPC 2024 World Finals!
 
 Since 2024 with [Simon Mauras](https://www.irif.fr/users/mauras/index)
 
@@ -26,3 +26,6 @@ Fridays 10:30-18:00 in lab info 35, [contact us](mailto:vie@jill-jenn.net) for m
 6. [Pathfinding, Matching and Flows](https://jiji.cat/slides/matching-flows.pdf)
 7. [Geometry](https://docs.google.com/presentation/d/1VggHupUHTSpYq0RCcgXngsHkd5cRpQQuyHTttPOYnOM/edit#slide=id.g30a5ba0c65e_0_56)
 8. [String Processing](https://jjv.ie/slides/strings2024.pdf)
+XCPC
+9. Bonus: [Hungarian](https://jjv.ie/slides/hungarian.pdf)
+10. Bonus: Advanced trees -- Union-Find, Lowest Common Ancestor, Heavy-Light Decomposition

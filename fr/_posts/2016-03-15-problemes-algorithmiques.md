@@ -12,17 +12,17 @@ On peut distinguer trois types de problèmes.
 
 La résolution complète de problèmes au moyen d'une panoplie d'algorithmes. Par exemple :
 
-- [Sortir d'un labyrinthe](http://tryalgo.org/tp4/)
-- [Gagner au jeu des allumettes de Fort Boyard](http://jill-jenn.net/codeweek/1-quartdesinge.html)
-- Plus court chemin entre deux points : [TryAlgo in Paris](http://nbviewer.jupyter.org/github/jilljenn/tryalgo/blob/master/examples/TryAlgo%20Maps%20in%20Paris.ipynb)
+- [Sortir d'un labyrinthe](https://tryalgo.org/tp4/)
+- [Gagner au jeu des allumettes de Fort Boyard](https://jill-jenn.net/codeweek/1-quartdesinge.html)
+- Plus court chemin entre deux points : [TryAlgo in Paris](https://nbviewer.jupyter.org/github/jilljenn/tryalgo/blob/master/examples/TryAlgo%20Maps%20in%20Paris.ipynb)
 
-On trouve souvent ce problème dans les concours tels que [Prologin](https://prologin.org), [Google Code Jam](https://code.google.com/codejam/), [Facebook Hacker Cup](https://www.facebook.com/hackercup), [ACM-ICPC](/acm/), [etc.](http://jill-jenn.net/codeweek/4-competitions.html) Les organisateurs doivent avoir eux-mêmes la solution pour lancer le concours, et les candidats doivent la trouver.
+On trouve souvent ce problème dans les concours tels que [Prologin](https://prologin.org), Google Code Jam, [Meta Hacker Cup](https://www.facebook.com/hackercup), [ICPC](/icpc/), [etc.](https://jill-jenn.net/codeweek/4-competitions.html) Les organisateurs doivent avoir eux-mêmes la solution pour lancer le concours, et les candidats doivent la trouver.
 
 ## 2. Recherche opérationnelle
 
 Là, on ne cherche plus à résoudre un problème complètement mais à trouver la meilleure solution possible, maximisant un certain score ou critère.
 
-- [Parcourir un maximum de Paris en 15 heures](http://jill-jenn.net/codeweek/3-exploration-paris.html)
+- [Parcourir un maximum de Paris en 15 heures](https://jill-jenn.net/codeweek/3-exploration-paris.html)
 - [Heuristiques](https://fr.wikipedia.org/wiki/Heuristique_(mathématiques)), comme pour rechercher un bon coup au go : [Monte-Carlo Tree Search](https://en.wikipedia.org/wiki/Monte_Carlo_tree_search)
 
 En concours, on peut penser à [Google Hash Code](https://hashcode.withgoogle.com) ou [Primers](http://primers.xyz). Les organisateurs n'ont pas besoin de connaître la meilleure solution.
