@@ -22,6 +22,11 @@ Ah oui mais c'est embêtant ça car on sait que la quinte parfaite est à 3/2 ce
 
 Du coup, soit tous les pianos sont faux, soit les demi-tons ne sont pas égaux. La réponse est la première.
 
+To know more check this amazing presentation from Kenya Otsuka (Kyoto University):
+
+<embed src="/static/20221226_Otsuka.pdf" width="100%" height="551" 
+ type="application/pdf">
+
 <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
 <script>
 const res = document.getElementById("output");
