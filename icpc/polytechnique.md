@@ -9,9 +9,10 @@ grand_parent: Competitions
 
 ## INF471S now CSC_41M02_EP
 
-cnXtv and eXotic got [2 Silver medals at SWERC 2023](https://swerc.eu/2023/results/)! cnXtv advance to EUC and ICPC 2024 World Finals!
+- Xeppelin won SWERC 2024! And cnXtv got a Silver Medal.
+- cnXtv and eXotic got [2 Silver medals at SWERC 2023](https://swerc.eu/2023/results/)! cnXtv advance to EUC and ICPC 2024 World Finals!
 
-Since 2024 with [Simon Mauras](https://www.irif.fr/users/mauras/index)
+Instructors: [Jill-Jênn Vie](https://jjv.ie) and [Simon Mauras](https://www.irif.fr/users/mauras/index)
 
 INF471S, now [CSC_41M02_EP Programmation compétitive -- ICPC SWERC training](https://moodle.polytechnique.fr/enrol/index.php?id=19278)
 
