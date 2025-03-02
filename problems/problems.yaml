@@ -297,12 +297,12 @@ Potholers \href{https://www.spoj.com/problems/POTHOLE/}{[spoj:POTHOLE]}
     - url: https://www.spoj.com/problems/POTHOLE/
       code: [spoj:POTHOLE]
 
-Stock Charts  \href{https://code.google.com/codejam/contest/204113/dashboard#s=p2}{[gcj:2009round2C]},
+Stock Charts  \href{https://zibada.guru/gcj/2009r2/problems/#C}{[gcj:2009round2C]},
 
 - chapter: dilworth
   name:  Stock Charts
   links:
-    - url: https://code.google.com/codejam/contest/204113/dashboard#s=p2
+    - url: https://zibada.guru/gcj/2009r2/problems/#C
       code: [gcj:2009round2C]
 
 Taxi  Cab Scheme \href{https://icpcarchive.ecs.baylor.edu/index.php?option=onlinejudge&page=show_problem&problem=1127}{[icpcarchive:3126]} \href{http://poj.org/problem?id=2060}{[poj:2060]}

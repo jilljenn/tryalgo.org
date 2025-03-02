@@ -31,7 +31,7 @@ dijkstra\dijkstra.tex:%Almost Shortest Path \href{https://www.spoj.com/problems/
 dijkstra\dijkstra.tex:Dragon Maze \href{https://code.google.com/codejam/contest/2929486/dashboard#s=p3}{[gcj:China2014roundB]} \\
 dijkstra\dijkstra.tex:%Potholers \href{https://www.spoj.com/problems/POTHOLE/}{[spoj:POTHOLE]}
 dilworth\dilworth.tex:Reservations of taxis \href{https://open.kattis.com/problems/taxicab}{[kattis:taxicab]}
-dilworth\dilworth.tex:Stock Charts  \href{https://code.google.com/codejam/contest/204113/dashboard#s=p2}{[gcj:2009round2C]}
+dilworth\dilworth.tex:Stock Charts  \href{https://zibada.guru/gcj/2009r2/problems/#C}{[gcj:2009round2C]}
 dilworth\dilworth.tex:Taxi  Cab Scheme \href{https://icpcarchive.ecs.baylor.edu/index.php?option=onlinejudge&page=show_problem&problem=1127}{[icpcarchive:3126]} 
 dinic\dinic.tex:% Maximum Flow \href{http://www.spoj.com/A12/problems/FLOW/}{[spoj:FLOW]},
 dinic\dinic.tex:Fast Maximum Flow \href{http://www.spoj.com/problems/FASTFLOW/}{[spoj:FASTFLOW]}
@@ -51,7 +51,7 @@ ford_fulkerson\ford_fulkerson.tex:Maximum Flow \href{https://www.spoj.com/A12/pr
 gale_shapley\gale_shapley.tex:Stable Marriage Problem \href{http://www.spoj.com/problems/STABLEMP/}{[spoj:STABLEMP]}
 gauss_jordan\gauss_jordan.tex:Ars Longa  \href{https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&category=18&page=show_problem&problem=1564}{[icpcarchive:3563]}
 gauss_jordan\gauss_jordan.tex:Linear Equation Solver \href{https://www.spoj.com/problems/LINQSOLV/}{[spoj:LINQSOLV]}
-greedy\glouton.tex:Minimum Scalar Product \href{https://code.google.com/codejam/contest/32016/dashboard}{[gcj:2008round1A]}
+greedy\glouton.tex:Minimum Scalar Product \href{https://zibada.guru/gcj/2008r1a/problems/#A}{[gcj:2008round1A]}
 greedy\glouton.tex:Minimal Coverage \href{https://acm.timus.ru/problem.aspx?space=1&num=1303}{[timus:1303]}
 graph01\graph01.tex:KATHTHI \href{https://www.spoj.com/problems/KATHTHI/}{[spoj:KATHTHI]}
 huffman\huffman.tex:Huffman Trees \href{http://poj.org/problem?id=1261}{[poj:1261]}
@@ -113,7 +113,7 @@ strongly_connected_components\strongly_connected_components.tex:Capital City \hr
 structures\structures.tex:Encryption \href{https://www.spoj.com/problems/CENCRY/}{[spoj:CENCRY]}
 structures\structures.tex:Phone List \href{http://www.spoj.com/problems/PHONELST/}{[spoj:PHONELST]}
 structures\structures.tex:A concrete simulation \href{http://www.spoj.com/problems/ACS/}{[spoj:ACS]}
-structures\structures.tex:Havannah \href{https://code.google.com/codejam/contest/1835486/dashboard#s=p1}{[gcj:2013round3B]}
+structures\structures.tex:Havannah \href{https://zibada.guru/gcj/2012r3/problems/#B}{[gcj:2012round3B]}
 subsetsum\subsetsum.tex:Boat Burglary \href{https://www.spoj.com/problems/BURGLARY/}{[spoj:BURGLARY]}
 sudoku\sudoku.tex:Easy sudoku \href{http://www.spoj.com/problems/EASUDOKU/}{[spoj:EASUDOKU]}
 sudoku\sudoku.tex:%Sudoku  \href{http://www.spoj.com/problems/SUDOKU/}{[spoj:SUDOKU]}
