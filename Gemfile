@@ -7,3 +7,5 @@ gem "jekyll-paginate", "~> 1.1"
 gem "numo-narray", "~> 0.9.2"
 gem "numo-linalg", "~> 0.1.7"
 gem "classifier-reborn", "~> 2.3"
+
+gem "bigdecimal", "~> 3.2"

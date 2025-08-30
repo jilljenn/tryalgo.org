@@ -1,28 +1,25 @@
 ---
 layout: page
-title: Configuration tips
+title: Configuring VSCode
 parent: Competitions
 ---
+
+# Configuring VSCode
 
 1. TOC
 {:toc}
 
-## Compilation
+## Compile with g++
 
-Pour un fichier A.cpp
+For a file `A.cpp`, the simplest command in a terminal is:
 
     make A
 
-La commande [officielle](https://swerc.eu/2023/environment/) est :
+In VSCode, you can compile using Ctrl+B.
 
-    g++ -x c++ -Wall -Wextra -O2 -std=gnu++20 -static -pipe A.cpp -o A
-
-### C++ compilation flags
-
-If we take a obviously bad code:
+If we take an obviously bad code:
 
 ```c++
-#include <bits/stdc++.h>
 #include <iostream>
 using namespace std;
 
@@ -33,35 +30,66 @@ int main(void) {
 }
 ```
 
-If your compiler flags contain (i.e. the "args" of your tasks.json config file in VSCode/Codium):
+If you naively compile it, you may just get a random number displayed in your terminal.
+
+If you click the gear after Ctrl+B, you can customize the compiler flags in `tasks.json`. Add the following `args` from [AddressSanitizer](https://github.com/google/sanitizers/wiki/addresssanitizer):
 
                 "-fsanitize=address",
                 "-fsanitize=undefined",
                 "-std=c++20",
+
+You can also add other flags from the [official SWERC command](https://swerc.eu/2024/environment/) (notably the extra `-Wall -Wextra`):
+
+    g++ -x c++ -Wall -Wextra -g -O2 -std=gnu++20 -static -pipe A.cpp -o A
 
 Then you should have some nice error message:
 
     bad.cpp:7:16: runtime error: index 6 out of bounds for type 'int [5]'
     bad.cpp:7:16: runtime error: load of address 0x7fffffffd5d8 with insufficient space for an object of type 'int'
 
-## Tests
+## Compile using clang (notably on Mac)
 
-Pour exécuter un fichier de tests :
+{: .note }
+Unfortunately, AddressSanitizer does not work on Apple Silicon Macs. But clang may give you nice messages anyway.
+
+If we use clangd instead, the code above will raise the following warning:
+
+    /usr/bin/clang -std=gnu++14 -fcolor-diagnostics -fansi-escape-codes -g /Users/jj/code/icpc/test.cpp -o /Users/jj/code/icpc/test
+    /Users/jj/code/icpc/test.cpp:6:13: warning: array index 6 is past the end of the array (that has type 'int[5]') [-Warray-bounds]
+        6 |     cout << t[6] << endl;
+          |             ^ ~
+    /Users/jj/code/icpc/test.cpp:5:5: note: array 't' declared here
+        5 |     int t[5];
+          |     ^
+    1 warning generated.
+
+It's also possible to download gcc on Homebrew, like `g++-15`, but you won't have AddressSanitizer anyway.
+
+## Execute tests
+
+To execute one file of testcases:
 
     ./A < A.in
 
-Pour exécuter un [tas de fichiers de tests](https://bitbucket.org/jilljenn/acm/src) :
+To execute several files of testcases and redirect output:
 
-    for x in *in; do ./A < $x; done
-    cat *out  # Pour comparer
+    for x in *in; do ./A < $x > $x.out; done
+    diff A.out A.in.out  # For example, or diff -y to display side by side
 
-You may want to check cph [competitive programming helper](https://codeforces.com/blog/entry/116939). There are browser extensions to import the testcases in VSCode or other IDEs.
+## Competitive Programming Helper
 
-I am impressed by [the notebook of KTH](https://github.com/kth-competitive-programming/kactl) which is tested, like any notebook should be.
+- In VSCode, install the VSCode extension **cph** [competitive programming helper](https://codeforces.com/blog/entry/116939).
+- Download the browser extension **Competitive Companion** on [Chrome](https://chromewebstore.google.com/detail/competitive-companion/cjnmckjndlpiamhfimnnjmnckgghkjbl) or [Firefox](https://addons.mozilla.org/en-US/firefox/addon/competitive-companion/).
+- When you are on some problem statement on Kattis, click the **+** of the browser extension.
+- Go back to VSCode and choose your language (`cpp`) to create a new file and import the testcases from Kattis to VSCode.
 
-If you want to troll, you should learn about [policy-based data structures](https://codeforces.com/blog/entry/11080).
+## Notebooks
 
-## Graphviz
+[The 25-page notebook from KTH](https://github.com/kth-competitive-programming/kactl) is stress-tested, like any notebook should be.
+
+In particular, you can check its entry about [policy-based data structures](https://codeforces.com/blog/entry/11080).
+
+# Visualization with Graphviz
 
 Pour visualiser un graphe, la syntaxe est la suivante :
 
