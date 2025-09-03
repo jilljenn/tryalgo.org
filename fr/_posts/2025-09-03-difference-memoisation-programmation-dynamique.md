@@ -96,7 +96,7 @@ max_value(n, cmax)
 La mémoïsation fonctionne et reste optimale. Qu'en est-il du précédent code de programmation dynamique ?
 
 ```python
-capacities = [-2, 3, 5]  # knapsack won't work if 2 => -2
+capacities = [-2, 3, 5]
 values = [6, 4, 2]
 cmax = 9
 
@@ -109,7 +109,7 @@ knapsack()
 
 Exercice au lecteur : comment modifier le code précédent pour qu'il fonctionne dans le cas de capacités négatives ? Faites un dessin sur papier pour voir ce qui se passe.
 
-Méta : si ça vous intéresse de voir comment j'ai chargé [pyodide](https://pyodide.org/en/stable/usage/quickstart.html) sur ce blog post Jekyll, vous pouvez regarder [le source de cette page](https://github.com/jilljenn/tryalgo.org/blob/master/fr/_posts/2025-09-03-difference-memoisation-programmation-dynamique.md). Vous pouvez [faire une PR](https://github.com/jilljenn/tryalgo.org) pour remplacer le premier bloc par un textarea (avec coloration syntaxique svp) pour modifier le code.
+Méta : si ça vous intéresse de voir comment j'ai chargé [pyodide](https://pyodide.org/en/stable/usage/quickstart.html) sur ce blog post Jekyll, vous pouvez regarder [en bas du source de cette page](https://raw.githubusercontent.com/jilljenn/tryalgo.org/refs/heads/master/fr/_posts/2025-09-03-difference-memoisation-programmation-dynamique.md). Vous pouvez [faire une PR](https://github.com/jilljenn/tryalgo.org) pour remplacer le premier bloc par un textarea (avec coloration syntaxique svp) pour modifier le code.
 
 <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
 <script>
