@@ -6,19 +6,20 @@ grand_parent: Competitions
 ---
 
 # École polytechnique ICPC SWERC Training
+{: .no_toc }
 
-## INF471S now CSC_41M02_EP
+Class code on Moodle: [CSC_41M02_EP - Algorithms and Advanced Programming (2025-2026)
+](https://moodle.ip-paris.fr/course/view.php?id=10626)
 
-- Xeppelin won SWERC 2024! And cnXtv got a Silver Medal.
-- cnXtv and eXotic got [2 Silver medals at SWERC 2023](https://swerc.eu/2023/results/)! cnXtv advance to EUC and ICPC 2024 World Finals!
+- Xeppelin won [SWERC 2024](https://swerc.eu/2024/) & Bronze Medal at ICPC EUC. Currently at [ICPC World Finals 2025](https://worldfinals.icpc.global/)!
+- UXT won a Silver Medal at SWERC 2024.
+- cnXtv and eXotic got [2 Silver medals at SWERC 2023](https://swerc.eu/2023/results/). cnXtv went to ICPC World Finals 2024.
 
-Instructors: [Jill-Jênn Vie](https://jjv.ie) and [Simon Mauras](https://www.irif.fr/users/mauras/index)
-
-INF471S, now [CSC_41M02_EP Programmation compétitive -- ICPC SWERC training](https://moodle.polytechnique.fr/enrol/index.php?id=19278)
+Instructors: [Jill-Jênn Vie](https://jjv.ie) and [Hang Zhou](https://www.normalesup.org/~zhou/)
 
 Fridays 10:30-18:00 in lab info 35, [contact us](mailto:vie@jill-jenn.net) for more information.
 
-0. [Introduction](https://jjv.ie/slides/swerc-intro2024.pdf)
+0. [Introduction](https://jjv.ie/slides/swerc-intro2025.pdf)
 1. [Pathfinding](https://jjv.ie/slides/pathfinding.pdf)
 2. [DP](https://jjv.ie/slides/bellman2024.pdf)
 3. [Search: Binary, Ternary, Backtracking](https://jjv.ie/slides/strategies.pdf)
@@ -30,3 +31,17 @@ Fridays 10:30-18:00 in lab info 35, [contact us](mailto:vie@jill-jenn.net) for m
 XCPC
 9. Bonus: [Hungarian](https://jjv.ie/slides/hungarian.pdf)
 10. Bonus: Advanced trees -- Union-Find, Lowest Common Ancestor, Heavy-Light Decomposition
+
+## Frequently asked questions
+
+### How to solve problems after the end of a contest?
+
+If the contest link on Kattis is <https://open.kattis.com/contests/ethqoq> you can just remove contest info from the URL e.g. <https://open.kattis.com/contests/ethqoq/problems/longestpathinadag> becomes <https://open.kattis.com/problems/longestpathinadag>
+
+### How to practice interactive problems?
+
+There is a [guide on Codeforces](https://codeforces.com/blog/entry/45307). TL;DR: don't forget to `fflush(stdout)` every time you output data.
+
+## References
+
+See [useful resources](/contests/#useful-resources-for-practice) for practice.
