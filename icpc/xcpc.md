@@ -8,7 +8,7 @@ grand_parent: Competitions
 # XCPC rules
 {: .no_toc }
 
-- 6 problems, 3 hours, teams of 2 or 3 with 3 computers.
+- 7 problems, 3 hours, teams of 2 or 3 with 3 computers.
 - It is mandatory to submit solutions in C++.
 - You can use Python for generating testcases, for example.
 - Please create an account on [Kattis](https://open.kattis.com).
