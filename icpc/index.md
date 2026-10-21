@@ -16,7 +16,7 @@ has_children: true
 
 - [ENS Paris-Saclay](/club-cachan) 2015--2016
 - [Université de Lille](/club-ecl) 2021
-- [École polytechnique](/icpc/polytechnique/) 2022-- ([intro](https://jjv.ie/slides/swerc-intro2024.pdf))
+- [École polytechnique](/icpc/polytechnique/) 2022-- ([intro](https://jjv.ie/slides/swerc-intro2026.pdf))
 
 [Tout savoir sur le concours ICPC](https://fr.wikipedia.org/wiki/International_Collegiate_Programming_Contest) (sur Wikipédia).
 
