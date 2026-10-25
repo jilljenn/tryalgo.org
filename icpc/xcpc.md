@@ -25,6 +25,16 @@ We are following the [regulations of SWERC](https://swerc.eu/2026/regulations/).
 
 ## TBD
 
+## Programming languages
+
+The following programming languages will be present in the judging system:
+
+| Language | Version | Compilation command | Execution command |
+| -------- | ------- | ------------------- | ----------------- |
+| C | gcc 14.2.0 | gcc -x c -Wall -O2 -static -pipe "$@" -lm | < executable > |
+| C++ | g++ 14.2.0 | g++ -x c++ -std=c++23 -Wall -O2 -static -pipe "$@" | < executable > |
+| Java | OpenJDK 21 | javac -encoding UTF-8 -sourcepath . -d . "$@" | java -Dfile.encoding=UTF-8 -XX:+UseSerialGC -Xss64m -Xms{ML - 16m} -Xmx{ML - 16m}  "$@" |
+
 === Everything below is irrelevant ===
 
 # XCPC rules
