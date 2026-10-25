@@ -5,6 +5,28 @@ parent: ICPC Training
 grand_parent: Competitions
 ---
 
+# XCPC
+
+XCPC is a local selection contest at École Polytechnique.
+Top 3 teams from the contest will advance to [SWERC](https://swerc.eu/) to represent the school.
+
+XCPC 2026 will happen on November 7 in computer rooms of X.
+
+## Registration
+
+In order to participate, your team must be registered.
+If you have attended PDV/MODAL course this year and you have a team, then you are registered.
+If you have filled out the google form for XCPC/XCAIC registration or contacted Jill-Jênn Vie about it, then you are registered.
+If you wish to register your team, contact jill-jenn.vie@inria.fr or manoprenko@gmail.com.
+
+# XCPC regulations
+
+We are following the [regulations of SWERC](https://swerc.eu/2026/regulations/). Main points and technical details are outlined below.
+
+## TBD
+
+=== Everything below is irrelevant ===
+
 # XCPC rules
 {: .no_toc }
 
