@@ -34,6 +34,8 @@ The following programming languages will be present in the judging system:
 | C | gcc 14.2.0 | gcc -x c -Wall -O2 -static -pipe "$@" -lm | < executable > |
 | C++ | g++ 14.2.0 | g++ -x c++ -std=c++23 -Wall -O2 -static -pipe "$@" | < executable > |
 | Java | OpenJDK 21 | javac -encoding UTF-8 -sourcepath . -d . "$@" | java -Dfile.encoding=UTF-8 -XX:+UseSerialGC -Xss64m -Xms{ML - 16m} -Xmx{ML - 16m}  "$@" |
+| Kotlin | Kotlin 2.4.21 | kotlinc -d . "$@" | kotlin -Dfile.encoding=UTF-8 -J-XX:+UseSerialGC -J-Xss64m -J-Xms{ML - 16m} -J-Xmx{ML - 16m} "$@" |
+| Python | PyPy3 7.3.19 | - | pypy3 "$@" |
 
 === Everything below is irrelevant ===
 
