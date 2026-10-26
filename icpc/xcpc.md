@@ -23,7 +23,12 @@ If you wish to register your team, contact jill-jenn.vie@inria.fr or manoprenko@
 
 We are following the [regulations of SWERC](https://swerc.eu/2026/regulations/). Main points and technical details are outlined below.
 
-## TBD
+- Teams of up to 3 participants with **one** computer per team. All the teams will use computers of Polytechnique. Bringing your own computer or keyboard is forbidden.
+- It is forbidden to use any electronic devices except your team's computer, including phones, watches, AR glasses etc.
+- It is forbidden to access any online resources except the judging system and authorized documentationm.
+- It is fobidden to use search engines or any AI models.
+- It is forbidden to bring any written notes. Blank paper and writing tools are authorized.
+- Teams are allowed to access and consult [cppreference.com](https://cppreference.com/) and the team reference document.
 
 ## Programming languages
 
@@ -37,31 +42,22 @@ The following programming languages will be present in the judging system:
 | Kotlin | Kotlin 2.4.21 | kotlinc -d . "$@" | kotlin -Dfile.encoding=UTF-8 -J-XX:+UseSerialGC -J-Xss64m -J-Xms{ML - 16m} -J-Xmx{ML - 16m} "$@" |
 | Python | PyPy3 7.3.19 | - | pypy3 "$@" |
 
-=== Everything below is irrelevant ===
+All problems are guaranteed to have solutions in C++. There is no such guarantee for other programming languages.
 
-# XCPC rules
-{: .no_toc }
+## Team reference document
 
-- 7 problems, 3 hours, teams of 2 or 3 with 3 computers.
-- It is mandatory to submit solutions in C++.
-- You can use Python for generating testcases, for example.
-- Please create an account on [Kattis](https://open.kattis.com).
-- You have to use the computers provided in the lab.  
-To get your AltGr key back, go to Settings > Keyboard > Alt/Compose > choose "Right Super" for example. To change layout, open a Terminal and do `setxkbmap us` or `setxkbmap fr`.
+This part of regulations significantly differs from SWERC/WF.
 
-- You have to use the provided [KACTL](https://github.com/kth-competitive-programming/kactl/) notebook, that won't be printed.
+Teams are allowed to use the provided [KACTL](https://github.com/kth-competitive-programming/kactl/blob/main/kactl.pdf) reference document.
+It will not be printed and will be available in the testing system in pdf format.
+Teams are authorized to consult this document and copy its content.
 
-```
-git clone https://github.com/kth-competitive-programming/kactl.git
-```
+## Printing
 
-It's okay to copy-paste code from this repository only.  
-Template is in [`content/contest/template.cpp`](https://github.com/kth-competitive-programming/kactl/blob/main/content/contest/template.cpp).
+We will try to provide a possibility of printing your solutions and other text files during the contest.
+However, we cannot guarantee its availability during the contest.
 
-- It's okay to have a config file or macros but please show them to the coach.
-- You cannot use Google, LLMs or anything else besides the notebook. But you can browse [cppreference.com](https://cppreference.com/).
-
-## Advice
+# Advice
 
 - Read the problem statements and check the constraints. Split the work with your team.
 - Think on paper. You are encouraged to write on the problem statements (e.g. highlight constraints).
