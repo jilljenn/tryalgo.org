@@ -1,0 +1,2 @@
+---
+BUNDLE_BUILD__NUMO___NARRAY: "--with-cflags=-std=gnu17"
