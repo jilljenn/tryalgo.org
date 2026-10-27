@@ -1,2 +1,2 @@
 ---
-BUNDLE_BUILD__NUMO___NARRAY: "--with-cflags=-std=gnu17"
+BUNDLE_BUILD__NUMO___NARRAY: "--with-cflags='-std=gnu17 -include stdbool.h'"
