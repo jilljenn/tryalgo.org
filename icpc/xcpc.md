@@ -109,7 +109,7 @@ If you wish to register your team, contact jill-jenn.vie@inria.fr or manoprenko@
 
 - polyteam (MD, MD, GR)
 
-### ENS Paris
+### ENS Paris (17)
 {: .no_toc }
 
 - TBC
