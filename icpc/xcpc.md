@@ -5,21 +5,33 @@ parent: ICPC Training
 grand_parent: Competitions
 ---
 
+1. TOC
+{:toc}
+
 # XCPC
 
-XCPC is a local selection contest at École Polytechnique.
+XCPC is a local ICPC selection contest at École Polytechnique.
 Top 2 to 3 teams (with probability 1) from the contest will advance to [SWERC](https://swerc.eu/) to represent the school.
+
+## Schedule
 
 XCPC 2026 will happen on November 7 in computer rooms of X, from 1 PM to 6 PM.
 
-## Registration
+12:40 -- 12:50
+:	
+entering computer rooms
 
-In order to participate, your team must be registered.
-If you have attended PDV/MODAL course this year and you have a team, then you are registered.
-If you have filled out the google form for XCPC/XCAIC registration or contacted Jill-Jênn Vie about it, then you are registered.
-If you wish to register your team, contact jill-jenn.vie@inria.fr or manoprenko@gmail.com.
+13:00 -- 18:00
+:	
+contest
 
-# XCPC regulations
+18:00 -- 18:30
+:	
+problem analysis and results announcement
+
+1 hour before the contest ends, the scoreboard will be frozen. It will be unfrozen during results announcement.
+
+## XCPC rules & environment
 
 We are following the [regulations of SWERC](https://swerc.eu/2026/regulations/). Main points and technical details are outlined below.
 
@@ -29,9 +41,19 @@ We are following the [regulations of SWERC](https://swerc.eu/2026/regulations/).
 - It is forbidden to access any online resources except the judging system and authorized offline documentation.
 - It is forbidden to use search engines or <span style="color: red">any AI models</span>.
 - It is forbidden to bring any written notes. Blank paper and writing tools are authorized.
-- Teams are allowed to access and consult an offline version of [cppreference.com](https://cppreference.com/) and the team reference document. They can exceptionally copy paste from a clone of the KACTL repository.
+- Teams are allowed to access and consult an offline version of [cppreference.com](https://cppreference.com/) and the team reference document.
 
-## Programming languages
+### Team reference document
+{: .no_toc }
+
+This part of regulations significantly differs from SWERC.
+
+Teams are allowed to use the provided [KACTL](https://github.com/kth-competitive-programming/kactl/blob/main/kactl.pdf) reference document.
+It will not be printed and will be available in the testing system in pdf format.
+Teams are authorized to consult this document and copy its content.
+
+### Programming languages
+{: .no_toc }
 
 The following programming languages will be present in the judging system:
 
@@ -45,20 +67,54 @@ The following programming languages will be present in the judging system:
 
 All problems are guaranteed to have solutions in C++. There is no such guarantee for other programming languages.
 
-## Team reference document
-
-This part of regulations significantly differs from SWERC/WF.
-
-Teams are allowed to use the provided [KACTL](https://github.com/kth-competitive-programming/kactl/blob/main/kactl.pdf) reference document.
-It will not be printed and will be available in the testing system in pdf format.
-Teams are authorized to consult this document and copy its content.
-
-## Printing
+### Printing
+{: .no_toc }
 
 We will try to provide a possibility of printing your solutions and other text files during the contest.
 However, we cannot guarantee its availability during the contest.
 
-# Advice
+## Registered Teams
+
+In order to participate, your team must be registered.  
+If you have attended PDV/MODAL course this year and you have a team, then you are registered.  
+If you have filled out the Google Form for XCPC/XCAIC registration or contacted Jill-Jênn Vie about it, then you are registered.  
+If you wish to register your team, contact jill-jenn.vie@inria.fr or manoprenko@gmail.com.
+
+### École polytechnique (20)
+{: .no_toc }
+
+- "ACE" (ESL, CP, AM)
+- Alliance of the Golden Witch (QNB, VR, GBD)
+- "AVL" (AT, VB, LBM)
+- Bambiliches (DC, LC, AB)
+- BeurreVolant (PF, EA, AP)
+- Cache me if you can (NK, RS, AB)
+- "ERL" (LMI, EM, RAP)
+- FBZ (TO, MC, AC)
+- five hand team (AH, SCNY, AS)
+- ICPC Dream Team (XBH, MK, AP)
+- Moo's Algorithm (LC, MS, DG)
+- nonameteam (HG, AEO, MM)
+- PC 34 (BM, AM, GT)
+- Skill_Issue_Error (TA, JC, AdB)
+- Team Alpha (YB, IP, LS)
+- Triangle Inequality (RT, KV, WB)
+- Untitled Team 3 (PL, PA, AT)
+- Untitled Team 5 (MKK, TM, TM)
+- Untitled Team 6 (SA, AK, EI)
+- Zarbout (YM, EO, MG)
+
+### Polytech Paris-Saclay (1)
+{: .no_toc }
+
+- polyteam (MD, MD, GR)
+
+### ENS Paris
+{: .no_toc }
+
+- TBC
+
+## Advice
 
 - Read the problem statements and check the constraints. Split the work with your team.
 - Think on paper. You are encouraged to write on the problem statements (e.g. highlight constraints).
@@ -66,7 +122,8 @@ However, we cannot guarantee its availability during the contest.
 - Every minute counts, so don't give up. If it's hard, it's hard for everybody.
 - Build some testcases yourself.
 
-## Common mistakes
+### Common mistakes
+{: .no_toc }
 
 - Do not forget `long long`
 - Your code should have upper bounds that are high enough.
