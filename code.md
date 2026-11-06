@@ -14,6 +14,7 @@ We gathered various efficient implementations of algorithms and data structures 
 - [Check the documentation](https://jilljenn.github.io/tryalgo/)
 - [Browse the algorithms on GitHub](https://github.com/jilljenn/tryalgo/tree/master/tryalgo)
 - [Download all code in a ZIP](https://github.com/jilljenn/tryalgo/archive/master.zip)
+- [Essential algorithms in an ICPC reference document](https://github.com/jilljenn/tryalgo/tree/master/notebook)
 
 <iframe src="https://ghbtns.com/github-btn.html?user=jilljenn&amp;repo=tryalgo&amp;type=fork&amp;count=true&amp;size=large" frameborder="0" scrolling="0" width="158px" height="30px"></iframe>
 
