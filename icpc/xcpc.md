@@ -10,12 +10,17 @@ grand_parent: Competitions
 
 # XCPC
 
+Last updated: Nov 7 10:27
+
 XCPC is a local ICPC selection contest at École Polytechnique.
-Top 2 to 3 teams (with probability 1) from the contest will advance to [SWERC](https://swerc.eu/) to represent the school.
+**Top 3 teams** from the contest will advance to [SWERC](https://swerc.eu/) to represent the school.
 
 ## Schedule
 
 XCPC 2026 will happen on November 7 in computer rooms of X, from 1 PM to 6 PM.
+
+**At 12:40 PM, meet in front of [Bât. 8](https://maps.app.goo.gl/TVTTgFQ9FKmYQ1yo8)** (this marker "ELSE" is a good meeting point).  
+Campus de l'École polytechnique, 91120 Palaiseau.
 
 12:40 -- 12:50
 :	
